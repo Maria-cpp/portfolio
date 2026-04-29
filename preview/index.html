@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maria Naseem — AI / ML Engineer</title>
+<meta name="description" content="AI Engineer & Solution Architect. Agentic systems, computer vision, full-stack. Founder of ZumfluxAI." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: { DEFAULT: '#08090c', soft: '#0c0e13', card: '#10131a' },
+        accent: { DEFAULT: '#7c5cff', cyan: '#22d3ee', lime: '#a3e635', pink: '#f472b6' }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace']
+      }
+    }
+  }
+};
+</script>
+
+<style>
+  body { background: #08090c; color: #e7e9ee; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: rgba(124, 92, 255, 0.4); color: white; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #08090c; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 999px; }
+
+  .glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .glass-strong {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+  .gradient-text {
+    background: linear-gradient(120deg, #fff 0%, #c4b5fd 20%, #22d3ee 45%, #a3e635 70%, #f472b6 100%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientX 10s ease infinite;
+  }
+  @keyframes gradientX {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .glow-blob {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(100px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 50%, transparent 100%);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  @keyframes marquee { 0% { transform: translateX(0);} 100% { transform: translateX(-50%);} }
+  .fade-mask-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.25rem; border-radius: 999px; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.14); }
+  .btn-primary { background: linear-gradient(135deg, #7c5cff, #5b3dff); color: white; box-shadow: 0 0 30px rgba(124,92,255,0.3); }
+  .btn-primary:hover { box-shadow: 0 0 40px rgba(124,92,255,0.5); transform: translateY(-1px); }
+  .btn-ghost { background: rgba(255,255,255,0.04); color: white; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #9aa0ad; }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: #22d3ee; display: inline-block; }
+  .card-hover { transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.18); box-shadow: 0 20px 60px -20px rgba(124,92,255,0.25); }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .float-y { animation: float 4s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
+  .pulse-dot { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  section { scroll-margin-top: 80px; }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Background blobs -->
+<div class="pointer-events-none fixed inset-0 z-0">
+  <div class="glow-blob bg-accent w-[600px] h-[600px] -top-40 -left-40" style="opacity:.3"></div>
+  <div class="glow-blob bg-accent-cyan w-[500px] h-[500px] top-[40%] -right-40" style="opacity:.2"></div>
+  <div class="glow-blob bg-accent-pink w-[400px] h-[400px] bottom-0 left-1/3" style="opacity:.15"></div>
+</div>
+
+<div class="relative z-10">
+
+<!-- Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 py-4 transition-all" id="nav">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex items-center justify-between glass-strong rounded-full px-4 py-2.5">
+      <a href="#top" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-full p-[1.5px]" style="background:linear-gradient(135deg,#7c5cff,#22d3ee,#f472b6)">
+          <div class="w-full h-full rounded-full bg-bg flex items-center justify-center">
+            <span class="font-display font-bold text-xs">MN</span>
+          </div>
+        </div>
+        <span class="hidden sm:block font-display text-sm font-medium">Maria<span class="text-white/40">.dev</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1 text-sm">
+        <a href="#about" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">About</a>
+        <a href="#stack" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">Stack</a>
+        <a href="#skills" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">Skills</a>
+        <a href="#experience" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">Experience</a>
+        <a href="#projects" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">Projects</a>
+        <a href="#zumflux" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">ZumfluxAI</a>
+        <a href="#certifications" class="px-3 py-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/5">Certs</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary text-xs">Let's talk</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="top" class="relative min-h-screen flex items-center pt-32 pb-20">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+  <div class="relative mx-auto max-w-6xl px-5 w-full">
+    <div class="grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 glass rounded-full px-3.5 py-1.5 mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-lime opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-lime"></span>
+          </span>
+          <span class="text-xs text-white/80 font-mono">Available for AI engineering work</span>
+        </div>
+        <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
+          <span class="block text-white/95">Maria</span>
+          <span class="block gradient-text">Naseem.</span>
+        </h1>
+        <div class="mt-6 flex items-center gap-2 font-mono text-sm text-white/70">
+          <span style="color:#22d3ee">✦</span>
+          <span>AI / ML Engineer</span>
+          <span class="text-white/30">/</span>
+          <span class="text-accent-cyan" id="rotating-tag">Agentic AI Architect</span>
+        </div>
+        <p class="mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed">
+          AI Engineer & Solution Architect shipping production-grade intelligent systems — from multi-camera computer vision pipelines to agentic LLM platforms and autonomous observability stacks.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#projects" class="btn btn-primary">View my work →</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="mt-7 flex items-center gap-5 text-sm text-white/50 flex-wrap">
+          <a href="https://github.com/Maria-cpp" target="_blank" class="hover:text-white">GitHub</a>
+          <a href="https://www.linkedin.com/in/maria-naseem-343594128/" target="_blank" class="hover:text-white">LinkedIn</a>
+          <span>📍 Islamabad, Pakistan</span>
+        </div>
+      </div>
+
+      <div class="relative reveal">
+        <div class="relative glass-strong rounded-3xl p-6 overflow-hidden">
+          <div class="absolute -inset-px rounded-3xl pointer-events-none opacity-50" style="background:linear-gradient(135deg,rgba(124,92,255,0.4),transparent,rgba(34,211,238,0.3))"></div>
+          <div class="relative">
+            <div class="flex items-center justify-between mb-5">
+              <div class="flex items-center gap-2">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
+                </div>
+                <span class="ml-2 text-xs font-mono text-white/40">~/maria</span>
+              </div>
+              <span class="text-[10px] font-mono text-white/30">v1.0</span>
+            </div>
+            <div class="font-mono text-xs space-y-1.5">
+              <div><span style="color:#f472b6">const</span> <span style="color:#22d3ee">maria</span> <span class="text-white/40">=</span> {</div>
+              <div class="pl-4"><span class="text-white/70">role:</span> <span style="color:#a3e635">'AI / ML Engineer'</span>,</div>
+              <div class="pl-4"><span class="text-white/70">focus:</span> [<span style="color:#a3e635">'Agentic AI'</span>, <span style="color:#a3e635">'CV'</span>],</div>
+              <div class="pl-4"><span class="text-white/70">stack:</span> <span style="color:#a3e635">'FastAPI · Next · Docker'</span>,</div>
+              <div class="pl-4"><span class="text-white/70">founded:</span> <span style="color:#a3e635">'ZumfluxAI'</span>,</div>
+              <div class="pl-4"><span class="text-white/70">based:</span> <span style="color:#a3e635">'Islamabad, PK'</span>,</div>
+              <div class="pl-4"><span class="text-white/70">status:</span> <span style="color:#22d3ee">'shipping ✦'</span></div>
+              <div>};</div>
+            </div>
+            <div class="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full p-[2px]" style="background:linear-gradient(135deg,#7c5cff,#22d3ee,#f472b6)">
+                <div class="w-full h-full rounded-full bg-bg-card flex items-center justify-center font-display font-bold text-sm">MN</div>
+              </div>
+              <div class="text-xs">
+                <div class="text-white/90 font-medium">Founder · ZumfluxAI</div>
+                <div class="text-white/40 font-mono">Production AI engineering</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -top-4 -right-4 glass rounded-full px-3 py-1.5 text-xs font-mono float-y" style="color:#22d3ee">⚡ Agentic</div>
+        <div class="absolute -bottom-4 -left-4 glass rounded-full px-3 py-1.5 text-xs font-mono float-y" style="color:#a3e635;animation-delay:1s">✦ Vision</div>
+      </div>
+    </div>
+
+    <div class="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-3 reveal">
+      <div class="glass rounded-2xl p-4 sm:p-5">
+        <div class="font-display text-2xl sm:text-3xl font-bold gradient-text">4+</div>
+        <div class="mt-1 text-xs text-white/50 font-mono uppercase tracking-wider">Years building AI systems</div>
+      </div>
+      <div class="glass rounded-2xl p-4 sm:p-5">
+        <div class="font-display text-2xl sm:text-3xl font-bold gradient-text">12+</div>
+        <div class="mt-1 text-xs text-white/50 font-mono uppercase tracking-wider">Production projects shipped</div>
+      </div>
+      <div class="glass rounded-2xl p-4 sm:p-5">
+        <div class="font-display text-2xl sm:text-3xl font-bold gradient-text">5</div>
+        <div class="mt-1 text-xs text-white/50 font-mono uppercase tracking-wider">AI / Agentic certifications</div>
+      </div>
+      <div class="glass rounded-2xl p-4 sm:p-5">
+        <div class="font-display text-2xl sm:text-3xl font-bold gradient-text">1</div>
+        <div class="mt-1 text-xs text-white/50 font-mono uppercase tracking-wider">Founded company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl reveal">
+      <div class="eyebrow">About me</div>
+      <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">Engineer first. <span class="gradient-text">Builder always.</span></h2>
+      <p class="mt-5 text-white/65 leading-relaxed">
+        I build intelligent systems that think, see, and act. With 4+ years across AI engineering and full-stack development, I architect production-grade platforms — facial-recognition attendance running on multi-camera RTSP streams, agentic observability with AI-driven root-cause analysis, and multi-channel notification microservices powered by LLMs. Currently focused on AI Platform Engineering and autonomous system architecture, I founded ZumfluxAI to bring this craft to teams shipping real-world AI products.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5">
+      <div class="relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-2xl" style="background:rgba(34,211,238,0.2)"></div>
+        <div class="relative inline-flex items-center justify-center w-11 h-11 rounded-xl glass border" style="color:#22d3ee;border-color:rgba(34,211,238,0.3)">👁</div>
+        <div class="mt-5 text-xs font-mono uppercase tracking-wider text-white/40">Vision</div>
+        <h3 class="mt-2 font-display text-xl font-semibold">AI that ships, not demos</h3>
+        <p class="mt-3 text-sm text-white/65 leading-relaxed">I believe the next decade belongs to teams that turn LLM capability into production systems. Real value lives in pipelines that handle 10k requests, recover from failure, and scale beyond the demo.</p>
+      </div>
+      <div class="relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-2xl" style="background:rgba(163,230,53,0.2)"></div>
+        <div class="relative inline-flex items-center justify-center w-11 h-11 rounded-xl glass border" style="color:#a3e635;border-color:rgba(163,230,53,0.3)">⚡</div>
+        <div class="mt-5 text-xs font-mono uppercase tracking-wider text-white/40">Expertise</div>
+        <h3 class="mt-2 font-display text-xl font-semibold">Agentic systems & computer vision</h3>
+        <p class="mt-3 text-sm text-white/65 leading-relaxed">Deep hands-on with multi-agent orchestration, RAG pipelines, real-time RTSP processing, and FastAPI/Next.js stacks. I bridge the gap between research-grade ML and battle-tested infrastructure.</p>
+      </div>
+      <div class="relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-2xl" style="background:rgba(244,114,182,0.2)"></div>
+        <div class="relative inline-flex items-center justify-center w-11 h-11 rounded-xl glass border" style="color:#f472b6;border-color:rgba(244,114,182,0.3)">🚀</div>
+        <div class="mt-5 text-xs font-mono uppercase tracking-wider text-white/40">Innovation</div>
+        <h3 class="mt-2 font-display text-xl font-semibold">From prototype to platform in weeks</h3>
+        <p class="mt-3 text-sm text-white/65 leading-relaxed">Shipped a facial-recognition AMS in 2 weeks against a client bid. Built an agentic observability stack that auto-analyzes Prometheus alerts. I move fast — and document the path so teams can move with me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section id="stack" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 reveal">
+      <div>
+        <div class="eyebrow">Tech stack</div>
+        <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">Tools I reach for <span class="gradient-text">every week</span></h2>
+      </div>
+      <p class="text-white/55 max-w-md text-sm">A curated set across AI, backend, frontend and DevOps — the same stack I use to ship production systems.</p>
+    </div>
+
+    <div class="mt-12 fade-mask-x reveal">
+      <div class="marquee-track">
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Python</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">TypeScript</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">FastAPI</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Next.js</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">React</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">OpenAI</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Anthropic</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">YOLO</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">OpenCV</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">PostgreSQL</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Redis</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Celery</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Docker</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">GitHub Actions</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Tailwind CSS</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Pinecone</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">FAISS</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">LangChain</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Grafana</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Prometheus</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Playwright</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Node.js</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Streamlit</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Linux</div>
+        <!-- duplicate -->
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Python</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">TypeScript</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">FastAPI</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Next.js</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">React</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">OpenAI</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Anthropic</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">YOLO</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">OpenCV</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">PostgreSQL</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Redis</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Celery</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Docker</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">GitHub Actions</div>
+        <div class="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80">Tailwind CSS</div>
+      </div>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">🧠</div>
+          <h3 class="font-display font-semibold">AI / ML</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">OpenAI</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Anthropic</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Grok</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Gemini</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">YOLO</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">OpenCV</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">DeepFace</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">FAISS</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Pinecone</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">RAG</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">🖥️</div>
+          <h3 class="font-display font-semibold">Backend</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">FastAPI</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Python</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Node.js</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Redis</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Celery</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">PostgreSQL</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">WebSockets</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">🎨</div>
+          <h3 class="font-display font-semibold">Frontend</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Next.js</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">React</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">TypeScript</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Tailwind</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Streamlit</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Framer Motion</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">📦</div>
+          <h3 class="font-display font-semibold">DevOps</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Docker</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Docker Compose</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">GitHub Actions</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Linux</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Nginx</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">CI/CD</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">⚡</div>
+          <h3 class="font-display font-semibold">Automation</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Playwright</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">MCP Servers</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">File Watchers</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Webhooks</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center" style="color:#22d3ee">🔧</div>
+          <h3 class="font-display font-semibold">Tools</h3>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Git</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">GitHub</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">VS Code</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Postman</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Grafana</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70">Prometheus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl reveal">
+      <div class="eyebrow">Skill set</div>
+      <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">What I bring <span class="gradient-text">to the table</span></h2>
+      <p class="mt-4 text-white/65">Six core practice areas — each one battle-tested in production work.</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">Agentic AI</h3>
+        <p class="mt-1.5 text-xs text-white/50">Multi-agent orchestration, MCP servers, autonomous workflows.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> OpenAI / Claude Agents SDK</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Multi-Agent Orchestration</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> MCP Server (Gmail, Calendar)</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Pydantic Structured Outputs</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Tool-use & Function Calling</li>
+        </ul>
+      </div>
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">Computer Vision</h3>
+        <p class="mt-1.5 text-xs text-white/50">Real-time recognition on live RTSP and webcam streams.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Facial Recognition (DeepFace, SFace)</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Object Detection (YOLO, custom)</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> RTSP Stream Processing</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Multi-camera Pipelines</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> OpenCV</li>
+        </ul>
+      </div>
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">LLM Engineering</h3>
+        <p class="mt-1.5 text-xs text-white/50">RAG, prompt engineering, structured output across providers.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> OpenAI · Anthropic · Grok · Gemini</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Retrieval-Augmented Generation</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Embeddings & Vector Search</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> FAISS · Pinecone</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Prompt Engineering</li>
+        </ul>
+      </div>
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">Backend & APIs</h3>
+        <p class="mt-1.5 text-xs text-white/50">Production-grade Python services with async + queues.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> FastAPI · Python</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Redis + Celery</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> PostgreSQL · MySQL</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> WebSockets · REST</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Microservices</li>
+        </ul>
+      </div>
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">Frontend</h3>
+        <p class="mt-1.5 text-xs text-white/50">Modern React stacks for AI-driven dashboards.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Next.js 14 (App Router)</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> React · TypeScript</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Tailwind CSS</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Streamlit (rapid prototyping)</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Framer Motion</li>
+        </ul>
+      </div>
+      <div class="relative glass rounded-2xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl" style="background:rgba(124,92,255,0.1)"></div>
+        <h3 class="font-display text-lg font-semibold">DevOps</h3>
+        <p class="mt-1.5 text-xs text-white/50">Container-first deployments with CI/CD.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/75">
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Docker · Docker Compose</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> GitHub Actions CI/CD</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Linux · Nginx</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Grafana · Prometheus</li>
+          <li class="flex items-start gap-2"><span style="color:#a3e635">✓</span> Alertmanager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl reveal">
+      <div class="eyebrow">Career timeline</div>
+      <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">A track record of <span class="gradient-text">shipping in production</span></h2>
+    </div>
+
+    <div class="mt-14 relative">
+      <div class="absolute left-[19px] md:left-[23px] top-3 bottom-3 w-px" style="background:linear-gradient(to bottom, rgba(124,92,255,0.4), rgba(255,255,255,0.1), transparent)"></div>
+      <div class="space-y-6">
+        <!-- Job 1 -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-accent-lime pulse-dot"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="font-display text-lg font-semibold">AI Solution Architect & Full Stack Developer</h3>
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full text-accent-lime border" style="background:rgba(163,230,53,0.15);border-color:rgba(163,230,53,0.3)">Current</span>
+                </div>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 Arwen Tech</span>
+                  <span class="text-white/40">📍 Islamabad, Pakistan</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">2025 — Present</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Deployed a Facial Recognition Attendance Management System in 2 weeks against a client bid — multi-camera RTSP, OpenCV SFace embeddings, threshold-based confidence verification, color-coded match indicators across 40+ employees.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Built a Video Analytics Object Detection platform on live CCTV streams with trained ML models, real-time bounding-box classification, timestamped events, and alert triggers.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Engineered an agentic notification microservice (email · SMS · Slack · WhatsApp) using Grok LLM with template fallback, Redis + Celery for async queueing.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Designed a Customer Experience Portal — contract onboarding, SLA lifecycle, workflow automation — on FastAPI · Next.js · JWT · WebSockets.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Built an Agentic Observability Platform monitoring autonomous agent execution, tool calls, and workflow health in real time.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">FastAPI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">OpenCV</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">YOLO</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Next.js</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Redis</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Celery</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2: ZumfluxAI -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-accent-lime pulse-dot"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="font-display text-lg font-semibold">Founder</h3>
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full text-accent-lime border" style="background:rgba(163,230,53,0.15);border-color:rgba(163,230,53,0.3)">Current</span>
+                </div>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 ZumfluxAI</span>
+                  <span class="text-white/40">📍 Remote</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">2025 — Present</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Currently engaging with clients on agentic workflow automation and custom LLM integration.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Agentic AI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">LLMs</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Computer Vision</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">FastAPI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Next.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-white/40"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display text-lg font-semibold">Executive Coordinator — Corporate & Digital Operations</h3>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 Green Tourism Private Limited</span>
+                  <span class="text-white/40">📍 Islamabad, Pakistan</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">2024 — 2025</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Led digital operations and web solutions including WordPress sites, e-commerce, API integrations, and workflow automation.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">WordPress</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">WooCommerce</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-white/40"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display text-lg font-semibold">Full Stack Developer & Co-Founder</h3>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 ZUM Services Providers</span>
+                  <span class="text-white/40">📍 Pakistan</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">2023 — 2025</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Co-founded technology services company; built full-stack platform on FastAPI · Next.js · PostgreSQL · Docker.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Implemented JWT authentication, modular API design, and automated CI/CD via GitHub Actions for reliable release pipelines.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">FastAPI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Next.js</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">PostgreSQL</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Docker</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-white/40"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display text-lg font-semibold">Blockchain Developer</h3>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 MediaPark</span>
+                  <span class="text-white/40">📍 Pakistan</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">2020 — 2022</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Designed decentralized applications and blockchain integrations with ECDSA cryptography, consensus validation, and identity protection.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Built compliance frameworks for smart contract interactions meeting auditability standards.</li>
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Optimized blockchain API integrations including ledger queries and access control.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Smart Contracts</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">ECDSA</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">Web3</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/60">API Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="relative pl-12 md:pl-16 reveal">
+          <div class="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-white/40"></div>
+          </div>
+          <div class="glass rounded-2xl p-5 md:p-6 card-hover">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display text-lg font-semibold">Intern — ERP & Systems</h3>
+                <div class="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                  <span>💼 IBM Pakistan</span>
+                  <span class="text-white/40">📍 Pakistan</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-white/50">Jul 2016 — Sep 2016</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-white/70 leading-relaxed">
+              <li class="pl-4 relative"><span class="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan"></span>Hands-on with ERP systems (PeopleSoft), Maximo configuration, GPON inventory, and resource planning for the PTCL project.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 reveal">
+      <div>
+        <div class="eyebrow">Featured work</div>
+        <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">Selected <span class="gradient-text">projects</span></h2>
+      </div>
+      <p class="text-white/55 max-w-md text-sm">A mix of client work and open-source — from multi-camera vision systems to agentic LLM platforms.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-5">
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute top-5 right-5 inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md text-accent border" style="background:rgba(124,92,255,0.15);border-color:rgba(124,92,255,0.3)">✦ Flagship</div>
+        <h3 class="font-display text-xl font-semibold pr-24">Agentic Observability Platform</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">AI-driven monitoring stack on Grafana + Prometheus</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Dockerized observability stack with an AI Alert Analyzer that performs root-cause inference, severity classification, and recommends next actions. Self-validating PromQL rules and dashboards against live Prometheus.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">FastAPI</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Prometheus</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Grafana</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Alertmanager</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">LLM Agents</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Docker</span>
+        </div>
+        <div class="mt-6">
+          <a href="https://github.com/Maria-cpp/Agentic-Observability-Platform" target="_blank" class="text-sm text-white/80 hover:text-white">→ Source</a>
+        </div>
+      </div>
+
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute top-5 right-5 inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md text-accent border" style="background:rgba(124,92,255,0.15);border-color:rgba(124,92,255,0.3)">✦ Client Project</div>
+        <h3 class="font-display text-xl font-semibold pr-24">Facial Recognition AMS</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">Multi-camera attendance on live RTSP streams</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Production-grade Attendance Management System running across multiple gate cameras. SFace embeddings, threshold-based confidence verification, color-coded match indicators (Red/Orange/Green), scalable to thousands of employee records.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">OpenCV</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">DeepFace</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">RTSP</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">FastAPI</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">PostgreSQL</span>
+        </div>
+        <div class="mt-6"><span class="text-xs text-white/40 italic">Private — available on request</span></div>
+      </div>
+
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute top-5 right-5 inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md text-accent border" style="background:rgba(124,92,255,0.15);border-color:rgba(124,92,255,0.3)">✦ Automation</div>
+        <h3 class="font-display text-xl font-semibold pr-24">FTE Sales Lead Engine</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">Browser automation × AI scoring × HITL</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer — reducing manual outreach effort by ~80%.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Playwright</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Python</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">LLM</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">HITL</span>
+        </div>
+        <div class="mt-6"><span class="text-xs text-white/40 italic">Private — available on request</span></div>
+      </div>
+
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <h3 class="font-display text-xl font-semibold">Gesture AI Website</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">Touchless interaction via webcam hand-gestures</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Computer Vision</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Next.js</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">MediaPipe</span>
+        </div>
+        <div class="mt-6"><a href="https://github.com/Maria-cpp/gesture_ai_website" target="_blank" class="text-sm text-white/80 hover:text-white">→ Source</a></div>
+      </div>
+
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <div class="absolute top-5 right-5 inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md text-accent border" style="background:rgba(124,92,255,0.15);border-color:rgba(124,92,255,0.3)">✦ Microservice</div>
+        <h3 class="font-display text-xl font-semibold pr-24">Multi-Channel Notification Microservice</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">Grok LLM + Redis/Celery message orchestrator</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Agentic notification service routing across email, SMS, Slack, WhatsApp. Grok LLM produces context-aware messages with predefined template fallback for guaranteed delivery; Redis + Celery handle async queue, retry, and decoupled processing.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Grok LLM</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Redis</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Celery</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">FastAPI</span>
+        </div>
+        <div class="mt-6"><span class="text-xs text-white/40 italic">Private — available on request</span></div>
+      </div>
+
+      <div class="group relative glass rounded-3xl p-6 card-hover overflow-hidden reveal">
+        <h3 class="font-display text-xl font-semibold">Bulk Data Import System</h3>
+        <p class="mt-1 text-sm text-accent-cyan font-mono">Validated, error-resilient ingestion pipeline</p>
+        <p class="mt-4 text-sm text-white/65 leading-relaxed">Scalable bulk-data import pipeline with validation rules, error handling, and optimized database ingestion patterns for high-volume workloads.</p>
+        <div class="mt-5 flex flex-wrap gap-1.5">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Python</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">PostgreSQL</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">Validation</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/65">ETL</span>
+        </div>
+        <div class="mt-6"><a href="https://github.com/Maria-cpp/Bulk-data-import" target="_blank" class="text-sm text-white/80 hover:text-white">→ Source</a></div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center reveal">
+      <a href="https://github.com/Maria-cpp" target="_blank" class="btn btn-ghost">→ See more on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ZumfluxAI -->
+<section id="zumflux" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="relative glass-strong rounded-[28px] p-8 md:p-12 overflow-hidden reveal">
+      <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(124,92,255,0.25);filter:blur(80px)"></div>
+      <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(34,211,238,0.2);filter:blur(80px)"></div>
+      <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+
+      <div class="relative grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
+        <div>
+          <div class="inline-flex items-center gap-2 glass rounded-full px-3.5 py-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-pink"></span>
+            <span class="text-xs font-mono text-white/80">Founder · Active client engagements</span>
+          </div>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl p-[2px]" style="background:linear-gradient(135deg,#7c5cff,#22d3ee,#f472b6)">
+              <div class="w-full h-full rounded-2xl bg-bg-card flex items-center justify-center font-display font-bold text-lg">Z</div>
+            </div>
+            <div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold leading-none">ZumfluxAI</h2>
+              <div class="mt-1 text-xs font-mono text-white/50">by Maria Naseem · 2025</div>
+            </div>
+          </div>
+          <p class="mt-6 text-lg text-white/85 font-display leading-snug">Production AI engineering for teams shipping real-world products.</p>
+          <p class="mt-4 text-sm text-white/65 leading-relaxed">I founded ZumfluxAI to bring agentic systems, computer vision pipelines, and full-stack AI platforms to teams that need shipping-grade engineering — not demos. From multi-camera vision systems to autonomous LLM workflows, ZumfluxAI delivers AI that runs in production.</p>
+          <a href="mailto:marianaseem99@gmail.com?subject=ZumfluxAI%20engagement" class="mt-7 btn btn-primary">Hire ZumfluxAI ↗</a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div class="glass rounded-2xl p-5 card-hover">
+            <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center mb-4" style="color:#22d3ee">🤖</div>
+            <h3 class="font-display font-semibold">Agentic Workflow Automation</h3>
+            <p class="mt-2 text-xs text-white/60 leading-relaxed">Multi-agent systems with MCP integration, tool-use orchestration, and HITL review.</p>
+          </div>
+          <div class="glass rounded-2xl p-5 card-hover">
+            <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center mb-4" style="color:#22d3ee">📷</div>
+            <h3 class="font-display font-semibold">Computer Vision Pipelines</h3>
+            <p class="mt-2 text-xs text-white/60 leading-relaxed">Real-time facial recognition, object detection, and RTSP-based video analytics.</p>
+          </div>
+          <div class="glass rounded-2xl p-5 card-hover">
+            <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center mb-4" style="color:#22d3ee">💾</div>
+            <h3 class="font-display font-semibold">Custom LLM Integration</h3>
+            <p class="mt-2 text-xs text-white/60 leading-relaxed">RAG, embedding stores, prompt engineering, and provider-agnostic LLM gateways.</p>
+          </div>
+          <div class="glass rounded-2xl p-5 card-hover">
+            <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center mb-4" style="color:#22d3ee">🧱</div>
+            <h3 class="font-display font-semibold">Full-Stack AI Platforms</h3>
+            <p class="mt-2 text-xs text-white/60 leading-relaxed">FastAPI + Next.js + PostgreSQL + Docker — end-to-end product engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 reveal">
+      <div>
+        <div class="eyebrow">Certifications & education</div>
+        <h2 class="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">Always <span class="gradient-text">leveling up</span></h2>
+      </div>
+      <p class="text-white/55 max-w-md text-sm">Continuous learning across agentic AI, generative systems, and platform engineering.</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-lime">🏆</div>
+          <span class="text-[10px] font-mono text-white/40">2025</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">Agentic AI Level 2 — Professional</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">PIAIC / Panaversity</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-lime"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime"></span> Completed</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-lime">🏆</div>
+          <span class="text-[10px] font-mono text-white/40">2025</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">Agentic AI Level 1 — Developer Fundamentals</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">PIAIC / Panaversity</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-lime"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime"></span> Completed</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-lime">🏆</div>
+          <span class="text-[10px] font-mono text-white/40">2025</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">FTE (Full-Time Equivalent) AI Program</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">PIAIC / Panaversity</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-lime"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime"></span> Completed · 81%</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-lime">🏆</div>
+          <span class="text-[10px] font-mono text-white/40">2025</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">Develop Generative AI Applications</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">Coursera</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-lime"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime"></span> Completed · 90%</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-lime">🏆</div>
+          <span class="text-[10px] font-mono text-white/40">2025</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">Build RAG Applications</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">IBM · Coursera</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-lime"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime"></span> Completed</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-pink">⏳</div>
+          <span class="text-[10px] font-mono text-white/40">2026</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">Agentic AI Foundations</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">Self-paced</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-pink"><span class="w-1.5 h-1.5 rounded-full bg-accent-pink pulse-dot"></span> In Progress</span>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover relative overflow-hidden reveal">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-pink">⏳</div>
+          <span class="text-[10px] font-mono text-white/40">2026</span>
+        </div>
+        <h3 class="font-display font-semibold leading-tight">AI For Everyone</h3>
+        <div class="mt-1 text-xs font-mono text-white/50">Coursera</div>
+        <div class="mt-4 pt-3 border-t border-white/5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-accent-pink"><span class="w-1.5 h-1.5 rounded-full bg-accent-pink pulse-dot"></span> In Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 reveal">
+      <div class="eyebrow">Education</div>
+      <div class="mt-4 grid md:grid-cols-2 gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center justify-between gap-4">
+          <div>
+            <div class="font-display font-semibold">Master of Information Technology</div>
+            <div class="mt-1 text-sm text-white/60">Quaid-e-Azam University</div>
+          </div>
+          <span class="text-xs font-mono text-white/40">2016</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="relative py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="relative glass-strong rounded-[28px] p-10 md:p-14 overflow-hidden reveal">
+      <div class="absolute -top-32 right-0 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(124,92,255,0.2);filter:blur(80px)"></div>
+      <div class="absolute -bottom-32 left-0 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(34,211,238,0.15);filter:blur(80px)"></div>
+      <div class="relative grid lg:grid-cols-[1.2fr_1fr] gap-10">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2 class="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">Have a project? <span class="gradient-text">Let's build.</span></h2>
+          <p class="mt-5 text-white/65 max-w-md leading-relaxed">Whether you need an AI engineer for your team, want to engage ZumfluxAI for a build, or just want to chat about agentic systems — drop me a line.</p>
+          <a href="mailto:marianaseem99@gmail.com" class="mt-7 inline-flex items-center gap-2 btn btn-primary">✉ marianaseem99@gmail.com ↗</a>
+        </div>
+        <div class="space-y-3">
+          <a href="https://github.com/Maria-cpp" target="_blank" class="flex items-center justify-between gap-3 glass rounded-2xl px-5 py-4 card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">⌨</div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/40">GitHub</div>
+                <div class="text-sm font-medium">Maria-cpp</div>
+              </div>
+            </div>
+            <span class="text-white/30">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/maria-naseem-343594128/" target="_blank" class="flex items-center justify-between gap-3 glass rounded-2xl px-5 py-4 card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">in</div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/40">LinkedIn</div>
+                <div class="text-sm font-medium">maria-naseem</div>
+              </div>
+            </div>
+            <span class="text-white/30">↗</span>
+          </a>
+          <a href="tel:+923066775777" class="flex items-center justify-between gap-3 glass rounded-2xl px-5 py-4 card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">☎</div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/40">Phone</div>
+                <div class="text-sm font-medium">+92 306 6775777</div>
+              </div>
+            </div>
+            <span class="text-white/30">↗</span>
+          </a>
+          <div class="flex items-center justify-between gap-3 glass rounded-2xl px-5 py-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">📍</div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-wider text-white/40">Based in</div>
+                <div class="text-sm font-medium">Islamabad, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative pt-12 pb-8 border-t border-white/5">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <div class="font-display font-bold text-lg">Maria<span class="text-white/40">.dev</span></div>
+        <div class="mt-1 text-xs font-mono text-white/40">© 2026 Maria Naseem · Founder, ZumfluxAI</div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/Maria-cpp" target="_blank" class="w-9 h-9 rounded-full glass flex items-center justify-center text-white/70 hover:text-white card-hover">G</a>
+        <a href="https://www.linkedin.com/in/maria-naseem-343594128/" target="_blank" class="w-9 h-9 rounded-full glass flex items-center justify-center text-white/70 hover:text-white card-hover">in</a>
+        <a href="mailto:marianaseem99@gmail.com" class="w-9 h-9 rounded-full glass flex items-center justify-center text-white/70 hover:text-white card-hover">✉</a>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/5 text-center">
+      <p class="text-xs text-white/40 font-mono">Built with Next.js · Tailwind · Framer Motion · shipped with ♥</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Tagline rotator
+  const taglines = ['Agentic AI Architect', 'Computer Vision Engineer', 'Full-Stack Developer', 'Founder @ ZumfluxAI'];
+  let idx = 0;
+  const tagEl = document.getElementById('rotating-tag');
+  setInterval(() => {
+    idx = (idx + 1) % taglines.length;
+    tagEl.style.opacity = '0';
+    setTimeout(() => {
+      tagEl.textContent = taglines[idx];
+      tagEl.style.opacity = '1';
+    }, 200);
+  }, 2400);
+  if (tagEl) tagEl.style.transition = 'opacity 0.4s';
+</script>
+
+</body>
+</html>
