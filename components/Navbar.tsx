@@ -11,6 +11,7 @@ const links = [
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
+  { href: '#architecture', label: 'Architecture' },
   { href: '#zumflux', label: 'ZumfluxAI' },
   { href: '#certifications', label: 'Certs' },
   { href: '#contact', label: 'Contact' }

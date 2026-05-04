@@ -18,7 +18,7 @@ export default function Experience() {
           <div className="eyebrow">Career timeline</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
             A track record of{' '}
-            <span className="gradient-text">shipping in production</span>
+            <span className="gradient-text">government & enterprise delivery</span>
           </h2>
         </motion.div>
 
@@ -27,78 +27,85 @@ export default function Experience() {
           <div className="absolute left-[19px] md:left-[23px] top-3 bottom-3 w-px bg-gradient-to-b from-accent/40 via-white/10 to-transparent" />
 
           <div className="space-y-6">
-            {experience.map((job, i) => (
-              <motion.div
-                key={`${job.company}-${i}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="relative pl-12 md:pl-16"
-              >
-                {/* Dot */}
-                <div className="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
-                  <div
-                    className={`w-2 h-2 rounded-full ${
-                      job.current ? 'bg-accent-lime animate-pulse' : 'bg-white/40'
-                    }`}
-                  />
-                </div>
-
-                <div className="glass rounded-2xl p-5 md:p-6 card-hover">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-display text-lg font-semibold">
-                          {job.role}
-                        </h3>
-                        {job.current && (
-                          <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-lime/15 text-accent-lime border border-accent-lime/30">
-                            Current
-                          </span>
-                        )}
-                      </div>
-                      <div className="mt-1.5 flex items-center gap-3 text-sm text-white/60">
-                        <span className="flex items-center gap-1.5">
-                          <Briefcase size={13} /> {job.company}
-                        </span>
-                        <span className="flex items-center gap-1.5 text-white/40">
-                          <MapPin size={13} /> {job.location}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="text-xs font-mono text-white/50 whitespace-nowrap">
-                      {job.period}
-                    </div>
+            {experience.map((job, i) => {
+              const isMinimal = (job as { minimal?: boolean }).minimal === true;
+              return (
+                <motion.div
+                  key={`${job.company}-${i}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  className="relative pl-12 md:pl-16"
+                >
+                  {/* Dot */}
+                  <div className="absolute left-2 md:left-3 top-3 w-5 md:w-6 h-5 md:h-6 rounded-full glass-strong flex items-center justify-center">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        job.current ? 'bg-accent-lime animate-pulse' : 'bg-white/40'
+                      }`}
+                    />
                   </div>
 
-                  <ul className="mt-4 space-y-2">
-                    {job.bullets.map((b, idx) => (
-                      <li
-                        key={idx}
-                        className="text-sm text-white/70 leading-relaxed pl-4 relative"
-                      >
-                        <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {job.stack && job.stack.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {job.stack.map((s) => (
-                        <span
-                          key={s}
-                          className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/60"
-                        >
-                          {s}
-                        </span>
-                      ))}
+                  <div className={`glass rounded-2xl card-hover ${isMinimal ? 'p-4 md:p-5' : 'p-5 md:p-6'}`}>
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className={`font-display font-semibold ${isMinimal ? 'text-base' : 'text-lg'}`}>
+                            {job.role}
+                          </h3>
+                          {job.current && (
+                            <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-lime/15 text-accent-lime border border-accent-lime/30">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                        <div className="mt-1.5 flex items-center gap-3 text-sm text-white/60 flex-wrap">
+                          <span className="flex items-center gap-1.5">
+                            <Briefcase size={13} /> {job.company}
+                          </span>
+                          {!isMinimal && (
+                            <span className="flex items-center gap-1.5 text-white/40">
+                              <MapPin size={13} /> {job.location}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className="text-xs font-mono text-white/50 whitespace-nowrap">
+                        {job.period}
+                      </div>
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+
+                    {!isMinimal && job.bullets && job.bullets.length > 0 && (
+                      <ul className="mt-4 space-y-2">
+                        {job.bullets.map((b, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm text-white/70 leading-relaxed pl-4 relative"
+                          >
+                            <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan" />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {!isMinimal && job.stack && job.stack.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {job.stack.map((s) => (
+                          <span
+                            key={s}
+                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/60"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

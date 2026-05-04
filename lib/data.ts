@@ -9,21 +9,23 @@ export const personal = {
   initials: 'MN',
   title: 'AI / ML Engineer',
   taglines: [
-    'Agentic AI Architect',
+    'AI Solutions Architect',
+    'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
-    'Full-Stack Developer',
+    'Government & Enterprise AI',
     'Founder @ ZumfluxAI'
   ],
   location: 'Islamabad, Pakistan',
   email: 'marianaseem99@gmail.com',
+  businessEmail: 'zumfluxai@gmail.com',
   phone: '+92 306 6775777',
   github: 'https://github.com/Maria-cpp',
   linkedin: 'https://www.linkedin.com/in/maria-naseem-343594128/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'AI Engineer & Solution Architect shipping production-grade intelligent systems — from multi-camera computer vision pipelines to agentic LLM platforms and autonomous observability stacks.',
+    'AI Solutions Architect shipping production AI for regulated and government clients. Federal Track & Trace video analytics, four-stage HITL facial-recognition for a provincial-government secretariat, and an MCP-native agentic observability stack — all in production-grade Python + Next.js.',
   longBio:
-    'I build intelligent systems that think, see, and act. With 4+ years across AI engineering and full-stack development, I architect production-grade platforms — facial-recognition attendance running on multi-camera RTSP streams, agentic observability with AI-driven root-cause analysis, and multi-channel notification microservices powered by LLMs. Currently focused on AI Platform Engineering and autonomous system architecture, I founded ZumfluxAI to bring this craft to teams shipping real-world AI products.'
+    'I architect AI systems for regulated and government delivery — the kind that have to pass live demonstrations, audit trails, and ministry-level scrutiny. With 5+ years building AI and 10+ years professional experience, I lead architecture for a Federal Track & Trace video-analytics platform under Chapter XIV-BA compliance, a four-stage HITL facial-recognition AMS for a Provincial Government Secretariat, and an MCP-server-native agentic observability stack. I also founded ZumfluxAI to deliver this craft to teams shipping real-world AI products. Beyond engineering, I bring rare stakeholder fluency — coordinating BOD-level meetings and engaging with provincial secretaries, federal ministers, GHQ, SIFC, and the Law Directorate during my time leading corporate and government affairs at a national tourism body.'
 };
 
 // ---------------------------------------------------------------------
@@ -33,23 +35,23 @@ export const personal = {
 export const aboutPillars = [
   {
     label: 'Vision',
-    title: 'AI that ships, not demos',
+    title: 'AI that survives audit',
     description:
-      'I believe the next decade belongs to teams that turn LLM capability into production systems. Real value lives in pipelines that handle 10k requests, recover from failure, and scale beyond the demo.',
+      'For regulated and government clients, "it works in a notebook" is the start, not the end. I build AI systems that pass live demonstrations, carry audit trails, and operate under compliance frameworks like FBR Chapter XIV-BA.',
     accent: 'cyan'
   },
   {
     label: 'Expertise',
-    title: 'Agentic systems & computer vision',
+    title: 'Agentic systems · MCP · HITL',
     description:
-      'Deep hands-on with multi-agent orchestration, RAG pipelines, real-time RTSP processing, and FastAPI/Next.js stacks. I bridge the gap between research-grade ML and battle-tested infrastructure.',
+      'Multi-agent orchestration with explicit Human-in-the-Loop gates, MCP servers (built and deployed), RAG over vector stores, real-time RTSP processing, and FastAPI/Next.js stacks — bridging research-grade ML to battle-tested infrastructure.',
     accent: 'lime'
   },
   {
     label: 'Innovation',
-    title: 'From prototype to platform in weeks',
+    title: 'From prototype to production demo in weeks',
     description:
-      'Shipped a facial-recognition AMS in 2 weeks against a client bid. Built an agentic observability stack that auto-analyzes Prometheus alerts. I move fast — and document the path so teams can move with me.',
+      'A federal video-analytics prototype built and demo-ready inside a regulator authorization window. A four-stage HITL AMS architected and deployed at a provincial secretariat. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
     accent: 'pink'
   }
 ] as const;
@@ -60,12 +62,19 @@ export const aboutPillars = [
 
 export const techCategories = [
   {
-    name: 'AI / ML',
+    name: 'Agentic AI & LLMs',
     icon: 'Brain',
     items: [
-      'OpenAI', 'Anthropic Claude', 'Grok', 'Gemini', 'YOLO', 'OpenCV',
-      'DeepFace', 'FAISS', 'Pinecone', 'LangChain', 'RAG', 'Pydantic AI'
+      'OpenAI', 'Anthropic Claude', 'Grok', 'Gemini',
+      'MCP Servers (built & deployed)', 'Multi-Agent Orchestration',
+      'HITL Controls', 'RAG', 'FAISS', 'Pinecone',
+      'Pydantic Structured Outputs', 'LangChain'
     ]
+  },
+  {
+    name: 'Computer Vision',
+    icon: 'Camera',
+    items: ['YOLOv8 / Ultralytics', 'OpenCV', 'DeepFace · SFace', 'lap (tracking)', 'RTSP Multi-camera', 'Production-line analytics']
   },
   {
     name: 'Backend',
@@ -75,31 +84,29 @@ export const techCategories = [
   {
     name: 'Frontend',
     icon: 'Layout',
-    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'Framer Motion']
+    items: ['Next.js 14', 'React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'Framer Motion']
+  },
+  {
+    name: 'MLOps & Observability',
+    icon: 'Activity',
+    items: ['Grafana', 'Prometheus', 'Alertmanager', 'structlog', 'Docker health checks', 'Agentic alert analysis']
   },
   {
     name: 'DevOps',
     icon: 'Boxes',
-    items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD']
-  },
-  {
-    name: 'Automation',
-    icon: 'Zap',
-    items: ['Playwright', 'MCP Servers', 'File Watchers', 'Webhooks', 'Cron']
-  },
-  {
-    name: 'Tools',
-    icon: 'Wrench',
-    items: ['Git', 'GitHub', 'VS Code', 'Postman', 'Grafana', 'Prometheus', 'Figma']
+    items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD', 'systemd', 'certbot']
   }
 ] as const;
 
-// Flat list for marquee
 export const techMarquee = [
-  'Python', 'TypeScript', 'FastAPI', 'Next.js', 'React', 'OpenAI', 'Anthropic',
-  'YOLO', 'OpenCV', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'GitHub Actions',
-  'Tailwind CSS', 'Pinecone', 'FAISS', 'LangChain', 'Grafana', 'Prometheus',
-  'Playwright', 'Node.js', 'Streamlit', 'Linux'
+  'Python', 'TypeScript', 'FastAPI', 'Next.js', 'React',
+  'OpenAI', 'Anthropic', 'Gemini', 'Grok',
+  'MCP', 'YOLOv8', 'OpenCV', 'DeepFace',
+  'PostgreSQL', 'Redis', 'Celery',
+  'Docker', 'GitHub Actions', 'Tailwind CSS',
+  'Pinecone', 'FAISS', 'LangChain',
+  'Grafana', 'Prometheus', 'Alertmanager',
+  'Playwright', 'Node.js', 'Streamlit'
 ];
 
 // ---------------------------------------------------------------------
@@ -108,52 +115,52 @@ export const techMarquee = [
 
 export const skillGroups = [
   {
-    title: 'Agentic AI',
-    blurb: 'Multi-agent orchestration, MCP servers, autonomous workflows.',
+    title: 'Agentic AI & MCP',
+    blurb: 'Multi-agent orchestration with explicit HITL gates and MCP-native tool integration.',
     items: [
       'OpenAI / Claude Agents SDK',
+      'MCP Servers (built & deployed)',
       'Multi-Agent Orchestration',
-      'MCP Server (Gmail, Calendar)',
-      'Pydantic Structured Outputs',
-      'Tool-use & Function Calling'
+      'Human-in-the-Loop gates',
+      'Pydantic Structured Outputs'
     ]
   },
   {
     title: 'Computer Vision',
-    blurb: 'Real-time recognition on live RTSP and webcam streams.',
+    blurb: 'Production CV pipelines on live RTSP — from secretariat AMS to factory-line analytics.',
     items: [
+      'YOLOv8 / Ultralytics + lap tracking',
       'Facial Recognition (DeepFace, SFace)',
-      'Object Detection (YOLO, custom)',
-      'RTSP Stream Processing',
-      'Multi-camera Pipelines',
-      'OpenCV'
+      'RTSP multi-camera ingestion',
+      '4-stage enrollment → HITL → embedding → inference',
+      'Production-line counting & anomaly detection'
     ]
   },
   {
     title: 'LLM Engineering',
-    blurb: 'RAG, prompt engineering, structured output across providers.',
+    blurb: 'RAG, structured outputs, and provider-agnostic LLM gateways.',
     items: [
       'OpenAI · Anthropic · Grok · Gemini',
       'Retrieval-Augmented Generation',
       'Embeddings & Vector Search',
       'FAISS · Pinecone',
-      'Prompt Engineering'
+      'Prompt Engineering & guardrails'
     ]
   },
   {
     title: 'Backend & APIs',
-    blurb: 'Production-grade Python services with async + queues.',
+    blurb: 'Production-grade Python services with async + queues + auth.',
     items: [
       'FastAPI · Python',
-      'Redis + Celery',
-      'PostgreSQL · MySQL',
-      'WebSockets · REST',
-      'Microservices'
+      'Redis + Celery (async + retry)',
+      'PostgreSQL · MySQL · Alembic',
+      'WebSockets · REST · JWT',
+      'Microservices · structlog'
     ]
   },
   {
     title: 'Frontend',
-    blurb: 'Modern React stacks for AI-driven dashboards.',
+    blurb: 'Modern React stacks for AI-driven dashboards and operator tools.',
     items: [
       'Next.js 14 (App Router)',
       'React · TypeScript',
@@ -163,14 +170,14 @@ export const skillGroups = [
     ]
   },
   {
-    title: 'DevOps',
-    blurb: 'Container-first deployments with CI/CD.',
+    title: 'MLOps · DevOps · Observability',
+    blurb: 'Container-first deployments with monitoring and CI/CD.',
     items: [
       'Docker · Docker Compose',
       'GitHub Actions CI/CD',
-      'Linux · Nginx',
-      'Grafana · Prometheus',
-      'Alertmanager'
+      'Grafana · Prometheus · Alertmanager',
+      'Linux · Nginx · systemd · certbot',
+      'Familiarity with Kubernetes patterns'
     ]
   }
 ];
@@ -187,13 +194,13 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Deployed a Facial Recognition Attendance Management System in 2 weeks against a client bid — multi-camera RTSP, OpenCV SFace embeddings, threshold-based confidence verification, and color-coded match indicators across 40+ employees.',
-      'Built a Video Analytics Object Detection platform on live CCTV streams with trained ML models, real-time bounding-box classification, timestamped event records, and alert triggers.',
-      'Engineered an agentic notification microservice (email · SMS · Slack · WhatsApp) using Grok LLM for context-aware messaging with template fallback, Redis + Celery for async queueing.',
-      'Designed a Customer Experience Portal — contract onboarding, SLA lifecycle, workflow automation — on FastAPI · Next.js · JWT · WebSockets.',
-      'Built an Agentic Observability Platform monitoring autonomous agent execution, tool calls, and workflow health in real time.'
+      'Architected a Federal Track & Trace Video Analytics platform under Chapter XIV-BA compliance — YOLOv8 + Ultralytics object detection with lap tracking, multi-line / multi-SKU production-line counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for a Provincial Government Secretariat — enrollment pipeline → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scaling to thousands of employees. Status: prototype, demonstration-ready.',
+      'Engineered a multi-channel agentic notification microservice (email · SMS · Slack · WhatsApp) using Grok LLM for context-aware messaging with template fallback, Redis + Celery for async queueing, and structured retry handling.',
+      'Designed and shipped a Customer Experience Portal (CXP) — contract onboarding, SLA lifecycle, workflow automation — on FastAPI · Next.js · PostgreSQL · Redis · Celery with Gemini-powered assistance, JWT auth, WebSocket live updates, and Docker dev/prod compose splits.',
+      'Built an Agentic Observability Platform with native MCP server — Prometheus + Grafana + Alertmanager driven by an AI Alert Analyzer that performs root-cause inference, severity classification, and recommends next actions.'
     ],
-    stack: ['FastAPI', 'OpenCV', 'YOLO', 'Next.js', 'Redis', 'Celery', 'Docker']
+    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Prometheus', 'Gemini']
   },
   {
     role: 'Founder',
@@ -203,19 +210,21 @@ export const experience = [
     current: true,
     bullets: [
       'Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.',
-      'Currently engaging with clients on agentic workflow automation and custom LLM integration.'
+      'Active client engagements: SitesBuildOps (construction-finance fraud-detection platform) and the Nauman Afzal author portfolio.'
     ],
-    stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js']
+    stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
   },
   {
-    role: 'Executive Coordinator — Corporate & Digital Operations',
+    role: 'Executive Coordinator — Corporate & Government Affairs',
     company: 'Green Tourism Private Limited',
     location: 'Islamabad, Pakistan',
     period: '2024 — 2025',
     bullets: [
-      'Led digital operations and web solutions including WordPress sites, e-commerce, API integrations, and workflow automation.'
+      'CEO-level stakeholder engagement across federal and provincial government bodies — provincial secretaries and additional secretaries, ministerial offices, GHQ liaison, SIFC (Special Investment Facilitation Council), and the Law Directorate.',
+      'End-to-end Board of Directors meeting management — agenda, attendee coordination, minutes, and follow-through; functioned as the operational bridge between CEO and staff.',
+      'Led parallel digital operations — WordPress/e-commerce sites, API integrations, and workflow automation supporting corporate communications.'
     ],
-    stack: ['WordPress', 'WooCommerce', 'REST APIs']
+    stack: ['Stakeholder Engagement', 'BOD Operations', 'Government Liaison']
   },
   {
     role: 'Full Stack Developer & Co-Founder',
@@ -241,6 +250,15 @@ export const experience = [
     stack: ['Smart Contracts', 'ECDSA', 'Web3', 'API Integration']
   },
   {
+    role: 'Administrative Coordinator',
+    company: 'Team Work Construction · Prime Tele Power Solution',
+    location: 'Pakistan',
+    period: '2016 — 2020',
+    minimal: true,
+    bullets: [],
+    stack: []
+  },
+  {
     role: 'Intern — ERP & Systems',
     company: 'IBM Pakistan',
     location: 'Pakistan',
@@ -258,47 +276,86 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'Agentic Observability Platform',
-    tagline: 'AI-driven monitoring stack on Grafana + Prometheus',
+    title: 'Federal Track & Trace Video Analytics',
+    tagline: 'YOLOv8 production-line counting under Chapter XIV-BA',
     description:
-      'Dockerized observability stack with an AI Alert Analyzer that performs root-cause inference, severity classification, and recommends next actions. Self-validating PromQL rules and dashboards against live Prometheus.',
-    tags: ['FastAPI', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
-    repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
-    demo: null,
-    featured: true,
-    highlight: 'Flagship'
-  },
-  {
-    title: 'Facial Recognition AMS',
-    tagline: 'Multi-camera attendance on live RTSP streams',
-    description:
-      'Production-grade Attendance Management System running across multiple gate cameras. SFace embeddings, threshold-based confidence verification, color-coded match indicators (Red/Orange/Green), scalable to thousands of employee records.',
-    tags: ['OpenCV', 'DeepFace', 'RTSP', 'FastAPI', 'PostgreSQL'],
+      'Architected for a federal regulator under Pakistan\'s Track & Trace authorization framework (Chapter XIV-BA). YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
+    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker'],
     repo: null,
     demo: null,
     featured: true,
-    highlight: 'Client Project'
+    highlight: 'Government · Chapter XIV-BA',
+    sector: 'Government'
+  },
+  {
+    title: 'Provincial Government Secretariat AMS',
+    tagline: '4-stage HITL facial recognition on multi-camera RTSP',
+    description:
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for a provincial-government secretariat. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: prototype, demonstration-ready.',
+    tags: ['DeepFace · SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'Government · HITL',
+    sector: 'Government'
+  },
+  {
+    title: 'Customer Experience Portal (CXP)',
+    tagline: 'Contract lifecycle automation with Gemini-assisted workflows',
+    description:
+      'End-to-end customer experience portal — contract onboarding through full SLA lifecycle, contract tracking, workflow automation, and Gemini-powered assistant. Stack: FastAPI · Celery · Notifications microservice · Next.js · PostgreSQL · Redis · Nginx. Production-ready Docker compose splits (dev/prod) with systemd unit files and certbot SSL.',
+    tags: ['FastAPI', 'Next.js', 'Celery', 'PostgreSQL', 'Redis', 'Gemini', 'Docker', 'WebSockets'],
+    repo: null,
+    demo: null,
+    videoUrl: null, // user will add YouTube URL
+    featured: true,
+    highlight: 'Enterprise · SaaS'
+  },
+  {
+    title: 'Agentic Observability Platform',
+    tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
+    description:
+      'Dockerized observability stack with a built and deployed MCP server. AI Alert Analyzer performs root-cause inference, severity classification, and recommended next actions. Self-validating PromQL rules and dashboards against live Prometheus.',
+    tags: ['FastAPI', 'MCP', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
+    repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
+    demo: null,
+    featured: true,
+    highlight: 'MCP Server'
+  },
+  {
+    title: 'SitesBuildOps',
+    tagline: 'Construction-finance ledger with AI fraud detection',
+    description:
+      'Centralized finance, ledger, and fraud-detection platform for construction companies managing multiple sites, vendors, and contractors. Features purchase tracking, ledger reconciliation, duplicate detection engine, audit logging, and AI-assisted fraud prevention. Phase 0 prototype shipped; Phase 1 in progress.',
+    tags: ['Next.js 14', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'ZumfluxAI · Client',
+    sector: 'ZumfluxAI'
+  },
+  {
+    title: 'Nauman Afzal — Author Portfolio',
+    tagline: 'Bibliophile · Author of Mudslinging & Budhoo',
+    description:
+      'Designed and built the official author portfolio for Nauman Afzal — author of Mudslinging and Budhoo. Clean, content-first React + Vite single-page site with custom theming, Lucide iconography, and a books showcase.',
+    tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'ZumfluxAI · Client',
+    sector: 'ZumfluxAI'
   },
   {
     title: 'FTE Sales Lead Engine',
-    tagline: 'Browser automation × AI scoring × HITL',
+    tagline: 'Browser automation × AI scoring × HITL review',
     description:
       'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer — reducing manual outreach effort by ~80%.',
     tags: ['Playwright', 'Python', 'LLM', 'HITL'],
     repo: null,
     demo: null,
-    featured: true,
+    videoUrl: null, // user will add YouTube URL
     highlight: 'Automation'
-  },
-  {
-    title: 'Gesture AI Website',
-    tagline: 'Touchless interaction via webcam hand-gestures',
-    description:
-      'Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.',
-    tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
-    repo: 'https://github.com/Maria-cpp/gesture_ai_website',
-    demo: null,
-    featured: true
   },
   {
     title: 'Multi-Channel Notification Microservice',
@@ -308,8 +365,17 @@ export const projects = [
     tags: ['Grok LLM', 'Redis', 'Celery', 'FastAPI'],
     repo: null,
     demo: null,
-    featured: true,
     highlight: 'Microservice'
+  },
+  {
+    title: 'Gesture AI Website',
+    tagline: 'Touchless interaction via webcam hand-gestures',
+    description:
+      'Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.',
+    tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
+    repo: 'https://github.com/Maria-cpp/gesture_ai_website',
+    demo: null,
+    videoUrl: null // user will add YouTube URL
   },
   {
     title: 'Bulk Data Import System',
@@ -331,43 +397,50 @@ export const certifications = [
     name: 'Agentic AI Level 2 — Professional',
     issuer: 'PIAIC / Panaversity',
     year: '2025',
-    status: 'Completed'
+    status: 'Completed',
+    pdfUrl: '/certificates/agentic-ai-l2.pdf'
   },
   {
     name: 'Agentic AI Level 1 — Developer Fundamentals',
     issuer: 'PIAIC / Panaversity',
     year: '2025',
-    status: 'Completed'
+    status: 'Completed',
+    pdfUrl: '/certificates/agentic-ai-l1.pdf'
   },
   {
     name: 'FTE (Full-Time Equivalent) AI Program',
     issuer: 'PIAIC / Panaversity',
     year: '2025',
-    status: 'Completed · 81%'
+    status: 'Completed · 81%',
+    pdfUrl: null
   },
   {
     name: 'Develop Generative AI Applications: Get Started',
-    issuer: 'Coursera',
+    issuer: 'IBM · Coursera',
     year: '2025',
-    status: 'Completed · 90%'
+    status: 'Completed · 90%',
+    pdfUrl: '/certificates/ibm-generative-ai.pdf'
   },
   {
     name: 'Build RAG Applications',
     issuer: 'IBM · Coursera',
     year: '2025',
-    status: 'Completed'
+    status: 'Completed',
+    pdfUrl: '/certificates/rag-applications.pdf'
   },
   {
-    name: 'Agentic AI Foundations',
-    issuer: 'Self-paced',
+    name: 'AI for Cybersecurity Specialization',
+    issuer: 'Johns Hopkins University · Coursera',
     year: '2026',
-    status: 'In Progress'
+    status: 'In Progress',
+    pdfUrl: null
   },
   {
-    name: 'AI For Everyone',
-    issuer: 'Coursera',
+    name: 'AI for Everyone',
+    issuer: 'DeepLearning.AI · Coursera',
     year: '2026',
-    status: 'In Progress'
+    status: 'In Progress',
+    pdfUrl: null
   }
 ];
 
@@ -398,6 +471,16 @@ export const zumflux = {
       description: 'FastAPI + Next.js + PostgreSQL + Docker — end-to-end product engineering.'
     }
   ],
+  recentClients: [
+    {
+      name: 'SitesBuildOps',
+      kind: 'Construction finance & fraud detection platform'
+    },
+    {
+      name: 'Nauman Afzal',
+      kind: 'Author portfolio site (Mudslinging · Budhoo)'
+    }
+  ],
   cta: 'Hire ZumfluxAI'
 };
 
@@ -418,8 +501,8 @@ export const education = [
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Years building AI systems', value: '4+' },
-  { label: 'Production projects shipped', value: '12+' },
-  { label: 'AI / Agentic certifications', value: '5' },
-  { label: 'Founded company', value: '1' }
+  { label: 'Years in AI / development', value: '5+' },
+  { label: 'Years professional experience', value: '10+' },
+  { label: 'Government & enterprise projects', value: '5' },
+  { label: 'AI / Agentic certifications', value: '5' }
 ];

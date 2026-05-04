@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# zip artifacts and leftover files
+*.zip
+ziI*
+
+# Original source assets — don't commit raw videos / heavy media
+data/videos/
+
+# Build output
+out/

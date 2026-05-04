@@ -5,6 +5,7 @@ import TechStack from '@/components/TechStack';
 import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
+import Architecture from '@/components/Architecture';
 import Zumflux from '@/components/Zumflux';
 import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
@@ -28,6 +29,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
+        <Architecture />
         <Zumflux />
         <Certifications />
         <Contact />

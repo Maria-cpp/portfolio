@@ -17,13 +17,11 @@ export default function Zumflux() {
           transition={{ duration: 0.6 }}
           className="relative glass-strong rounded-[28px] p-8 md:p-12 overflow-hidden"
         >
-          {/* Decorative gradients */}
           <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-accent/25 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-accent-cyan/20 blur-3xl pointer-events-none" />
           <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
           <div className="relative grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
-            {/* Left: Brand */}
             <div>
               <div className="inline-flex items-center gap-2 glass rounded-full px-3.5 py-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-pink" />
@@ -56,7 +54,7 @@ export default function Zumflux() {
               </p>
 
               <a
-                href={`mailto:${personal.email}?subject=ZumfluxAI%20engagement`}
+                href={`mailto:${personal.businessEmail}?subject=ZumfluxAI%20engagement`}
                 className="mt-7 btn btn-primary"
               >
                 {zumflux.cta}
@@ -64,7 +62,6 @@ export default function Zumflux() {
               </a>
             </div>
 
-            {/* Right: services grid */}
             <div className="grid sm:grid-cols-2 gap-3">
               {zumflux.services.map((s, i) => {
                 const Icon = icons[i % icons.length];
@@ -91,6 +88,41 @@ export default function Zumflux() {
               })}
             </div>
           </div>
+
+          {/* Recent client work */}
+          {zumflux.recentClients && zumflux.recentClients.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="relative mt-10 pt-8 border-t border-white/5"
+            >
+              <div className="text-xs font-mono uppercase tracking-wider text-white/40 mb-4">
+                Recent client work
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {zumflux.recentClients.map((client) => (
+                  <div
+                    key={client.name}
+                    className="glass rounded-xl px-4 py-3 flex items-center gap-3"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-pink/20 to-accent/20 border border-accent-pink/20 flex items-center justify-center text-accent-pink font-display font-bold text-xs">
+                      {client.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="text-sm font-display font-semibold">
+                        {client.name}
+                      </div>
+                      <div className="text-[11px] text-white/55">
+                        {client.kind}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>

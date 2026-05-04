@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Phone, ArrowUpRight, Briefcase } from 'lucide-react';
 import { personal } from '@/lib/data';
 
 export default function Contact() {
@@ -28,14 +28,14 @@ export default function Contact() {
               <p className="mt-5 text-white/65 max-w-md leading-relaxed">
                 Whether you need an AI engineer for your team, want to engage
                 ZumfluxAI for a build, or just want to chat about agentic
-                systems — drop me a line.
+                systems and government AI — drop me a line.
               </p>
 
               <a
-                href={`mailto:${personal.email}`}
+                href={`mailto:${personal.businessEmail}?subject=ZumfluxAI%20engagement`}
                 className="mt-7 inline-flex items-center gap-2 btn btn-primary"
               >
-                <Mail size={16} /> {personal.email}
+                <Briefcase size={16} /> {personal.businessEmail}
                 <ArrowUpRight size={14} />
               </a>
             </div>
@@ -43,28 +43,46 @@ export default function Contact() {
             <div className="space-y-3">
               {[
                 {
+                  icon: Briefcase,
+                  label: 'Business · ZumfluxAI',
+                  value: personal.businessEmail,
+                  href: `mailto:${personal.businessEmail}`,
+                  accent: 'pink' as const
+                },
+                {
+                  icon: Mail,
+                  label: 'Personal',
+                  value: personal.email,
+                  href: `mailto:${personal.email}`,
+                  accent: 'cyan' as const
+                },
+                {
                   icon: Github,
                   label: 'GitHub',
                   value: 'Maria-cpp',
-                  href: personal.github
+                  href: personal.github,
+                  accent: 'cyan' as const
                 },
                 {
                   icon: Linkedin,
                   label: 'LinkedIn',
                   value: 'maria-naseem',
-                  href: personal.linkedin
+                  href: personal.linkedin,
+                  accent: 'cyan' as const
                 },
                 {
                   icon: Phone,
                   label: 'Phone',
                   value: personal.phone,
-                  href: `tel:${personal.phone.replace(/\s/g, '')}`
+                  href: `tel:${personal.phone.replace(/\s/g, '')}`,
+                  accent: 'cyan' as const
                 },
                 {
                   icon: MapPin,
                   label: 'Based in',
                   value: personal.location,
-                  href: null
+                  href: null,
+                  accent: 'cyan' as const
                 }
               ].map((item) => (
                 <a
@@ -77,7 +95,9 @@ export default function Contact() {
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">
+                    <div className={`w-10 h-10 rounded-xl glass-strong flex items-center justify-center ${
+                      item.accent === 'pink' ? 'text-accent-pink' : 'text-accent-cyan'
+                    }`}>
                       <item.icon size={16} />
                     </div>
                     <div>

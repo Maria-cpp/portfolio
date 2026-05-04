@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion';
 import {
-  Brain, Server, Layout, Boxes, Zap, Wrench, type LucideIcon
+  Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
+  type LucideIcon
 } from 'lucide-react';
 import { techCategories, techMarquee } from '@/lib/data';
 
 const iconMap: Record<string, LucideIcon> = {
-  Brain, Server, Layout, Boxes, Zap, Wrench
+  Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap
 };
 
 export default function TechStack() {
@@ -32,8 +33,8 @@ export default function TechStack() {
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">
-            A curated set across AI, backend, frontend and DevOps — the same
-            stack I use to ship production systems.
+            A curated set across agentic AI, computer vision, backend, frontend,
+            and observability — the same stack I use to ship production systems.
           </p>
         </motion.div>
 
