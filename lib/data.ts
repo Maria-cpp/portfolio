@@ -506,3 +506,22 @@ export const stats = [
   { label: 'Government & enterprise projects', value: '5' },
   { label: 'AI / Agentic certifications', value: '5' }
 ];
+
+// ---------------------------------------------------------------------
+//  Currently learning — books / textbooks / online courses
+// ---------------------------------------------------------------------
+
+export const currentlyLearning = {
+  label: 'Currently studying',
+  items: [
+    {
+      title: 'AI-Native Textbook for Physical AI & Humanoid Robotics',
+      author: 'Online textbook',
+      blurb:
+        'Embodied AI, ROS 2 fundamentals, Gazebo / Unity, NVIDIA Isaac, Vision-Language-Action, humanoid and conversational robotics — bridging my LLM/agentic background into physical-AI systems.',
+      cover: '/images/physical-ai-textbook-1.png',
+      coverAlt: '/images/physical-ai-textbook-2.png',
+      url: null
+    }
+  ]
+};
