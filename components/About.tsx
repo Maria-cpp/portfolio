@@ -32,14 +32,13 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="max-w-full"
         >
           <div className="eyebrow">About me</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
             Engineer first.{' '}
             <span className="gradient-text">Builder always.</span>
           </h2>
-          <p className="mt-5 text-white/65 leading-relaxed">
+          <p className="mt-5 text-sm text-white/65 leading-relaxed">
             {personal.longBio}
           </p>
         </motion.div>

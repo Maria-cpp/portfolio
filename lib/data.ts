@@ -425,6 +425,17 @@ export const projects = [
     videoUrl: '/videos/Gesture based website.mp4'
   },
   {
+    title: 'Green Pak Tourism',
+    tagline: 'Corporate web presence for national tourism body',
+    description:
+      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company working with federal and provincial government stakeholders. Built during tenure as Executive Coordinator for Digital Operations.',
+    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
+    repo: null,
+    demo: 'https://greenpaktourism.com/',
+    featured: true,
+    highlight: 'GTPL · Live'
+  },
+  {
     title: 'Document AI / Bulk Data Import',
     tagline: 'OCR + async ingestion with audit logging',
     description:
