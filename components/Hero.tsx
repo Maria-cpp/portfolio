@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Sparkles, Download } from 'lucide-react';
 import { personal, stats } from '@/lib/data';
 
 export default function Hero() {
@@ -90,6 +90,9 @@ export default function Hero() {
               </a>
               <a href="#contact" className="btn btn-ghost">
                 <Mail size={14} /> Get in touch
+              </a>
+              <a href={personal.resumeUrl} download className="btn btn-ghost">
+                <Download size={14} /> Download CV
               </a>
             </motion.div>
 

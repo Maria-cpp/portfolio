@@ -245,6 +245,126 @@ const diagrams: Diagram[] = [
         <text x="695" y="335" textAnchor="middle" fill="#22d3ee" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">DELIVER</text>
       </svg>
     )
+  },
+  {
+    id: 'observability',
+    title: 'Agentic Observability Platform',
+    subtitle: 'MCP-native AI alert analyzer · Prometheus · Grafana',
+    description:
+      'Dockerized observability stack with 4 custom exporters feeding Prometheus. Alertmanager routes firing alerts to an AI Alert Analyzer (Claude/OpenAI) that performs root-cause inference and severity classification. An optional MCP server exposes query_metrics, list_alerts, read_logs, and more as callable tools for AI agents.',
+    svg: (
+      <svg viewBox="0 0 800 420" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="obs-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#7c5cff" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.5" />
+          </linearGradient>
+          <marker id="obs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#22d3ee" opacity="0.7" />
+          </marker>
+          <marker id="obs-arrow-pink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#f472b6" opacity="0.7" />
+          </marker>
+          <marker id="obs-arrow-lime" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#a3e635" opacity="0.7" />
+          </marker>
+        </defs>
+
+        {/* Exporters column */}
+        <rect x="20" y="30" width="130" height="48" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+        <text x="85" y="52" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="11" fontWeight="600">Node Exporter</text>
+        <text x="85" y="68" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">:9100 · host metrics</text>
+
+        <rect x="20" y="90" width="130" height="48" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+        <text x="85" y="112" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="11" fontWeight="600">KPI Exporter</text>
+        <text x="85" y="128" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">:8000 · business</text>
+
+        <rect x="20" y="150" width="130" height="48" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+        <text x="85" y="172" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="11" fontWeight="600">Agent Exporter</text>
+        <text x="85" y="188" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">:8001 · AI agents</text>
+
+        <rect x="20" y="210" width="130" height="48" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+        <text x="85" y="232" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="11" fontWeight="600">CXP Exporter</text>
+        <text x="85" y="248" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">:8003 · platform</text>
+
+        {/* Arrows from exporters to Prometheus */}
+        <path d="M 155 54 L 230 140" stroke="#22d3ee" strokeWidth="1.2" fill="none" markerEnd="url(#obs-arrow)" opacity="0.5" />
+        <path d="M 155 114 L 230 150" stroke="#22d3ee" strokeWidth="1.2" fill="none" markerEnd="url(#obs-arrow)" opacity="0.5" />
+        <path d="M 155 174 L 230 165" stroke="#22d3ee" strokeWidth="1.2" fill="none" markerEnd="url(#obs-arrow)" opacity="0.5" />
+        <path d="M 155 234 L 230 175" stroke="#22d3ee" strokeWidth="1.2" fill="none" markerEnd="url(#obs-arrow)" opacity="0.5" />
+
+        {/* Prometheus */}
+        <rect x="235" y="110" width="150" height="100" rx="14" fill="url(#obs-grad)" stroke="rgba(124,92,255,0.5)" strokeWidth="1.5" />
+        <text x="310" y="140" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">Prometheus</text>
+        <text x="310" y="158" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">:9090 · TSDB</text>
+        <text x="310" y="174" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">15 alert rules</text>
+        <text x="310" y="190" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">scrape every 15s</text>
+
+        {/* Arrow Prometheus → Grafana (up-right) */}
+        <path d="M 390 130 L 460 60" stroke="#a3e635" strokeWidth="1.5" fill="none" markerEnd="url(#obs-arrow-lime)" opacity="0.7" />
+
+        {/* Grafana */}
+        <rect x="465" y="25" width="150" height="80" rx="14" fill="rgba(163,230,53,0.08)" stroke="rgba(163,230,53,0.4)" strokeWidth="1.5" />
+        <text x="540" y="52" textAnchor="middle" fill="#a3e635" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">Grafana</text>
+        <text x="540" y="70" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">:3000 · dashboards</text>
+        <text x="540" y="86" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">4 auto-provisioned</text>
+
+        {/* Arrow Prometheus → Alertmanager (down-right) */}
+        <path d="M 390 185 L 460 230" stroke="#f472b6" strokeWidth="1.5" fill="none" markerEnd="url(#obs-arrow-pink)" opacity="0.7" />
+        <text x="420" y="200" fill="#f472b6" fontFamily="JetBrains Mono, monospace" fontSize="9" fontWeight="600">firing</text>
+
+        {/* Alertmanager */}
+        <rect x="465" y="200" width="150" height="80" rx="14" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.4)" strokeWidth="1.5" />
+        <text x="540" y="228" textAnchor="middle" fill="#f472b6" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">Alertmanager</text>
+        <text x="540" y="246" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">:9093 · routes</text>
+        <text x="540" y="262" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">group · dedup · fan-out</text>
+
+        {/* Arrow Alertmanager → Alert Analyzer */}
+        <path d="M 620 240 L 670 240" stroke="#f472b6" strokeWidth="1.5" fill="none" markerEnd="url(#obs-arrow-pink)" opacity="0.7" />
+
+        {/* AI Alert Analyzer */}
+        <rect x="675" y="180" width="110" height="120" rx="14" fill="rgba(124,92,255,0.15)" stroke="rgba(124,92,255,0.5)" strokeWidth="2" />
+        <text x="730" y="200" textAnchor="middle" fill="#7c5cff" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">AI ENGINE</text>
+        <text x="730" y="222" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Alert</text>
+        <text x="730" y="238" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Analyzer</text>
+        <text x="730" y="258" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="9">:5100</text>
+        <text x="730" y="274" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">root-cause</text>
+        <text x="730" y="288" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">severity · actions</text>
+
+        {/* Alert Analyzer queries Prometheus (feedback arrow) */}
+        <path d="M 675 195 C 620 195, 500 165, 390 160" stroke="rgba(124,92,255,0.4)" strokeWidth="1" fill="none" strokeDasharray="4 3" markerEnd="url(#obs-arrow)" />
+        <text x="530" y="175" fill="#c4b5fd" fontFamily="JetBrains Mono, monospace" fontSize="8" opacity="0.8">queries context</text>
+
+        {/* MCP Server */}
+        <rect x="465" y="320" width="150" height="80" rx="14" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.4)" strokeWidth="1.5" />
+        <text x="540" y="340" textAnchor="middle" fill="#22d3ee" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">MCP SERVER</text>
+        <text x="540" y="360" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Tool Layer</text>
+        <text x="540" y="378" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">:5200 · query_metrics</text>
+        <text x="540" y="392" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">list_alerts · read_logs</text>
+
+        {/* MCP ↔ Prometheus */}
+        <path d="M 465 360 C 400 360, 350 250, 310 215" stroke="rgba(34,211,238,0.4)" strokeWidth="1" fill="none" strokeDasharray="4 3" markerEnd="url(#obs-arrow)" />
+
+        {/* MCP ↔ Alertmanager */}
+        <path d="M 540 320 L 540 285" stroke="rgba(34,211,238,0.4)" strokeWidth="1" fill="none" strokeDasharray="4 3" markerEnd="url(#obs-arrow)" />
+
+        {/* AI Agents → MCP */}
+        <rect x="675" y="335" width="110" height="55" rx="10" fill="rgba(163,230,53,0.06)" stroke="rgba(163,230,53,0.25)" strokeDasharray="4 3" />
+        <text x="730" y="358" textAnchor="middle" fill="#a3e635" fontFamily="Space Grotesk, sans-serif" fontSize="11" fontWeight="600">AI Agents</text>
+        <text x="730" y="376" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">call tools</text>
+        <path d="M 675 362 L 620 362" stroke="#a3e635" strokeWidth="1.2" fill="none" markerEnd="url(#obs-arrow-lime)" opacity="0.6" />
+
+        {/* Stage labels */}
+        <text x="85" y="280" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1">COLLECT</text>
+        <text x="310" y="230" textAnchor="middle" fill="#7c5cff" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">STORE &amp; EVALUATE</text>
+        <text x="540" y="130" textAnchor="middle" fill="#a3e635" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">VISUALIZE</text>
+        <text x="730" y="315" textAnchor="middle" fill="#7c5cff" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="1" fontWeight="600">ANALYZE</text>
+
+        {/* Bottom bar */}
+        <rect x="20" y="395" width="760" height="20" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" />
+        <text x="400" y="409" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="9">Docker Compose · observability bridge network · persistent volumes · Claude / OpenAI · FastAPI · PromQL</text>
+      </svg>
+    )
   }
 ];
 
@@ -268,7 +388,7 @@ export default function Architecture() {
             <span className="gradient-text">pipelines fit together</span>
           </h2>
           <p className="mt-4 text-white/65">
-            Three production pipelines, drawn from real engagements. Click each tab
+            Four production pipelines, drawn from real engagements. Click each tab
             to see the data flow and the deliberate architectural choices.
           </p>
         </motion.div>

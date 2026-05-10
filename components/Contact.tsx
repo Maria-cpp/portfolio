@@ -31,31 +31,26 @@ export default function Contact() {
                 systems and government AI — drop me a line.
               </p>
 
-              <a
-                href={`mailto:${personal.businessEmail}?subject=ZumfluxAI%20engagement`}
-                className="mt-7 inline-flex items-center gap-2 btn btn-primary"
-              >
-                <Briefcase size={16} /> {personal.businessEmail}
-                <ArrowUpRight size={14} />
-              </a>
+              <div className="mt-7 flex flex-col gap-3">
+                <a
+                  href={`mailto:${personal.businessEmail}?subject=ZumfluxAI%20engagement`}
+                  className="inline-flex items-center gap-2 btn btn-primary w-fit"
+                >
+                  <Briefcase size={16} /> {personal.businessEmail}
+                  <ArrowUpRight size={14} />
+                </a>
+                <a
+                  href={`mailto:${personal.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition"
+                >
+                  <Mail size={16} /> {personal.email}
+                  <ArrowUpRight size={14} />
+                </a>
+              </div>
             </div>
 
             <div className="space-y-3">
               {[
-                {
-                  icon: Briefcase,
-                  label: 'Business · ZumfluxAI',
-                  value: personal.businessEmail,
-                  href: `mailto:${personal.businessEmail}`,
-                  accent: 'pink' as const
-                },
-                {
-                  icon: Mail,
-                  label: 'Personal',
-                  value: personal.email,
-                  href: `mailto:${personal.email}`,
-                  accent: 'cyan' as const
-                },
                 {
                   icon: Github,
                   label: 'GitHub',

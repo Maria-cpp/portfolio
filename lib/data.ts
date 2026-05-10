@@ -13,7 +13,8 @@ export const personal = {
     'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
     'Government & Enterprise AI',
-    'Founder @ ZumfluxAI & ZUM Services'
+    'Founder @ ZumfluxAI',
+    'Founder @ ZUM Services Providers'
   ],
   location: 'Islamabad, Pakistan',
   email: 'marianaseem99@gmail.com',

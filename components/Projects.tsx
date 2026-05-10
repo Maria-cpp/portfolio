@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X } from 'lucide-react';
 import Image from 'next/image';
 import { projects } from '@/lib/data';
 
@@ -61,6 +61,8 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 }
 
 export default function Projects() {
+  const [screenshotModal, setScreenshotModal] = useState<{ images: string[]; title: string } | null>(null);
+
   return (
     <section id="projects" className="relative py-24">
       <div className="mx-auto max-w-6xl px-5">
@@ -92,6 +94,9 @@ export default function Projects() {
               videoUrl2?: string | null;
               images?: string[];
             };
+            const hasVideo = !!proj.videoUrl;
+            const hasImages = proj.images && proj.images.length > 0;
+
             return (
               <motion.div
                 key={proj.title}
@@ -104,31 +109,33 @@ export default function Projects() {
                 <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-accent/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {proj.highlight && (
-                  <div className={`absolute top-5 right-5 inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border ${highlightColor(proj.sector)}`}>
-                    <Sparkles size={10} /> {proj.highlight}
+                  <div className="flex justify-end mb-2">
+                    <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border ${highlightColor(proj.sector)}`}>
+                      <Sparkles size={10} /> {proj.highlight}
+                    </div>
                   </div>
                 )}
 
-                <h3 className="font-display text-xl font-semibold pr-28">
+                <h3 className="font-display text-xl font-semibold">
                   {proj.title}
                 </h3>
                 <p className="mt-1 text-sm text-accent-cyan font-mono">
                   {proj.tagline}
                 </p>
 
-                {/* Image carousel */}
-                {proj.images && proj.images.length > 0 && (
+                {/* Image carousel — only when no video */}
+                {hasImages && !hasVideo && (
                   <div className="mt-4">
-                    <ImageCarousel images={proj.images} title={proj.title} />
+                    <ImageCarousel images={proj.images!} title={proj.title} />
                   </div>
                 )}
 
                 {/* Video embed(s) */}
-                {proj.videoUrl && (
+                {hasVideo && (
                   <div className="mt-4 flex flex-col gap-3">
                     <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
                       <video
-                        src={proj.videoUrl}
+                        src={proj.videoUrl!}
                         className="absolute inset-0 w-full h-full object-cover"
                         controls
                         preload="metadata"
@@ -187,12 +194,21 @@ export default function Projects() {
                       <ExternalLink size={14} /> Live
                     </a>
                   )}
-                  {proj.videoUrl && !proj.repo && !proj.demo && (
+                  {/* View Screenshots button — only when project has both video AND images */}
+                  {hasVideo && hasImages && (
+                    <button
+                      onClick={() => setScreenshotModal({ images: proj.images!, title: proj.title })}
+                      className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline cursor-pointer"
+                    >
+                      <Images size={14} /> Screenshots
+                    </button>
+                  )}
+                  {hasVideo && !proj.repo && !proj.demo && !hasImages && (
                     <span className="inline-flex items-center gap-1.5 text-sm text-white/60">
                       <Play size={14} /> Watch demo above
                     </span>
                   )}
-                  {!proj.repo && !proj.demo && !proj.videoUrl && !proj.images && (
+                  {!proj.repo && !proj.demo && !hasVideo && !hasImages && (
                     <span className="text-xs text-white/40 italic">
                       Private — available on request
                     </span>
@@ -220,6 +236,38 @@ export default function Projects() {
           </a>
         </motion.div>
       </div>
+
+      {/* Screenshots popup modal */}
+      <AnimatePresence>
+        {screenshotModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setScreenshotModal(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-4xl w-full rounded-2xl overflow-hidden border border-white/10 bg-bg p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setScreenshotModal(null)}
+                className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/60 backdrop-blur flex items-center justify-center text-white/70 hover:text-white transition"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+              <h3 className="font-display text-lg font-semibold mb-4">{screenshotModal.title} — Screenshots</h3>
+              <ImageCarousel images={screenshotModal.images} title={screenshotModal.title} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

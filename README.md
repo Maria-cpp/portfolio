@@ -1,8 +1,8 @@
 # Maria Naseem — Portfolio
 
-A modern AI/ML engineer portfolio built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. Dark glassmorphism design with smooth animations.
+A modern AI Solutions Architect portfolio built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. Dark glassmorphism design with smooth animations, image carousels, local video embeds, and interactive architecture diagrams.
 
-> Live preview: deploy to Vercel in 2 minutes (instructions below).
+> Live at: [Vercel](https://vercel.com) (auto-deploys on push to `main`)
 
 ---
 
@@ -18,16 +18,17 @@ A modern AI/ML engineer portfolio built with **Next.js 14**, **Tailwind CSS**, a
 
 ## Sections
 
-1. **Hero** — Animated tagline rotation, code-card avatar, stats strip
+1. **Hero** — Animated tagline rotation, code-card avatar, stats strip, Download CV
 2. **About** — Vision / Expertise / Innovation pillars
-3. **Tech Stack** — Marquee + categorized grid
-4. **Skills** — Six specialty cards (Agentic AI, CV, LLM, Backend, Frontend, DevOps)
-5. **Experience** — Vertical timeline (Arwen Tech, ZumfluxAI, Green Tourism, ZUM, MediaPark, IBM)
-6. **Projects** — Featured cards with tags + repo links
-7. **ZumfluxAI** — Dedicated founder section with services grid
-8. **Certifications** — PIAIC/Panaversity, Coursera, IBM + Education
-9. **Contact** — Email, GitHub, LinkedIn, Phone, Location
-10. **Footer**
+3. **Tech Stack** — Marquee + categorized grid (Agentic AI, CV, Backend, Frontend, MLOps, DevOps)
+4. **Skills** — Six specialty cards (Agentic AI & MCP, CV, LLM, Backend, Frontend, DevOps)
+5. **Experience** — Vertical timeline (Arwen Tech, ZumfluxAI, Green Tourism, ZUM Services, MediaPark, Earlier Career)
+6. **Projects** — 13 featured cards with tags, image carousels, local video embeds, screenshots popup
+7. **Architecture** — 4 interactive SVG flow diagrams (Track & Trace, AMS HITL, Notification Service, Agentic Observability)
+8. **ZumfluxAI** — Dedicated founder section with services grid + recent client work
+9. **Certifications** — 7 certs with in-page popup viewer + Education
+10. **Contact** — Business & personal email, GitHub, LinkedIn, Phone, Location
+11. **Footer**
 
 ---
 
@@ -56,69 +57,74 @@ npm start
 
 All content lives in **`lib/data.ts`** — a single TypeScript file. Update:
 
-- `personal` — name, title, bio, contact
+- `personal` — name, title, bio, contact, resume URL
 - `aboutPillars` — vision/expertise/innovation cards
 - `techCategories` / `techMarquee` — tech stack
 - `skillGroups` — six skill cards
 - `experience` — career timeline
-- `projects` — featured projects
-- `certifications` — certifications + status
+- `projects` — featured projects (supports `videoUrl`, `videoUrl2`, `images[]`)
+- `certifications` — certifications + status + image URLs
 - `zumflux` — ZumfluxAI section + services
 - `education` — degree(s)
 - `stats` — hero stats strip
 
 Colors live in `tailwind.config.ts` and `app/globals.css`.
 
+Architecture diagrams are SVGs defined in `components/Architecture.tsx`.
+
 ---
 
-## Deploy to Vercel (free)
+## File structure
 
-### Option 1 — One-click via GitHub (Recommended)
-
-1. Create a new repo on GitHub (e.g. `maria-cpp/portfolio`).
-2. From this folder:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial portfolio"
-   git branch -M main
-   git remote add origin https://github.com/Maria-cpp/portfolio.git
-   git push -u origin main
-   ```
-
-3. Go to **[vercel.com/new](https://vercel.com/new)** → sign in with GitHub.
-4. Click **Import** on your `portfolio` repo.
-5. Leave all settings as default → click **Deploy**.
-6. Done — your site is live at `https://portfolio-<random>.vercel.app`.
-
-To get a clean URL like `maria-naseem.vercel.app`:
-**Project Settings → Domains → Add `maria-naseem.vercel.app`**.
-
-### Option 2 — Vercel CLI (no GitHub needed)
-
-```bash
-npm i -g vercel
-vercel
-# follow prompts; accept defaults
-vercel --prod
+```
+Portfolio/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx          <- fonts, metadata
+│   └── page.tsx            <- composes all sections
+├── components/
+│   ├── About.tsx           <- pillars + currently learning
+│   ├── Architecture.tsx    <- 4 SVG diagrams with tabs
+│   ├── Certifications.tsx  <- 7 certs + popup viewer + Education
+│   ├── Contact.tsx         <- business + personal email, socials
+│   ├── Experience.tsx      <- timeline, supports "minimal" entries
+│   ├── Footer.tsx
+│   ├── Hero.tsx            <- tagline rotation, Download CV button
+│   ├── Navbar.tsx
+│   ├── Projects.tsx        <- video embeds, image carousel, screenshots popup
+│   ├── Skills.tsx
+│   ├── TechStack.tsx       <- marquee + categorized grid
+│   └── Zumflux.tsx         <- founder section + recent client work
+├── lib/
+│   └── data.ts             <- ALL CONTENT lives here
+├── public/
+│   ├── certificates/       <- 4 certificate JPGs
+│   ├── images/             <- project screenshots (ams/, video_analytics_fbr/, agentic_observability/)
+│   ├── videos/             <- 6 MP4 demo videos (~130MB total)
+│   └── Maria_Naseem_CV.pdf <- downloadable resume
+├── docs/                   <- source CV and assets
+├── DEPLOYMENT.md           <- Vercel deployment guide
+├── README.md
+└── package.json
 ```
 
 ---
 
-## Deploy alternatives
+## Deploy to Vercel (free)
 
-- **Netlify:** Push to GitHub, then `netlify.app/start` → import repo. Build cmd: `npm run build`, publish dir: `.next`.
-- **GitHub Pages:** Requires `next export` config (Next 14 supports `output: 'export'` in `next.config.mjs`). Then push the `out/` folder.
+1. Push to GitHub (`github.com/Maria-cpp/portfolio`)
+2. Go to [vercel.com/new](https://vercel.com/new) -> sign in with GitHub
+3. Import the `portfolio` repo -> click **Deploy**
+4. Auto-deploys on every push to `main`
 
 ---
 
 ## Resume
 
-Place `Maria_Naseem_CV.pdf` inside `public/` to enable the resume download link in the hero.
+The CV is at `public/Maria_Naseem_CV.pdf` and is downloadable from the hero section's **Download CV** button.
 
 ---
 
 ## Credits
 
-Built by Maria Naseem · Founder of ZumfluxAI · April 2026
+Built by Maria Naseem | Founder of ZumfluxAI & ZUM Services Providers | 2026
