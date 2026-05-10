@@ -1,10 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Award, Clock, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Award, Clock, Eye, X } from 'lucide-react';
+import Image from 'next/image';
 import { certifications, education } from '@/lib/data';
 
 export default function Certifications() {
+  const [viewCert, setViewCert] = useState<string | null>(null);
+
   return (
     <section id="certifications" className="relative py-24">
       <div className="mx-auto max-w-6xl px-5">
@@ -66,14 +70,12 @@ export default function Certifications() {
                     {cert.status}
                   </span>
                   {cert.pdfUrl && (
-                    <a
-                      href={cert.pdfUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-white/60 hover:text-white transition"
+                    <button
+                      onClick={() => setViewCert(cert.pdfUrl!)}
+                      className="inline-flex items-center gap-1 text-[11px] font-mono text-white/60 hover:text-white transition cursor-pointer"
                     >
-                      View <ExternalLink size={11} />
-                    </a>
+                      View <Eye size={11} />
+                    </button>
                   )}
                 </div>
               </motion.div>
@@ -103,6 +105,45 @@ export default function Certifications() {
           </div>
         </motion.div>
       </div>
+
+      {/* Certificate popup modal */}
+      <AnimatePresence>
+        {viewCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setViewCert(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-4xl w-full max-h-[90vh] rounded-2xl overflow-hidden border border-white/10 bg-bg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setViewCert(null)}
+                className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/60 backdrop-blur flex items-center justify-center text-white/70 hover:text-white transition"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+              <div className="relative w-full h-[85vh]">
+                <Image
+                  src={viewCert}
+                  alt="Certificate"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  className="object-contain p-4"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

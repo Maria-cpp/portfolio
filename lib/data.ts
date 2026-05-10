@@ -13,7 +13,7 @@ export const personal = {
     'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
     'Government & Enterprise AI',
-    'Founder @ ZumfluxAI'
+    'Founder @ ZumfluxAI & ZUM Services'
   ],
   location: 'Islamabad, Pakistan',
   email: 'marianaseem99@gmail.com',
@@ -276,6 +276,12 @@ export const projects = [
     tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker'],
     repo: null,
     demo: null,
+    images: [
+      '/images/video_analytics_fbr/multi_obj_detection.png',
+      '/images/video_analytics_fbr/single object.png',
+      '/images/video_analytics_fbr/moving object.png',
+      '/images/video_analytics_fbr/logs.png'
+    ],
     featured: true,
     highlight: 'Government · Chapter XIV-BA',
     sector: 'Government'
@@ -288,6 +294,12 @@ export const projects = [
     tags: ['DeepFace · SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
     repo: null,
     demo: null,
+    images: [
+      '/images/ams/face detection 2.png',
+      '/images/ams/2face detection.png',
+      '/images/ams/front cam.png',
+      '/images/ams/ams_logs.png'
+    ],
     featured: true,
     highlight: 'Government · HITL',
     sector: 'Government'
@@ -300,7 +312,7 @@ export const projects = [
     tags: ['FastAPI', 'Next.js', 'Celery', 'PostgreSQL', 'Redis', 'Gemini', 'Docker', 'WebSockets'],
     repo: null,
     demo: null,
-    videoUrl: '/videos/chat base FTE creation.mp4',
+    videoUrl: '/videos/CX portal.mp4',
     featured: true,
     highlight: 'Enterprise · SaaS'
   },
@@ -312,6 +324,15 @@ export const projects = [
     tags: ['FastAPI', 'MCP', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
     repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
     demo: null,
+    images: [
+      '/images/agentic_observability/agents_dashboard.png',
+      '/images/agentic_observability/operations_dashboard.png',
+      '/images/agentic_observability/alert_analyzer.png',
+      '/images/agentic_observability/alert_manager.png',
+      '/images/agentic_observability/alerts.png',
+      '/images/agentic_observability/prometheus target.png',
+      '/images/agentic_observability/cxp_dashboard.png'
+    ],
     featured: true,
     highlight: 'MCP Server'
   },
@@ -335,6 +356,37 @@ export const projects = [
     tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
     repo: null,
     demo: null,
+    videoUrl: '/videos/Nauman Afzal.mp4',
+    featured: true,
+    highlight: 'ZumfluxAI · Client',
+    sector: 'ZumfluxAI'
+  },
+  {
+    title: 'AI Books',
+    tagline: 'Docusaurus-powered AI knowledge base',
+    description:
+      'An open-source Docusaurus documentation site compiling AI/ML knowledge — covering agentic systems, computer vision, LLM engineering, and robotics. Built as a structured, searchable reference for the AI community.',
+    tags: ['Docusaurus', 'React', 'MDX', 'AI/ML'],
+    repo: null,
+    demo: null,
+    videoUrl: '/videos/AI Books.mp4',
+    images: [
+      '/images/AI Book.png',
+      '/images/AI Book 2.png'
+    ],
+    featured: true,
+    highlight: 'ZumfluxAI · Open Source',
+    sector: 'ZumfluxAI'
+  },
+  {
+    title: 'ZeenuShop',
+    tagline: 'E-commerce platform for fashion & lifestyle',
+    description:
+      'Full-stack e-commerce application with product catalog, cart management, checkout flow, and admin dashboard. Built with modern web technologies for a seamless shopping experience.',
+    tags: ['Next.js', 'React', 'Tailwind', 'PostgreSQL'],
+    repo: null,
+    demo: null,
+    videoUrl: '/videos/ZeenuShop.mp4',
     featured: true,
     highlight: 'ZumfluxAI · Client',
     sector: 'ZumfluxAI'
@@ -348,6 +400,7 @@ export const projects = [
     repo: null,
     demo: null,
     videoUrl: '/videos/FTE video.mp4',
+    videoUrl2: '/videos/chat base FTE creation.mp4',
     highlight: 'Automation'
   },
   {
@@ -494,10 +547,10 @@ export const education = [
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Years building AI systems', value: '5+' },
+  { label: 'Years building AI (10+ total)', value: '5+' },
   { label: 'Production projects shipped', value: '12+' },
   { label: 'AI / Agentic certifications', value: '5' },
-  { label: 'Founded company', value: '1' }
+  { label: 'Founded companies', value: '2' }
 ];
 
 // ---------------------------------------------------------------------
@@ -506,15 +559,5 @@ export const stats = [
 
 export const currentlyLearning = {
   label: 'Currently studying',
-  items: [
-    {
-      title: 'AI-Native Textbook for Physical AI & Humanoid Robotics',
-      author: 'Online textbook',
-      blurb:
-        'Embodied AI, ROS 2 fundamentals, Gazebo / Unity, NVIDIA Isaac, Vision-Language-Action, humanoid and conversational robotics — bridging my LLM/agentic background into physical-AI systems.',
-      cover: '/images/physical-ai-textbook-1.png',
-      coverAlt: '/images/physical-ai-textbook-2.png',
-      url: null
-    }
-  ]
+  items: [] as { title: string; author: string; blurb: string; cover: string; coverAlt?: string; url: string | null }[]
 };
