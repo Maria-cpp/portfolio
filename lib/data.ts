@@ -7,7 +7,7 @@ export const personal = {
   name: 'Maria Naseem',
   firstName: 'Maria',
   initials: 'MN',
-  title: 'AI / ML Engineer',
+  title: 'AI / ML Engineer / Full-Stack Developer',
   taglines: [
     'AI Solutions Architect',
     'Agentic AI · MCP · HITL',
@@ -188,19 +188,21 @@ export const skillGroups = [
 
 export const experience = [
   {
-    role: 'AI Solution Architect & Full Stack Developer',
+    role: 'AI Solutions Architect & Full-Stack Developer',
     company: 'Arwen Tech',
     location: 'Islamabad, Pakistan',
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected a Federal Track & Trace Video Analytics platform under Chapter XIV-BA compliance — YOLOv8 + Ultralytics object detection with lap tracking, multi-line / multi-SKU production-line counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for a Provincial Government Secretariat — enrollment pipeline → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scaling to thousands of employees. Status: prototype, demonstration-ready.',
-      'Engineered a multi-channel agentic notification microservice (email · SMS · Slack · WhatsApp) using Grok LLM for context-aware messaging with template fallback, Redis + Celery for async queueing, and structured retry handling.',
-      'Designed and shipped a Customer Experience Portal (CXP) — contract onboarding, SLA lifecycle, workflow automation — on FastAPI · Next.js · PostgreSQL · Redis · Celery with Gemini-powered assistance, JWT auth, WebSocket live updates, and Docker dev/prod compose splits.',
-      'Built an Agentic Observability Platform with native MCP server — Prometheus + Grafana + Alertmanager driven by an AI Alert Analyzer that performs root-cause inference, severity classification, and recommends next actions.'
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system being prepared for vendor authorization under FBR\'s Chapter XIV-BA framework (Sales Tax Rules, 2006) — covering production-line monitoring for Third Schedule goods. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time transmission to a Central Control Unit (CCU). Currently in demonstration / approval phase.',
+      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for a Pakistani provincial government secretariat — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of government employees. Currently in demonstration / approval phase.',
+      'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
+      'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
+      'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
+      'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
+      'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
     ],
-    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Prometheus', 'Gemini']
+    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
   },
   {
     role: 'Founder',
@@ -215,25 +217,24 @@ export const experience = [
     stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
   },
   {
-    role: 'Executive Coordinator — Corporate & Government Affairs',
-    company: 'Green Tourism Private Limited',
+    role: 'Executive Coordinator — Corporate & Government Affairs | Digital Operations',
+    company: 'Green Tourism Pvt. Ltd.',
     location: 'Islamabad, Pakistan',
     period: '2024 — 2025',
     bullets: [
-      'CEO-level stakeholder engagement across federal and provincial government bodies — provincial secretaries and additional secretaries, ministerial offices, GHQ liaison, SIFC (Special Investment Facilitation Council), and the Law Directorate.',
-      'End-to-end Board of Directors meeting management — agenda, attendee coordination, minutes, and follow-through; functioned as the operational bridge between CEO and staff.',
-      'Led parallel digital operations — WordPress/e-commerce sites, API integrations, and workflow automation supporting corporate communications.'
+      'Operated as the bridge between the CEO and federal/provincial stakeholder ecosystem: provincial secretaries and additional secretaries across all four provinces, ministerial offices, GHQ liaison, SIFC (Special Investment Facilitation Council), and the Law Directorate. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
+      'Concurrently led digital operations — corporate web presence, e-commerce, API integrations, and workflow automation.'
     ],
-    stack: ['Stakeholder Engagement', 'BOD Operations', 'Government Liaison']
+    stack: ['Stakeholder Engagement', 'BOD Operations', 'Government Liaison', 'Digital Operations']
   },
   {
-    role: 'Full Stack Developer & Co-Founder',
+    role: 'Co-Founder & Full-Stack Developer',
     company: 'ZUM Services Providers',
     location: 'Pakistan',
     period: '2023 — 2025',
     bullets: [
-      'Co-founded technology services company; built full-stack platform on FastAPI · Next.js · PostgreSQL · Docker.',
-      'Implemented JWT authentication, modular API design, and automated CI/CD via GitHub Actions for reliable release pipelines.'
+      'Co-founded a multi-services company and served as the primary technical lead, driving architecture, system design, and end-to-end delivery across the full stack (FastAPI, Next.js, PostgreSQL, Docker). Established CI/CD practices using GitHub Actions and automated release pipelines.',
+      'Designed and delivered solar solution proposals and technical system layouts while leading all digital operations, including website development, marketing initiatives, branding, and digital content creation.'
     ],
     stack: ['FastAPI', 'Next.js', 'PostgreSQL', 'Docker', 'GitHub Actions']
   },
@@ -243,28 +244,20 @@ export const experience = [
     location: 'Pakistan',
     period: '2020 — 2022',
     bullets: [
-      'Designed decentralized applications and blockchain integrations with ECDSA cryptography, consensus validation, and identity protection.',
-      'Built compliance frameworks for smart contract interactions meeting auditability standards.',
-      'Optimized blockchain API integrations including ledger queries and access control.'
+      'Designed and delivered scalable native blockchain systems and decentralized applications (DApps), implementing core blockchain architecture including blocks, transactions, consensus validation, and ECDSA-based cryptographic signing for secure authentication and identity protection.',
+      'Implemented low-level socket-based networking for peer-to-peer (P2P) node communication, enabling distributed synchronization, block propagation, and transaction broadcasting across the blockchain network.',
+      'Developed compliance-oriented smart contract interaction frameworks with controlled access mechanisms, encryption standards, auditability practices, and structured technical documentation to ensure blockchain security and operational integrity.'
     ],
-    stack: ['Smart Contracts', 'ECDSA', 'Web3', 'API Integration']
+    stack: ['Blockchain', 'ECDSA', 'P2P Networking', 'Smart Contracts', 'DApps']
   },
   {
-    role: 'Administrative Coordinator',
-    company: 'Team Work Construction · Prime Tele Power Solution',
+    role: 'Earlier Career',
+    company: 'IBM Pakistan · Prime Tele Power Solution · Team Work Construction',
     location: 'Pakistan',
     period: '2016 — 2020',
     minimal: true,
-    bullets: [],
-    stack: []
-  },
-  {
-    role: 'Intern — ERP & Systems',
-    company: 'IBM Pakistan',
-    location: 'Pakistan',
-    period: 'Jul 2016 — Sep 2016',
     bullets: [
-      'Hands-on with ERP systems (PeopleSoft), Maximo configuration, GPON inventory, and resource planning for the PTCL project.'
+      'Internship at IBM Pakistan (2016) — supported PTCL\'s GPON deployment via PeopleSoft, Siebel, IBM Maximo, and IBM Integration Bus; contributed to GPON training documentation and inventory provisioning. Subsequent operations and IT support roles.'
     ],
     stack: ['PeopleSoft', 'Maximo', 'ERP']
   }
@@ -307,7 +300,7 @@ export const projects = [
     tags: ['FastAPI', 'Next.js', 'Celery', 'PostgreSQL', 'Redis', 'Gemini', 'Docker', 'WebSockets'],
     repo: null,
     demo: null,
-    videoUrl: null, // user will add YouTube URL
+    videoUrl: '/videos/chat base FTE creation.mp4',
     featured: true,
     highlight: 'Enterprise · SaaS'
   },
@@ -354,7 +347,7 @@ export const projects = [
     tags: ['Playwright', 'Python', 'LLM', 'HITL'],
     repo: null,
     demo: null,
-    videoUrl: null, // user will add YouTube URL
+    videoUrl: '/videos/FTE video.mp4',
     highlight: 'Automation'
   },
   {
@@ -375,14 +368,14 @@ export const projects = [
     tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
     repo: 'https://github.com/Maria-cpp/gesture_ai_website',
     demo: null,
-    videoUrl: null // user will add YouTube URL
+    videoUrl: '/videos/Gesture based website.mp4'
   },
   {
-    title: 'Bulk Data Import System',
-    tagline: 'Validated, error-resilient ingestion pipeline',
+    title: 'Document AI / Bulk Data Import',
+    tagline: 'OCR + async ingestion with audit logging',
     description:
-      'Scalable bulk-data import pipeline with validation rules, error handling, and optimized database ingestion patterns for high-volume workloads.',
-    tags: ['Python', 'PostgreSQL', 'Validation', 'ETL'],
+      'Async FastAPI service combining PaddleOCR + pdfplumber + python-docx for document AI ingestion, MIME validation, and audit-grade structured logging. Scalable bulk-data import pipeline with validation rules and optimized database patterns for high-volume workloads.',
+    tags: ['FastAPI', 'PaddleOCR', 'pdfplumber', 'PostgreSQL', 'Python', 'Docker'],
     repo: 'https://github.com/Maria-cpp/Bulk-data-import',
     demo: null
   }
@@ -396,37 +389,37 @@ export const certifications = [
   {
     name: 'Agentic AI Level 2 — Professional',
     issuer: 'PIAIC / Panaversity',
-    year: '2025',
+    year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/agentic-ai-l2.pdf'
+    pdfUrl: '/certificates/agentic_ai_level-II.jpg'
   },
   {
     name: 'Agentic AI Level 1 — Developer Fundamentals',
     issuer: 'PIAIC / Panaversity',
-    year: '2025',
+    year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/agentic-ai-l1.pdf'
+    pdfUrl: '/certificates/agentic_ai_level-I.jpg'
   },
   {
     name: 'FTE (Full-Time Equivalent) AI Program',
     issuer: 'PIAIC / Panaversity',
-    year: '2025',
+    year: '2026',
     status: 'Completed · 81%',
     pdfUrl: null
   },
   {
-    name: 'Develop Generative AI Applications: Get Started',
-    issuer: 'IBM · Coursera',
-    year: '2025',
+    name: 'Generative AI Applications',
+    issuer: 'Coursera',
+    year: '2026',
     status: 'Completed · 90%',
-    pdfUrl: '/certificates/ibm-generative-ai.pdf'
+    pdfUrl: '/certificates/IBM _genrative _Ai.jpg'
   },
   {
     name: 'Build RAG Applications',
-    issuer: 'IBM · Coursera',
-    year: '2025',
+    issuer: 'IBM / Coursera',
+    year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/rag-applications.pdf'
+    pdfUrl: '/certificates/IBM_rag_application\'s .jpg'
   },
   {
     name: 'AI for Cybersecurity Specialization',
@@ -501,10 +494,10 @@ export const education = [
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Years in AI / development', value: '5+' },
-  { label: 'Years professional experience', value: '10+' },
-  { label: 'Government & enterprise projects', value: '5' },
-  { label: 'AI / Agentic certifications', value: '5' }
+  { label: 'Years building AI systems', value: '5+' },
+  { label: 'Production projects shipped', value: '12+' },
+  { label: 'AI / Agentic certifications', value: '5' },
+  { label: 'Founded company', value: '1' }
 ];
 
 // ---------------------------------------------------------------------

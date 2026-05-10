@@ -64,11 +64,12 @@ export default function Projects() {
                 {/* Video embed */}
                 {proj.videoUrl && (
                   <div className="mt-4 relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
-                    <iframe
+                    <video
                       src={proj.videoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      className="absolute inset-0 w-full h-full object-cover"
+                      controls
+                      preload="metadata"
+                      playsInline
                       title={`${proj.title} demo`}
                     />
                   </div>
