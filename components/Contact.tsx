@@ -90,9 +90,7 @@ export default function Contact() {
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl glass-strong flex items-center justify-center ${
-                      item.accent === 'pink' ? 'text-accent-pink' : 'text-accent-cyan'
-                    }`}>
+                    <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan">
                       <item.icon size={16} />
                     </div>
                     <div>
