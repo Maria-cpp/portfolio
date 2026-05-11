@@ -269,6 +269,7 @@ export const experience = [
 // ---------------------------------------------------------------------
 
 export const projects = [
+  // 1
   {
     title: 'Federal Track & Trace Video Analytics',
     tagline: 'YOLOv8 production-line counting under Chapter XIV-BA',
@@ -287,6 +288,7 @@ export const projects = [
     highlight: 'Government · Chapter XIV-BA',
     sector: 'Government'
   },
+  // 2
   {
     title: 'Provincial Government Secretariat AMS',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
@@ -305,6 +307,7 @@ export const projects = [
     highlight: 'Government · HITL',
     sector: 'Government'
   },
+  // 3
   {
     title: 'Customer Experience Portal (CXP)',
     tagline: 'Contract lifecycle automation with Gemini-assisted workflows',
@@ -317,6 +320,7 @@ export const projects = [
     featured: true,
     highlight: 'Enterprise · SaaS'
   },
+  // 4
   {
     title: 'Agentic Observability Platform',
     tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
@@ -337,6 +341,66 @@ export const projects = [
     featured: true,
     highlight: 'MCP Server'
   },
+  // 5
+  {
+    title: 'Multi-Channel Notification Microservice',
+    tagline: 'Grok LLM + Redis/Celery message orchestrator',
+    description:
+      'Agentic notification service routing across email, SMS, Slack, WhatsApp. Grok LLM produces context-aware messages with predefined template fallback for guaranteed delivery; Redis + Celery handle async queue, retry, and decoupled processing.',
+    tags: ['Grok LLM', 'Redis', 'Celery', 'FastAPI'],
+    repo: null,
+    demo: null,
+    highlight: 'Microservice'
+  },
+  // 6
+  {
+    title: 'Document AI / Bulk Data Import',
+    tagline: 'OCR + async ingestion with audit logging',
+    description:
+      'Async FastAPI service combining PaddleOCR + pdfplumber + python-docx for document AI ingestion, MIME validation, and audit-grade structured logging. Scalable bulk-data import pipeline with validation rules and optimized database patterns for high-volume workloads.',
+    tags: ['FastAPI', 'PaddleOCR', 'pdfplumber', 'PostgreSQL', 'Python', 'Docker'],
+    repo: 'https://github.com/Maria-cpp/Bulk-data-import',
+    demo: null
+  },
+  // 7
+  {
+    title: 'FTE Sales Lead Engine',
+    tagline: 'Browser automation × AI scoring × HITL review',
+    description:
+      'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer — reducing manual outreach effort by ~80%.',
+    tags: ['Playwright', 'Python', 'LLM', 'HITL'],
+    repo: null,
+    demo: null,
+    videoUrl: '/videos/FTE video.mp4',
+    videoUrl2: '/videos/chat base FTE creation.mp4',
+    highlight: 'Automation'
+  },
+  // 8
+  {
+    title: 'Gesture AI Website',
+    tagline: 'Touchless interaction via webcam hand-gestures',
+    description:
+      'Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.',
+    tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
+    extraTag: 'Participated in AI Speedcoding competition by AI COE',
+    repo: 'https://github.com/Maria-cpp/gesture_ai_website',
+    demo: null,
+    videoUrl: '/videos/Gesture based website.mp4'
+  },
+  // 9
+  {
+    title: 'Green Pak Tourism',
+    tagline: 'Corporate web presence for national tourism body',
+    description:
+      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company working with federal and provincial government stakeholders. Built during tenure as Executive Coordinator for Digital Operations.',
+    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
+    repo: null,
+    demo: 'https://greenpaktourism.com/',
+    images: ['/images/gtpl_website.png'],
+    featured: true,
+    highlight: 'GTPL · Live'
+  },
+  // 10
   {
     title: 'SitesBuildOps',
     tagline: 'Construction-finance ledger with AI fraud detection',
@@ -349,6 +413,7 @@ export const projects = [
     highlight: 'ZumfluxAI · Client',
     sector: 'ZumfluxAI'
   },
+  // 11
   {
     title: 'Nauman Afzal — Author Portfolio',
     tagline: 'Bibliophile · Author of Mudslinging & Budhoo',
@@ -362,6 +427,7 @@ export const projects = [
     highlight: 'ZumfluxAI · Client',
     sector: 'ZumfluxAI'
   },
+  // 12
   {
     title: 'AI Books',
     tagline: 'Docusaurus-powered AI knowledge base',
@@ -379,6 +445,7 @@ export const projects = [
     highlight: 'ZumfluxAI · Open Source',
     sector: 'ZumfluxAI'
   },
+  // 13
   {
     title: 'ZeenuShop',
     tagline: 'E-commerce platform for fashion & lifestyle',
@@ -391,58 +458,6 @@ export const projects = [
     featured: true,
     highlight: 'ZumfluxAI · Client',
     sector: 'ZumfluxAI'
-  },
-  {
-    title: 'FTE Sales Lead Engine',
-    tagline: 'Browser automation × AI scoring × HITL review',
-    description:
-      'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer — reducing manual outreach effort by ~80%.',
-    tags: ['Playwright', 'Python', 'LLM', 'HITL'],
-    repo: null,
-    demo: null,
-    videoUrl: '/videos/FTE video.mp4',
-    videoUrl2: '/videos/chat base FTE creation.mp4',
-    highlight: 'Automation'
-  },
-  {
-    title: 'Multi-Channel Notification Microservice',
-    tagline: 'Grok LLM + Redis/Celery message orchestrator',
-    description:
-      'Agentic notification service routing across email, SMS, Slack, WhatsApp. Grok LLM produces context-aware messages with predefined template fallback for guaranteed delivery; Redis + Celery handle async queue, retry, and decoupled processing.',
-    tags: ['Grok LLM', 'Redis', 'Celery', 'FastAPI'],
-    repo: null,
-    demo: null,
-    highlight: 'Microservice'
-  },
-  {
-    title: 'Gesture AI Website',
-    tagline: 'Touchless interaction via webcam hand-gestures',
-    description:
-      'Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.',
-    tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
-    repo: 'https://github.com/Maria-cpp/gesture_ai_website',
-    demo: null,
-    videoUrl: '/videos/Gesture based website.mp4'
-  },
-  {
-    title: 'Green Pak Tourism',
-    tagline: 'Corporate web presence for national tourism body',
-    description:
-      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company working with federal and provincial government stakeholders. Built during tenure as Executive Coordinator for Digital Operations.',
-    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
-    repo: null,
-    demo: 'https://greenpaktourism.com/',
-    featured: true,
-    highlight: 'GTPL · Live'
-  },
-  {
-    title: 'Document AI / Bulk Data Import',
-    tagline: 'OCR + async ingestion with audit logging',
-    description:
-      'Async FastAPI service combining PaddleOCR + pdfplumber + python-docx for document AI ingestion, MIME validation, and audit-grade structured logging. Scalable bulk-data import pipeline with validation rules and optimized database patterns for high-volume workloads.',
-    tags: ['FastAPI', 'PaddleOCR', 'pdfplumber', 'PostgreSQL', 'Python', 'Docker'],
-    repo: 'https://github.com/Maria-cpp/Bulk-data-import',
-    demo: null
   }
 ];
 

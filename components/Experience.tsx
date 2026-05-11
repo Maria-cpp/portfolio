@@ -1,10 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Briefcase, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Briefcase, MapPin, ChevronDown } from 'lucide-react';
 import { experience } from '@/lib/data';
 
 export default function Experience() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
+  const toggleExperience = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <section id="experience" className="relative py-24">
       <div className="mx-auto max-w-6xl px-5">
@@ -29,6 +36,7 @@ export default function Experience() {
           <div className="space-y-6">
             {experience.map((job, i) => {
               const isMinimal = (job as { minimal?: boolean }).minimal === true;
+              const isExpanded = expandedIndex === i;
               return (
                 <motion.div
                   key={`${job.company}-${i}`}
@@ -47,9 +55,13 @@ export default function Experience() {
                     />
                   </div>
 
-                  <div className={`glass rounded-2xl card-hover ${isMinimal ? 'p-4 md:p-5' : 'p-5 md:p-6'}`}>
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <div>
+                  <div className={`glass rounded-2xl overflow-hidden ${isMinimal ? '' : ''}`}>
+                    {/* Header — always visible, clickable */}
+                    <button
+                      onClick={() => toggleExperience(i)}
+                      className="w-full flex items-center justify-between p-4 md:p-5 text-left cursor-pointer"
+                    >
+                      <div className="min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <h3 className={`font-display font-semibold ${isMinimal ? 'text-base' : 'text-lg'}`}>
                             {job.role}
@@ -64,44 +76,78 @@ export default function Experience() {
                           <span className="flex items-center gap-1.5">
                             <Briefcase size={13} /> {job.company}
                           </span>
-                          {!isMinimal && (
-                            <span className="flex items-center gap-1.5 text-white/40">
-                              <MapPin size={13} /> {job.location}
-                            </span>
-                          )}
+                          <span className="text-xs font-mono text-white/50">
+                            {job.period}
+                          </span>
                         </div>
                       </div>
-                      <div className="text-xs font-mono text-white/50 whitespace-nowrap">
-                        {job.period}
-                      </div>
-                    </div>
+                      <ChevronDown
+                        size={20}
+                        className={`text-white/50 shrink-0 ml-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                      />
+                    </button>
 
-                    {!isMinimal && job.bullets && job.bullets.length > 0 && (
-                      <ul className="mt-4 space-y-2">
-                        {job.bullets.map((b, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-white/70 leading-relaxed pl-4 relative"
-                          >
-                            <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {/* Expanded content */}
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-4 md:px-5 pb-5">
+                            {!isMinimal && (
+                              <span className="flex items-center gap-1.5 text-sm text-white/40 mb-3">
+                                <MapPin size={13} /> {job.location}
+                              </span>
+                            )}
 
-                    {!isMinimal && job.stack && job.stack.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-1.5">
-                        {job.stack.map((s) => (
-                          <span
-                            key={s}
-                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/60"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                            {!isMinimal && job.bullets && job.bullets.length > 0 && (
+                              <ul className="space-y-2">
+                                {job.bullets.map((b, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="text-sm text-white/70 leading-relaxed pl-4 relative"
+                                  >
+                                    <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan" />
+                                    {b}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+
+                            {isMinimal && job.bullets && job.bullets.length > 0 && (
+                              <ul className="space-y-2">
+                                {job.bullets.map((b, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="text-sm text-white/70 leading-relaxed pl-4 relative"
+                                  >
+                                    <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent-cyan" />
+                                    {b}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+
+                            {job.stack && job.stack.length > 0 && (
+                              <div className="mt-4 flex flex-wrap gap-1.5">
+                                {job.stack.map((s) => (
+                                  <span
+                                    key={s}
+                                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/60"
+                                  >
+                                    {s}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               );

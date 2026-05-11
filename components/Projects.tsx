@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { projects } from '@/lib/data';
 
@@ -62,6 +62,12 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 
 export default function Projects() {
   const [screenshotModal, setScreenshotModal] = useState<{ images: string[]; title: string } | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [showFteChatbot, setShowFteChatbot] = useState(false);
+
+  const toggleProject = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <section id="projects" className="relative py-24">
@@ -71,7 +77,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+          className="flex flex-col gap-4"
         >
           <div>
             <div className="eyebrow">Featured work</div>
@@ -86,16 +92,20 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5">
+        <div className="mt-14 flex flex-col gap-3">
           {projects.map((p, i) => {
             const proj = p as typeof p & {
               sector?: string;
               videoUrl?: string | null;
               videoUrl2?: string | null;
               images?: string[];
+              extraTag?: string;
             };
             const hasVideo = !!proj.videoUrl;
             const hasImages = proj.images && proj.images.length > 0;
+            const isExpanded = expandedIndex === i;
+            const isFTE = proj.title === 'FTE Sales Lead Engine';
+            const isGTPL = proj.title === 'Green Pak Tourism';
 
             return (
               <motion.div
@@ -103,117 +113,212 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group relative glass rounded-3xl p-6 card-hover overflow-hidden"
+                transition={{ duration: 0.5, delay: i * 0.03 }}
+                className="group relative glass rounded-3xl overflow-hidden"
               >
-                <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-accent/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {proj.highlight && (
-                  <div className="flex justify-end mb-2">
-                    <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border ${highlightColor(proj.sector)}`}>
-                      <Sparkles size={10} /> {proj.highlight}
-                    </div>
-                  </div>
-                )}
-
-                <h3 className="font-display text-xl font-semibold">
-                  {proj.title}
-                </h3>
-                <p className="mt-1 text-sm text-accent-cyan font-mono">
-                  {proj.tagline}
-                </p>
-
-                {/* Image carousel — only when no video */}
-                {hasImages && !hasVideo && (
-                  <div className="mt-4">
-                    <ImageCarousel images={proj.images!} title={proj.title} />
-                  </div>
-                )}
-
-                {/* Video embed(s) */}
-                {hasVideo && (
-                  <div className="mt-4 flex flex-col gap-3">
-                    <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
-                      <video
-                        src={proj.videoUrl!}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        controls
-                        preload="metadata"
-                        playsInline
-                        title={`${proj.title} demo`}
-                      />
-                    </div>
-                    {proj.videoUrl2 && (
-                      <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
-                        <video
-                          src={proj.videoUrl2}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          controls
-                          preload="metadata"
-                          playsInline
-                          title={`${proj.title} demo 2`}
-                        />
+                {/* Collapsed header — always visible */}
+                <button
+                  onClick={() => toggleProject(i)}
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
+                >
+                  <div className="flex items-center gap-3 flex-wrap min-w-0">
+                    <h3 className="font-display text-lg md:text-xl font-semibold truncate">
+                      {proj.title}
+                    </h3>
+                    {proj.highlight && (
+                      <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border shrink-0 ${highlightColor(proj.sector)}`}>
+                        <Sparkles size={10} /> {proj.highlight}
+                      </div>
+                    )}
+                    {proj.extraTag && (
+                      <div className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border bg-accent-lime/15 text-accent-lime border-accent-lime/30 shrink-0">
+                        {proj.extraTag}
                       </div>
                     )}
                   </div>
-                )}
+                  <ChevronDown
+                    size={20}
+                    className={`text-white/50 shrink-0 ml-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                  />
+                </button>
 
-                <p className="mt-4 text-sm text-white/65 leading-relaxed">
-                  {proj.description}
-                </p>
+                {/* Expanded content */}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 md:px-6 pb-6">
+                        <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-accent/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {proj.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/65"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                        <p className="text-sm text-accent-cyan font-mono">
+                          {proj.tagline}
+                        </p>
 
-                <div className="mt-6 flex items-center gap-3">
-                  {proj.repo && (
-                    <a
-                      href={proj.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
-                    >
-                      <Github size={14} /> Source
-                    </a>
+                        {/* GTPL: image + click here to view website */}
+                        {isGTPL && hasImages && (
+                          <div className="mt-4">
+                            <ImageCarousel images={proj.images!} title={proj.title} />
+                            <div className="mt-3 text-center">
+                              <a
+                                href="https://greenpaktourism.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1.5 text-sm text-accent-cyan hover:text-white transition link-underline font-medium"
+                              >
+                                <ExternalLink size={14} /> Click here to view website
+                              </a>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Image carousel — only when no video and not GTPL (GTPL handled above) */}
+                        {hasImages && !hasVideo && !isGTPL && (
+                          <div className="mt-4">
+                            <ImageCarousel images={proj.images!} title={proj.title} />
+                          </div>
+                        )}
+
+                        {/* Video embed(s) — FTE special handling */}
+                        {hasVideo && !isFTE && (
+                          <div className="mt-4 flex flex-col gap-3">
+                            <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                              <video
+                                src={proj.videoUrl!}
+                                className="absolute inset-0 w-full h-full object-cover"
+                                controls
+                                preload="metadata"
+                                playsInline
+                                title={`${proj.title} demo`}
+                              />
+                            </div>
+                            {proj.videoUrl2 && (
+                              <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                                <video
+                                  src={proj.videoUrl2}
+                                  className="absolute inset-0 w-full h-full object-cover"
+                                  controls
+                                  preload="metadata"
+                                  playsInline
+                                  title={`${proj.title} demo 2`}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* FTE: show 1 video + button for chatbot style */}
+                        {isFTE && hasVideo && (
+                          <div className="mt-4 flex flex-col gap-3">
+                            {!showFteChatbot ? (
+                              <>
+                                <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                                  <video
+                                    src={proj.videoUrl!}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    title={`${proj.title} demo`}
+                                  />
+                                </div>
+                                {proj.videoUrl2 && (
+                                  <button
+                                    onClick={() => setShowFteChatbot(true)}
+                                    className="self-start inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30 hover:bg-accent-cyan/25 transition cursor-pointer"
+                                  >
+                                    <Play size={14} /> FTE Chatbot Style (18s)
+                                  </button>
+                                )}
+                              </>
+                            ) : (
+                              <>
+                                <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                                  <video
+                                    src={proj.videoUrl2!}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    controls
+                                    autoPlay
+                                    preload="metadata"
+                                    playsInline
+                                    title={`${proj.title} chatbot style`}
+                                  />
+                                </div>
+                                <button
+                                  onClick={() => setShowFteChatbot(false)}
+                                  className="self-start inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30 hover:bg-accent-cyan/25 transition cursor-pointer"
+                                >
+                                  <Play size={14} /> Back to Main Demo
+                                </button>
+                              </>
+                            )}
+                          </div>
+                        )}
+
+                        <p className="mt-4 text-sm text-white/65 leading-relaxed">
+                          {proj.description}
+                        </p>
+
+                        <div className="mt-5 flex flex-wrap gap-1.5">
+                          {proj.tags.map((t) => (
+                            <span
+                              key={t}
+                              className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/65"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="mt-6 flex items-center gap-3">
+                          {proj.repo && (
+                            <a
+                              href={proj.repo}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
+                            >
+                              <Github size={14} /> Source
+                            </a>
+                          )}
+                          {proj.demo && !isGTPL && (
+                            <a
+                              href={proj.demo}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
+                            >
+                              <ExternalLink size={14} /> Live
+                            </a>
+                          )}
+                          {/* View Screenshots button — only when project has both video AND images */}
+                          {hasVideo && hasImages && (
+                            <button
+                              onClick={() => setScreenshotModal({ images: proj.images!, title: proj.title })}
+                              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline cursor-pointer"
+                            >
+                              <Images size={14} /> Screenshots
+                            </button>
+                          )}
+                          {hasVideo && !proj.repo && !proj.demo && !hasImages && !isFTE && (
+                            <span className="inline-flex items-center gap-1.5 text-sm text-white/60">
+                              <Play size={14} /> Watch demo above
+                            </span>
+                          )}
+                          {!proj.repo && !proj.demo && !hasVideo && !hasImages && (
+                            <span className="text-xs text-white/40 italic">
+                              Private — available on request
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
                   )}
-                  {proj.demo && (
-                    <a
-                      href={proj.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
-                    >
-                      <ExternalLink size={14} /> Live
-                    </a>
-                  )}
-                  {/* View Screenshots button — only when project has both video AND images */}
-                  {hasVideo && hasImages && (
-                    <button
-                      onClick={() => setScreenshotModal({ images: proj.images!, title: proj.title })}
-                      className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline cursor-pointer"
-                    >
-                      <Images size={14} /> Screenshots
-                    </button>
-                  )}
-                  {hasVideo && !proj.repo && !proj.demo && !hasImages && (
-                    <span className="inline-flex items-center gap-1.5 text-sm text-white/60">
-                      <Play size={14} /> Watch demo above
-                    </span>
-                  )}
-                  {!proj.repo && !proj.demo && !hasVideo && !hasImages && (
-                    <span className="text-xs text-white/40 italic">
-                      Private — available on request
-                    </span>
-                  )}
-                </div>
+                </AnimatePresence>
               </motion.div>
             );
           })}

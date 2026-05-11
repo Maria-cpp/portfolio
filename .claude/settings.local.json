@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(python3 -c ':*)",
-      "Bash(python -c ':*)"
+      "Bash(python -c ':*)",
+      "Bash(npx next:*)",
+      "Bash(npm run:*)",
+      "Bash(ls node_modules/.bin/next*)",
+      "Bash(node_modules/.bin/next --version)"
     ]
   }
 }
