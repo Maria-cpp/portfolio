@@ -77,7 +77,7 @@ export default function Projects() {
             <div className="eyebrow">Featured work</div>
             <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
               Selected{' '}
-              <span className="gradient-text">projects</span>
+              <span className="gradient-text">Projects</span>
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">

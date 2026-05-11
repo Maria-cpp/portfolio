@@ -23,13 +23,13 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+          className="flex flex-col gap-4"
         >
           <div>
             <div className="eyebrow">Tech stack</div>
             <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-              Tools I reach for{' '}
-              <span className="gradient-text">every week</span>
+              Tools I Reach For{' '}
+              <span className="gradient-text">Every Week</span>
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">

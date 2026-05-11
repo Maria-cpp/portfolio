@@ -384,8 +384,8 @@ export default function Architecture() {
         >
           <div className="eyebrow">System architecture</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-            How the{' '}
-            <span className="gradient-text">pipelines fit together</span>
+            How The{' '}
+            <span className="gradient-text">Pipelines Fit Together</span>
           </h2>
           <p className="mt-4 text-white/65">
             Four production pipelines, drawn from real engagements. Click each tab

@@ -17,8 +17,8 @@ export default function Experience() {
         >
           <div className="eyebrow">Career timeline</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-            A track record of{' '}
-            <span className="gradient-text">government & enterprise delivery</span>
+            A Track Record Of{' '}
+            <span className="gradient-text">Government & Enterprise Delivery</span>
           </h2>
         </motion.div>
 

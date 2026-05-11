@@ -22,8 +22,8 @@ export default function Contact() {
             <div>
               <div className="eyebrow">Get in touch</div>
               <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">
-                Have a project?{' '}
-                <span className="gradient-text">Let&apos;s build.</span>
+                Have A Project?{' '}
+                <span className="gradient-text">Let&apos;s Build.</span>
               </h2>
               <p className="mt-5 text-white/65 max-w-md leading-relaxed">
                 Whether you need an AI engineer for your team, want to engage

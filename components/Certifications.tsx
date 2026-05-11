@@ -23,7 +23,7 @@ export default function Certifications() {
             <div className="eyebrow">Certifications & education</div>
             <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
               Always{' '}
-              <span className="gradient-text">leveling up</span>
+              <span className="gradient-text">Leveling Up</span>
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">

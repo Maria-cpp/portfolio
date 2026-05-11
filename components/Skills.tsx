@@ -17,8 +17,8 @@ export default function Skills() {
         >
           <div className="eyebrow">Skill set</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-            What I bring{' '}
-            <span className="gradient-text">to the table</span>
+            What I Bring{' '}
+            <span className="gradient-text">To The Table</span>
           </h2>
           <p className="mt-4 text-white/65">
             Six core practice areas — each one battle-tested in production work.
