@@ -6,7 +6,8 @@
       "Bash(npx next:*)",
       "Bash(npm run:*)",
       "Bash(ls node_modules/.bin/next*)",
-      "Bash(node_modules/.bin/next --version)"
+      "Bash(node_modules/.bin/next --version)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

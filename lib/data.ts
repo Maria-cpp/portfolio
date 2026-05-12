@@ -12,7 +12,7 @@ export const personal = {
     'AI Solutions Architect',
     'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
-    'Government & Enterprise AI',
+    'Enterprise & Regulated-Industry AI',
     'Founder @ ZumfluxAI',
     'Founder @ ZUM Services Providers'
   ],
@@ -24,9 +24,9 @@ export const personal = {
   linkedin: 'https://www.linkedin.com/in/maria-naseem-343594128/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'AI Solutions Architect shipping production AI for regulated and government clients. Federal Track & Trace video analytics, four-stage HITL facial-recognition for a provincial-government secretariat, and an MCP-native agentic observability stack — all in production-grade Python + Next.js.',
+    'AI Solutions Architect shipping production AI for regulated and enterprise clients. Real-time video analytics, four-stage HITL facial-recognition attendance system, and an MCP-native agentic observability stack — all in production-grade Python + Next.js.',
   longBio:
-    'I architect AI systems for regulated and government delivery — the kind that have to pass live demonstrations, audit trails, and ministry-level scrutiny. With 5+ years building AI and 10+ years professional experience, I lead architecture for a Federal Track & Trace video-analytics platform under Chapter XIV-BA compliance, a four-stage HITL facial-recognition AMS for a Provincial Government Secretariat, and an MCP-server-native agentic observability stack. I also founded ZumfluxAI to deliver this craft to teams shipping real-world AI products. Beyond engineering, I bring rare stakeholder fluency — coordinating BOD-level meetings and engaging with provincial secretaries, federal ministers, GHQ, SIFC, and the Law Directorate during my time leading corporate and government affairs at a national tourism body.'
+    'I architect AI systems for regulated and enterprise delivery — the kind that have to pass live demonstrations, audit trails, and executive-level scrutiny. With 5+ years building AI and 10+ years professional experience, I lead architecture for a real-time video-analytics platform under regulatory compliance, a four-stage HITL facial-recognition attendance system, and an MCP-server-native agentic observability stack. I also founded ZumfluxAI to deliver this craft to teams shipping real-world AI products. Beyond engineering, I bring rare stakeholder fluency — coordinating BOD-level meetings and engaging with senior executives and stakeholders during my time leading corporate affairs at a national tourism company.'
 };
 
 // ---------------------------------------------------------------------
@@ -38,7 +38,7 @@ export const aboutPillars = [
     label: 'Vision',
     title: 'AI that survives audit',
     description:
-      'For regulated and government clients, "it works in a notebook" is the start, not the end. I build AI systems that pass live demonstrations, carry audit trails, and operate under compliance frameworks like FBR Chapter XIV-BA.',
+      'For regulated and enterprise clients, "it works in a notebook" is the start, not the end. I build AI systems that pass live demonstrations, carry audit trails, and operate under strict compliance frameworks.',
     accent: 'cyan'
   },
   {
@@ -52,7 +52,7 @@ export const aboutPillars = [
     label: 'Innovation',
     title: 'From prototype to production demo in weeks',
     description:
-      'A federal video-analytics prototype built and demo-ready inside a regulator authorization window. A four-stage HITL AMS architected and deployed at a provincial secretariat. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
+      'A video-analytics prototype built and demo-ready inside a regulator authorization window. A four-stage HITL attendance system architected and deployed for an enterprise client. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
     accent: 'pink'
   }
 ] as const;
@@ -128,7 +128,7 @@ export const skillGroups = [
   },
   {
     title: 'Computer Vision',
-    blurb: 'Production CV pipelines on live RTSP — from secretariat AMS to factory-line analytics.',
+    blurb: 'Production CV pipelines on live RTSP — from facial-recognition attendance to factory-line analytics.',
     items: [
       'YOLOv8 / Ultralytics + lap tracking',
       'Facial Recognition (DeepFace, SFace)',
@@ -195,8 +195,8 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system being prepared for vendor authorization under FBR\'s Chapter XIV-BA framework (Sales Tax Rules, 2006) — covering production-line monitoring for Third Schedule goods. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time transmission to a Central Control Unit (CCU). Currently in demonstration / approval phase.',
-      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for a Pakistani provincial government secretariat — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of government employees. Currently in demonstration / approval phase.',
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Currently in demonstration / approval phase.',
+      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Currently in demonstration / approval phase.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
       'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
@@ -218,15 +218,15 @@ export const experience = [
     stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
   },
   {
-    role: 'Executive Coordinator — Corporate & Government Affairs | Digital Operations',
+    role: 'Executive Coordinator — Corporate Affairs | Digital Operations',
     company: 'Green Tourism Pvt. Ltd.',
     location: 'Islamabad, Pakistan',
     period: '2024 — 2025',
     bullets: [
-      'Operated as the bridge between the CEO and federal/provincial stakeholder ecosystem: provincial secretaries and additional secretaries across all four provinces, ministerial offices, GHQ liaison, SIFC (Special Investment Facilitation Council), and the Law Directorate. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
+      'Operated as the bridge between the CEO and senior stakeholder ecosystem — coordinating with executives and key decision-makers across multiple regions. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
       'Concurrently led digital operations — corporate web presence, e-commerce, API integrations, and workflow automation.'
     ],
-    stack: ['Stakeholder Engagement', 'BOD Operations', 'Government Liaison', 'Digital Operations']
+    stack: ['Stakeholder Engagement', 'BOD Operations', 'Corporate Liaison', 'Digital Operations']
   },
   {
     role: 'Co-Founder & Full-Stack Developer',
@@ -271,10 +271,10 @@ export const experience = [
 export const projects = [
   // 1
   {
-    title: 'Federal Track & Trace Video Analytics',
-    tagline: 'YOLOv8 production-line counting under Chapter XIV-BA',
+    title: 'Video Analytics',
+    tagline: 'YOLOv8 production-line counting for regulatory compliance',
     description:
-      'Architected for a federal regulator under Pakistan\'s Track & Trace authorization framework (Chapter XIV-BA). YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
+      'Architected for a regulated-industry client under a national track-and-trace authorization framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
     tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker'],
     repo: null,
     demo: null,
@@ -285,15 +285,15 @@ export const projects = [
       '/images/video_analytics_fbr/logs.png'
     ],
     featured: true,
-    highlight: 'Government · Chapter XIV-BA',
-    sector: 'Government'
+    highlight: 'Regulated Industry · Compliance',
+    sector: 'Enterprise'
   },
   // 2
   {
-    title: 'Provincial Government Secretariat AMS',
+    title: 'Facial Recognition Attendance System',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
     description:
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for a provincial-government secretariat. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: prototype, demonstration-ready.',
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: prototype, demonstration-ready.',
     tags: ['DeepFace · SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
     repo: null,
     demo: null,
@@ -304,8 +304,8 @@ export const projects = [
       '/images/ams/ams_logs.png'
     ],
     featured: true,
-    highlight: 'Government · HITL',
-    sector: 'Government'
+    highlight: 'Enterprise · HITL',
+    sector: 'Enterprise'
   },
   // 3
   {
@@ -392,7 +392,7 @@ export const projects = [
     title: 'Green Pak Tourism',
     tagline: 'Corporate web presence for national tourism body',
     description:
-      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company working with federal and provincial government stakeholders. Built during tenure as Executive Coordinator for Digital Operations.',
+      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company. Built during tenure as Executive Coordinator for Digital Operations.',
     tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
     repo: null,
     demo: 'https://greenpaktourism.com/',
