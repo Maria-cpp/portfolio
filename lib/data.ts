@@ -69,7 +69,7 @@ export const techCategories = [
       'OpenAI', 'Anthropic Claude', 'Grok', 'Gemini',
       'MCP Servers (built & deployed)', 'Multi-Agent Orchestration',
       'HITL Controls', 'RAG', 'FAISS', 'Pinecone',
-      'Pydantic Structured Outputs', 'LangChain'
+      'Pydantic Structured Outputs', 'LangChain', 'LangGraph', 'NLP'
     ]
   },
   {
@@ -80,7 +80,7 @@ export const techCategories = [
   {
     name: 'Backend',
     icon: 'Server',
-    items: ['FastAPI', 'Python', 'Node.js', 'Redis', 'Celery', 'PostgreSQL', 'MySQL', 'WebSockets']
+    items: ['FastAPI', 'Python', 'Node.js', 'Redis', 'Celery', 'PostgreSQL', 'MySQL', 'WebSockets', 'RBAC/CBAC']
   },
   {
     name: 'Frontend',
@@ -105,7 +105,7 @@ export const techMarquee = [
   'MCP', 'YOLOv8', 'OpenCV', 'DeepFace',
   'PostgreSQL', 'Redis', 'Celery',
   'Docker', 'GitHub Actions', 'Tailwind CSS',
-  'Pinecone', 'FAISS', 'LangChain',
+  'Pinecone', 'FAISS', 'LangChain', 'LangGraph', 'NLP',
   'Grafana', 'Prometheus', 'Alertmanager',
   'Playwright', 'Node.js', 'Streamlit'
 ];
@@ -123,7 +123,8 @@ export const skillGroups = [
       'MCP Servers (built & deployed)',
       'Multi-Agent Orchestration',
       'Human-in-the-Loop gates',
-      'Pydantic Structured Outputs'
+      'Pydantic Structured Outputs',
+      'LangGraph'
     ]
   },
   {
@@ -145,7 +146,8 @@ export const skillGroups = [
       'Retrieval-Augmented Generation',
       'Embeddings & Vector Search',
       'FAISS · Pinecone',
-      'Prompt Engineering & guardrails'
+      'Prompt Engineering & guardrails',
+      'NLP'
     ]
   },
   {
@@ -156,7 +158,8 @@ export const skillGroups = [
       'Redis + Celery (async + retry)',
       'PostgreSQL · MySQL · Alembic',
       'WebSockets · REST · JWT',
-      'Microservices · structlog'
+      'Microservices · structlog',
+      'RBAC/CBAC'
     ]
   },
   {
@@ -512,8 +515,8 @@ export const certifications = [
     name: 'AI for Everyone',
     issuer: 'DeepLearning.AI · Coursera',
     year: '2026',
-    status: 'In Progress',
-    pdfUrl: null
+    status: 'Completed',
+    pdfUrl: '/certificates/ai_for_everyone.png'
   }
 ];
 
