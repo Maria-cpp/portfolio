@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Bot, Camera, Database, Layers } from 'lucide-react';
+import { ArrowUpRight, Bot, Camera, Database, Layers, ExternalLink } from 'lucide-react';
 import { zumflux, personal } from '@/lib/data';
+import Tilt3D from './Tilt3D';
 
 const icons = [Bot, Camera, Database, Layers];
 
@@ -66,13 +67,10 @@ export default function Zumflux() {
               {zumflux.services.map((s, i) => {
                 const Icon = icons[i % icons.length];
                 return (
-                  <motion.div
+                  <Tilt3D
                     key={s.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
-                    className="glass rounded-2xl p-5 card-hover"
+                    delay={0.1 + i * 0.06}
+                    className="glass rounded-2xl p-5 border border-white/10 hover:border-accent/40 h-full"
                   >
                     <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan mb-4">
                       <Icon size={18} />
@@ -83,7 +81,7 @@ export default function Zumflux() {
                     <p className="mt-2 text-xs text-white/60 leading-relaxed">
                       {s.description}
                     </p>
-                  </motion.div>
+                  </Tilt3D>
                 );
               })}
             </div>
@@ -102,24 +100,47 @@ export default function Zumflux() {
                 Recent client work
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
-                {zumflux.recentClients.map((client) => (
-                  <div
-                    key={client.name}
-                    className="glass rounded-xl px-4 py-3 flex items-center gap-3"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-pink/20 to-accent/20 border border-accent-pink/20 flex items-center justify-center text-accent-pink font-display font-bold text-xs">
-                      {client.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="text-sm font-display font-semibold">
-                        {client.name}
+                {zumflux.recentClients.map((client) => {
+                  const inner = (
+                    <>
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-pink/20 to-accent/20 border border-accent-pink/20 flex items-center justify-center text-accent-pink font-display font-bold text-xs shrink-0">
+                        {client.name.charAt(0)}
                       </div>
-                      <div className="text-[11px] text-white/55">
-                        {client.kind}
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-sm font-display font-semibold truncate">
+                            {client.name}
+                          </span>
+                          {client.url && (
+                            <ExternalLink size={12} className="text-accent-cyan shrink-0" />
+                          )}
+                        </div>
+                        <div className="text-[11px] text-white/55">
+                          {client.kind}
+                        </div>
                       </div>
+                    </>
+                  );
+
+                  return client.url ? (
+                    <a
+                      key={client.name}
+                      href={client.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="glass rounded-xl px-4 py-3 flex items-center gap-3 border border-white/10 hover:border-accent/40 hover:bg-white/[0.06] transition group"
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div
+                      key={client.name}
+                      className="glass rounded-xl px-4 py-3 flex items-center gap-3 border border-transparent"
+                    >
+                      {inner}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           )}

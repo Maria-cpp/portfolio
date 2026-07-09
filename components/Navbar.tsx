@@ -13,6 +13,7 @@ const links = [
   { href: '#projects', label: 'Projects' },
   { href: '#architecture', label: 'Architecture' },
   { href: '#zumflux', label: 'ZumfluxAI' },
+  { href: '#consulting', label: 'Consulting' },
   { href: '#certifications', label: 'Certs' },
   { href: '#contact', label: 'Contact' }
 ];

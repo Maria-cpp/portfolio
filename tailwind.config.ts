@@ -15,7 +15,9 @@ const config: Config = {
           card: '#10131a'
         },
         accent: {
-          DEFAULT: '#7c5cff',
+          DEFAULT: '#2b4dff',
+          soft: '#5b78ff',
+          deep: '#1533e0',
           cyan: '#22d3ee',
           lime: '#a3e635',
           pink: '#f472b6'

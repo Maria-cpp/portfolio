@@ -555,9 +555,72 @@ export const zumflux = {
     {
       name: 'Nauman Afzal',
       kind: 'Author portfolio site (Mudslinging · Budhoo)'
+    },
+    {
+      name: 'Voyara Tourism',
+      kind: 'Tourism booking experience — live prototype',
+      url: 'https://voyara-tourism-projects.vercel.app/'
+    },
+    {
+      name: 'Naimat Khan Durrani',
+      kind: 'Personal portfolio site — live prototype',
+      url: 'https://naimat-khan-durrani.vercel.app/'
     }
-  ],
+  ] as { name: string; kind: string; url?: string }[],
   cta: 'Hire ZumfluxAI'
+};
+
+// ---------------------------------------------------------------------
+//  Forward Deployed Engineer — positioning
+// ---------------------------------------------------------------------
+
+export const forwardDeployed = {
+  label: 'Forward Deployed Engineer',
+  definition:
+    "A Forward Deployed Engineer (FDE) is a hybrid technical role—part engineer, part consultant, and part problem-solver. They embed directly into enterprise client environments to customize, build, and deploy complex software or AI systems, bridging the gap between a tech company's product and real-world client workflows.",
+  note:
+    'This is exactly how I work: embedded with your team, hands-on in your environment, and accountable for the system running in production — not just a slide deck.'
+};
+
+// ---------------------------------------------------------------------
+//  Consulting & Training services
+// ---------------------------------------------------------------------
+
+export const consulting = {
+  eyebrow: 'Work with me',
+  heading: 'Consulting & Training',
+  intro:
+    'Beyond building AI products, I help organizations adopt AI the right way — turning repetitive work into automation, and upskilling teams so they can keep improving on their own.',
+  services: [
+    {
+      icon: 'Workflow',
+      badge: 'Consultancy',
+      title: 'AI Automation Consultancy',
+      description:
+        'I help companies turn repetitive, manual, day-to-day work into reliable automations. I map your workflows, find the bottlenecks worth fixing, and design AI + automation that frees your team to focus on higher-value work.',
+      points: [
+        'Workflow mapping & pain-point analysis',
+        'Automation & AI opportunity assessment',
+        'Prototype → pilot → production rollout'
+      ],
+      cta: 'Book a free consultation',
+      href: 'mailto:zumfluxai@gmail.com?subject=AI%20Automation%20Consultation'
+    },
+    {
+      icon: 'GraduationCap',
+      badge: 'AI Trainer',
+      title: 'AI Training & Enablement',
+      description:
+        'I train small businesses, solo owners, and solar-industry teams to use AI with confidence — so they can build their own small automations in-house instead of depending on outside vendors for every change.',
+      points: [
+        'Hands-on, role-based AI training',
+        'Practical automations your team can maintain',
+        'Guided by my open AI Bootcamp curriculum'
+      ],
+      cta: 'View the AI Bootcamp',
+      href: 'https://github.com/Maria-cpp/ai-bootcamp-guide'
+    }
+  ]
 };
 
 // ---------------------------------------------------------------------

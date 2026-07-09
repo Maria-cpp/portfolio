@@ -6,6 +6,7 @@ import {
   type LucideIcon
 } from 'lucide-react';
 import { techCategories, techMarquee } from '@/lib/data';
+import Tilt3D from './Tilt3D';
 
 const iconMap: Record<string, LucideIcon> = {
   Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap
@@ -44,13 +45,23 @@ export default function TechStack() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 fade-mask-x"
+          className="mt-12 fade-mask-x flex flex-col gap-3"
         >
           <div className="marquee-track">
             {marqueeItems.map((tech, i) => (
               <div
                 key={`${tech}-${i}`}
-                className="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80"
+                className="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/80 border border-white/10 hover:border-accent/40 hover:text-white transition"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
+          <div className="marquee-track" style={{ animationDirection: 'reverse' }}>
+            {marqueeItems.map((tech, i) => (
+              <div
+                key={`rev-${tech}-${i}`}
+                className="mx-2 glass rounded-full px-5 py-2.5 font-mono text-sm whitespace-nowrap text-white/60 border border-white/10 hover:border-accent-cyan/40 hover:text-white transition"
               >
                 {tech}
               </div>
@@ -63,13 +74,10 @@ export default function TechStack() {
           {techCategories.map((cat, idx) => {
             const Icon = iconMap[cat.icon] ?? Boxes;
             return (
-              <motion.div
+              <Tilt3D
                 key={cat.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.45, delay: idx * 0.05 }}
-                className="glass rounded-2xl p-5 card-hover group"
+                delay={idx * 0.05}
+                className="glass rounded-2xl p-5 border border-white/10 hover:border-accent/40 group h-full"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan group-hover:scale-110 transition-transform">
@@ -87,7 +95,7 @@ export default function TechStack() {
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </Tilt3D>
             );
           })}
         </div>

@@ -7,9 +7,11 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Architecture from '@/components/Architecture';
 import Zumflux from '@/components/Zumflux';
+import Consulting from '@/components/Consulting';
 import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import NeonBar from '@/components/NeonBar';
 
 export default function Home() {
   return (
@@ -24,14 +26,25 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <NeonBar />
         <About />
+        <NeonBar />
         <TechStack />
+        <NeonBar />
         <Skills />
+        <NeonBar />
         <Experience />
+        <NeonBar />
         <Projects />
+        <NeonBar />
         <Architecture />
+        <NeonBar />
         <Zumflux />
+        <NeonBar />
+        <Consulting />
+        <NeonBar />
         <Certifications />
+        <NeonBar />
         <Contact />
         <Footer />
       </div>

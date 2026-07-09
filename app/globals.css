@@ -1,12 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
 
 :root {
   --bg: #08090c;
   --bg-soft: #0c0e13;
   --bg-card: #10131a;
-  --accent: #7c5cff;
+  --accent: #2b4dff;
+  --accent-soft: #5b78ff;
+  --accent-deep: #1533e0;
   --accent-cyan: #22d3ee;
   --accent-lime: #a3e635;
   --accent-pink: #f472b6;
@@ -59,7 +60,7 @@ body {
   background: linear-gradient(
     120deg,
     #ffffff 0%,
-    #c4b5fd 20%,
+    #7aa2ff 20%,
     #22d3ee 45%,
     #a3e635 70%,
     #f472b6 100%
@@ -151,7 +152,7 @@ section {
 
 /* Selection */
 ::selection {
-  background: rgba(124, 92, 255, 0.4);
+  background: rgba(43, 77, 255, 0.45);
   color: #fff;
 }
 
@@ -169,14 +170,14 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #7c5cff 0%, #5b3dff 100%);
+  background: linear-gradient(135deg, #2b4dff 0%, #1533e0 100%);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 30px rgba(124, 92, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 30px rgba(43, 77, 255, 0.35);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 40px rgba(124, 92, 255, 0.5);
+  box-shadow: 0 0 44px rgba(43, 77, 255, 0.6);
   transform: translateY(-1px);
 }
 
@@ -218,7 +219,7 @@ section {
 .card-hover:hover {
   transform: translateY(-4px);
   border-color: var(--border-strong);
-  box-shadow: 0 20px 60px -20px rgba(124, 92, 255, 0.25);
+  box-shadow: 0 20px 60px -20px rgba(43, 77, 255, 0.3);
 }
 
 /* Underline link */
@@ -243,4 +244,106 @@ section {
 .link-underline:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* =====================================================================
+   Moving neon bar — section divider with a light sweeping across it
+   ===================================================================== */
+.neon-bar {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(43, 77, 255, 0.35) 25%,
+    rgba(91, 120, 255, 0.55) 50%,
+    rgba(34, 211, 238, 0.35) 75%,
+    transparent 100%
+  );
+}
+
+.neon-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #5b78ff 40%,
+    #22d3ee 50%,
+    #5b78ff 60%,
+    transparent
+  );
+  filter: blur(2px);
+  opacity: 0.9;
+  transform: translateX(-100%);
+  animation: neonSweep 3.2s linear infinite;
+}
+
+.neon-bar::after {
+  content: '';
+  position: absolute;
+  inset: -3px 0;
+  background: radial-gradient(
+    60% 120% at 50% 50%,
+    rgba(43, 77, 255, 0.45),
+    transparent 70%
+  );
+  filter: blur(6px);
+  opacity: 0.7;
+  transform: translateX(-100%);
+  animation: neonSweep 3.2s linear infinite;
+}
+
+@keyframes neonSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-bar::before,
+  .neon-bar::after {
+    animation: none;
+    transform: translateX(50%);
+  }
+}
+
+/* =====================================================================
+   3D card scroll animation helpers
+   ===================================================================== */
+.perspective {
+  perspective: 1200px;
+}
+
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform;
+}
+
+.tilt-3d:hover {
+  transform: rotateX(6deg) rotateY(-6deg) translateY(-6px) scale(1.015);
+  border-color: var(--border-strong);
+  box-shadow: 0 30px 70px -25px rgba(43, 77, 255, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-3d:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Second marquee lane (offset speed) for layered carousels */
+.marquee-track-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+.marquee-track-slow:hover {
+  animation-play-state: paused;
 }

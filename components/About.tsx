@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Eye, Cpu, Rocket, BookOpen, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { aboutPillars, personal, currentlyLearning } from '@/lib/data';
+import Tilt3D from './Tilt3D';
 
 const iconFor = (label: string) => {
   if (label === 'Vision') return Eye;
@@ -47,13 +48,10 @@ export default function About() {
           {aboutPillars.map((p, i) => {
             const Icon = iconFor(p.label);
             return (
-              <motion.div
+              <Tilt3D
                 key={p.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative glass rounded-3xl p-6 card-hover overflow-hidden"
+                delay={i * 0.08}
+                className="relative glass rounded-3xl p-6 border border-white/10 hover:border-accent/40 overflow-hidden h-full"
               >
                 <div className={`absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br ${accentGlow(p.accent)} to-transparent blur-2xl`} />
                 <div className={`relative inline-flex items-center justify-center w-11 h-11 rounded-xl glass border ${accentClass(p.accent)}`}>
@@ -68,7 +66,7 @@ export default function About() {
                 <p className="mt-3 text-sm text-white/65 leading-relaxed">
                   {p.description}
                 </p>
-              </motion.div>
+              </Tilt3D>
             );
           })}
         </div>
