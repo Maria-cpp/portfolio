@@ -13,19 +13,19 @@ type Diagram = {
 
 const diagrams: Diagram[] = [
   {
-    id: 'fbr',
-    title: 'Federal Track & Trace Video Analytics',
-    subtitle: 'Chapter XIV-BA · Production-line monitoring',
+    id: 'video-analytics',
+    title: 'Real-Time Video Analytics',
+    subtitle: 'Production-line monitoring · Compliance reporting',
     description:
-      'Real-time object detection on multi-line RTSP feeds with structured logging, dashboard views per SKU/line/batch/shift, and API integration to the central control unit (CCU).',
+      'Real-time object detection on multi-line RTSP feeds with structured logging, dashboard views per SKU/line/batch/shift, and API integration to a central compliance reporting system.',
     svg: (
       <svg viewBox="0 0 800 360" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="fbr-grad" x1="0" y1="0" x2="1" y2="0">
+          <linearGradient id="va-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.5" />
             <stop offset="100%" stopColor="#7c5cff" stopOpacity="0.5" />
           </linearGradient>
-          <marker id="fbr-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <marker id="va-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#22d3ee" opacity="0.7" />
           </marker>
         </defs>
@@ -44,16 +44,16 @@ const diagrams: Diagram[] = [
         </g>
 
         {/* Arrow to YOLO */}
-        <path d="M 145 160 L 215 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#fbr-arrow)" opacity="0.7" />
+        <path d="M 145 160 L 215 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#va-arrow)" opacity="0.7" />
 
         {/* Stage 2: YOLOv8 */}
-        <rect x="220" y="120" width="140" height="80" rx="14" fill="url(#fbr-grad)" stroke="rgba(124,92,255,0.5)" strokeWidth="1.5" />
+        <rect x="220" y="120" width="140" height="80" rx="14" fill="url(#va-grad)" stroke="rgba(124,92,255,0.5)" strokeWidth="1.5" />
         <text x="290" y="148" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">YOLOv8</text>
         <text x="290" y="166" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">Ultralytics + lap</text>
         <text x="290" y="182" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Object detection + tracking</text>
 
         {/* Arrow to Counter */}
-        <path d="M 365 160 L 435 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#fbr-arrow)" opacity="0.7" />
+        <path d="M 365 160 L 435 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#va-arrow)" opacity="0.7" />
 
         {/* Stage 3: Counter & Event */}
         <rect x="440" y="120" width="140" height="80" rx="14" fill="rgba(163,230,53,0.08)" stroke="rgba(163,230,53,0.4)" strokeWidth="1.5" />
@@ -62,16 +62,16 @@ const diagrams: Diagram[] = [
         <text x="510" y="182" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Event triggers + timestamps</text>
 
         {/* Arrow to API */}
-        <path d="M 585 160 L 655 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#fbr-arrow)" opacity="0.7" />
+        <path d="M 585 160 L 655 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#va-arrow)" opacity="0.7" />
 
-        {/* Stage 4: FastAPI + CCU */}
+        {/* Stage 4: FastAPI + Reporting */}
         <rect x="660" y="50" width="120" height="60" rx="12" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.4)" />
-        <text x="720" y="80" textAnchor="middle" fill="#f472b6" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">FBR-API</text>
-        <text x="720" y="98" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Track &amp; Trace</text>
+        <text x="720" y="80" textAnchor="middle" fill="#f472b6" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Compliance API</text>
+        <text x="720" y="98" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Compliance feed</text>
 
         <rect x="660" y="130" width="120" height="60" rx="12" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.4)" />
-        <text x="720" y="160" textAnchor="middle" fill="#f472b6" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">CCU</text>
-        <text x="720" y="178" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Federal regulator</text>
+        <text x="720" y="160" textAnchor="middle" fill="#f472b6" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Reporting Hub</text>
+        <text x="720" y="178" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Compliance reporting</text>
 
         <rect x="660" y="210" width="120" height="60" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
         <text x="720" y="240" textAnchor="middle" fill="#e7e9ee" fontFamily="Space Grotesk, sans-serif" fontSize="12" fontWeight="700">Dashboard</text>

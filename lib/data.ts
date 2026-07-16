@@ -54,9 +54,9 @@ export const aboutPillars = [
   },
   {
     label: 'Innovation',
-    title: 'From prototype to production demo in weeks',
+    title: 'From prototype to live deployment in weeks',
     description:
-      'A video-analytics prototype built and demo-ready inside a regulator authorization window. A four-stage HITL attendance system architected and deployed for an enterprise client. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
+      'A real-time video-analytics system demonstrated on-site to the client at their production facility. A four-stage HITL attendance system deployed and running live on-premises. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
     accent: 'pink'
   }
 ] as const;
@@ -306,8 +306,8 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Currently in demonstration / approval phase.',
-      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Currently in demonstration / approval phase.',
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
+      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Deployed live on-premises (LAN) on our own staff in Karachi for real-world training and validation.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
       'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
@@ -398,13 +398,14 @@ export const projects = [
     slug: 'security-vault-service',
     tagline: 'Bank-grade PII tokenization vault with dual-gate unmask + hash-chained audit',
     description:
-      'An independent privacy-vault microservice: detects sensitive data (regex + Luhn, then spaCy NER across 11 entity types), replaces it with deterministic HMAC-SHA256 tokens, envelope-encrypts the reversible mapping at rest, and resolves tokens only behind a dual policy-plus-permission gate. Every operation appends to an immutable SHA-256 hash-chained audit log enforced at the database layer — UPDATE/DELETE/TRUNCATE are rejected by triggers. Versioned keys with in-place rotation, pluggable KMS/HSM key provider, format-preserving and salted masking, Redis caching, Celery async bulk jobs, TLS via nginx, least-privilege DB role, and a Prometheus/Grafana/Alertmanager stack with an AI Alert Analyzer. 86 tests. Enterprise IdP (Keycloak/OIDC) code-complete, deployment pending.',
+      'An independent privacy-vault microservice: detects sensitive data (regex + Luhn, then spaCy NER across 11 entity types), replaces it with deterministic HMAC-SHA256 tokens, envelope-encrypts the reversible mapping at rest, and resolves tokens only behind a dual policy-plus-permission gate. Every operation appends to an immutable SHA-256 hash-chained audit log enforced at the database layer — UPDATE/DELETE/TRUNCATE are rejected by triggers. Versioned keys with in-place rotation, pluggable KMS/HSM key provider, format-preserving and salted masking, Redis caching, Celery async bulk jobs, TLS via nginx, least-privilege DB role, and a Prometheus/Grafana/Alertmanager stack with an AI Alert Analyzer. 86 tests; in internal use at Arwen Tech for active testing and hardening. Enterprise IdP (Keycloak/OIDC) code-complete.',
     tags: ['FastAPI', 'PostgreSQL 16', 'HMAC-SHA256', 'Fernet/AES', 'spaCy NER', 'Redis', 'Celery', 'KMS/HSM', 'Prometheus', 'Docker'],
     repo: null,
     demo: null,
     featured: true,
     highlight: 'Security · Privacy Vault',
-    sector: 'Enterprise'
+    sector: 'Enterprise',
+    extraTag: 'In internal use'
   },
   // 0c — Multilingual NLP Intelligence Platform
   {
@@ -412,39 +413,41 @@ export const projects = [
     slug: 'multilingual-nlp-intelligence',
     tagline: 'Agentic pipeline for low-resource-language public-feedback analysis + AI briefs',
     description:
-      'A multilingual NLP platform that ingests social data across Pakistan’s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection → script normalization/transliteration → NLLB-200 translation to an English pivot → sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Phases 1–5 operational; LoRA training + full observability in progress.',
+      'A multilingual NLP platform that ingests social data across Pakistan’s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection → script normalization/transliteration → NLLB-200 translation to an English pivot → sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Operational internally — running sentiment analysis on live feedback and posts; LoRA training and full observability in progress.',
     tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'Aya 23', 'PyTorch', 'PEFT / LoRA', 'pgvector', 'Qdrant', 'Claude / Grok', 'Next.js'],
     repo: null,
     demo: null,
     featured: true,
     highlight: 'NLP · Agentic Pipeline',
-    sector: 'Enterprise'
+    sector: 'Enterprise',
+    extraTag: 'Operational'
   },
   // 1
   {
     title: 'Video Analytics',
     tagline: 'YOLOv8 production-line counting for regulatory compliance',
     description:
-      'Architected for a regulated-industry client under a national track-and-trace authorization framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: prototype, demonstration-ready.',
+      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
     tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
     repo: null,
     demo: null,
     images: [
-      '/images/video_analytics_fbr/multi_obj_detection.png',
-      '/images/video_analytics_fbr/single object.png',
-      '/images/video_analytics_fbr/moving object.png',
-      '/images/video_analytics_fbr/logs.png'
+      '/images/video_analytics/multi_obj_detection.png',
+      '/images/video_analytics/single object.png',
+      '/images/video_analytics/moving object.png',
+      '/images/video_analytics/logs.png'
     ],
     featured: true,
     highlight: 'Regulated Industry · Compliance',
-    sector: 'Enterprise'
+    sector: 'Enterprise',
+    extraTag: 'Demoed on-site'
   },
   // 2
   {
     title: 'Facial Recognition Attendance System',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
     description:
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: prototype, demonstration-ready.',
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
     tags: ['DeepFace · SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
     repo: null,
     demo: null,
@@ -456,7 +459,8 @@ export const projects = [
     ],
     featured: true,
     highlight: 'Enterprise · HITL',
-    sector: 'Enterprise'
+    sector: 'Enterprise',
+    extraTag: 'Live · on-prem'
   },
   // — Agentic AI Contract Intelligence Platform (GTPL)
   {
@@ -464,13 +468,14 @@ export const projects = [
     slug: 'agentic-contract-intelligence',
     tagline: 'Multi-agent RAG for contract intelligence, JMB automation & legal ops',
     description:
-      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice.',
+      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice. Deployed and in active use by the executive team.',
     tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
     repo: null,
     demo: null,
     featured: true,
     highlight: 'Agentic RAG · Document AI',
-    sector: 'Enterprise'
+    sector: 'Enterprise',
+    extraTag: 'In active use'
   },
   // 3
   {

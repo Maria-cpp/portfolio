@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'Solution Designer & Engineer (self-initiated)',
     org: 'Green Tourism Pvt. Ltd.',
     period: '2024 — 2025',
-    status: 'Delivered as an internal initiative',
+    status: 'Deployed — in active use by the executive team at Green Tourism',
     summary:
       'A LangGraph multi-agent platform that reads contracts, answers questions grounded in their actual text, and automates the governance workflow around them — JMB scheduling, reminders, and Minutes of Meeting. Identified the bottleneck from inside the business and built the solution: the Forward Deployed pattern in practice.',
     tags: [
@@ -220,7 +220,7 @@ export const caseStudies: CaseStudy[] = [
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
     status:
-      'Core production-hardened (86 tests) · Enterprise IdP integration code-complete, deployment pending · Ops observability in progress',
+      'In internal use at Arwen Tech (active testing & hardening) · Core production-hardened, 86 tests · Enterprise IdP integration code-complete · Ops observability in progress',
     summary:
       'An independent privacy-vault microservice implementing detect → tokenize → protect → gate access. Lets an enterprise use LLMs and third-party analytics on regulated data without exposing raw PII, with an audit trail a regulator can actually accept.',
     tags: [
@@ -444,7 +444,7 @@ export const caseStudies: CaseStudy[] = [
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
     status:
-      'Phases 1–5 operational (pipeline, briefing agent, connectors, dashboard, human review) · LoRA training + full observability in progress · 107 backend tests passing',
+      'Operational internally — running sentiment analysis on live feedback & posts (pipeline, briefing agent, connectors, dashboard, human review) · LoRA training + full observability in progress · 107 backend tests passing',
     summary:
       'A multilingual NLP platform that ingests public social data across languages mainstream NLP handles poorly, runs it through an agentic pipeline, and produces validated, actionable analysis — improving its own sovereign models through a human-review and active-learning loop.',
     tags: [

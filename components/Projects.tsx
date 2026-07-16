@@ -121,22 +121,35 @@ export default function Projects() {
                 {/* Collapsed header — always visible */}
                 <button
                   onClick={() => toggleProject(i)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between gap-3 p-5 md:p-6 text-left cursor-pointer"
                 >
-                  <div className="flex items-center gap-3 flex-wrap min-w-0">
-                    <h3 className="font-display text-lg md:text-xl font-semibold truncate">
-                      {proj.title}
-                    </h3>
-                    {proj.highlight && (
-                      <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border shrink-0 ${highlightColor(proj.sector)}`}>
-                        <Sparkles size={10} /> {proj.highlight}
+                  <div className="flex items-center gap-3 md:gap-4 min-w-0">
+                    {hasImages && (
+                      <div className="relative hidden sm:block w-16 h-12 md:w-20 md:h-14 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                        <Image
+                          src={proj.images![0]}
+                          alt={`${proj.title} preview`}
+                          fill
+                          sizes="80px"
+                          className="object-cover"
+                        />
                       </div>
                     )}
-                    {proj.extraTag && (
-                      <div className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border bg-accent-lime/15 text-accent-lime border-accent-lime/30 shrink-0">
-                        {proj.extraTag}
-                      </div>
-                    )}
+                    <div className="flex items-center gap-3 flex-wrap min-w-0">
+                      <h3 className="font-display text-lg md:text-xl font-semibold truncate">
+                        {proj.title}
+                      </h3>
+                      {proj.highlight && (
+                        <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border shrink-0 ${highlightColor(proj.sector)}`}>
+                          <Sparkles size={10} /> {proj.highlight}
+                        </div>
+                      )}
+                      {proj.extraTag && (
+                        <div className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border bg-accent-lime/15 text-accent-lime border-accent-lime/30 shrink-0">
+                          {proj.extraTag}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <ChevronDown
                     size={20}

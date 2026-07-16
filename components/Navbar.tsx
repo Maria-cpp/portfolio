@@ -50,7 +50,7 @@ export default function Navbar() {
           <div
             className={`flex items-center justify-between transition-all duration-300 ${
               scrolled
-                ? 'glass-strong rounded-full px-4 py-2.5 shadow-lg'
+                ? 'nav-scrolled rounded-full px-4 py-2.5 shadow-lg'
                 : 'px-2'
             }`}
           >
@@ -107,7 +107,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed top-[72px] left-4 right-4 z-40 lg:hidden glass-strong rounded-2xl p-4"
+            className="fixed top-[72px] left-4 right-4 z-40 lg:hidden nav-scrolled rounded-2xl p-4"
           >
             <div className="flex flex-col gap-1">
               {links.map((l) => (
