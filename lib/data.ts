@@ -388,20 +388,6 @@ export const experience = [
 // ---------------------------------------------------------------------
 
 export const projects = [
-  // 0 — Agentic AI Contract Intelligence Platform (GTPL)
-  {
-    title: 'Agentic AI Contract Intelligence Platform',
-    slug: 'agentic-contract-intelligence',
-    tagline: 'Multi-agent RAG for contract intelligence, JMB automation & legal ops',
-    description:
-      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice.',
-    tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
-    repo: null,
-    demo: null,
-    featured: true,
-    highlight: 'Agentic RAG · Document AI',
-    sector: 'Enterprise'
-  },
   // 0b — Security Vault Service
   {
     title: 'Security Vault Service',
@@ -466,6 +452,20 @@ export const projects = [
     ],
     featured: true,
     highlight: 'Enterprise · HITL',
+    sector: 'Enterprise'
+  },
+  // — Agentic AI Contract Intelligence Platform (GTPL)
+  {
+    title: 'Agentic AI Contract Intelligence Platform',
+    slug: 'agentic-contract-intelligence',
+    tagline: 'Multi-agent RAG for contract intelligence, JMB automation & legal ops',
+    description:
+      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice.',
+    tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'Agentic RAG · Document AI',
     sector: 'Enterprise'
   },
   // 3
