@@ -462,7 +462,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: [
       { layer: 'Backend', tech: 'Python, FastAPI' },
-      { layer: 'Frontend', tech: 'Next.js 14, TailwindCSS, shadcn/ui' },
+      { layer: 'Frontend', tech: 'Next.js, TailwindCSS, shadcn/ui' },
       { layer: 'Messaging', tech: 'Apache Kafka' },
       { layer: 'Database', tech: 'PostgreSQL + pgvector' },
       { layer: 'Vector DB', tech: 'Qdrant' },

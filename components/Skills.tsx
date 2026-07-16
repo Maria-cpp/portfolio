@@ -21,7 +21,7 @@ export default function Skills() {
             <span className="gradient-text">To The Table</span>
           </h2>
           <p className="mt-4 text-white/65">
-            Six core practice areas — each one battle-tested in production work.
+            The capabilities I deliver on — practice areas proven in production work.
           </p>
         </motion.div>
 

@@ -55,8 +55,6 @@ export default function Hero() {
               className="mt-6 h-7 flex items-center gap-2 font-mono text-sm text-white/70"
             >
               <Sparkles size={14} className="text-accent-cyan" />
-              <span>{personal.title}</span>
-              <span className="text-white/30">/</span>
               <motion.span
                 key={tagIndex}
                 initial={{ opacity: 0, y: 8 }}
@@ -140,8 +138,8 @@ export default function Hero() {
 
                 <div className="font-mono text-xs space-y-1.5">
                   <div><span className="text-accent-pink">const</span> <span className="text-accent-cyan">maria</span> <span className="text-white/40">=</span> {`{`}</div>
-                  <div className="pl-4"><span className="text-white/70">role:</span> <span className="text-accent-lime">&apos;AI / ML Engineer&apos;</span>,</div>
-                  <div className="pl-4"><span className="text-white/70">focus:</span> [<span className="text-accent-lime">&apos;Agentic AI&apos;</span>, <span className="text-accent-lime">&apos;CV&apos;</span>],</div>
+                  <div className="pl-4"><span className="text-white/70">role:</span> <span className="text-accent-lime">&apos;Forward Deployed Engineer&apos;</span>,</div>
+                  <div className="pl-4"><span className="text-white/70">focus:</span> [<span className="text-accent-lime">&apos;Agentic AI&apos;</span>, <span className="text-accent-lime">&apos;CV&apos;</span>, <span className="text-accent-lime">&apos;NLP&apos;</span>],</div>
                   <div className="pl-4"><span className="text-white/70">stack:</span> <span className="text-accent-lime">&apos;FastAPI · Next · Docker&apos;</span>,</div>
                   <div className="pl-4"><span className="text-white/70">founded:</span> <span className="text-accent-lime">&apos;ZumfluxAI&apos;</span>,</div>
                   <div className="pl-4"><span className="text-white/70">based:</span> <span className="text-accent-lime">&apos;Islamabad, PK&apos;</span>,</div>

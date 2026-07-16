@@ -13,6 +13,8 @@ export const personal = {
     'AI Solutions Architect',
     'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
+    'NLP · Multilingual & Low-Resource',
+    'Conversational & Voice Agents — in progress',
     'Enterprise & Regulated-Industry AI',
     'Founder @ ZumfluxAI',
     'Founder @ ZUM Services Providers'
@@ -28,7 +30,7 @@ export const personal = {
   shortBio:
     'Forward Deployed Engineer & AI Solutions Architect. I embed with clients, map their operations, and ship production AI they can actually run — real-time video analytics, four-stage HITL facial recognition, MCP-native agentic systems, and bank-grade data protection. Currently running three live FDE engagements across tourism, automotive, and travel.',
   longBio:
-    'I’m a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across ~10 years in software and technology (the last ~2 focused intensively on production AI/ML), I’ve led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run three active Forward Deployed engagements — automating manual operations end-to-end for tourism, automotive, and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.'
+    'I’m a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across roughly 10 years combining corporate and software roles — about 6 in software and technology and ~4 working with AI/ML, the last ~2 focused intensively on production systems — I’ve led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run three active Forward Deployed engagements — automating manual operations end-to-end for tourism, automotive, and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.'
 };
 
 // ---------------------------------------------------------------------
@@ -87,7 +89,7 @@ export const techCategories = [
   {
     name: 'Frontend',
     icon: 'Layout',
-    items: ['Next.js 14', 'React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'Framer Motion']
+    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'Framer Motion']
   },
   {
     name: 'MLOps & Observability',
@@ -131,8 +133,8 @@ export const techCategories = [
     name: 'Web & CMS',
     icon: 'Globe',
     items: [
-      'WordPress', 'WooCommerce', 'Custom themes', 'PHP plugin development',
-      'Payment gateways', 'REST API integrations', 'Performance optimization', 'Client deployments'
+      'WordPress', 'Custom themes', 'PHP plugin development',
+      'REST API integrations', 'Performance optimization', 'Client deployments'
     ]
   },
   {
@@ -152,7 +154,7 @@ export const techMarquee = [
   'MCP', 'YOLOv8', 'OpenCV', 'DeepFace',
   'PostgreSQL', 'Redis', 'Celery',
   'Docker', 'GitHub Actions', 'Tailwind CSS',
-  'Pinecone', 'FAISS', 'LangChain', 'LangGraph', 'NLP',
+  'Pinecone', 'FAISS', 'LangChain', 'LangGraph', 'n8n', 'NLP',
   'Grafana', 'Prometheus', 'Alertmanager',
   'Playwright', 'Node.js', 'Streamlit'
 ];
@@ -171,7 +173,10 @@ export const skillGroups = [
       'Multi-Agent Orchestration',
       'Human-in-the-Loop gates',
       'Pydantic Structured Outputs',
-      'LangGraph'
+      'LangGraph',
+      'n8n workflow automation',
+      'Conversational agents (in progress)',
+      'Voice / calling agents (in progress)'
     ]
   },
   {
@@ -194,7 +199,7 @@ export const skillGroups = [
       'Embeddings & Vector Search',
       'FAISS · Pinecone',
       'Prompt Engineering & guardrails',
-      'NLP'
+      'NLP — multilingual & low-resource (Urdu, Roman Urdu, Pashto…)'
     ]
   },
   {
@@ -213,7 +218,7 @@ export const skillGroups = [
     title: 'Frontend',
     blurb: 'Modern React stacks for AI-driven dashboards and operator tools.',
     items: [
-      'Next.js 14 (App Router)',
+      'Next.js (App Router)',
       'React · TypeScript',
       'Tailwind CSS',
       'Streamlit (rapid prototyping)',
@@ -268,10 +273,9 @@ export const skillGroups = [
   },
   {
     title: 'Web & CMS',
-    blurb: 'Production WordPress and WooCommerce delivery — custom themes, PHP plugins, and integrations.',
+    blurb: 'Production WordPress delivery — custom themes, PHP plugins, and integrations.',
     items: [
       'WordPress · custom themes',
-      'WooCommerce · payment gateways',
       'PHP plugin development',
       'REST API & third-party integrations',
       'Performance optimization · client deployments'
@@ -338,12 +342,12 @@ export const experience = [
       'Corporate Affairs & Legal Operations (primary role): Served as the primary legal and regulatory liaison — managing stakeholder communication, compliance workflows, contract reviews, executive correspondence, and coordination across C-suite and cross-functional teams.',
       'Coordinated corporate governance including Board of Directors (BoD) and Joint Management Board (JMB) meetings — preparing agendas, managing documentation, recording minutes, and tracking action items. Drafted and reviewed contracts, MoUs, and regulatory filings ensuring compliance with corporate law, procurement regulations, and internal governance policies.',
       'Collaborated with external legal counsel and senior leadership on compliance reviews, risk assessments, and governance initiatives; implemented structured document management to improve audit readiness, traceability, and regulatory reporting.',
-      'Web & technical systems: Led delivery of the corporate WordPress website and Souvenir Shop (WooCommerce) — production-grade custom themes and PHP plugins integrating REST APIs, payment gateways, and third-party services, plus contributions to internal booking/reservation applications with Git-based version control.'
+      'Web & technical systems: Led delivery of the corporate WordPress website and Souvenir Shop — production-grade custom themes and PHP plugins integrating REST APIs and third-party services, with a cash-on-delivery checkout flow per client requirement, plus contributions to internal booking/reservation applications with Git-based version control.'
     ],
-    stack: ['Python', 'FastAPI', 'Claude', 'LangGraph', 'RAG', 'PostgreSQL / pgvector', 'OCR', 'WordPress', 'WooCommerce', 'PHP', 'Corporate Governance', 'Legal Operations']
+    stack: ['Python', 'FastAPI', 'Claude', 'LangGraph', 'RAG', 'PostgreSQL / pgvector', 'OCR', 'WordPress', 'PHP', 'Corporate Governance', 'Legal Operations']
   },
   {
-    role: 'Co-Founder & Full-Stack Developer',
+    role: 'Co-Founder · Full-Stack Developer & Applied Generative AI',
     company: 'ZUM Services Providers',
     location: 'Pakistan',
     period: '2023 — 2025',
@@ -567,7 +571,7 @@ export const projects = [
     tagline: 'Construction-finance ledger with AI fraud detection',
     description:
       'Centralized finance, ledger, and fraud-detection platform for construction companies managing multiple sites, vendors, and contractors. Features purchase tracking, ledger reconciliation, duplicate detection engine, audit logging, and AI-assisted fraud prevention. Phase 0 prototype shipped; Phase 1 in progress.',
-    tags: ['Next.js 14', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
+    tags: ['Next.js', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
     repo: null,
     demo: null,
     featured: true,
@@ -762,7 +766,11 @@ export const consulting = {
         'Prototype → pilot → production rollout'
       ],
       cta: 'Book a free consultation',
-      href: 'mailto:zumfluxai@gmail.com?subject=AI%20Automation%20Consultation'
+      href: 'mailto:zumfluxai@gmail.com?subject=AI%20Automation%20Consultation',
+      whatsapp: {
+        label: 'WhatsApp me',
+        href: 'https://wa.me/923066775777?text=Hi%20Maria%2C%20I%27d%20like%20to%20book%20a%20free%20AI%20consultation.'
+      }
     },
     {
       icon: 'GraduationCap',
@@ -776,7 +784,8 @@ export const consulting = {
         'Guided by my open AI Bootcamp curriculum'
       ],
       cta: 'View the AI Bootcamp',
-      href: 'https://github.com/Maria-cpp/ai-bootcamp-guide'
+      href: 'https://github.com/Maria-cpp/ai-bootcamp-guide',
+      whatsapp: null
     }
   ]
 };
@@ -799,7 +808,7 @@ export const education = [
 
 export const stats = [
   { label: 'Active FDE client engagements', value: '3' },
-  { label: 'Yrs software · ~2 in production AI', value: '10+' },
+  { label: 'Yrs overall · 6+ software · 4+ in AI', value: '10+' },
   { label: 'Systems delivered — prod, pilot & demo', value: '15+' },
   { label: 'AI / agentic certifications', value: '5' }
 ];

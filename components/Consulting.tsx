@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Workflow, GraduationCap, ArrowUpRight, Check, Zap } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { consulting, forwardDeployed } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
@@ -89,15 +90,34 @@ export default function Consulting() {
                     ))}
                   </ul>
 
-                  <a
-                    href={s.href}
-                    target={external ? '_blank' : undefined}
-                    rel={external ? 'noreferrer' : undefined}
-                    className="mt-7 btn btn-primary w-fit"
-                  >
-                    {s.cta}
-                    <ArrowUpRight size={16} />
-                  </a>
+                  <div className="mt-7 flex flex-wrap items-center gap-3">
+                    <a
+                      href={s.href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noreferrer' : undefined}
+                      className="btn btn-primary w-fit"
+                    >
+                      {s.cta}
+                      <ArrowUpRight size={16} />
+                    </a>
+                    {s.whatsapp && (
+                      <a
+                        href={s.whatsapp.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={s.whatsapp.label}
+                        className="btn w-fit hover:brightness-125"
+                        style={{
+                          background: 'rgba(37, 211, 102, 0.12)',
+                          color: '#25D366',
+                          border: '1px solid rgba(37, 211, 102, 0.45)'
+                        }}
+                      >
+                        <FaWhatsapp size={17} />
+                        {s.whatsapp.label}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </Tilt3D>
             );

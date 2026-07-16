@@ -36,8 +36,8 @@ export default function TechStack() {
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">
-            A curated set across agentic AI, computer vision, backend, frontend,
-            and observability — the same stack I use to ship production systems.
+            The day-to-day toolbox I build with — across agentic AI, computer vision,
+            backend, frontend, and observability.
           </p>
         </motion.div>
 
