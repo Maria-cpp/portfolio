@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X, ChevronDown } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X, ChevronDown, FileText } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { projects } from '@/lib/data';
 
 const highlightColor = (sector?: string) => {
@@ -95,6 +96,7 @@ export default function Projects() {
         <div className="mt-14 flex flex-col gap-3">
           {projects.map((p, i) => {
             const proj = p as typeof p & {
+              slug?: string;
               sector?: string;
               videoUrl?: string | null;
               videoUrl2?: string | null;
@@ -275,6 +277,14 @@ export default function Projects() {
                         </div>
 
                         <div className="mt-6 flex items-center gap-3">
+                          {proj.slug && (
+                            <Link
+                              href={`/projects/${proj.slug}`}
+                              className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/15 px-3 py-1.5 text-sm font-medium text-accent transition hover:bg-accent/25"
+                            >
+                              <FileText size={14} /> Read case study
+                            </Link>
+                          )}
                           {proj.repo && (
                             <a
                               href={proj.repo}
@@ -309,7 +319,7 @@ export default function Projects() {
                               <Play size={14} /> Watch demo above
                             </span>
                           )}
-                          {!proj.repo && !proj.demo && !hasVideo && !hasImages && (
+                          {!proj.repo && !proj.demo && !hasVideo && !hasImages && !proj.slug && (
                             <span className="text-xs text-white/40 italic">
                               Private — available on request
                             </span>

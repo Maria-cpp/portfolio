@@ -3,13 +3,15 @@
 import { motion } from 'framer-motion';
 import {
   Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
+  Cloud, FileSearch, ShieldCheck, Globe, Handshake,
   type LucideIcon
 } from 'lucide-react';
 import { techCategories, techMarquee } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
 const iconMap: Record<string, LucideIcon> = {
-  Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap
+  Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
+  Cloud, FileSearch, ShieldCheck, Globe, Handshake
 };
 
 export default function TechStack() {

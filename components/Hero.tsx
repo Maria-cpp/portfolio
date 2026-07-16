@@ -34,7 +34,7 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-lime" />
               </span>
               <span className="text-xs text-white/80 font-mono">
-                Available for AI engineering work
+                {personal.availability}
               </span>
             </motion.div>
 

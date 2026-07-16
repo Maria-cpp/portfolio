@@ -7,8 +7,9 @@ export const personal = {
   name: 'Maria Naseem',
   firstName: 'Maria',
   initials: 'MN',
-  title: 'AI / ML Engineer / Full-Stack Developer',
+  title: 'Forward Deployed Engineer · AI Solutions Architect',
   taglines: [
+    'Forward Deployed Engineer',
     'AI Solutions Architect',
     'Agentic AI · MCP · HITL',
     'Computer Vision Engineer',
@@ -17,16 +18,17 @@ export const personal = {
     'Founder @ ZUM Services Providers'
   ],
   location: 'Islamabad, Pakistan',
+  availability: 'Open to relocation & remote — worldwide',
   email: 'marianaseem99@gmail.com',
   businessEmail: 'zumfluxai@gmail.com',
   phone: '+92 306 6775777',
   github: 'https://github.com/Maria-cpp',
-  linkedin: 'https://www.linkedin.com/in/maria-naseem-343594128/',
+  linkedin: 'https://www.linkedin.com/in/maria-naseem/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'AI Solutions Architect shipping production AI for regulated and enterprise clients. Real-time video analytics, four-stage HITL facial-recognition attendance system, and an MCP-native agentic observability stack — all in production-grade Python + Next.js.',
+    'Forward Deployed Engineer & AI Solutions Architect. I embed with clients, map their operations, and ship production AI they can actually run — real-time video analytics, four-stage HITL facial recognition, MCP-native agentic systems, and bank-grade data protection. Currently running three live FDE engagements across tourism, automotive, and travel.',
   longBio:
-    'I architect AI systems for regulated and enterprise delivery — the kind that have to pass live demonstrations, audit trails, and executive-level scrutiny. With 5+ years building AI and 10+ years professional experience, I lead architecture for a real-time video-analytics platform under regulatory compliance, a four-stage HITL facial-recognition attendance system, and an MCP-server-native agentic observability stack. I also founded ZumfluxAI to deliver this craft to teams shipping real-world AI products. Beyond engineering, I bring rare stakeholder fluency — coordinating BOD-level meetings and engaging with senior executives and stakeholders during my time leading corporate affairs at a national tourism company.'
+    'I’m a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across ~10 years in software and technology (the last ~2 focused intensively on production AI/ML), I’ve led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run three active Forward Deployed engagements — automating manual operations end-to-end for tourism, automotive, and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.'
 };
 
 // ---------------------------------------------------------------------
@@ -80,7 +82,7 @@ export const techCategories = [
   {
     name: 'Backend',
     icon: 'Server',
-    items: ['FastAPI', 'Python', 'Node.js', 'Redis', 'Celery', 'PostgreSQL', 'MySQL', 'WebSockets', 'RBAC/CBAC']
+    items: ['FastAPI', 'Python', 'Node.js', 'Redis', 'Celery', 'PostgreSQL', 'SQLAlchemy', 'MySQL', 'WebSockets', 'RBAC/CBAC']
   },
   {
     name: 'Frontend',
@@ -96,6 +98,51 @@ export const techCategories = [
     name: 'DevOps',
     icon: 'Boxes',
     items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD', 'systemd', 'certbot']
+  },
+  {
+    name: 'Cloud',
+    icon: 'Cloud',
+    items: [
+      'Microsoft Azure — production deployment',
+      'Azure Container Apps',
+      'Containerized deployment (Docker)',
+      'Azure AI Foundry (exploring)'
+    ]
+  },
+  {
+    name: 'Document Intelligence & RAG',
+    icon: 'FileSearch',
+    items: [
+      'RAG (Retrieval-Augmented Generation)', 'PostgreSQL / pgvector', 'Qdrant', 'Semantic Search',
+      'OCR (PaddleOCR · pdfplumber)', 'Regex + rule-based parsing',
+      'LLM-assisted validation', 'Confidence scoring', 'Metadata extraction', 'Audit logging'
+    ]
+  },
+  {
+    name: 'Security & Privacy',
+    icon: 'ShieldCheck',
+    items: [
+      'PII detection & tokenization', 'Envelope encryption (Fernet/AES)', 'HMAC-SHA256',
+      'Hash-chained audit logs', 'KMS / HSM key providers', 'Key rotation',
+      'RBAC · dual-gate authorization', 'SIEM forwarding', 'spaCy NER'
+    ]
+  },
+  {
+    name: 'Web & CMS',
+    icon: 'Globe',
+    items: [
+      'WordPress', 'WooCommerce', 'Custom themes', 'PHP plugin development',
+      'Payment gateways', 'REST API integrations', 'Performance optimization', 'Client deployments'
+    ]
+  },
+  {
+    name: 'Consulting & Business',
+    icon: 'Handshake',
+    items: [
+      'Requirement gathering', 'Workflow mapping', 'Stakeholder communication',
+      'Solution architecture', 'Technical consulting', 'Client acquisition & delivery',
+      'Corporate governance (BoD / JMB)', 'Contract review & compliance', 'Legal operations'
+    ]
   }
 ] as const;
 
@@ -174,6 +221,63 @@ export const skillGroups = [
     ]
   },
   {
+    title: 'Consulting & Delivery',
+    blurb: 'The forward-deployed half — embedding with stakeholders, mapping workflows, and owning delivery end to end.',
+    items: [
+      'Requirement gathering & workflow mapping',
+      'Stakeholder & C-suite communication',
+      'Solution architecture',
+      'Client acquisition & service delivery',
+      'Corporate governance · BoD / JMB coordination',
+      'Contract review · regulatory compliance'
+    ]
+  },
+  {
+    title: 'Document Intelligence & RAG',
+    blurb: 'Deterministic-first extraction — rules and OCR before the LLM, with confidence gates and audit trails.',
+    items: [
+      'RAG over PostgreSQL / pgvector',
+      'Semantic search across enterprise records',
+      'OCR + regex + rule-based extraction',
+      'LLM-assisted validation · confidence scoring',
+      'Contract & document metadata extraction',
+      'Audit logging · validation pipelines'
+    ]
+  },
+  {
+    title: 'Cloud',
+    blurb: 'Production AI workloads on Microsoft Azure alongside self-hosted Linux stacks.',
+    items: [
+      'Microsoft Azure — deployed real-time video analytics to production',
+      'Azure Container Apps',
+      'Docker containerized deployment · GitHub Actions CI/CD',
+      'Azure AI Foundry (exploring)'
+    ]
+  },
+  {
+    title: 'Security & Privacy Engineering',
+    blurb: 'Bank-grade data protection — tokenization, envelope encryption, and tamper-evident audit trails.',
+    items: [
+      'PII detection (regex + Luhn + spaCy NER)',
+      'Deterministic tokenization (HMAC-SHA256)',
+      'Envelope encryption · versioned keys · rotation',
+      'Hash-chained, append-only audit logs',
+      'Dual-gate authorization · RBAC',
+      'KMS / HSM key providers · SIEM forwarding'
+    ]
+  },
+  {
+    title: 'Web & CMS',
+    blurb: 'Production WordPress and WooCommerce delivery — custom themes, PHP plugins, and integrations.',
+    items: [
+      'WordPress · custom themes',
+      'WooCommerce · payment gateways',
+      'PHP plugin development',
+      'REST API & third-party integrations',
+      'Performance optimization · client deployments'
+    ]
+  },
+  {
     title: 'MLOps · DevOps · Observability',
     blurb: 'Container-first deployments with monitoring and CI/CD.',
     items: [
@@ -198,7 +302,7 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Currently in demonstration / approval phase.',
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Currently in demonstration / approval phase.',
       'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Currently in demonstration / approval phase.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
@@ -206,7 +310,7 @@ export const experience = [
       'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
       'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
     ],
-    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
   },
   {
     role: 'Founder',
@@ -216,20 +320,27 @@ export const experience = [
     current: true,
     bullets: [
       'Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.',
+      'Running three active Forward Deployed engagements — embedding with tourism, automotive, and travel-agency clients to map operations and automate manual workflows end-to-end. Case studies to follow as builds complete.',
       'Active client engagements: SitesBuildOps (construction-finance fraud-detection platform) and the Nauman Afzal author portfolio.'
     ],
     stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
   },
   {
-    role: 'Executive Coordinator — Corporate Affairs | Digital Operations',
+    role: 'Corporate Affairs, Legal Operations & AI Solutions Engineer',
     company: 'Green Tourism Pvt. Ltd.',
     location: 'Islamabad, Pakistan',
     period: '2024 — 2025',
     bullets: [
-      'Operated as the bridge between the CEO and senior stakeholder ecosystem — coordinating with executives and key decision-makers across multiple regions. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
-      'Concurrently led digital operations — corporate web presence, e-commerce, API integrations, and workflow automation.'
+      'AI Solutions & Forward Deployed Engineering (self-initiated): Proactively identified operational inefficiencies in contract and governance workflows and independently designed an Agentic AI Contract Intelligence Platform to automate legal operations and executive coordination — working in a Forward Deployed capacity, collaborating directly with business stakeholders to understand requirements and rapidly deliver AI-powered workflow automation.',
+      'Designed a multi-agent architecture using Python, FastAPI, Claude, LangGraph, and RAG for contract ingestion, information extraction, semantic search, validation, and workflow orchestration.',
+      'Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata — duration, site details, revenue share, signatories, contact information, and JMB schedules — and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering.',
+      'Automated JMB scheduling, meeting reminders, Minutes of Meeting (MoM) management, follow-up email generation, and contract lifecycle workflows — engineering RESTful APIs, modular AI services, confidence scoring, validation pipelines, and audit logging following clean-architecture principles for scalable enterprise deployment.',
+      'Corporate Affairs & Legal Operations (primary role): Served as the primary legal and regulatory liaison — managing stakeholder communication, compliance workflows, contract reviews, executive correspondence, and coordination across C-suite and cross-functional teams.',
+      'Coordinated corporate governance including Board of Directors (BoD) and Joint Management Board (JMB) meetings — preparing agendas, managing documentation, recording minutes, and tracking action items. Drafted and reviewed contracts, MoUs, and regulatory filings ensuring compliance with corporate law, procurement regulations, and internal governance policies.',
+      'Collaborated with external legal counsel and senior leadership on compliance reviews, risk assessments, and governance initiatives; implemented structured document management to improve audit readiness, traceability, and regulatory reporting.',
+      'Web & technical systems: Led delivery of the corporate WordPress website and Souvenir Shop (WooCommerce) — production-grade custom themes and PHP plugins integrating REST APIs, payment gateways, and third-party services, plus contributions to internal booking/reservation applications with Git-based version control.'
     ],
-    stack: ['Stakeholder Engagement', 'BOD Operations', 'Corporate Liaison', 'Digital Operations']
+    stack: ['Python', 'FastAPI', 'Claude', 'LangGraph', 'RAG', 'PostgreSQL / pgvector', 'OCR', 'WordPress', 'WooCommerce', 'PHP', 'Corporate Governance', 'Legal Operations']
   },
   {
     role: 'Co-Founder & Full-Stack Developer',
@@ -237,10 +348,15 @@ export const experience = [
     location: 'Pakistan',
     period: '2023 — 2025',
     bullets: [
-      'Co-founded a multi-services company and served as the primary technical lead, driving architecture, system design, and end-to-end delivery across the full stack (FastAPI, Next.js, PostgreSQL, Docker). Established CI/CD practices using GitHub Actions and automated release pipelines.',
-      'Designed and delivered solar solution proposals and technical system layouts while leading all digital operations, including website development, marketing initiatives, branding, and digital content creation.'
+      'Co-founded ZUM Services Providers and managed full end-to-end product development — building the full-stack platform from scratch while simultaneously running business operations, client acquisition, and service delivery.',
+      'Designed and developed production-ready web applications with RESTful API design, backend business logic in Python/FastAPI, and frontend interfaces — owning the complete software development lifecycle independently.',
+      'Designed and managed PostgreSQL databases — schemas, relationships, and optimized queries using SQLAlchemy ORM.',
+      'Containerized all backend services with Docker and implemented automated CI/CD pipelines via GitHub Actions, ensuring reliable, repeatable production deployments.',
+      'Managed the end-to-end product lifecycle — balancing technical execution with operational ownership across development, deployment, maintenance, and client communication.',
+      'Applied generative AI (ChatGPT) with structured prompt engineering to accelerate marketing and digital content production for the business — an early, practical adoption of LLM tooling to cut content turnaround and cost.',
+      'Delivered solar solution proposals and technical system layouts while leading digital operations — website development, marketing, branding, and digital content creation.'
     ],
-    stack: ['FastAPI', 'Next.js', 'PostgreSQL', 'Docker', 'GitHub Actions']
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'GitHub Actions', 'CI/CD', 'REST APIs', 'ChatGPT · Prompt Engineering']
   },
   {
     role: 'Blockchain Developer',
@@ -272,13 +388,55 @@ export const experience = [
 // ---------------------------------------------------------------------
 
 export const projects = [
+  // 0 — Agentic AI Contract Intelligence Platform (GTPL)
+  {
+    title: 'Agentic AI Contract Intelligence Platform',
+    slug: 'agentic-contract-intelligence',
+    tagline: 'Multi-agent RAG for contract intelligence, JMB automation & legal ops',
+    description:
+      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice.',
+    tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'Agentic RAG · Document AI',
+    sector: 'Enterprise'
+  },
+  // 0b — Security Vault Service
+  {
+    title: 'Security Vault Service',
+    slug: 'security-vault-service',
+    tagline: 'Bank-grade PII tokenization vault with dual-gate unmask + hash-chained audit',
+    description:
+      'An independent privacy-vault microservice: detects sensitive data (regex + Luhn, then spaCy NER across 11 entity types), replaces it with deterministic HMAC-SHA256 tokens, envelope-encrypts the reversible mapping at rest, and resolves tokens only behind a dual policy-plus-permission gate. Every operation appends to an immutable SHA-256 hash-chained audit log enforced at the database layer — UPDATE/DELETE/TRUNCATE are rejected by triggers. Versioned keys with in-place rotation, pluggable KMS/HSM key provider, format-preserving and salted masking, Redis caching, Celery async bulk jobs, TLS via nginx, least-privilege DB role, and a Prometheus/Grafana/Alertmanager stack with an AI Alert Analyzer. 86 tests. Enterprise IdP (Keycloak/OIDC) code-complete, deployment pending.',
+    tags: ['FastAPI', 'PostgreSQL 16', 'HMAC-SHA256', 'Fernet/AES', 'spaCy NER', 'Redis', 'Celery', 'KMS/HSM', 'Prometheus', 'Docker'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'Security · Privacy Vault',
+    sector: 'Enterprise'
+  },
+  // 0c — Multilingual NLP Intelligence Platform
+  {
+    title: 'Multilingual NLP Intelligence Platform',
+    slug: 'multilingual-nlp-intelligence',
+    tagline: 'Agentic pipeline for low-resource-language public-feedback analysis + AI briefs',
+    description:
+      'A multilingual NLP platform that ingests social data across Pakistan’s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection → script normalization/transliteration → NLLB-200 translation to an English pivot → sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Phases 1–5 operational; LoRA training + full observability in progress.',
+    tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'Aya 23', 'PyTorch', 'PEFT / LoRA', 'pgvector', 'Qdrant', 'Claude / Grok', 'Next.js'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'NLP · Agentic Pipeline',
+    sector: 'Enterprise'
+  },
   // 1
   {
     title: 'Video Analytics',
     tagline: 'YOLOv8 production-line counting for regulatory compliance',
     description:
-      'Architected for a regulated-industry client under a national track-and-trace authorization framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Status: prototype, demonstration-ready.',
-    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker'],
+      'Architected for a regulated-industry client under a national track-and-trace authorization framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: prototype, demonstration-ready.',
+    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
     repo: null,
     demo: null,
     images: [
@@ -640,10 +798,10 @@ export const education = [
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Years building AI (10+ total)', value: '5+' },
-  { label: 'Production projects shipped', value: '12+' },
-  { label: 'AI / Agentic certifications', value: '5' },
-  { label: 'Founded companies', value: '2' }
+  { label: 'Active FDE client engagements', value: '3' },
+  { label: 'Yrs software · ~2 in production AI', value: '10+' },
+  { label: 'Systems delivered — prod, pilot & demo', value: '15+' },
+  { label: 'AI / agentic certifications', value: '5' }
 ];
 
 // ---------------------------------------------------------------------

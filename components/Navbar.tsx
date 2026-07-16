@@ -1,10 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { personal } from '@/lib/data';
 
+// Anchors only resolve on the homepage. On sub-routes (e.g. /projects/[slug])
+// they must be prefixed so they navigate home first, then scroll.
 const links = [
   { href: '#about', label: 'About' },
   { href: '#stack', label: 'Stack' },
@@ -19,6 +22,10 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const to = (hash: string) => (isHome ? hash : `/${hash}`);
+
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -47,7 +54,7 @@ export default function Navbar() {
                 : 'px-2'
             }`}
           >
-            <a href="#top" className="flex items-center gap-2 group">
+            <a href={isHome ? '#top' : '/'} className="flex items-center gap-2 group">
               <div className="relative">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent via-accent-cyan to-accent-pink p-[1.5px]">
                   <div className="w-full h-full rounded-full bg-bg flex items-center justify-center">
@@ -66,7 +73,7 @@ export default function Navbar() {
               {links.map((l) => (
                 <a
                   key={l.href}
-                  href={l.href}
+                  href={to(l.href)}
                   className="px-3 py-1.5 text-sm text-white/70 hover:text-white rounded-full hover:bg-white/5 transition"
                 >
                   {l.label}
@@ -76,7 +83,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2">
               <a
-                href="#contact"
+                href={to('#contact')}
                 className="hidden md:inline-flex btn btn-primary text-xs"
               >
                 Let&apos;s talk
@@ -106,7 +113,7 @@ export default function Navbar() {
               {links.map((l) => (
                 <a
                   key={l.href}
-                  href={l.href}
+                  href={to(l.href)}
                   onClick={() => setOpen(false)}
                   className="px-3 py-2.5 text-sm text-white/80 hover:text-white rounded-lg hover:bg-white/5"
                 >
