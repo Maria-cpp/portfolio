@@ -51,12 +51,16 @@ export default function Certifications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.45, delay: i * 0.04 }}
-                className="glass rounded-2xl p-5 card-hover relative overflow-hidden flex flex-col"
+                className="group/cert glass rounded-2xl p-5 card-hover relative overflow-hidden flex flex-col"
                 onMouseMove={cert.pdfUrl ? (e) => handleMouseMove(e, cert.pdfUrl!) : undefined}
                 onMouseLeave={cert.pdfUrl ? handleMouseLeave : undefined}
               >
+                {/* Scanline */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover/cert:opacity-100 group-hover/cert:animate-[scanlineSlide_2s_linear_infinite] transition-opacity duration-500 z-[2]"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.6) 30%, rgba(43,77,255,0.8) 50%, rgba(0,229,255,0.6) 70%, transparent)' }}
+                />
                 <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className={`w-10 h-10 rounded-xl glass-strong flex items-center justify-center ${
+                  <div className={`w-10 h-10 rounded-xl glass-strong flex items-center justify-center lang-ring ${
                     inProgress ? 'text-accent-pink' : 'text-accent-lime'
                   }`}>
                     {inProgress ? <Clock size={18} /> : <Award size={18} />}

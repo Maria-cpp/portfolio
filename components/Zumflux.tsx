@@ -75,17 +75,20 @@ export default function Zumflux() {
                   <Tilt3D
                     key={s.title}
                     delay={0.1 + i * 0.06}
-                    className="glass rounded-2xl p-5 border border-white/10 hover:border-accent/40 h-full"
+                    className="glass rounded-2xl p-5 border border-white/10 h-full"
                   >
-                    <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan mb-4">
-                      <Icon size={18} />
+                    <div className="scanline" />
+                    <div className="relative z-[2]">
+                      <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan lang-ring mb-4">
+                        <Icon size={18} />
+                      </div>
+                      <h3 className="font-display font-semibold">
+                        {s.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-white/60 leading-relaxed">
+                        {s.description}
+                      </p>
                     </div>
-                    <h3 className="font-display font-semibold">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-white/60 leading-relaxed">
-                      {s.description}
-                    </p>
                   </Tilt3D>
                 );
               })}

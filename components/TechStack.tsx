@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import {
   Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
-  Cloud, FileSearch, ShieldCheck, Globe, Handshake,
+  ShieldCheck,
   type LucideIcon
 } from 'lucide-react';
 import { techCategories, techMarquee } from '@/lib/data';
@@ -11,7 +11,7 @@ import Tilt3D from './Tilt3D';
 
 const iconMap: Record<string, LucideIcon> = {
   Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
-  Cloud, FileSearch, ShieldCheck, Globe, Handshake
+  ShieldCheck
 };
 
 export default function TechStack() {
@@ -79,23 +79,27 @@ export default function TechStack() {
               <Tilt3D
                 key={cat.name}
                 delay={idx * 0.05}
-                className="glass rounded-2xl p-5 border border-white/10 hover:border-accent/40 group h-full"
+                variant="skill"
+                className="glass rounded-2xl p-5 border border-white/10 group h-full"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan group-hover:scale-110 transition-transform">
-                    <Icon size={18} />
+                <div className="scanline" />
+                <div className="relative z-[2]">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl glass-strong flex items-center justify-center text-accent-cyan lang-ring">
+                      <Icon size={18} />
+                    </div>
+                    <h3 className="font-display font-semibold">{cat.name}</h3>
                   </div>
-                  <h3 className="font-display font-semibold">{cat.name}</h3>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {cat.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/70 hover:text-white hover:bg-white/[0.08] transition"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-1.5">
+                    {cat.items.map((item) => (
+                      <span
+                        key={item}
+                        className="skill-tag text-xs font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/70"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Tilt3D>
             );

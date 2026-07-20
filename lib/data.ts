@@ -72,8 +72,9 @@ export const techCategories = [
     items: [
       'OpenAI', 'Anthropic Claude', 'Grok', 'Gemini',
       'MCP Servers (built & deployed)', 'Multi-Agent Orchestration',
-      'HITL Controls', 'RAG', 'FAISS', 'Pinecone',
-      'Pydantic Structured Outputs', 'LangChain', 'LangGraph', 'NLP'
+      'HITL Controls', 'RAG', 'FAISS', 'Pinecone', 'Qdrant',
+      'Pydantic Structured Outputs', 'LangChain', 'LangGraph', 'NLP',
+      'OCR (PaddleOCR · pdfplumber)', 'Semantic Search'
     ]
   },
   {
@@ -97,28 +98,9 @@ export const techCategories = [
     items: ['Grafana', 'Prometheus', 'Alertmanager', 'structlog', 'Docker health checks', 'Agentic alert analysis']
   },
   {
-    name: 'DevOps',
+    name: 'DevOps & Cloud',
     icon: 'Boxes',
-    items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD', 'systemd', 'certbot']
-  },
-  {
-    name: 'Cloud',
-    icon: 'Cloud',
-    items: [
-      'Microsoft Azure — production deployment',
-      'Azure Container Apps',
-      'Containerized deployment (Docker)',
-      'Azure AI Foundry (exploring)'
-    ]
-  },
-  {
-    name: 'Document Intelligence & RAG',
-    icon: 'FileSearch',
-    items: [
-      'RAG (Retrieval-Augmented Generation)', 'PostgreSQL / pgvector', 'Qdrant', 'Semantic Search',
-      'OCR (PaddleOCR · pdfplumber)', 'Regex + rule-based parsing',
-      'LLM-assisted validation', 'Confidence scoring', 'Metadata extraction', 'Audit logging'
-    ]
+    items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD', 'systemd', 'certbot', 'Azure', 'Azure Container Apps']
   },
   {
     name: 'Security & Privacy',
@@ -127,23 +109,6 @@ export const techCategories = [
       'PII detection & tokenization', 'Envelope encryption (Fernet/AES)', 'HMAC-SHA256',
       'Hash-chained audit logs', 'KMS / HSM key providers', 'Key rotation',
       'RBAC · dual-gate authorization', 'SIEM forwarding', 'spaCy NER'
-    ]
-  },
-  {
-    name: 'Web & CMS',
-    icon: 'Globe',
-    items: [
-      'WordPress', 'Custom themes', 'PHP plugin development',
-      'REST API integrations', 'Performance optimization', 'Client deployments'
-    ]
-  },
-  {
-    name: 'Consulting & Business',
-    icon: 'Handshake',
-    items: [
-      'Requirement gathering', 'Workflow mapping', 'Stakeholder communication',
-      'Solution architecture', 'Technical consulting', 'Client acquisition & delivery',
-      'Corporate governance (BoD / JMB)', 'Contract review & compliance', 'Legal operations'
     ]
   }
 ] as const;
@@ -403,6 +368,9 @@ export const projects = [
     tags: ['FastAPI', 'PostgreSQL 16', 'HMAC-SHA256', 'Fernet/AES', 'spaCy NER', 'Redis', 'Celery', 'KMS/HSM', 'Prometheus', 'Docker'],
     repo: null,
     demo: null,
+    images: [
+      '/images/security_vault_service/Screenshot 2026-07-20 172719.png'
+    ],
     featured: true,
     highlight: 'Security · Privacy Vault',
     sector: 'Enterprise',
@@ -417,6 +385,13 @@ export const projects = [
     tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'Aya 23', 'PyTorch', 'PEFT / LoRA', 'pgvector', 'Qdrant', 'Claude / Grok', 'Next.js'],
     repo: null,
     demo: null,
+    images: [
+      '/images/NLP/posts.png',
+      '/images/NLP/English.png',
+      '/images/NLP/urdu.png',
+      '/images/NLP/Pashto.png',
+      '/images/NLP/Sindhi.png'
+    ],
     featured: true,
     highlight: 'NLP \u00b7 Agentic Pipeline',
     sector: 'Enterprise',
@@ -560,6 +535,9 @@ export const projects = [
     repo: null,
     demo: null,
     videoUrl: '/videos/Nauman Afzal.mp4',
+    images: [
+      '/images/nauman_afzal/Screenshot 2026-07-20 174208.png'
+    ],
     featured: true,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
@@ -572,6 +550,13 @@ export const projects = [
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     repo: null,
     demo: 'https://voyara-tourism-projects.vercel.app/',
+    images: [
+      '/images/voyara/Screenshot 2026-07-20 173458.png',
+      '/images/voyara/Screenshot 2026-07-20 173513.png',
+      '/images/voyara/Screenshot 2026-07-20 173535.png',
+      '/images/voyara/Screenshot 2026-07-20 173546.png',
+      '/images/voyara/Screenshot 2026-07-20 173607.png'
+    ],
     featured: true,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
@@ -585,6 +570,11 @@ export const projects = [
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     repo: null,
     demo: 'https://naimat-khan-durrani.vercel.app/',
+    images: [
+      '/images/naimat/Screenshot 2026-07-20 173435.png',
+      '/images/naimat/Screenshot 2026-07-20 173719.png',
+      '/images/naimat/Screenshot 2026-07-20 173736.png'
+    ],
     featured: true,
     highlight: 'FDE \u00b7 ZumfluxAI',
     sector: 'ZumfluxAI',
@@ -661,6 +651,13 @@ export const certifications = [
     year: '2026',
     status: 'Completed',
     pdfUrl: '/certificates/agentic_ai_level-I.jpg'
+  },
+  {
+    name: 'Agent Factory Fundamentals: Building Digital FTEs',
+    issuer: 'PIAIC / Panaversity',
+    year: '2026',
+    status: 'Completed · 81%',
+    pdfUrl: '/certificates/FTE.png'
   },
   {
     name: 'Alibaba Cloud Trainer',

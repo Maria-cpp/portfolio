@@ -107,8 +107,14 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: globalIndex * 0.03 }}
-      className="group relative glass rounded-3xl overflow-hidden"
+      className="group relative glass rounded-3xl overflow-hidden project-card"
     >
+      {/* 8. Top stripe — cyan → red */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[var(--accent-cyan)] to-[#ef4444] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[2]" />
+      {/* 7. Scanline */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 group-hover:animate-[scanlineSlide_2s_linear_infinite] transition-opacity duration-500 z-[2]"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.6) 30%, rgba(43,77,255,0.8) 50%, rgba(0,229,255,0.6) 70%, transparent)' }}
+      />
       <button
         onClick={onToggle}
         onMouseMove={hasImages && !isExpanded ? onMouseMove : undefined}
@@ -269,7 +275,7 @@ function ProjectCard({
                 {proj.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/65"
+                    className="skill-tag text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-white/65"
                   >
                     {t}
                   </span>

@@ -223,13 +223,19 @@ section {
 
 /* Subtle card hover */
 .card-hover {
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.5s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo),
+              box-shadow 0.5s var(--ease-out-expo);
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
-  box-shadow: 0 20px 60px -20px rgba(43, 77, 255, 0.3);
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 229, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Underline link */
@@ -329,22 +335,178 @@ section {
   perspective: 1200px;
 }
 
-.tilt-3d {
+/* =====================================================================
+   Tilt Card — Premium interactive card system
+   ===================================================================== */
+.tilt-card {
+  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: box-shadow 0.5s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo);
   will-change: transform;
+  overflow: hidden;
 }
 
-.tilt-3d:hover {
-  transform: rotateX(6deg) rotateY(-6deg) translateY(-6px) scale(1.015);
-  border-color: var(--border-strong);
-  box-shadow: 0 30px 70px -25px rgba(43, 77, 255, 0.4);
+/* 3. Radial spotlight — follows mouse via --mouse-x / --mouse-y */
+.tilt-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 229, 255, 0.10),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+  z-index: 1;
 }
 
+/* 4. Diagonal gradient overlay */
+.tilt-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 229, 255, 0.06) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover states */
+.tilt-card.is-hovered::before {
+  opacity: 1;
+}
+
+.tilt-card.is-hovered::after {
+  opacity: 1;
+}
+
+/* 5. Border glow */
+.tilt-card.is-hovered {
+  border-color: rgba(0, 229, 255, 0.3) !important;
+}
+
+/* 6. Deep layered shadow */
+.tilt-card.is-hovered {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 229, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 7. Edge glow scanline */
+.tilt-card .scanline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 0 0 inherit inherit;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 229, 255, 0.6) 30%,
+    rgba(43, 77, 255, 0.8) 50%,
+    rgba(0, 229, 255, 0.6) 70%,
+    transparent
+  );
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tilt-card.is-hovered .scanline {
+  opacity: 1;
+  animation: scanlineSlide 2s linear infinite;
+}
+
+@keyframes scanlineSlide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 8. Project card top stripe — cyan → red gradient */
+.tilt-card--project .top-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), #ef4444);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tilt-card--project.is-hovered .top-stripe {
+  opacity: 1;
+}
+
+/* 9. Skill tag micro-lift */
+.skill-tag {
+  transition: transform 0.3s var(--ease-out-expo),
+              border-color 0.3s var(--ease-out-expo),
+              color 0.3s var(--ease-out-expo),
+              box-shadow 0.3s var(--ease-out-expo);
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 229, 255, 0.4) !important;
+  color: var(--accent-cyan) !important;
+  box-shadow: 0 2px 12px rgba(0, 229, 255, 0.15);
+}
+
+/* 10. Language ring pulse */
+.lang-ring {
+  transition: transform 0.3s var(--ease-out-expo),
+              box-shadow 0.3s var(--ease-out-expo);
+}
+
+.lang-ring:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+}
+
+/* Project card hover enhancements */
+.project-card {
+  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.5s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo),
+              box-shadow 0.5s var(--ease-out-expo);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 229, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .tilt-3d:hover {
-    transform: translateY(-4px);
+  .tilt-card.is-hovered,
+  .project-card:hover {
+    transform: translateY(-4px) !important;
+  }
+  .tilt-card.is-hovered .scanline {
+    animation: none;
+    opacity: 0;
   }
 }
 
