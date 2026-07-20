@@ -11,7 +11,6 @@ import { personal } from '@/lib/data';
 const links = [
   { href: '#about', label: 'About' },
   { href: '#stack', label: 'Stack' },
-  { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#architecture', label: 'Architecture' },

@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import TechStack from '@/components/TechStack';
-import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Architecture from '@/components/Architecture';
@@ -30,8 +29,6 @@ export default function Home() {
         <About />
         <NeonBar />
         <TechStack />
-        <NeonBar />
-        <Skills />
         <NeonBar />
         <Experience />
         <NeonBar />

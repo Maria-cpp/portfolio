@@ -28,9 +28,9 @@ export const personal = {
   linkedin: 'https://www.linkedin.com/in/maria-naseem/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'Forward Deployed Engineer & AI Solutions Architect. I embed with clients, map their operations, and ship production AI they can actually run — real-time video analytics, four-stage HITL facial recognition, MCP-native agentic systems, and bank-grade data protection. Currently running three live FDE engagements across tourism, automotive, and travel.',
+    'Forward Deployed Engineer & AI Solutions Architect. I embed with clients, map their operations, and ship production AI they can actually run — real-time video analytics, four-stage HITL facial recognition, MCP-native agentic systems, and bank-grade data protection. Currently running two live FDE engagements across automotive and travel.',
   longBio:
-    'I’m a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across roughly 10 years combining corporate and software roles — about 6 in software and technology and ~4 working with AI/ML, the last ~2 focused intensively on production systems — I’ve led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run three active Forward Deployed engagements — automating manual operations end-to-end for tourism, automotive, and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.'
+    `I'm a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across roughly 10 years combining corporate and software roles — about 6 in software and technology and ~4 working with AI/ML, the last ~2 focused intensively on production systems — I've led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run two active Forward Deployed engagements — automating manual operations end-to-end for automotive and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.`
 };
 
 // ---------------------------------------------------------------------
@@ -79,7 +79,7 @@ export const techCategories = [
   {
     name: 'Computer Vision',
     icon: 'Camera',
-    items: ['YOLOv8 / Ultralytics', 'OpenCV', 'DeepFace · SFace', 'lap (tracking)', 'RTSP Multi-camera', 'Production-line analytics']
+    items: ['YOLO11 / Ultralytics', 'OpenCV', 'DeepFace · SFace', 'lap (tracking)', 'RTSP Multi-camera', 'Production-line analytics']
   },
   {
     name: 'Backend',
@@ -151,7 +151,7 @@ export const techCategories = [
 export const techMarquee = [
   'Python', 'TypeScript', 'FastAPI', 'Next.js', 'React',
   'OpenAI', 'Anthropic', 'Gemini', 'Grok',
-  'MCP', 'YOLOv8', 'OpenCV', 'DeepFace',
+  'MCP', 'YOLO11', 'OpenCV', 'DeepFace',
   'PostgreSQL', 'Redis', 'Celery',
   'Docker', 'GitHub Actions', 'Tailwind CSS',
   'Pinecone', 'FAISS', 'LangChain', 'LangGraph', 'n8n', 'NLP',
@@ -183,7 +183,7 @@ export const skillGroups = [
     title: 'Computer Vision',
     blurb: 'Production CV pipelines on live RTSP — from facial-recognition attendance to factory-line analytics.',
     items: [
-      'YOLOv8 / Ultralytics + lap tracking',
+      'YOLO11 / Ultralytics · lap tracking',
       'Facial Recognition (DeepFace, SFace)',
       'RTSP multi-camera ingestion',
       '4-stage enrollment → HITL → embedding → inference',
@@ -306,7 +306,7 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLO11 custom-trained, multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
       'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Deployed live on-premises (LAN) on our own staff in Karachi for real-world training and validation.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
@@ -314,7 +314,8 @@ export const experience = [
       'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
       'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
     ],
-    stack: ['FastAPI', 'YOLOv8', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+    stack: ['FastAPI', 'YOLO11', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+
   },
   {
     role: 'Founder',
@@ -324,7 +325,7 @@ export const experience = [
     current: true,
     bullets: [
       'Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.',
-      'Running three active Forward Deployed engagements — embedding with tourism, automotive, and travel-agency clients to map operations and automate manual workflows end-to-end. Case studies to follow as builds complete.',
+      'Running two active Forward Deployed engagements — embedding with automotive and travel-agency clients to map operations and automate manual workflows end-to-end. Case studies to follow as builds complete.',
       'Active client engagements: SitesBuildOps (construction-finance fraud-detection platform) and the Nauman Afzal author portfolio.'
     ],
     stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
@@ -392,7 +393,7 @@ export const experience = [
 // ---------------------------------------------------------------------
 
 export const projects = [
-  // 0b — Security Vault Service
+  // ── Career / Enterprise Projects ──────────────────────────────────
   {
     title: 'Security Vault Service',
     slug: 'security-vault-service',
@@ -405,30 +406,28 @@ export const projects = [
     featured: true,
     highlight: 'Security · Privacy Vault',
     sector: 'Enterprise',
-    extraTag: 'In internal use'
-  },
-  // 0c — Multilingual NLP Intelligence Platform
+    extraTag: 'In internal use',
+    category: 'career'  },
   {
     title: 'Multilingual NLP Intelligence Platform',
     slug: 'multilingual-nlp-intelligence',
     tagline: 'Agentic pipeline for low-resource-language public-feedback analysis + AI briefs',
     description:
-      'A multilingual NLP platform that ingests social data across Pakistan’s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection → script normalization/transliteration → NLLB-200 translation to an English pivot → sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Operational internally — running sentiment analysis on live feedback and posts; LoRA training and full observability in progress.',
+      'A multilingual NLP platform that ingests social data across Pakistan\u2019s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection \u2192 script normalization/transliteration \u2192 NLLB-200 translation to an English pivot \u2192 sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Operational internally \u2014 running sentiment analysis on live feedback and posts; LoRA training and full observability in progress.',
     tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'Aya 23', 'PyTorch', 'PEFT / LoRA', 'pgvector', 'Qdrant', 'Claude / Grok', 'Next.js'],
     repo: null,
     demo: null,
     featured: true,
-    highlight: 'NLP · Agentic Pipeline',
+    highlight: 'NLP \u00b7 Agentic Pipeline',
     sector: 'Enterprise',
-    extraTag: 'Operational'
-  },
-  // 1
+    extraTag: 'Operational',
+    category: 'career'  },
   {
     title: 'Video Analytics',
-    tagline: 'YOLOv8 production-line counting for regulatory compliance',
+    tagline: 'YOLO11 production-line counting for regulatory compliance',
     description:
-      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLOv8 + Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
-    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
+      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLO11 / Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site \u2014 the client visited the production facility; minor updates before rollout.',
+    tags: ['YOLO11', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
     repo: null,
     demo: null,
     images: [
@@ -438,17 +437,16 @@ export const projects = [
       '/images/video_analytics/logs.png'
     ],
     featured: true,
-    highlight: 'Regulated Industry · Compliance',
+    highlight: 'Regulated Industry \u00b7 Compliance',
     sector: 'Enterprise',
-    extraTag: 'Demoed on-site'
-  },
-  // 2
+    extraTag: 'Demoed on-site',
+    category: 'career'  },
   {
     title: 'Facial Recognition Attendance System',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
     description:
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment → similarity-based candidate retrieval from live RTSP → human-in-the-loop verification gate → embedding generation → real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
-    tags: ['DeepFace · SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment \u2192 similarity-based candidate retrieval from live RTSP \u2192 human-in-the-loop verification gate \u2192 embedding generation \u2192 real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
+    tags: ['DeepFace \u00b7 SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
     repo: null,
     demo: null,
     images: [
@@ -458,39 +456,36 @@ export const projects = [
       '/images/ams/ams_logs.png'
     ],
     featured: true,
-    highlight: 'Enterprise · HITL',
+    highlight: 'Enterprise \u00b7 HITL',
     sector: 'Enterprise',
-    extraTag: 'Live · on-prem'
-  },
-  // — Agentic AI Contract Intelligence Platform (GTPL)
+    extraTag: 'Live \u00b7 on-prem',
+    category: 'career'  },
   {
     title: 'Agentic AI Contract Intelligence Platform',
     slug: 'agentic-contract-intelligence',
-    tagline: 'Multi-agent RAG for contract intelligence, JMB automation & legal ops',
+    tagline: 'FDE project \u2014 Multi-agent RAG for contract intelligence, JMB automation & legal ops',
     description:
-      'Self-initiated Forward Deployed build for a national tourism company managing contracts across multiple provinces. A LangGraph multi-agent architecture (Python · FastAPI · Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. A deterministic extraction pipeline (regex + OCR + rule-based parsing with LLM-assisted validation and confidence scoring) pulls contract metadata — duration, site details, revenue share, signatories, contacts, JMB schedules — while a RAG knowledge base on PostgreSQL/pgvector powers contextual Q&A and semantic search across historical records. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution — the Forward Deployed pattern in practice. Deployed and in active use by the executive team.',
+      'Forward Deployed Engineering build for a national tourism company managing contracts across multiple provinces. Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata \u2014 duration, site details, revenue share, signatories, contact information, and JMB schedules \u2014 and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering. A LangGraph multi-agent architecture (Python \u00b7 FastAPI \u00b7 Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution \u2014 the Forward Deployed pattern in practice.',
     tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
     repo: null,
     demo: null,
     featured: true,
-    highlight: 'Agentic RAG · Document AI',
+    highlight: 'FDE \u00b7 Agentic RAG',
     sector: 'Enterprise',
-    extraTag: 'In active use'
-  },
-  // 3
+    extraTag: 'Completed',
+    category: 'career'  },
   {
     title: 'Customer Experience Portal (CXP)',
     tagline: 'Contract lifecycle automation with Gemini-assisted workflows',
     description:
-      'End-to-end customer experience portal — contract onboarding through full SLA lifecycle, contract tracking, workflow automation, and Gemini-powered assistant. Stack: FastAPI · Celery · Notifications microservice · Next.js · PostgreSQL · Redis · Nginx. Production-ready Docker compose splits (dev/prod) with systemd unit files and certbot SSL.',
+      'End-to-end customer experience portal \u2014 contract onboarding through full SLA lifecycle, contract tracking, workflow automation, and Gemini-powered assistant. Stack: FastAPI \u00b7 Celery \u00b7 Notifications microservice \u00b7 Next.js \u00b7 PostgreSQL \u00b7 Redis \u00b7 Nginx. Production-ready Docker compose splits (dev/prod) with systemd unit files and certbot SSL.',
     tags: ['FastAPI', 'Next.js', 'Celery', 'PostgreSQL', 'Redis', 'Gemini', 'Docker', 'WebSockets'],
     repo: null,
     demo: null,
     videoUrl: '/videos/CX portal.mp4',
     featured: true,
-    highlight: 'Enterprise · SaaS'
-  },
-  // 4
+    highlight: 'Enterprise \u00b7 SaaS',
+    category: 'career'  },
   {
     title: 'Agentic Observability Platform',
     tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
@@ -509,9 +504,8 @@ export const projects = [
       '/images/agentic_observability/cxp_dashboard.png'
     ],
     featured: true,
-    highlight: 'MCP Server'
-  },
-  // 5
+    highlight: 'MCP Server',
+    category: 'career'  },
   {
     title: 'Multi-Channel Notification Microservice',
     tagline: 'Grok LLM + Redis/Celery message orchestrator',
@@ -520,9 +514,8 @@ export const projects = [
     tags: ['Grok LLM', 'Redis', 'Celery', 'FastAPI'],
     repo: null,
     demo: null,
-    highlight: 'Microservice'
-  },
-  // 6
+    highlight: 'Microservice',
+    category: 'career'  },
   {
     title: 'Document AI / Bulk Data Import',
     tagline: 'OCR + async ingestion with audit logging',
@@ -530,79 +523,102 @@ export const projects = [
       'Async FastAPI service combining PaddleOCR + pdfplumber + python-docx for document AI ingestion, MIME validation, and audit-grade structured logging. Scalable bulk-data import pipeline with validation rules and optimized database patterns for high-volume workloads.',
     tags: ['FastAPI', 'PaddleOCR', 'pdfplumber', 'PostgreSQL', 'Python', 'Docker'],
     repo: 'https://github.com/Maria-cpp/Bulk-data-import',
-    demo: null
-  },
-  // 7
+    demo: null,
+    category: 'career'  },
+  {
+    title: 'Green Pak Tourism',
+    tagline: 'Corporate web presence for national tourism body',
+    description:
+      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. \u2014 a national tourism company. Built during tenure as Executive Coordinator for Digital Operations.',
+    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
+    repo: null,
+    demo: 'https://greenpaktourism.com/',
+    images: ['/images/gtpl_website.png'],
+    featured: true,
+    highlight: 'GTPL \u00b7 Live',
+    category: 'career'  },
+  // ── ZumfluxAI Client Projects ─────────────────────────────────────
+  {
+    title: 'SitesBuildOps',
+    tagline: 'FDE project \u2014 Construction-finance ledger with AI fraud detection',
+    description:
+      'Forward Deployed Engineering engagement. Centralized finance, ledger, and fraud-detection platform for construction companies managing multiple sites, vendors, and contractors. Features purchase tracking, ledger reconciliation, duplicate detection engine, audit logging, and AI-assisted fraud prevention. Phase 0 prototype shipped; Phase 1 in progress.',
+    tags: ['Next.js', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'FDE \u00b7 ZumfluxAI',
+    sector: 'ZumfluxAI',
+    extraTag: 'In Progress',
+    category: 'zumfluxai'  },
+  {
+    title: 'Nauman Afzal \u2014 Author Portfolio',
+    tagline: 'Bibliophile \u00b7 Author of Mudslinging & Budhoo',
+    description:
+      'Designed and built the official author portfolio for Nauman Afzal \u2014 author of Mudslinging and Budhoo. Clean, content-first React + Vite single-page site with custom theming, Lucide iconography, and a books showcase.',
+    tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
+    repo: null,
+    demo: null,
+    videoUrl: '/videos/Nauman Afzal.mp4',
+    featured: true,
+    highlight: 'ZumfluxAI \u00b7 Client',
+    sector: 'ZumfluxAI',
+    category: 'zumfluxai'  },
+  {
+    title: 'Voyara Tourism',
+    tagline: 'Tourism booking experience \u2014 live prototype',
+    description:
+      'Tourism booking platform with a modern, immersive interface for discovering and booking travel experiences. Designed for a tourism-industry client as a ZumfluxAI engagement.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
+    repo: null,
+    demo: 'https://voyara-tourism-projects.vercel.app/',
+    featured: true,
+    highlight: 'ZumfluxAI \u00b7 Client',
+    sector: 'ZumfluxAI',
+    extraTag: 'Live prototype',
+    category: 'zumfluxai'  },
+  {
+    title: 'Naimat Khan Durrani \u2014 Portfolio',
+    tagline: 'FDE project \u2014 Personal portfolio site',
+    description:
+      'Forward Deployed Engineering engagement. Designed and built a personal portfolio site for Naimat Khan Durrani \u2014 embedded with the client to understand their brand and deliver a polished, production-ready web presence.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
+    repo: null,
+    demo: 'https://naimat-khan-durrani.vercel.app/',
+    featured: true,
+    highlight: 'FDE \u00b7 ZumfluxAI',
+    sector: 'ZumfluxAI',
+    extraTag: 'Live',
+    category: 'zumfluxai'  },
+  // ── Learning Projects ─────────────────────────────────────────────
   {
     title: 'FTE Sales Lead Engine',
-    tagline: 'Browser automation × AI scoring × HITL review',
+    tagline: 'Browser automation \u00d7 AI scoring \u00d7 HITL review',
     description:
-      'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer — reducing manual outreach effort by ~80%.',
+      'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer \u2014 reducing manual outreach effort by ~80%.',
     tags: ['Playwright', 'Python', 'LLM', 'HITL'],
     repo: null,
     demo: null,
     videoUrl: '/videos/FTE video.mp4',
     videoUrl2: '/videos/chat base FTE creation.mp4',
-    highlight: 'Automation'
-  },
-  // 8
+    highlight: 'Automation',
+    category: 'learning'  },
   {
     title: 'Gesture AI Website',
     tagline: 'Touchless interaction via webcam hand-gestures',
     description:
       'Computer vision web app integrating real-time hand-gesture detection with a Next.js frontend. Demonstrates browser-based ML inference for touchless UI experiments.',
     tags: ['Computer Vision', 'Next.js', 'MediaPipe'],
-    extraTag: 'Participated in AI Speedcoding competition by AI COE',
+    extraTag: 'AI Speedcoding competition by AI COE',
     repo: 'https://github.com/Maria-cpp/gesture_ai_website',
     demo: null,
-    videoUrl: '/videos/Gesture based website.mp4'
-  },
-  // 9
-  {
-    title: 'Green Pak Tourism',
-    tagline: 'Corporate web presence for national tourism body',
-    description:
-      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. — a national tourism company. Built during tenure as Executive Coordinator for Digital Operations.',
-    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
-    repo: null,
-    demo: 'https://greenpaktourism.com/',
-    images: ['/images/gtpl_website.png'],
-    featured: true,
-    highlight: 'GTPL · Live'
-  },
-  // 10
-  {
-    title: 'SitesBuildOps',
-    tagline: 'Construction-finance ledger with AI fraud detection',
-    description:
-      'Centralized finance, ledger, and fraud-detection platform for construction companies managing multiple sites, vendors, and contractors. Features purchase tracking, ledger reconciliation, duplicate detection engine, audit logging, and AI-assisted fraud prevention. Phase 0 prototype shipped; Phase 1 in progress.',
-    tags: ['Next.js', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
-    repo: null,
-    demo: null,
-    featured: true,
-    highlight: 'ZumfluxAI · Client',
-    sector: 'ZumfluxAI'
-  },
-  // 11
-  {
-    title: 'Nauman Afzal — Author Portfolio',
-    tagline: 'Bibliophile · Author of Mudslinging & Budhoo',
-    description:
-      'Designed and built the official author portfolio for Nauman Afzal — author of Mudslinging and Budhoo. Clean, content-first React + Vite single-page site with custom theming, Lucide iconography, and a books showcase.',
-    tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
-    repo: null,
-    demo: null,
-    videoUrl: '/videos/Nauman Afzal.mp4',
-    featured: true,
-    highlight: 'ZumfluxAI · Client',
-    sector: 'ZumfluxAI'
-  },
-  // 12
+    videoUrl: '/videos/Gesture based website.mp4',
+    category: 'learning'  },
   {
     title: 'AI Books',
     tagline: 'Docusaurus-powered AI knowledge base',
     description:
-      'An open-source Docusaurus documentation site compiling AI/ML knowledge — covering agentic systems, computer vision, LLM engineering, and robotics. Built as a structured, searchable reference for the AI community.',
+      'An open-source Docusaurus documentation site compiling AI/ML knowledge \u2014 covering agentic systems, computer vision, LLM engineering, and robotics. Built as a structured, searchable reference for the AI community.',
     tags: ['Docusaurus', 'React', 'MDX', 'AI/ML'],
     repo: null,
     demo: null,
@@ -611,11 +627,9 @@ export const projects = [
       '/images/AI Book.png',
       '/images/AI Book 2.png'
     ],
-    featured: true,
-    highlight: 'ZumfluxAI · Open Source',
-    sector: 'ZumfluxAI'
-  },
-  // 13
+    highlight: 'Open Source',
+    sector: 'ZumfluxAI',
+    category: 'learning'  },
   {
     title: 'ZeenuShop',
     tagline: 'E-commerce platform for fashion & lifestyle',
@@ -625,10 +639,8 @@ export const projects = [
     repo: null,
     demo: null,
     videoUrl: '/videos/ZeenuShop.mp4',
-    featured: true,
-    highlight: 'ZumfluxAI · Client',
-    sector: 'ZumfluxAI'
-  }
+    highlight: 'E-commerce',
+    category: 'learning'  }
 ];
 
 // ---------------------------------------------------------------------
@@ -651,10 +663,10 @@ export const certifications = [
     pdfUrl: '/certificates/agentic_ai_level-I.jpg'
   },
   {
-    name: 'FTE (Full-Time Equivalent) AI Program',
-    issuer: 'PIAIC / Panaversity',
+    name: 'Alibaba Cloud Trainer',
+    issuer: 'Bano Qabil',
     year: '2026',
-    status: 'Completed · 81%',
+    status: 'In Progress',
     pdfUrl: null
   },
   {
@@ -812,9 +824,9 @@ export const education = [
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Active FDE client engagements', value: '3' },
+  { label: 'Active FDE client engagements', value: '2' },
   { label: 'Yrs overall · 6+ software · 4+ in AI', value: '10+' },
-  { label: 'Systems delivered — prod, pilot & demo', value: '15+' },
+  { label: 'Systems built — production to prototype', value: '12+' },
   { label: 'AI / agentic certifications', value: '5' }
 ];
 

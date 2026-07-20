@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Clock, Eye, X } from 'lucide-react';
 import Image from 'next/image';
@@ -8,6 +8,15 @@ import { certifications, education } from '@/lib/data';
 
 export default function Certifications() {
   const [viewCert, setViewCert] = useState<string | null>(null);
+  const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent, src: string) => {
+    setHoverPreview({ src, x: e.clientX, y: e.clientY });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setHoverPreview(null);
+  }, []);
 
   return (
     <section id="certifications" className="relative py-24">
@@ -43,6 +52,8 @@ export default function Certifications() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.45, delay: i * 0.04 }}
                 className="glass rounded-2xl p-5 card-hover relative overflow-hidden flex flex-col"
+                onMouseMove={cert.pdfUrl ? (e) => handleMouseMove(e, cert.pdfUrl!) : undefined}
+                onMouseLeave={cert.pdfUrl ? handleMouseLeave : undefined}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className={`w-10 h-10 rounded-xl glass-strong flex items-center justify-center ${
@@ -105,6 +116,33 @@ export default function Certifications() {
           </div>
         </motion.div>
       </div>
+
+      {/* Hover preview floating image */}
+      <AnimatePresence>
+        {hoverPreview && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.15 }}
+            className="fixed z-50 pointer-events-none"
+            style={{
+              left: hoverPreview.x + 20,
+              top: hoverPreview.y - 120,
+            }}
+          >
+            <div className="w-64 h-48 rounded-xl overflow-hidden border border-white/20 shadow-2xl shadow-black/60 bg-black">
+              <Image
+                src={hoverPreview.src}
+                alt="Certificate preview"
+                fill
+                sizes="256px"
+                className="object-contain !relative p-2"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Certificate popup modal */}
       <AnimatePresence>

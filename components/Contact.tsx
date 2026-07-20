@@ -39,13 +39,6 @@ export default function Contact() {
                   <Briefcase size={16} /> {personal.businessEmail}
                   <ArrowUpRight size={14} />
                 </a>
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition"
-                >
-                  <Mail size={16} /> {personal.email}
-                  <ArrowUpRight size={14} />
-                </a>
               </div>
             </div>
 

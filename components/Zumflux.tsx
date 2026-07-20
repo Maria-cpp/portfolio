@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Bot, Camera, Database, Layers, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import { zumflux, personal } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
@@ -32,10 +33,14 @@ export default function Zumflux() {
               </div>
 
               <div className="mt-6 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent via-accent-cyan to-accent-pink p-[2px]">
-                  <div className="w-full h-full rounded-2xl bg-bg-card flex items-center justify-center font-display font-bold text-lg">
-                    Z
-                  </div>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden relative shrink-0">
+                  <Image
+                    src="/images/zumfluxai-logo.png"
+                    alt="ZumfluxAI logo"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
                 </div>
                 <div>
                   <h2 className="font-display text-3xl sm:text-4xl font-bold leading-none">
