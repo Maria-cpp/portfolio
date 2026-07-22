@@ -823,7 +823,7 @@ export const education = [
 export const stats = [
   { label: 'Active FDE client engagements', value: '2' },
   { label: 'Yrs overall · 6+ software · 4+ in AI', value: '10+' },
-  { label: 'Systems built — production to prototype', value: '12+' },
+  { label: 'Systems built — prototype to production', value: '12+' },
   { label: 'AI / agentic certifications', value: '5' }
 ];
 

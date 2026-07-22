@@ -38,8 +38,9 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
         src={images[idx]}
         alt={`${title} screenshot ${idx + 1}`}
         fill
-        sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover"
+        sizes="100vw"
+        className="object-contain"
+        quality={100}
       />
       {images.length > 1 && (
         <>
