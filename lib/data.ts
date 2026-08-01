@@ -580,6 +580,19 @@ export const projects = [
     sector: 'ZumfluxAI',
     extraTag: 'Live',
     category: 'zumfluxai'  },
+  {
+    title: 'ARTSER',
+    tagline: 'Corporate site for an Italian aluminum & PVC window/door and fa\u00e7ade company',
+    description:
+      'Designed and built the corporate website for ARTSER \u2014 an aluminum and PVC window/door, fa\u00e7ade, and curtain-wall installation company based in Verona, Italy (independent since 2015, 26+ years of industry experience). Multi-language site (English, Italian, Arabic, Urdu) covering services, a featured-projects portfolio, supplier network, and client testimonials.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Vercel', 'Multi-language'],
+    repo: null,
+    demo: 'https://art-ser.vercel.app/',
+    featured: true,
+    highlight: 'ZumfluxAI \u00b7 Client',
+    sector: 'ZumfluxAI',
+    extraTag: 'Live',
+    category: 'zumfluxai'  },
   // ── Learning Projects ─────────────────────────────────────────────
   {
     title: 'FTE Sales Lead Engine',
@@ -741,6 +754,11 @@ export const zumflux = {
       name: 'Naimat Khan Durrani',
       kind: 'Personal portfolio site — live prototype',
       url: 'https://naimat-khan-durrani.vercel.app/'
+    },
+    {
+      name: 'ARTSER',
+      kind: 'Aluminum & PVC window/door, façade company website (Verona, Italy)',
+      url: 'https://art-ser.vercel.app/'
     }
   ] as { name: string; kind: string; url?: string }[],
   cta: 'Hire ZumfluxAI'
