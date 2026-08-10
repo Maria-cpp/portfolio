@@ -1,3 +1,16 @@
+/**
+ * Projects.tsx — Featured work section with expandable project cards.
+ *
+ * Shows projects in three categories (Career, ZumfluxAI, Learning) with:
+ * - Expandable accordion cards with image carousels, video embeds, and sector badges
+ * - Category tab filtering (shown after "View all projects" is clicked)
+ * - Hover preview floating image on collapsed cards with screenshots
+ * - Full-screen screenshot modal for projects that have both video and images
+ * - Special handling for FTE Sales Lead Engine (dual-video toggle)
+ * - Special handling for Green Pak Tourism (carousel + external link)
+ *
+ * Content sourced from `lib/data.ts` (projects).
+ */
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
@@ -9,6 +22,7 @@ import { projects } from '@/lib/data';
 
 type ProjectCategory = 'career' | 'zumfluxai' | 'learning';
 
+// Returns badge color classes based on the project's sector
 const highlightColor = (sector?: string) => {
   if (sector === 'Government') return 'bg-accent-cyan/15 text-accent-cyan border-accent-cyan/30';
   if (sector === 'ZumfluxAI') return 'bg-accent-pink/15 text-accent-pink border-accent-pink/30';
@@ -27,6 +41,7 @@ const categoryColors: Record<ProjectCategory, string> = {
   learning: 'border-accent-cyan/40 text-accent-cyan'
 };
 
+/** Inline image carousel with prev/next arrows and dot indicators */
 function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   const [idx, setIdx] = useState(0);
   const prev = () => setIdx((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -340,12 +355,12 @@ function ProjectCard({
 }
 
 export default function Projects() {
-  const [screenshotModal, setScreenshotModal] = useState<{ images: string[]; title: string } | null>(null);
-  const [expandedKey, setExpandedKey] = useState<string | null>(projects[0]?.title ?? null);
-  const [showFteChatbot, setShowFteChatbot] = useState(false);
-  const [showAll, setShowAll] = useState(false);
-  const [activeTab, setActiveTab] = useState<ProjectCategory | 'all'>('all');
-  const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);
+  const [screenshotModal, setScreenshotModal] = useState<{ images: string[]; title: string } | null>(null);  // Full-screen screenshot viewer
+  const [expandedKey, setExpandedKey] = useState<string | null>(projects[0]?.title ?? null);                  // Which project card is expanded
+  const [showFteChatbot, setShowFteChatbot] = useState(false);    // FTE project dual-video toggle
+  const [showAll, setShowAll] = useState(false);                  // Show all projects vs top 5
+  const [activeTab, setActiveTab] = useState<ProjectCategory | 'all'>('all');  // Category filter tab
+  const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);  // Floating preview on hover
 
   const handleMouseMove = useCallback((e: React.MouseEvent, imageSrc: string) => {
     setHoverPreview({ src: imageSrc, x: e.clientX, y: e.clientY });
@@ -355,11 +370,12 @@ export default function Projects() {
     setHoverPreview(null);
   }, []);
 
+  // Memoized category filters — avoids re-filtering on every render
   const careerProjects = useMemo(() => projects.filter(p => (p as typeof p & { category?: string }).category === 'career'), []);
   const zumfluxProjects = useMemo(() => projects.filter(p => (p as typeof p & { category?: string }).category === 'zumfluxai'), []);
   const learningProjects = useMemo(() => projects.filter(p => (p as typeof p & { category?: string }).category === 'learning'), []);
 
-  // Top 5 featured (from career) when not showing all
+  // Initial view shows only the top 5 career projects
   const topProjects = careerProjects.slice(0, 5);
 
   const tabs: { key: ProjectCategory | 'all'; label: string }[] = [

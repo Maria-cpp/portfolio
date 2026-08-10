@@ -1,3 +1,10 @@
+/**
+ * opengraph-image.tsx — Generates a dynamic OpenGraph image (1200x630 PNG).
+ *
+ * Runs on the Edge runtime. Produces a dark-themed card with the name,
+ * title, subtitle, short bio, and a list of focus areas. This image is
+ * used when the site is shared on social media (Twitter, LinkedIn, etc.).
+ */
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';

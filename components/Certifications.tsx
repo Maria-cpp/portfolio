@@ -1,3 +1,12 @@
+/**
+ * Certifications.tsx — Certifications grid + Education subsection.
+ *
+ * Renders a responsive grid of certification cards with status badges
+ * (completed/in-progress), hover preview tooltips, and an in-page modal
+ * viewer for certificate images. Education degrees shown below.
+ *
+ * Content sourced from `lib/data.ts` (certifications, education).
+ */
 'use client';
 
 import { useState, useCallback } from 'react';
@@ -7,8 +16,8 @@ import Image from 'next/image';
 import { certifications, education } from '@/lib/data';
 
 export default function Certifications() {
-  const [viewCert, setViewCert] = useState<string | null>(null);
-  const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);
+  const [viewCert, setViewCert] = useState<string | null>(null);          // URL of certificate to show in modal
+  const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);  // Floating preview tooltip
 
   const handleMouseMove = useCallback((e: React.MouseEvent, src: string) => {
     setHoverPreview({ src, x: e.clientX, y: e.clientY });

@@ -1,3 +1,9 @@
+/**
+ * sitemap.ts — Generates sitemap.xml for search engine indexing.
+ *
+ * Includes the homepage (priority 1.0) and all case study pages
+ * (priority 0.8). Slugs are sourced from lib/caseStudies.ts.
+ */
 import type { MetadataRoute } from 'next';
 import { caseStudySlugs } from '@/lib/caseStudies';
 

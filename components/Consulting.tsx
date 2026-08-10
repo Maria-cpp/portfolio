@@ -1,3 +1,12 @@
+/**
+ * Consulting.tsx — Consulting & Training services section.
+ *
+ * Renders a "Forward Deployed Engineer" positioning banner followed by
+ * two service cards (AI Automation Consultancy + AI Training) with CTAs,
+ * WhatsApp links, and bullet-point features. Uses Tilt3D for card hover.
+ *
+ * Content sourced from `lib/data.ts` (consulting, forwardDeployed).
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,6 +15,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { consulting, forwardDeployed } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
+// Maps icon name strings from data.ts to Lucide icon components
 const iconFor = (name: string) => {
   if (name === 'Workflow') return Workflow;
   if (name === 'GraduationCap') return GraduationCap;

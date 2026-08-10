@@ -1,6 +1,29 @@
+/*
+ * globals.css — Root styles, design tokens, and custom CSS effects.
+ *
+ * Organized into sections:
+ * 1. Design tokens (CSS custom properties)
+ * 2. Base styles (font smoothing, scroll, body)
+ * 3. Glass effects (glassmorphism cards and navbar)
+ * 4. Text effects (gradient text, selection)
+ * 5. Decorative backgrounds (noise, grid, glow blobs)
+ * 6. Scrollbar customization
+ * 7. Marquee animation (infinite horizontal scroll)
+ * 8. Button system (primary, ghost variants)
+ * 9. Section heading eyebrow
+ * 10. Card hover effects
+ * 11. Link underline animation
+ * 12. Neon bar section divider
+ * 13. Tilt3D card system (3D perspective, spotlight, scanline)
+ * 14. Project card enhancements
+ * 15. Accessibility (prefers-reduced-motion)
+ */
 @import 'tailwindcss';
 @config '../tailwind.config.ts';
 
+/* =====================================================================
+   1. Design tokens — color palette and borders
+   ===================================================================== */
 :root {
   --bg: #08090c;
   --bg-soft: #0c0e13;
@@ -17,6 +40,9 @@
   --fg-muted: #9aa0ad;
 }
 
+/* =====================================================================
+   2. Base styles
+   ===================================================================== */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +58,9 @@ body {
   font-feature-settings: 'cv11', 'ss01';
 }
 
-/* Glass card (used everywhere) */
+/* =====================================================================
+   3. Glass effects — frosted-glass cards and navbar
+   ===================================================================== */
 .glass {
   background: linear-gradient(
     135deg,
@@ -65,7 +93,9 @@ body {
   border: 1px solid var(--border-strong);
 }
 
-/* Animated gradient text */
+/* =====================================================================
+   4. Text effects — animated gradient text
+   ===================================================================== */
 .gradient-text {
   background: linear-gradient(
     120deg,
@@ -87,7 +117,9 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-/* Subtle noise texture overlay */
+/* =====================================================================
+   5. Decorative backgrounds — noise texture, grid pattern, glow blobs
+   ===================================================================== */
 .noise::before {
   content: '';
   position: fixed;
@@ -117,7 +149,9 @@ body {
   pointer-events: none;
 }
 
-/* Scroll bar */
+/* =====================================================================
+   6. Scrollbar customization
+   ===================================================================== */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -138,7 +172,9 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* Marquee */
+/* =====================================================================
+   7. Marquee animation — infinite horizontal scroll for tech ticker
+   ===================================================================== */
 .marquee-track {
   display: flex;
   width: max-content;
@@ -160,13 +196,15 @@ section {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
 }
 
-/* Selection */
+/* Text selection highlight color */
 ::selection {
   background: rgba(43, 77, 255, 0.45);
   color: #fff;
 }
 
-/* Button base */
+/* =====================================================================
+   8. Button system — base, primary (gradient + glow), ghost (transparent)
+   ===================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -201,7 +239,9 @@ section {
   border-color: var(--border-strong);
 }
 
-/* Section heading eyebrow */
+/* =====================================================================
+   9. Section heading eyebrow — mono uppercase label with cyan dash
+   ===================================================================== */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -221,7 +261,9 @@ section {
   display: inline-block;
 }
 
-/* Subtle card hover */
+/* =====================================================================
+   10. Card hover — lift + border glow + layered shadow on hover
+   ===================================================================== */
 .card-hover {
   --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
   transition: transform 0.5s var(--ease-out-expo),
@@ -238,7 +280,9 @@ section {
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Underline link */
+/* =====================================================================
+   11. Link underline animation — slides in from right on hover
+   ===================================================================== */
 .link-underline {
   position: relative;
   display: inline-block;

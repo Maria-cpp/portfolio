@@ -1,3 +1,13 @@
+/**
+ * Contact.tsx — Contact information section with social links.
+ *
+ * Full-width glassmorphic card with a two-column layout:
+ * Left: heading, description, and primary business email CTA.
+ * Right: stacked contact cards (GitHub, LinkedIn, Phone, Location)
+ * with hover effects and external link arrows.
+ *
+ * Content sourced from `lib/data.ts` (personal).
+ */
 'use client';
 
 import { motion } from 'framer-motion';

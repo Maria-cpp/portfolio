@@ -1,3 +1,12 @@
+/**
+ * Zumflux.tsx — ZumfluxAI founder spotlight section.
+ *
+ * Full-width glassmorphic card showcasing the company — logo, tagline,
+ * description, CTA button, and a 2x2 services grid with Tilt3D cards.
+ * Optionally renders a "Recent client work" list at the bottom.
+ *
+ * Content sourced from `lib/data.ts` (zumflux, personal).
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,6 +15,7 @@ import Image from 'next/image';
 import { zumflux, personal } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
+// Icons cycled through for the 4 service cards
 const icons = [Bot, Camera, Database, Layers];
 
 export default function Zumflux() {

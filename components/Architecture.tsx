@@ -1,3 +1,16 @@
+/**
+ * Architecture.tsx — System architecture diagrams section.
+ *
+ * Displays 4 tabbed inline SVG flow diagrams illustrating production pipelines:
+ * 1. Real-Time Video Analytics (RTSP -> YOLO -> Counter -> Dashboard)
+ * 2. Provincial Government AMS (4-stage HITL facial recognition)
+ * 3. Multi-Channel Notification Service (LLM + template fallback)
+ * 4. Agentic Observability Platform (MCP-native, Prometheus/Grafana)
+ *
+ * Each diagram includes a title, subtitle, description, and a hand-drawn SVG.
+ * Diagrams are defined inline rather than imported because they use JSX SVG
+ * elements with gradient fills and custom markers.
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -369,7 +382,7 @@ const diagrams: Diagram[] = [
 ];
 
 export default function Architecture() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(0);  // Index of the currently selected diagram tab
   const current = diagrams[active];
 
   return (

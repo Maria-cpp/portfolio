@@ -1,3 +1,12 @@
+/**
+ * Skills.tsx — Skill set grid section.
+ *
+ * Renders a responsive 3-column grid of skill group cards, each with a title,
+ * short blurb, and a checklist of capabilities. Staggered fade-in animation
+ * on scroll via Framer Motion.
+ *
+ * Content sourced from `lib/data.ts` (skillGroups).
+ */
 'use client';
 
 import { motion } from 'framer-motion';

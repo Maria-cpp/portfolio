@@ -1,3 +1,18 @@
+/**
+ * [slug]/page.tsx — Case study detail page.
+ *
+ * Statically generated at build time for each case study slug.
+ * Renders a long-form project writeup with:
+ * - Header (title, tagline, summary, tags, repo/demo links)
+ * - Meta grid (role, org, period, status)
+ * - Business value callout
+ * - Architecture diagrams (rendered via Mermaid component)
+ * - Tech stack table
+ * - Narrative sections (problem, solution, features, challenges, etc.)
+ * - JSON-LD TechArticle schema for SEO
+ *
+ * Content sourced from `lib/caseStudies.ts`.
+ */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -17,10 +32,12 @@ import Footer from '@/components/Footer';
 
 type Props = { params: { slug: string } };
 
+// Pre-generate pages for all case study slugs at build time
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
 }
 
+// Dynamic metadata for each case study page (title, description, OG tags)
 export function generateMetadata({ params }: Props): Metadata {
   const cs = getCaseStudy(params.slug);
   if (!cs) return { title: 'Case study not found' };

@@ -1,3 +1,9 @@
+/**
+ * Footer.tsx — Site footer with branding, social icons, and tech credits.
+ *
+ * Displays the brand name, copyright with dynamic year, social icon links
+ * (GitHub, LinkedIn, Email), and a "Built with" tech credit line.
+ */
 'use client';
 
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';

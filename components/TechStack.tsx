@@ -1,3 +1,12 @@
+/**
+ * TechStack.tsx — Tech stack showcase with marquee ticker and category grid.
+ *
+ * Top: a dual-row infinite-scrolling marquee of tech names (duplicated for
+ * seamless looping, second row reversed). Bottom: 3-column grid of categorized
+ * tech cards with Tilt3D hover effects and scanline decorations.
+ *
+ * Content sourced from `lib/data.ts` (techCategories, techMarquee).
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -9,13 +18,14 @@ import {
 import { techCategories, techMarquee } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
+// Maps category icon names (from data.ts) to Lucide icon components
 const iconMap: Record<string, LucideIcon> = {
   Brain, Server, Layout, Boxes, Wrench, Camera, Activity, Zap,
   ShieldCheck
 };
 
 export default function TechStack() {
-  // Duplicate for seamless marquee
+  // Duplicate the array so the CSS marquee animation loops seamlessly
   const marqueeItems = [...techMarquee, ...techMarquee];
 
   return (

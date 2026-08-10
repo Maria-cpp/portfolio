@@ -1,3 +1,12 @@
+/**
+ * Hero.tsx — Full-viewport landing section.
+ *
+ * Features a rotating tagline carousel (cycles every 2.4s), availability badge,
+ * CTA buttons (projects, contact, CV download), social links, and a glassmorphic
+ * "terminal card" with a code-style profile summary. Stats strip at the bottom.
+ *
+ * All text content is sourced from `lib/data.ts` (personal, stats).
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,8 +15,10 @@ import { ArrowRight, Github, Linkedin, Mail, MapPin, Sparkles, Download } from '
 import { personal, stats } from '@/lib/data';
 
 export default function Hero() {
+  // Index for the rotating tagline carousel
   const [tagIndex, setTagIndex] = useState(0);
 
+  // Rotate taglines every 2.4 seconds
   useEffect(() => {
     const id = setInterval(() => {
       setTagIndex((i) => (i + 1) % personal.taglines.length);
@@ -112,7 +123,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: avatar / glass card */}
+          {/* Right: glassmorphic terminal card — code-style profile summary */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -120,7 +131,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative glass-strong rounded-3xl p-6 overflow-hidden">
-              {/* gradient ring */}
+              {/* Gradient border ring around the card */}
               <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/40 via-transparent to-accent-cyan/30 opacity-50 pointer-events-none" />
 
               <div className="relative">

@@ -1,3 +1,12 @@
+/**
+ * About.tsx — "About me" section with three pillar cards and a currently-learning block.
+ *
+ * Displays Vision / Expertise / Innovation pillars as 3D-tilt cards (via Tilt3D),
+ * each with accent-colored icons and glow effects. Optionally renders a
+ * "Currently studying" subsection with book cover images if data is populated.
+ *
+ * Content sourced from `lib/data.ts` (aboutPillars, personal, currentlyLearning).
+ */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,18 +15,21 @@ import Image from 'next/image';
 import { aboutPillars, personal, currentlyLearning } from '@/lib/data';
 import Tilt3D from './Tilt3D';
 
+// Maps pillar labels to their corresponding Lucide icons
 const iconFor = (label: string) => {
   if (label === 'Vision') return Eye;
   if (label === 'Expertise') return Cpu;
   return Rocket;
 };
 
+// Returns Tailwind classes for accent text + border color based on pillar accent
 const accentClass = (a: string) => {
   if (a === 'cyan') return 'text-accent-cyan border-accent-cyan/30';
   if (a === 'lime') return 'text-accent-lime border-accent-lime/30';
   return 'text-accent-pink border-accent-pink/30';
 };
 
+// Returns Tailwind gradient class for the decorative glow blob on each card
 const accentGlow = (a: string) => {
   if (a === 'cyan') return 'from-accent-cyan/20';
   if (a === 'lime') return 'from-accent-lime/20';

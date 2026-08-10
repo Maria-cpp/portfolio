@@ -1,3 +1,11 @@
+/**
+ * Navbar.tsx — Sticky navigation bar with scroll-aware styling.
+ *
+ * Renders a fixed header with section anchor links (desktop) and a slide-down
+ * mobile menu (AnimatePresence). On sub-routes like /projects/[slug], anchor
+ * hrefs are prefixed with "/" so the browser navigates home before scrolling.
+ * Shrinks into a pill-shaped glassmorphic bar after 24px of scroll.
+ */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -23,10 +31,11 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === '/';
+  // Prefix anchors with "/" on sub-routes so they navigate home first
   const to = (hash: string) => (isHome ? hash : `/${hash}`);
 
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false); // true when scrolled past 24px
+  const [open, setOpen] = useState(false);          // mobile menu toggle
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);

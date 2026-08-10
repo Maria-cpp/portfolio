@@ -1,8 +1,15 @@
 // =====================================================================
-//  Maria Naseem — Portfolio Data
-//  Update this single file to change content across the site.
+//  Maria Naseem — Portfolio Data (Single Source of Truth)
+//
+//  ALL text content lives here. Components import from this file and
+//  never hardcode text in JSX. To update site content, edit this file.
+//
+//  Exports: personal, aboutPillars, techCategories, techMarquee,
+//  skillGroups, experience, projects, certifications, zumflux,
+//  forwardDeployed, consulting, education, stats, currentlyLearning
 // =====================================================================
 
+// --- Personal info used across Hero, Contact, Footer, layout.tsx ---
 export const personal = {
   name: 'Maria Naseem',
   firstName: 'Maria',
@@ -34,7 +41,8 @@ export const personal = {
 };
 
 // ---------------------------------------------------------------------
-//  About — vision / expertise / innovation (inspired by ali-ch.dev)
+//  About — three pillar cards (Vision / Expertise / Innovation)
+//  Used by: About.tsx
 // ---------------------------------------------------------------------
 
 export const aboutPillars = [
@@ -62,7 +70,8 @@ export const aboutPillars = [
 ] as const;
 
 // ---------------------------------------------------------------------
-//  Tech stack — grouped, marquee-friendly
+//  Tech stack — categorized cards + marquee ticker items
+//  Used by: TechStack.tsx
 // ---------------------------------------------------------------------
 
 export const techCategories = [
@@ -125,7 +134,8 @@ export const techMarquee = [
 ];
 
 // ---------------------------------------------------------------------
-//  Skills — grid card view (inspired by abbasraza.dev)
+//  Skills — grid card view with title, blurb, and checklist items
+//  Used by: Skills.tsx
 // ---------------------------------------------------------------------
 
 export const skillGroups = [
@@ -260,7 +270,10 @@ export const skillGroups = [
 ];
 
 // ---------------------------------------------------------------------
-//  Experience timeline (inspired by aaabadcode.com)
+//  Experience — career timeline entries (newest first)
+//  Used by: Experience.tsx
+//  Fields: role, company, location, period, current?, bullets, stack
+//  Set `minimal: true` for condensed entries (e.g. earlier career)
 // ---------------------------------------------------------------------
 
 export const experience = [
@@ -354,7 +367,11 @@ export const experience = [
 ];
 
 // ---------------------------------------------------------------------
-//  Featured projects
+//  Featured projects — expandable cards with media, sector badges, and categories
+//  Used by: Projects.tsx
+//  Categories: 'career' | 'zumfluxai' | 'learning'
+//  Optional fields: slug (for case study link), images, videoUrl, videoUrl2,
+//  sector (for badge color), extraTag, highlight, repo, demo
 // ---------------------------------------------------------------------
 
 export const projects = [
@@ -647,7 +664,8 @@ export const projects = [
 ];
 
 // ---------------------------------------------------------------------
-//  Certifications
+//  Certifications — grid cards with status and optional certificate image
+//  Used by: Certifications.tsx
 // ---------------------------------------------------------------------
 
 export const certifications = [
@@ -710,7 +728,8 @@ export const certifications = [
 ];
 
 // ---------------------------------------------------------------------
-//  ZumfluxAI — founder section
+//  ZumfluxAI — founder spotlight section with services and recent clients
+//  Used by: Zumflux.tsx
 // ---------------------------------------------------------------------
 
 export const zumflux = {
@@ -765,7 +784,8 @@ export const zumflux = {
 };
 
 // ---------------------------------------------------------------------
-//  Forward Deployed Engineer — positioning
+//  Forward Deployed Engineer — positioning banner content
+//  Used by: Consulting.tsx
 // ---------------------------------------------------------------------
 
 export const forwardDeployed = {
@@ -777,7 +797,8 @@ export const forwardDeployed = {
 };
 
 // ---------------------------------------------------------------------
-//  Consulting & Training services
+//  Consulting & Training — service cards with CTAs and WhatsApp links
+//  Used by: Consulting.tsx
 // ---------------------------------------------------------------------
 
 export const consulting = {
@@ -823,7 +844,8 @@ export const consulting = {
 };
 
 // ---------------------------------------------------------------------
-//  Education
+//  Education — degree entries
+//  Used by: Certifications.tsx
 // ---------------------------------------------------------------------
 
 export const education = [
@@ -835,7 +857,8 @@ export const education = [
 ];
 
 // ---------------------------------------------------------------------
-//  Stats (for hero / about strip)
+//  Stats — key metrics displayed in the Hero section stats strip
+//  Used by: Hero.tsx
 // ---------------------------------------------------------------------
 
 export const stats = [
@@ -847,6 +870,7 @@ export const stats = [
 
 // ---------------------------------------------------------------------
 //  Currently learning — books / textbooks / online courses
+//  Used by: About.tsx (renders when items array is non-empty)
 // ---------------------------------------------------------------------
 
 export const currentlyLearning = {

@@ -1,3 +1,13 @@
+/**
+ * Experience.tsx — Career timeline section with expandable job entries.
+ *
+ * Displays a vertical timeline (left-aligned dot + gradient line) with
+ * accordion-style job cards. Each card shows role, company, period, and
+ * expands to reveal location, bullet points, and tech stack tags.
+ * First entry is expanded by default.
+ *
+ * Content sourced from `lib/data.ts` (experience).
+ */
 'use client';
 
 import { useState } from 'react';
@@ -6,8 +16,10 @@ import { Briefcase, MapPin, ChevronDown } from 'lucide-react';
 import { experience } from '@/lib/data';
 
 export default function Experience() {
+  // Track which job card is expanded; first entry open by default
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
+  // Toggle accordion: clicking the same entry collapses it
   const toggleExperience = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };

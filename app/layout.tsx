@@ -1,7 +1,16 @@
+/**
+ * layout.tsx — Root layout for the Next.js App Router.
+ *
+ * Configures three Google Fonts (Inter for body, Space Grotesk for headings,
+ * JetBrains Mono for monospace), sets global SEO metadata (OpenGraph, Twitter
+ * cards, keywords), and injects JSON-LD structured data (Person + WebSite
+ * schemas) into the document head for search engine rich results.
+ */
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
+// --- Font configuration (CSS variables used in tailwind.config.ts) ---
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -20,6 +29,7 @@ const mono = JetBrains_Mono({
   display: 'swap'
 });
 
+// --- SEO constants ---
 const SITE_URL = 'https://maria-ai-portfolio.vercel.app';
 const TITLE = 'Maria Naseem — Forward Deployed Engineer & AI Solutions Architect';
 const DESCRIPTION =
@@ -95,6 +105,7 @@ export const metadata: Metadata = {
   category: 'technology'
 };
 
+// --- JSON-LD structured data for search engine rich results ---
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
