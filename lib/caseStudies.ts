@@ -37,6 +37,126 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   // -------------------------------------------------------------------
   {
+    slug: 'video-analytics',
+    title: 'Real-Time Video Analytics Platform',
+    tagline:
+      'YOLO26n + OpenVINO production-line counting and compliance reporting for a regulated-industry client',
+    role: 'AI Solutions Architect & Lead Engineer',
+    org: 'Arwen Tech (Pvt.) Ltd.',
+    period: '2025 — Present',
+    status:
+      'Demonstrated on-site to the client at their production facility · Minor updates before full rollout · Deployed on Microsoft Azure (Container Apps)',
+    summary:
+      'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using YOLO26n with ONNX/OpenVINO CPU inference. Built for a regulated-industry client under a national compliance framework. Containerized and deployed on Microsoft Azure.',
+    tags: [
+      'YOLO26n',
+      'OpenVINO',
+      'ONNX',
+      'OpenCV',
+      'RTSP',
+      'FastAPI',
+      'PostgreSQL',
+      'Docker',
+      'Microsoft Azure'
+    ],
+    stack: [
+      { layer: 'Detection', tech: 'YOLO26n (Ultralytics) — ONNX export, OpenVINO inference for lightweight CPU deployment' },
+      { layer: 'Tracking', tech: 'lap (Linear Assignment Problem) multi-object tracking' },
+      { layer: 'Video', tech: 'OpenCV RTSP multi-camera ingestion, real-time frame processing' },
+      { layer: 'Backend', tech: 'Python, FastAPI — real-time data transmission, event triggering, timestamped records' },
+      { layer: 'Database', tech: 'PostgreSQL — production counts per SKU/line/batch/shift' },
+      { layer: 'Frontend', tech: 'Dashboard views — per SKU, per line, per batch, per shift' },
+      { layer: 'Deploy', tech: 'Docker, Docker Compose, Microsoft Azure Container Apps' }
+    ],
+    diagrams: [
+      {
+        title: 'System Architecture',
+        caption:
+          'Live RTSP feeds flow through detection and tracking into real-time counting, with event triggers and compliance reporting.',
+        chart: `flowchart TB
+    CAM["RTSP Cameras<br/>multi-camera production floor"] --> ING["OpenCV<br/>RTSP ingestion"]
+    ING --> DET["YOLO26n<br/>ONNX → OpenVINO<br/>CPU inference"]
+    DET --> TRK["lap Tracker<br/>multi-object tracking"]
+    TRK --> CNT["Counting Engine<br/>multi-line · multi-SKU"]
+    CNT --> EVT["Event Triggers<br/>timestamped records<br/>anomaly & stoppage detection"]
+    EVT --> API["FastAPI<br/>real-time data transmission"]
+    API --> DB[("PostgreSQL<br/>counts · events · audit")]
+    API --> DASH["Dashboard<br/>SKU · line · batch · shift views"]
+    subgraph AZURE["Microsoft Azure"]
+      ACA["Azure Container Apps"]
+    end
+    API --> ACA`
+      },
+      {
+        title: 'Detection & Tracking Pipeline',
+        caption:
+          'YOLO26n is exported to ONNX and converted to OpenVINO IR for efficient CPU inference — no GPU required on the deployment target.',
+        chart: `flowchart LR
+    F["RTSP Frame"] --> PRE["Preprocessing<br/>resize · normalize"]
+    PRE --> Y["YOLO26n<br/>OpenVINO IR"]
+    Y --> BB["Bounding Boxes<br/>+ confidence scores"]
+    BB --> T["lap Tracker<br/>track assignment"]
+    T --> ID["Tracked Objects<br/>with persistent IDs"]
+    ID --> CL["Counting Lines<br/>multi-line · multi-SKU"]
+    CL --> REC["Timestamped Record<br/>SKU · line · batch · shift"]`
+      }
+    ],
+    sections: [
+      {
+        heading: 'Business Problem',
+        body:
+          'A regulated-industry client needed to accurately count production output across multiple lines and SKUs in real-time, under a national regulatory compliance framework. Manual counting was error-prone and could not produce the timestamped, auditable records regulators require. The solution needed to run on existing infrastructure without expensive GPU hardware.'
+      },
+      {
+        heading: 'Solution',
+        body:
+          'A multi-camera real-time video analytics platform. YOLO26n handles object detection, exported via ONNX and converted to OpenVINO for lightweight CPU inference. The lap tracker maintains persistent object IDs across frames. A counting engine tracks multi-line, multi-SKU production with real-time event triggering for anomalies and stoppages. FastAPI transmits data in real-time to PostgreSQL and a dashboard with views per SKU, line, batch, and shift.'
+      },
+      {
+        heading: 'Key Engineering Decisions',
+        bullets: [
+          'YOLO26n over larger models — the newest ultralight architecture provides sufficient accuracy for production-line objects while enabling CPU-only deployment via OpenVINO',
+          'ONNX → OpenVINO conversion — eliminates GPU dependency, reducing deployment cost and complexity on client infrastructure',
+          'lap tracker for multi-object tracking — lightweight linear assignment approach handles the structured, predictable motion patterns of a production line efficiently',
+          'Multi-line counting architecture — a single deployment handles multiple production lines and SKU types simultaneously'
+        ]
+      },
+      {
+        heading: 'Major Features',
+        bullets: [
+          'Real-time object detection on live RTSP feeds from multiple cameras',
+          'Multi-object tracking with persistent IDs across frames',
+          'Multi-line, multi-SKU production counting with per-shift aggregation',
+          'Anomaly and stoppage detection with real-time event triggering',
+          'Dashboard views: per SKU, per line, per batch, per shift',
+          'Timestamped, auditable records for regulatory compliance'
+        ]
+      },
+      {
+        heading: 'Challenges',
+        bullets: [
+          'Achieving reliable counting accuracy on a busy production line with overlapping objects and variable lighting',
+          'Deploying real-time inference on CPU-only infrastructure without sacrificing frame rate — solved with ONNX/OpenVINO optimization',
+          'Handling multiple RTSP camera feeds simultaneously with consistent tracking across views'
+        ]
+      },
+      {
+        heading: 'Deployment',
+        body:
+          'Containerized with Docker and deployed on Microsoft Azure Container Apps. The system was demonstrated on-site at the client\'s production facility — the client visited and observed live counting. Minor updates are in progress before full production rollout.'
+      },
+      {
+        heading: 'Lessons Learned',
+        body:
+          'The model choice matters less than the deployment engineering. YOLO26n is not the most accurate detector available, but it runs on CPU via OpenVINO at the frame rates the use case demands — and that practical constraint is what makes the system deployable on client infrastructure without a GPU procurement cycle. The on-site demo proved that real-time accuracy on actual production-line footage is what closes the deal, not benchmark numbers on public datasets.'
+      }
+    ],
+    businessValue:
+      'Replaces manual production counting with real-time, auditable automated tracking — meeting regulatory compliance requirements while eliminating human counting error. CPU-only inference via OpenVINO means no GPU hardware costs for the client.'
+  },
+
+  // -------------------------------------------------------------------
+  {
     slug: 'agentic-contract-intelligence',
     title: 'Agentic AI Contract Intelligence Platform',
     tagline:
