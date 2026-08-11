@@ -205,7 +205,7 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLO11 custom-trained, multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
+      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLO26n (ONNX/OpenVINO CPU inference), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
       'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Deployed live on-premises (LAN) on our own staff in Karachi for real-world training and validation.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
@@ -213,7 +213,7 @@ export const experience = [
       'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
       'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
     ],
-    stack: ['FastAPI', 'YOLO11', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+    stack: ['FastAPI', 'YOLO26n', 'OpenVINO', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
 
   },
   {
@@ -298,6 +298,59 @@ export const experience = [
 export const projects = [
   // ── Career / Enterprise Projects ──────────────────────────────────
   {
+    title: 'Video Analytics',
+    slug: 'video-analytics',
+    tagline: 'YOLO26n + OpenVINO production-line counting for regulatory compliance',
+    description:
+      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLO26n object detection with ONNX conversion to OpenVINO for lightweight CPU inference, lap multi-object tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
+    tags: ['YOLO26n', 'OpenVINO', 'ONNX', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
+    repo: null,
+    demo: null,
+    images: [
+      '/images/video_analytics/multi_obj_detection.png',
+      '/images/video_analytics/single object.png',
+      '/images/video_analytics/moving object.png',
+      '/images/video_analytics/logs.png'
+    ],
+    featured: true,
+    highlight: 'Regulated Industry · Compliance',
+    sector: 'Enterprise',
+    extraTag: 'Demoed on-site',
+    category: 'career'  },
+  {
+    title: 'Agentic AI Contract Intelligence Platform',
+    slug: 'agentic-contract-intelligence',
+    tagline: 'FDE project \u2014 Multi-agent RAG for contract intelligence, JMB automation & legal ops',
+    description:
+      'Forward Deployed Engineering build for a national tourism company managing contracts across multiple provinces. Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata \u2014 duration, site details, revenue share, signatories, contact information, and JMB schedules \u2014 and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering. A LangGraph multi-agent architecture (Python \u00b7 FastAPI \u00b7 Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution \u2014 the Forward Deployed pattern in practice.',
+    tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
+    repo: null,
+    demo: null,
+    featured: true,
+    highlight: 'FDE \u00b7 Agentic RAG',
+    sector: 'Enterprise',
+    extraTag: 'Completed',
+    category: 'career'  },
+  {
+    title: 'Facial Recognition Attendance System',
+    tagline: '4-stage HITL facial recognition on multi-camera RTSP',
+    description:
+      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment \u2192 similarity-based candidate retrieval from live RTSP \u2192 human-in-the-loop verification gate \u2192 embedding generation \u2192 real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
+    tags: ['DeepFace \u00b7 SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
+    repo: null,
+    demo: null,
+    images: [
+      '/images/ams/face detection 2.png',
+      '/images/ams/2face detection.png',
+      '/images/ams/front cam.png',
+      '/images/ams/ams_logs.png'
+    ],
+    featured: true,
+    highlight: 'Enterprise \u00b7 HITL',
+    sector: 'Enterprise',
+    extraTag: 'Live \u00b7 on-prem',
+    category: 'career'  },
+  {
     title: 'Security Vault Service',
     slug: 'security-vault-service',
     tagline: 'Bank-grade PII tokenization vault with dual-gate unmask + hash-chained audit',
@@ -313,6 +366,26 @@ export const projects = [
     highlight: 'Security · Privacy Vault',
     sector: 'Enterprise',
     extraTag: 'In internal use',
+    category: 'career'  },
+  {
+    title: 'Agentic Observability Platform',
+    tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
+    description:
+      'Dockerized observability stack with a built and deployed MCP server. AI Alert Analyzer performs root-cause inference, severity classification, and recommended next actions. Self-validating PromQL rules and dashboards against live Prometheus.',
+    tags: ['FastAPI', 'MCP', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
+    repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
+    demo: null,
+    images: [
+      '/images/agentic_observability/agents_dashboard.png',
+      '/images/agentic_observability/operations_dashboard.png',
+      '/images/agentic_observability/alert_analyzer.png',
+      '/images/agentic_observability/alert_manager.png',
+      '/images/agentic_observability/alerts.png',
+      '/images/agentic_observability/prometheus target.png',
+      '/images/agentic_observability/cxp_dashboard.png'
+    ],
+    featured: true,
+    highlight: 'MCP Server',
     category: 'career'  },
   {
     title: 'Multilingual NLP Intelligence Platform',
@@ -336,58 +409,6 @@ export const projects = [
     extraTag: 'Operational',
     category: 'career'  },
   {
-    title: 'Video Analytics',
-    tagline: 'YOLO11 production-line counting for regulatory compliance',
-    description:
-      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLO11 / Ultralytics object detection with lap tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site \u2014 the client visited the production facility; minor updates before rollout.',
-    tags: ['YOLO11', 'Ultralytics', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
-    repo: null,
-    demo: null,
-    images: [
-      '/images/video_analytics/multi_obj_detection.png',
-      '/images/video_analytics/single object.png',
-      '/images/video_analytics/moving object.png',
-      '/images/video_analytics/logs.png'
-    ],
-    featured: true,
-    highlight: 'Regulated Industry \u00b7 Compliance',
-    sector: 'Enterprise',
-    extraTag: 'Demoed on-site',
-    category: 'career'  },
-  {
-    title: 'Facial Recognition Attendance System',
-    tagline: '4-stage HITL facial recognition on multi-camera RTSP',
-    description:
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment \u2192 similarity-based candidate retrieval from live RTSP \u2192 human-in-the-loop verification gate \u2192 embedding generation \u2192 real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
-    tags: ['DeepFace \u00b7 SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
-    repo: null,
-    demo: null,
-    images: [
-      '/images/ams/face detection 2.png',
-      '/images/ams/2face detection.png',
-      '/images/ams/front cam.png',
-      '/images/ams/ams_logs.png'
-    ],
-    featured: true,
-    highlight: 'Enterprise \u00b7 HITL',
-    sector: 'Enterprise',
-    extraTag: 'Live \u00b7 on-prem',
-    category: 'career'  },
-  {
-    title: 'Agentic AI Contract Intelligence Platform',
-    slug: 'agentic-contract-intelligence',
-    tagline: 'FDE project \u2014 Multi-agent RAG for contract intelligence, JMB automation & legal ops',
-    description:
-      'Forward Deployed Engineering build for a national tourism company managing contracts across multiple provinces. Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata \u2014 duration, site details, revenue share, signatories, contact information, and JMB schedules \u2014 and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering. A LangGraph multi-agent architecture (Python \u00b7 FastAPI \u00b7 Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution \u2014 the Forward Deployed pattern in practice.',
-    tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
-    repo: null,
-    demo: null,
-    featured: true,
-    highlight: 'FDE \u00b7 Agentic RAG',
-    sector: 'Enterprise',
-    extraTag: 'Completed',
-    category: 'career'  },
-  {
     title: 'Customer Experience Portal (CXP)',
     tagline: 'Contract lifecycle automation with Gemini-assisted workflows',
     description:
@@ -398,26 +419,6 @@ export const projects = [
     videoUrl: '/videos/CX portal.mp4',
     featured: true,
     highlight: 'Enterprise \u00b7 SaaS',
-    category: 'career'  },
-  {
-    title: 'Agentic Observability Platform',
-    tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
-    description:
-      'Dockerized observability stack with a built and deployed MCP server. AI Alert Analyzer performs root-cause inference, severity classification, and recommended next actions. Self-validating PromQL rules and dashboards against live Prometheus.',
-    tags: ['FastAPI', 'MCP', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
-    repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
-    demo: null,
-    images: [
-      '/images/agentic_observability/agents_dashboard.png',
-      '/images/agentic_observability/operations_dashboard.png',
-      '/images/agentic_observability/alert_analyzer.png',
-      '/images/agentic_observability/alert_manager.png',
-      '/images/agentic_observability/alerts.png',
-      '/images/agentic_observability/prometheus target.png',
-      '/images/agentic_observability/cxp_dashboard.png'
-    ],
-    featured: true,
-    highlight: 'MCP Server',
     category: 'career'  },
   {
     title: 'Multi-Channel Notification Microservice',
