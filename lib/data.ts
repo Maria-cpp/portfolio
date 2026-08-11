@@ -596,56 +596,64 @@ export const certifications = [
     issuer: 'PIAIC / Panaversity',
     year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/agentic_ai_level-II.jpg'
+    pdfUrl: '/certificates/agentic_ai_level-II.jpg',
+    group: 'professional' as const
   },
   {
     name: 'Agentic AI Level 1 — Developer Fundamentals',
     issuer: 'PIAIC / Panaversity',
     year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/agentic_ai_level-I.jpg'
+    pdfUrl: '/certificates/agentic_ai_level-I.jpg',
+    group: 'professional' as const
   },
   {
     name: 'Agent Factory Fundamentals: Building Digital FTEs',
     issuer: 'PIAIC / Panaversity',
     year: '2026',
     status: 'Completed · 81%',
-    pdfUrl: '/certificates/FTE.png'
-  },
-  {
-    name: 'Alibaba Cloud Trainer',
-    issuer: 'Bano Qabil',
-    year: '2026',
-    status: 'In Progress',
-    pdfUrl: null
+    pdfUrl: '/certificates/FTE.png',
+    group: 'professional' as const
   },
   {
     name: 'Generative AI Applications',
     issuer: 'Coursera',
     year: '2026',
     status: 'Completed · 90%',
-    pdfUrl: '/certificates/IBM _genrative _Ai.jpg'
+    pdfUrl: '/certificates/IBM _genrative _Ai.jpg',
+    group: 'professional' as const
   },
   {
     name: 'Build RAG Applications',
     issuer: 'IBM / Coursera',
     year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/IBM_rag_application\'s .jpg'
-  },
-  {
-    name: 'AI for Cybersecurity Specialization',
-    issuer: 'Johns Hopkins University · Coursera',
-    year: '2026',
-    status: 'In Progress',
-    pdfUrl: null
+    pdfUrl: '/certificates/IBM_rag_application\'s .jpg',
+    group: 'professional' as const
   },
   {
     name: 'AI for Everyone',
     issuer: 'DeepLearning.AI · Coursera',
     year: '2026',
     status: 'Completed',
-    pdfUrl: '/certificates/ai_for_everyone.png'
+    pdfUrl: '/certificates/ai_for_everyone.png',
+    group: 'professional' as const
+  },
+  {
+    name: 'Alibaba Cloud Trainer',
+    issuer: 'Bano Qabil',
+    year: '2026',
+    status: 'In Progress',
+    pdfUrl: null,
+    group: 'development' as const
+  },
+  {
+    name: 'AI for Cybersecurity Specialization',
+    issuer: 'Johns Hopkins University · Coursera',
+    year: '2026',
+    status: 'In Progress',
+    pdfUrl: null,
+    group: 'development' as const
   }
 ];
 
