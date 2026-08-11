@@ -32,13 +32,13 @@ export default function Contact() {
             <div>
               <div className="eyebrow">Get in touch</div>
               <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">
-                Have A Project?{' '}
-                <span className="gradient-text">Let&apos;s Build.</span>
+                Have an AI workflow{' '}
+                <span className="gradient-text">worth automating?</span>
               </h2>
               <p className="mt-5 text-white/65 max-w-md leading-relaxed">
-                Whether you need an AI engineer for your team, want to engage
-                ZumfluxAI for a build, or just want to chat about agentic
-                systems and government AI — drop me a line.
+                Tell me what your team is doing manually. I&apos;ll help map the
+                workflow, identify where AI fits, and design a production-ready
+                solution.
               </p>
 
               <div className="mt-7 flex flex-col gap-3">

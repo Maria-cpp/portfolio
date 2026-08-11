@@ -18,12 +18,11 @@ import { personal } from '@/lib/data';
 // they must be prefixed so they navigate home first, then scroll.
 const links = [
   { href: '#about', label: 'About' },
-  { href: '#stack', label: 'Stack' },
+  { href: '#stack', label: 'Tech' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#architecture', label: 'Architecture' },
   { href: '#zumflux', label: 'ZumfluxAI' },
-  { href: '#consulting', label: 'Consulting' },
   { href: '#certifications', label: 'Certs' },
   { href: '#contact', label: 'Contact' }
 ];

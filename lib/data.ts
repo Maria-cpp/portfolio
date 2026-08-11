@@ -664,7 +664,7 @@ export const certifications = [
 
 export const zumflux = {
   name: 'ZumfluxAI',
-  tagline: 'Production AI engineering for teams shipping real-world products.',
+  tagline: 'AI Engineering Studio — production AI systems for teams shipping real-world products.',
   description:
     'I founded ZumfluxAI to bring agentic systems, computer vision pipelines, and full-stack AI platforms to teams that need shipping-grade engineering — not demos. From multi-camera vision systems to autonomous LLM workflows, ZumfluxAI delivers AI that runs in production.',
   services: [
@@ -735,14 +735,14 @@ export const consulting = {
   eyebrow: 'Work with me',
   heading: 'Consulting & Training',
   intro:
-    'Beyond building AI products, I help organizations adopt AI the right way — turning repetitive work into automation, and upskilling teams so they can keep improving on their own.',
+    'Beyond building AI products, I help organizations adopt AI the right way — turning repetitive work into automation.',
   services: [
     {
       icon: 'Workflow',
       badge: 'Consultancy',
       title: 'AI Automation Consultancy',
       description:
-        'I help companies turn repetitive, manual, day-to-day work into reliable automations. I map your workflows, find the bottlenecks worth fixing, and design AI + automation that frees your team to focus on higher-value work.',
+        'I map your workflows, find the bottlenecks worth fixing, and design AI + automation that frees your team to focus on higher-value work.',
       points: [
         'Workflow mapping & pain-point analysis',
         'Automation & AI opportunity assessment',
@@ -754,23 +754,13 @@ export const consulting = {
         label: 'WhatsApp me',
         href: 'https://wa.me/923066775777?text=Hi%20Maria%2C%20I%27d%20like%20to%20book%20a%20free%20AI%20consultation.'
       }
-    },
-    {
-      icon: 'GraduationCap',
-      badge: 'AI Trainer',
-      title: 'AI Training & Enablement',
-      description:
-        'I train small businesses, solo owners, and solar-industry teams to use AI with confidence — so they can build their own small automations in-house instead of depending on outside vendors for every change.',
-      points: [
-        'Hands-on, role-based AI training',
-        'Practical automations your team can maintain',
-        'Guided by my open AI Bootcamp curriculum'
-      ],
-      cta: 'View the AI Bootcamp',
-      href: 'https://github.com/Maria-cpp/ai-bootcamp-guide',
-      whatsapp: null
     }
-  ]
+  ],
+  trainingLink: {
+    text: 'I also offer AI training & enablement for small teams.',
+    cta: 'View the AI Bootcamp',
+    href: 'https://github.com/Maria-cpp/ai-bootcamp-guide'
+  }
 };
 
 // ---------------------------------------------------------------------

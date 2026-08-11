@@ -62,8 +62,8 @@ export default function Consulting() {
           </div>
         </Tilt3D>
 
-        {/* Service cards */}
-        <div className="mt-6 grid md:grid-cols-2 gap-5">
+        {/* Service card */}
+        <div className="mt-6 grid md:grid-cols-1 max-w-2xl gap-5">
           {consulting.services.map((s, i) => {
             const Icon = iconFor(s.icon);
             const external = s.href.startsWith('http');
@@ -133,6 +133,21 @@ export default function Consulting() {
             );
           })}
         </div>
+
+        {/* Training link — demoted */}
+        {consulting.trainingLink && (
+          <p className="mt-6 text-sm text-white/50">
+            {consulting.trainingLink.text}{' '}
+            <a
+              href={consulting.trainingLink.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-accent-cyan hover:text-white transition underline underline-offset-2"
+            >
+              {consulting.trainingLink.cta} →
+            </a>
+          </p>
+        )}
       </div>
     </section>
   );
