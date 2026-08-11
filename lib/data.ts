@@ -14,17 +14,12 @@ export const personal = {
   name: 'Maria Naseem',
   firstName: 'Maria',
   initials: 'MN',
-  title: 'Forward Deployed Engineer · AI Solutions Architect',
+  title: 'AI Engineer & AI Solutions Architect',
   taglines: [
-    'Forward Deployed Engineer',
-    'AI Solutions Architect',
-    'Agentic AI · MCP · HITL',
-    'Computer Vision Engineer',
-    'NLP · Multilingual & Low-Resource',
-    'Conversational & Voice Agents — in progress',
-    'Enterprise & Regulated-Industry AI',
-    'Founder @ ZumfluxAI',
-    'Founder @ ZUM Services Providers'
+    'AI Engineer & AI Solutions Architect',
+    'Agentic AI · Computer Vision · RAG',
+    'Production AI Systems',
+    'Founder @ ZumfluxAI'
   ],
   location: 'Islamabad, Pakistan',
   availability: 'Open to relocation & remote — worldwide',
@@ -35,9 +30,9 @@ export const personal = {
   linkedin: 'https://www.linkedin.com/in/maria-naseem/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'Forward Deployed Engineer & AI Solutions Architect. I embed with clients, map their operations, and ship production AI they can actually run — real-time video analytics, four-stage HITL facial recognition, MCP-native agentic systems, and bank-grade data protection. Currently running two live FDE engagements across automotive and travel.',
+    'AI Engineer & AI Solutions Architect. I design, build, and deploy production AI — real-time computer vision on RTSP, agentic systems with MCP and HITL gates, RAG platforms, and bank-grade data protection. Currently running two Forward Deployed engagements across automotive and travel.',
   longBio:
-    `I'm a Forward Deployed Engineer and AI Solutions Architect — I embed with clients, map their workflows, and deliver production AI they can operate, audit, and trust. Across roughly 10 years combining corporate and software roles — about 6 in software and technology and ~4 working with AI/ML, the last ~2 focused intensively on production systems — I've led architecture for a real-time video-analytics platform deployed on Microsoft Azure, a four-stage HITL facial-recognition attendance system, an MCP-native agentic observability stack, and a bank-grade PII tokenization vault. I currently run two active Forward Deployed engagements — automating manual operations end-to-end for automotive and travel clients. I also designed an agentic RAG contract-intelligence platform from inside a corporate-affairs role, and founded ZumfluxAI to deliver this work. Beyond engineering, I bring stakeholder fluency from serving as legal and regulatory liaison and coordinating BoD-level governance at a national tourism company.`
+    `AI Engineer & AI Solutions Architect with roughly 10 years across technology, engineering, and corporate operations — about 6 in software and ~4 in AI/ML, the last ~2 focused on production systems. I architect real-time video-analytics platforms on Azure, four-stage HITL facial-recognition systems, MCP-native agentic observability stacks, and bank-grade PII tokenization vaults. I work as a Forward Deployed Engineer — embedding with clients, mapping their operations, and shipping AI they can actually run. Currently running two active FDE engagements and founded ZumfluxAI to deliver this work.`
 };
 
 // ---------------------------------------------------------------------
@@ -863,9 +858,9 @@ export const education = [
 
 export const stats = [
   { label: 'Active FDE client engagements', value: '2' },
-  { label: 'Yrs overall · 6+ software · 4+ in AI', value: '10+' },
+  { label: 'Yrs across tech, engineering & ops · 6+ software · 4+ AI/ML', value: '10+' },
   { label: 'Systems built — prototype to production', value: '12+' },
-  { label: 'AI / agentic certifications', value: '5' }
+  { label: 'AI / agentic certifications', value: '6' }
 ];
 
 // ---------------------------------------------------------------------
