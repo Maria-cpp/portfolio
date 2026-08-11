@@ -71,61 +71,40 @@ export const aboutPillars = [
 
 export const techCategories = [
   {
-    name: 'Agentic AI & LLMs',
+    name: 'AI / Agentic',
     icon: 'Brain',
     items: [
-      'OpenAI', 'Anthropic Claude', 'Grok', 'Gemini',
+      'OpenAI', 'Anthropic Claude', 'Gemini',
       'MCP Servers (built & deployed)', 'Multi-Agent Orchestration',
-      'HITL Controls', 'RAG', 'FAISS', 'Pinecone', 'Qdrant',
-      'Pydantic Structured Outputs', 'LangChain', 'LangGraph', 'NLP',
-      'OCR (PaddleOCR · pdfplumber)', 'Semantic Search'
+      'HITL Controls', 'RAG', 'FAISS', 'LangGraph',
+      'Pydantic Structured Outputs'
     ]
   },
   {
     name: 'Computer Vision',
     icon: 'Camera',
-    items: ['YOLO11 / Ultralytics', 'OpenCV', 'DeepFace · SFace', 'lap (tracking)', 'RTSP Multi-camera', 'Production-line analytics']
+    items: ['YOLO26n', 'OpenCV', 'OpenVINO', 'DeepFace · SFace', 'RTSP Multi-camera', 'FAISS']
   },
   {
-    name: 'Backend',
+    name: 'Engineering',
     icon: 'Server',
-    items: ['FastAPI', 'Python', 'Node.js', 'Redis', 'Celery', 'PostgreSQL', 'SQLAlchemy', 'MySQL', 'WebSockets', 'RBAC/CBAC']
+    items: ['Python', 'FastAPI', 'Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Celery', 'WebSockets']
   },
   {
-    name: 'Frontend',
-    icon: 'Layout',
-    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'Framer Motion']
-  },
-  {
-    name: 'MLOps & Observability',
-    icon: 'Activity',
-    items: ['Grafana', 'Prometheus', 'Alertmanager', 'structlog', 'Docker health checks', 'Agentic alert analysis']
-  },
-  {
-    name: 'DevOps & Cloud',
+    name: 'Infrastructure',
     icon: 'Boxes',
-    items: ['Docker', 'Docker Compose', 'GitHub Actions', 'Linux', 'Nginx', 'CI/CD', 'systemd', 'certbot', 'Azure', 'Azure Container Apps']
-  },
-  {
-    name: 'Security & Privacy',
-    icon: 'ShieldCheck',
-    items: [
-      'PII detection & tokenization', 'Envelope encryption (Fernet/AES)', 'HMAC-SHA256',
-      'Hash-chained audit logs', 'KMS / HSM key providers', 'Key rotation',
-      'RBAC · dual-gate authorization', 'SIEM forwarding', 'spaCy NER'
-    ]
+    items: ['Docker', 'GitHub Actions', 'Azure', 'Prometheus', 'Grafana', 'Nginx', 'Linux']
   }
 ] as const;
 
 export const techMarquee = [
-  'Python', 'TypeScript', 'FastAPI', 'Next.js', 'React',
-  'OpenAI', 'Anthropic', 'Gemini', 'Grok',
-  'MCP', 'YOLO11', 'OpenCV', 'DeepFace',
-  'PostgreSQL', 'Redis', 'Celery',
-  'Docker', 'GitHub Actions', 'Tailwind CSS',
-  'Pinecone', 'FAISS', 'LangChain', 'LangGraph', 'n8n', 'NLP',
-  'Grafana', 'Prometheus', 'Alertmanager',
-  'Playwright', 'Node.js', 'Streamlit'
+  'Python', 'TypeScript', 'FastAPI', 'Next.js',
+  'OpenAI', 'Anthropic', 'MCP',
+  'YOLO26n', 'OpenCV', 'OpenVINO',
+  'PostgreSQL', 'Redis',
+  'Docker', 'Azure',
+  'LangGraph', 'FAISS',
+  'Prometheus', 'Grafana'
 ];
 
 // ---------------------------------------------------------------------
@@ -153,7 +132,7 @@ export const skillGroups = [
     title: 'Computer Vision',
     blurb: 'Production CV pipelines on live RTSP — from facial-recognition attendance to factory-line analytics.',
     items: [
-      'YOLO11 / Ultralytics · lap tracking',
+      'YOLO26n / Ultralytics · ONNX · OpenVINO',
       'Facial Recognition (DeepFace, SFace)',
       'RTSP multi-camera ingestion',
       '4-stage enrollment → HITL → embedding → inference',
@@ -162,12 +141,13 @@ export const skillGroups = [
   },
   {
     title: 'LLM Engineering',
-    blurb: 'RAG, structured outputs, and provider-agnostic LLM gateways.',
+    blurb: 'RAG, structured outputs, document intelligence, and provider-agnostic LLM gateways.',
     items: [
       'OpenAI · Anthropic · Grok · Gemini',
       'Retrieval-Augmented Generation',
       'Embeddings & Vector Search',
-      'FAISS · Pinecone',
+      'FAISS · Pinecone · pgvector',
+      'Document Intelligence · OCR · Contract AI',
       'Prompt Engineering & guardrails',
       'NLP — multilingual & low-resource (Urdu, Roman Urdu, Pashto…)'
     ]
@@ -185,51 +165,6 @@ export const skillGroups = [
     ]
   },
   {
-    title: 'Frontend',
-    blurb: 'Modern React stacks for AI-driven dashboards and operator tools.',
-    items: [
-      'Next.js (App Router)',
-      'React · TypeScript',
-      'Tailwind CSS',
-      'Streamlit (rapid prototyping)',
-      'Framer Motion'
-    ]
-  },
-  {
-    title: 'Consulting & Delivery',
-    blurb: 'The forward-deployed half — embedding with stakeholders, mapping workflows, and owning delivery end to end.',
-    items: [
-      'Requirement gathering & workflow mapping',
-      'Stakeholder & C-suite communication',
-      'Solution architecture',
-      'Client acquisition & service delivery',
-      'Corporate governance · BoD / JMB coordination',
-      'Contract review · regulatory compliance'
-    ]
-  },
-  {
-    title: 'Document Intelligence & RAG',
-    blurb: 'Deterministic-first extraction — rules and OCR before the LLM, with confidence gates and audit trails.',
-    items: [
-      'RAG over PostgreSQL / pgvector',
-      'Semantic search across enterprise records',
-      'OCR + regex + rule-based extraction',
-      'LLM-assisted validation · confidence scoring',
-      'Contract & document metadata extraction',
-      'Audit logging · validation pipelines'
-    ]
-  },
-  {
-    title: 'Cloud',
-    blurb: 'Production AI workloads on Microsoft Azure alongside self-hosted Linux stacks.',
-    items: [
-      'Microsoft Azure — deployed real-time video analytics to production',
-      'Azure Container Apps',
-      'Docker containerized deployment · GitHub Actions CI/CD',
-      'Azure AI Foundry (exploring)'
-    ]
-  },
-  {
     title: 'Security & Privacy Engineering',
     blurb: 'Bank-grade data protection — tokenization, envelope encryption, and tamper-evident audit trails.',
     items: [
@@ -242,24 +177,15 @@ export const skillGroups = [
     ]
   },
   {
-    title: 'Web & CMS',
-    blurb: 'Production WordPress delivery — custom themes, PHP plugins, and integrations.',
+    title: 'Consulting & Delivery',
+    blurb: 'The forward-deployed half — embedding with stakeholders, mapping workflows, and owning delivery end to end.',
     items: [
-      'WordPress · custom themes',
-      'PHP plugin development',
-      'REST API & third-party integrations',
-      'Performance optimization · client deployments'
-    ]
-  },
-  {
-    title: 'MLOps · DevOps · Observability',
-    blurb: 'Container-first deployments with monitoring and CI/CD.',
-    items: [
-      'Docker · Docker Compose',
-      'GitHub Actions CI/CD',
-      'Grafana · Prometheus · Alertmanager',
-      'Linux · Nginx · systemd · certbot',
-      'Familiarity with Kubernetes patterns'
+      'Requirement gathering & workflow mapping',
+      'Stakeholder & C-suite communication',
+      'Solution architecture',
+      'Client acquisition & service delivery',
+      'Corporate governance · BoD / JMB coordination',
+      'Contract review · regulatory compliance'
     ]
   }
 ];
