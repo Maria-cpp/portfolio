@@ -82,7 +82,7 @@ export default function TechStack() {
         </motion.div>
 
         {/* Categories grid */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {techCategories.map((cat, idx) => {
             const Icon = iconMap[cat.icon] ?? Boxes;
             return (

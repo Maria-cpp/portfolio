@@ -42,5 +42,8 @@ ziI*
 # Original source assets — don't commit raw videos / heavy media
 data/videos/
 
+# Resumes (editable source files)
+public/resumes/
+
 # Build output
 out/

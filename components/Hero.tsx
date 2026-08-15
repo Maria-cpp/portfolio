@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute inset-0 grid-bg pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-5 w-full">
-        <div className="grid lg:grid-cols-[1.8fr_0.8fr] gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
           {/* Left: copy */}
           <div>
             <motion.div

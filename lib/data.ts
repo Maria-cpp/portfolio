@@ -784,8 +784,8 @@ export const education = [
 export const stats = [
   { label: 'Active FDE client engagements', value: '2' },
   { label: 'Yrs across tech, engineering & ops · 6+ software · 4+ AI/ML', value: '10+' },
-  { label: 'Systems built — prototype to production', value: '12+' },
-  { label: 'AI / agentic certifications', value: '6' }
+  { label: 'Systems & projects — prototype to production', value: '12+' },
+  { label: 'AI certifications', value: '6' }
 ];
 
 // ---------------------------------------------------------------------
