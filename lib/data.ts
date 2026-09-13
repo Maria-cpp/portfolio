@@ -177,6 +177,18 @@ export const skillGroups = [
     ]
   },
   {
+    title: 'Cloud Architecture',
+    blurb: 'End-to-end architecture design for scalable, secure, and production-ready applications.',
+    items: [
+      'Alibaba Cloud architecture patterns',
+      'Full application architecture design',
+      'Scalable compute, storage, and networking',
+      'High availability, disaster recovery, and observability',
+      'Security, IAM, and cost-aware design',
+      'Mock exam preparation for Alibaba Cloud architecture'
+    ]
+  },
+  {
     title: 'Consulting & Delivery',
     blurb: 'The forward-deployed half — embedding with stakeholders, mapping workflows, and owning delivery end to end.',
     items: [
