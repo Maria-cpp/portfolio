@@ -7,6 +7,7 @@
  */
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Capabilities from '@/components/Capabilities';
 import About from '@/components/About';
 import TechStack from '@/components/TechStack';
 import Experience from '@/components/Experience';
@@ -22,27 +23,22 @@ import NeonBar from '@/components/NeonBar';
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* Fixed ambient glow blobs — decorative gradient background */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="glow-blob bg-accent/30 w-[600px] h-[600px] -top-40 -left-40" />
-        <div className="glow-blob bg-accent-cyan/20 w-[500px] h-[500px] top-[40%] -right-40" />
-        <div className="glow-blob bg-accent-pink/15 w-[400px] h-[400px] bottom-0 left-1/3" />
-      </div>
-
       {/* Section composition — order matches the visual flow top-to-bottom */}
       <div className="relative z-10">
         <Navbar />
         <Hero />
         <NeonBar />
-        <About />
-        <NeonBar />
-        <TechStack />
-        <NeonBar />
-        <Experience />
+        <Capabilities />
         <NeonBar />
         <Projects />
         <NeonBar />
+        <Experience />
+        <NeonBar />
+        <TechStack />
+        <NeonBar />
         <Architecture />
+        <NeonBar />
+        <About />
         <NeonBar />
         <Zumflux />
         <NeonBar />

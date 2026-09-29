@@ -27,7 +27,7 @@ All three variants follow the same 2-page layout. Content is tailored per varian
 3. **Professional Summary** — 8-10 lines, tailored per variant
 4. **Core Expertise** — 12 keywords in a 3x4 grid, tailored per variant
 5. **Technical Skills** — 4-5 categories with condensed single-line lists
-6. **Professional Experience** — Arwen Tech (4-5 bullets), Green Tourism (3-4 bullets)
+6. **Professional Experience** — Arwen Tech (4-5 bullets), Confidential Organization (3-4 bullets)
 
 ### Page 2
 
@@ -80,7 +80,7 @@ Enterprise AI Leader
 Agentic AI . Enterprise Platforms . Solution Design . Client Delivery
 ```
 
-**Summary emphasis:** Designing end-to-end AI solutions for enterprise and government clients. Architecture decisions, stakeholder communication, client demonstrations, production deployment. Bridge between business and technical.
+**Summary emphasis:** Designing end-to-end AI solutions for enterprise and enterprise clients. Architecture decisions, stakeholder communication, client demonstrations, production deployment. Bridge between business and technical.
 
 **Core Expertise:**
 Solution Architecture, Agentic AI, Enterprise AI, LLM Applications, Computer Vision, Client Delivery, RAG, System Design, Stakeholder Management, Azure, Docker, Microservices
@@ -152,10 +152,10 @@ Computer Vision, Object Detection, Facial Recognition, Real-Time ML, YOLO/Ultral
 - Senior AI Positioning: 10/10
 
 ## Confidentiality
-- No real client names (FBR, Sindh Secretariat) — use "federal regulator", "provincial government secretariat" per CLAUDE.md rules
-- "regulated-industry client" for Arwen Tech's video analytics client
+- No real client names (NDA-protected client, NDA-protected organization) — use "NDA-protected client", "NDA-protected client" per CLAUDE.md rules
+- "NDA-protected engagement" for Arwen Tech's video analytics client
 - "enterprise client" for Arwen Tech's attendance system client
-- "national tourism company" for Green Tourism
+- "client organization" for Confidential Organization
 
 ## Out of Scope
 - Automated PDF generation tooling

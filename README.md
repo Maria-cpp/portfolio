@@ -22,7 +22,7 @@ A modern AI Solutions Architect portfolio built with **Next.js 14**, **Tailwind 
 2. **About** — Vision / Expertise / Innovation pillars
 3. **Tech Stack** — Marquee + categorized grid (Agentic AI, CV, Backend, Frontend, MLOps, DevOps)
 4. **Skills** — Six specialty cards (Agentic AI & MCP, CV, LLM, Backend, Frontend, DevOps)
-5. **Experience** — Vertical timeline (Arwen Tech, ZumfluxAI, Green Tourism, ZUM Services, MediaPark, Earlier Career)
+5. **Experience** — Vertical timeline (Arwen Tech, ZumfluxAI, Confidential Organization, ZUM Services, MediaPark, Earlier Career)
 6. **Projects** — 13 featured cards with tags, image carousels, local video embeds, screenshots popup
 7. **Architecture** — 4 interactive SVG flow diagrams (Track & Trace, AMS HITL, Notification Service, Agentic Observability)
 8. **ZumfluxAI** — Dedicated founder section with services grid + recent client work
@@ -99,7 +99,7 @@ Portfolio/
 │   └── data.ts             <- ALL CONTENT lives here
 ├── public/
 │   ├── certificates/       <- 4 certificate JPGs
-│   ├── images/             <- project screenshots (ams/, video_analytics_fbr/, agentic_observability/)
+│   ├── images/             <- project screenshots (ams/, video_analytics_NDA-protected client/, agentic_observability/)
 │   ├── videos/             <- 6 MP4 demo videos (~130MB total)
 │   └── Maria_Naseem_CV.pdf <- downloadable resume
 ├── docs/                   <- source CV and assets

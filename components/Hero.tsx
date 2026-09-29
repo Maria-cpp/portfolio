@@ -1,213 +1,48 @@
-/**
- * Hero.tsx — Full-viewport landing section.
- *
- * Features a rotating tagline carousel (cycles every 2.4s), availability badge,
- * CTA buttons (projects, contact, CV download), social links, and a glassmorphic
- * "terminal card" with a code-style profile summary. Stats strip at the bottom.
- *
- * All text content is sourced from `lib/data.ts` (personal, stats).
- */
-'use client';
+import { ArrowDown, ArrowRight, Github, Linkedin, Download } from 'lucide-react';
+import { personal } from '@/lib/data';
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Sparkles, Download } from 'lucide-react';
-import { personal, stats } from '@/lib/data';
+const proof = [
+  ['10+', 'years across technology & operations'],
+  ['6+', 'years in software engineering'],
+  ['4+', 'years in AI / ML']
+];
 
 export default function Hero() {
-  // Index for the rotating tagline carousel
-  const [tagIndex, setTagIndex] = useState(0);
-
-  // Rotate taglines every 2.4 seconds
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTagIndex((i) => (i + 1) % personal.taglines.length);
-    }, 2400);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section id="top" className="relative min-h-[100vh] flex items-center pt-32 pb-20">
+    <section id="top" className="relative min-h-[88vh] flex items-center pt-28 pb-16">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-5 w-full">
-        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
-          {/* Left: copy */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 glass rounded-full px-3.5 py-1.5 mb-6"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-lime opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-lime" />
-              </span>
-              <span className="text-xs text-white/80 font-mono">
-                {personal.availability}
-              </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.05 }}
-              className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight"
-            >
-              <span className="block text-white/95">{personal.firstName}</span>
-              <span className="block gradient-text">Naseem.</span>
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 h-7 flex items-center gap-2 font-mono text-sm text-white/70"
-            >
-              <Sparkles size={14} className="text-accent-cyan" />
-              <motion.span
-                key={tagIndex}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.4 }}
-                className="text-accent-cyan"
-              >
-                {personal.taglines[tagIndex]}
-              </motion.span>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed"
-            >
-              {personal.shortBio}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
-            >
-              <a href="#projects" className="btn btn-primary">
-                View my work
-                <ArrowRight size={16} />
-              </a>
-              <a href="#contact" className="btn btn-ghost">
-                <Mail size={14} /> Get in touch
-              </a>
-              <a href={personal.resumeUrl} download className="btn btn-ghost">
-                <Download size={14} /> Download CV
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.55 }}
-              className="mt-7 flex items-center gap-5 text-sm text-white/50"
-            >
-              <a href={personal.github} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-white transition">
-                <Github size={15} /> GitHub
-              </a>
-              <a href={personal.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-white transition">
-                <Linkedin size={15} /> LinkedIn
-              </a>
-              <span className="flex items-center gap-1.5">
-                <MapPin size={15} /> {personal.location}
-              </span>
-            </motion.div>
+        <div className="max-w-4xl">
+          <p className="eyebrow">Maria Naseem <span className="text-white/30">/ Islamabad, Pakistan</span></p>
+          <h1 className="mt-6 font-display font-bold text-5xl sm:text-7xl lg:text-8xl leading-[.98] tracking-tight">
+            AI Engineer<span className="text-accent-cyan">.</span>
+          </h1>
+          <p className="mt-5 font-display text-xl sm:text-2xl text-white/75">Production AI <span className="text-white/30">·</span> Intelligent Systems <span className="text-white/30">·</span> Solutions Architecture</p>
+          <p className="mt-7 max-w-3xl text-base sm:text-lg text-white/65 leading-relaxed">
+            I build AI systems that move beyond prototypes into real environments — from real-time computer vision and multi-camera video analytics to agentic AI, RAG, MCP servers, and enterprise backend platforms.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/55">
+            <span><b className="text-white/90 font-medium">AI Solutions Architect</b> @ Arwen Tech</span>
+            <span><b className="text-white/90 font-medium">Founder</b> @ ZumfluxAI</span>
           </div>
-
-          {/* Right: glassmorphic terminal card — code-style profile summary */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative glass-strong rounded-3xl p-6 overflow-hidden">
-              {/* Gradient border ring around the card */}
-              <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/40 via-transparent to-accent-cyan/30 opacity-50 pointer-events-none" />
-
-              <div className="relative">
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-                    </div>
-                    <span className="ml-2 text-xs font-mono text-white/40">~/maria</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-white/30">v1.0</span>
-                </div>
-
-                <div className="font-mono text-xs space-y-1.5">
-                  <div><span className="text-accent-pink">const</span> <span className="text-accent-cyan">maria</span> <span className="text-white/40">=</span> {`{`}</div>
-                  <div className="pl-4"><span className="text-white/70">role:</span> <span className="text-accent-lime">&apos;AI Engineer &amp; Solutions Architect&apos;</span>,</div>
-                  <div className="pl-4"><span className="text-white/70">focus:</span> [<span className="text-accent-lime">&apos;Agentic AI&apos;</span>, <span className="text-accent-lime">&apos;Computer Vision&apos;</span>, <span className="text-accent-lime">&apos;RAG&apos;</span>],</div>
-                  <div className="pl-4"><span className="text-white/70">stack:</span> <span className="text-accent-lime">&apos;FastAPI · Next · Docker&apos;</span>,</div>
-                  <div className="pl-4"><span className="text-white/70">founded:</span> <span className="text-accent-lime">&apos;ZumfluxAI&apos;</span>,</div>
-                  <div className="pl-4"><span className="text-white/70">based:</span> <span className="text-accent-lime">&apos;Islamabad, PK&apos;</span>,</div>
-                  <div className="pl-4"><span className="text-white/70">status:</span> <span className="text-accent-cyan">&apos;shipping ✦&apos;</span></div>
-                  <div>{`}`};</div>
-                </div>
-
-                <div className="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent via-accent-cyan to-accent-pink p-[2px]">
-                    <div className="w-full h-full rounded-full bg-bg-card flex items-center justify-center font-display font-bold text-sm">
-                      {personal.initials}
-                    </div>
-                  </div>
-                  <div className="text-xs">
-                    <div className="text-white/90 font-medium">Founder · ZumfluxAI</div>
-                    <div className="text-white/40 font-mono">Production AI engineering</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative floating chips */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-4 -right-4 glass rounded-full px-3 py-1.5 text-xs font-mono text-accent-cyan"
-            >
-              ⚡ Agentic
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -bottom-4 -left-4 glass rounded-full px-3 py-1.5 text-xs font-mono text-accent-lime"
-            >
-              ✦ Vision
-            </motion.div>
-          </motion.div>
+          <div className="mt-7 flex flex-wrap gap-2" aria-label="Primary technologies">
+            {['Computer Vision', 'Agentic AI', 'LLMs · RAG · MCP', 'Python · FastAPI', 'Ultralytics · OpenVINO', 'PostgreSQL · Redis', 'Docker · Azure'].map((item) => (
+              <span key={item} className="rounded-md border border-white/10 bg-white/[.035] px-2.5 py-1.5 font-mono text-[11px] text-white/65">{item}</span>
+            ))}
+          </div>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a href="#projects" className="btn btn-primary">View AI projects <ArrowRight size={16} /></a>
+            <a href="#architecture" className="btn btn-ghost">View architecture <ArrowDown size={15} /></a>
+            <a href={personal.resumeUrl} download className="btn btn-ghost"><Download size={15} /> Download CV</a>
+          </div>
+          <div className="mt-6 flex gap-5 text-sm text-white/55">
+            <a href={personal.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Github size={15} /> GitHub</a>
+            <a href={personal.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Linkedin size={15} /> LinkedIn</a>
+          </div>
         </div>
-
-        {/* Stats strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-3"
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="glass rounded-2xl p-4 sm:p-5">
-              <div className="font-display text-2xl sm:text-3xl font-bold gradient-text">
-                {s.value}
-              </div>
-              <div className="mt-1 text-xs text-white/50 font-mono uppercase tracking-wider">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 border-y border-white/10">
+          {proof.map(([value, label]) => <div key={label} className="flex items-baseline gap-3 py-4 sm:py-5 sm:px-5 first:sm:pl-0 border-b sm:border-b-0 sm:border-r last:border-0 border-white/10"><strong className="font-display text-3xl text-white">{value}</strong><span className="text-xs sm:text-sm text-white/50">{label}</span></div>)}
+        </div>
       </div>
     </section>
   );

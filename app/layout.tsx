@@ -31,9 +31,9 @@ const mono = JetBrains_Mono({
 
 // --- SEO constants ---
 const SITE_URL = 'https://maria-ai-portfolio.vercel.app';
-const TITLE = 'Maria Naseem — Forward Deployed Engineer & AI Solutions Architect';
+const TITLE = 'Maria Naseem | AI Engineer · Computer Vision · Agentic AI';
 const DESCRIPTION =
-  'Forward Deployed Engineer and AI Solutions Architect. I embed with clients, map their workflows, and ship production AI — agentic systems, RAG, computer vision, and enterprise automation on Azure. Founder of ZumfluxAI. Open to relocation & remote worldwide.';
+  'AI Engineer and Solutions Architect building production computer vision, agentic AI, RAG, MCP, and enterprise platforms with Python, FastAPI, OpenVINO, PostgreSQL, Docker, and cloud infrastructure.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,7 +47,13 @@ export const metadata: Metadata = {
     'Forward Deployed Engineer',
     'Forward Deployment Engineer',
     'AI Engineer',
+    'Senior AI Engineer',
     'Applied AI Engineer',
+    'Computer Vision Engineer',
+    'Generative AI Engineer',
+    'Agentic AI Engineer',
+    'Machine Learning Engineer',
+    'Python AI Engineer',
     'AI Solutions Architect',
     'Solutions Engineer',
     'AI Consultant',
@@ -59,7 +65,8 @@ export const metadata: Metadata = {
     'MCP',
     'Model Context Protocol',
     'Computer Vision',
-    'YOLOv8',
+    'Ultralytics',
+    'YOLO26',
     'Workflow Automation',
     'Document Intelligence',
     'Microsoft Azure',
@@ -92,15 +99,14 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
-    siteName: 'Maria Naseem — Forward Deployed Engineer',
+    siteName: 'Maria Naseem — AI Engineer',
     type: 'website',
     locale: 'en_US'
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
-    description:
-      'Forward Deployed Engineer & AI Solutions Architect — agentic AI, RAG, computer vision, and enterprise automation. Founder of ZumfluxAI.'
+    description: DESCRIPTION
   },
   category: 'technology'
 };
@@ -112,7 +118,7 @@ const personSchema = {
   name: 'Maria Naseem',
   url: SITE_URL,
   email: 'mailto:marianaseem99@gmail.com',
-  jobTitle: 'Forward Deployed Engineer & AI Solutions Architect',
+  jobTitle: 'AI Engineer and AI Solutions Architect',
   description: DESCRIPTION,
   address: {
     '@type': 'PostalAddress',
@@ -128,7 +134,8 @@ const personSchema = {
     { '@type': 'Organization', name: 'ZumfluxAI' }
   ],
   knowsAbout: [
-    'Forward Deployed Engineering',
+    'Applied Artificial Intelligence',
+    'Machine Learning Engineering',
     'Agentic AI',
     'Retrieval Augmented Generation',
     'Computer Vision',

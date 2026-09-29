@@ -3,7 +3,7 @@
  *
  * Displays 4 tabbed inline SVG flow diagrams illustrating production pipelines:
  * 1. Real-Time Video Analytics (RTSP -> YOLO -> Counter -> Dashboard)
- * 2. Provincial Government AMS (4-stage HITL facial recognition)
+ * 2. Facial-recognition attendance system (4-stage HITL workflow)
  * 3. Multi-Channel Notification Service (LLM + template fallback)
  * 4. Agentic Observability Platform (MCP-native, Prometheus/Grafana)
  *
@@ -59,11 +59,11 @@ const diagrams: Diagram[] = [
         {/* Arrow to YOLO */}
         <path d="M 145 160 L 215 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#va-arrow)" opacity="0.7" />
 
-        {/* Stage 2: YOLOv8 */}
+        {/* Stage 2: Ultralytics YOLO26n */}
         <rect x="220" y="120" width="140" height="80" rx="14" fill="url(#va-grad)" stroke="rgba(124,92,255,0.5)" strokeWidth="1.5" />
-        <text x="290" y="148" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">YOLOv8</text>
-        <text x="290" y="166" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">Ultralytics + lap</text>
-        <text x="290" y="182" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">Object detection + tracking</text>
+        <text x="290" y="148" textAnchor="middle" fill="#fff" fontFamily="Space Grotesk, sans-serif" fontSize="14" fontWeight="700">Ultralytics YOLO26n</text>
+        <text x="290" y="166" textAnchor="middle" fill="#e7e9ee" fontFamily="JetBrains Mono, monospace" fontSize="10">ONNX → OpenVINO</text>
+        <text x="290" y="182" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">CPU detection + lap tracking</text>
 
         {/* Arrow to Counter */}
         <path d="M 365 160 L 435 160" stroke="#22d3ee" strokeWidth="1.5" fill="none" markerEnd="url(#va-arrow)" opacity="0.7" />
@@ -98,13 +98,13 @@ const diagrams: Diagram[] = [
 
         {/* Bottom bar */}
         <rect x="20" y="320" width="760" height="20" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" />
-        <text x="400" y="334" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">FastAPI · OpenCV · async PostgreSQL · structlog · Docker · 60-day retention · audit logs</text>
+        <text x="400" y="334" textAnchor="middle" fill="#9aa0ad" fontFamily="JetBrains Mono, monospace" fontSize="10">FastAPI · PostgreSQL · Docker · Azure Container Apps</text>
       </svg>
     )
   },
   {
     id: 'ams',
-    title: 'Provincial Government Secretariat AMS',
+    title: 'Facial Recognition Attendance System',
     subtitle: '4-stage HITL facial recognition pipeline',
     description:
       'Multi-camera attendance system on live RTSP. Enrolled faces feed a similarity-based candidate retriever; an explicit human-in-the-loop verification gate prevents bad embeddings from polluting the production index.',

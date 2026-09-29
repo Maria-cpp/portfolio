@@ -45,5 +45,8 @@ data/videos/
 # Resumes (editable source files)
 public/resumes/
 
+# Local archive of client-identifying media withheld from the public site
+/nda-media-archive/
+
 # Build output
 out/

@@ -80,8 +80,8 @@ Replace the entire Arwen Tech object with:
   period: '2025 — Present',
   current: true,
   bullets: [
-    'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system being prepared for vendor authorization under FBR\'s Chapter XIV-BA framework (Sales Tax Rules, 2006) — covering production-line monitoring for Third Schedule goods. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time transmission to a Central Control Unit (CCU). Currently in demonstration / approval phase.',
-    'Architected and prepared for deployment a Facial-Recognition Attendance Management System for a Pakistani provincial government secretariat — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of government employees. Currently in demonstration / approval phase.',
+    'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system being prepared for vendor authorization under NDA-protected client\'s Chapter XIV-BA framework (Sales Tax Rules, 2006) — covering production-line monitoring for Third Schedule goods. Built real-time RTSP video pipelines with YOLOv8 (custom-trained), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time transmission to a Central Control Unit (CCU). Currently in demonstration / approval phase.',
+    'Architected and prepared for deployment a Facial-Recognition Attendance Management System for a Pakistani NDA-protected client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of enterprise employees. Currently in demonstration / approval phase.',
     'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
     'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
     'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
@@ -92,21 +92,21 @@ Replace the entire Arwen Tech object with:
 },
 ```
 
-- [ ] **Step 2: Update Green Tourism entry**
+- [ ] **Step 2: Update Confidential Organization entry**
 
-Replace the Green Tourism object with:
+Replace the Confidential Organization object with:
 
 ```ts
 {
-  role: 'Executive Coordinator — Corporate & Government Affairs | Digital Operations',
-  company: 'Green Tourism Pvt. Ltd.',
+  role: 'Executive Coordinator — Corporate & enterprise Affairs | Digital Operations',
+  company: 'Confidential Organization',
   location: 'Islamabad, Pakistan',
   period: '2024 — 2025',
   bullets: [
-    'Operated as the bridge between the CEO and federal/provincial stakeholder ecosystem: provincial secretaries and additional secretaries across all four provinces, ministerial offices, GHQ liaison, SIFC (Special Investment Facilitation Council), and the Law Directorate. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
+    'Operated as the bridge between the CEO and external stakeholder ecosystem: external stakeholders. Coordinated BOD meetings end-to-end including agenda preparation, MOMs, and follow-through on resolutions.',
     'Concurrently led digital operations — corporate web presence, e-commerce, API integrations, and workflow automation.'
   ],
-  stack: ['Stakeholder Engagement', 'BOD Operations', 'Government Liaison', 'Digital Operations']
+  stack: ['Stakeholder Engagement', 'BOD Operations', 'enterprise Liaison', 'Digital Operations']
 },
 ```
 

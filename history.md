@@ -28,14 +28,14 @@ A modern portfolio at `C:\Users\ArwenTech\OneDrive\Desktop\Work\Project Folders\
 
 ### Sections (top to bottom)
 1. Navbar with About / Stack / Skills / Experience / Projects / Architecture / ZumfluxAI / Certs / Contact.
-2. **Hero** — name, rotating taglines (`AI Solutions Architect`, `Agentic AI · MCP · HITL`, `Computer Vision Engineer`, `Government & Enterprise AI`, `Founder @ ZUMFluxAI and ZUM Services Providers`), code-card avatar, 4-stat strip.
+2. **Hero** — name, rotating taglines (`AI Solutions Architect`, `Agentic AI · MCP · HITL`, `Computer Vision Engineer`, `enterprise & Enterprise AI`, `Founder @ ZUMFluxAI and ZUM Services Providers`), code-card avatar, 4-stat strip.
 3. **About** — Vision/Expertise/Innovation pillars + Currently studying card (Physical AI textbook).
 4. **Tech Stack** — marquee + 6 categorized cards (Agentic AI & LLMs, Computer Vision, Backend, Frontend, MLOps & Observability, DevOps).
 5. **Skills** — 6 cards led by `Agentic AI & MCP` with `MCP Servers (built & deployed)` called out.
-6. **Experience** — vertical timeline with 7 entries (Arwen Tech, ZumfluxAI Founder, Green Tourism, ZUM Services, MediaPark, TWC+PTPS combined minimal entry, IBM Pakistan).
-7. **Projects** — 11 cards. Sector-coloured highlight badges (cyan = Government, pink = ZumfluxAI client).
+6. **Experience** — vertical timeline with 7 entries (Arwen Tech, ZumfluxAI Founder, Confidential Organization, ZUM Services, MediaPark, TWC+PTPS combined minimal entry, IBM Pakistan).
+7. **Projects** — 11 cards. Sector-coloured highlight badges (cyan = enterprise, pink = ZumfluxAI client).
 8. **Architecture** — interactive tab section with 3 SVG flow diagrams (Federal Track & Trace pipeline, AMS 4-stage HITL, Notification microservice).
-9. **ZumfluxAI** — founder spotlight + 4 services + recent client work footer (SitesBuildOps, Nauman Afzal).
+9. **ZumfluxAI** — founder spotlight + 4 services + recent client work footer (NDA-protected project, NDA-protected client).
 10. **Certifications** — 5 completed (4 with PDF links to `public/certificates/`) + 2 in progress.
 11. **Contact** — `zumfluxai@gmail.com` first (Business · ZumfluxAI, pink), `marianaseem99@gmail.com` second (Personal), then GitHub, LinkedIn, Phone, Location.
 12. **Footer**.
@@ -44,14 +44,14 @@ A modern portfolio at `C:\Users\ArwenTech\OneDrive\Desktop\Work\Project Folders\
 
 ## Key positioning decisions
 
-The portfolio is reframed from a generic AI engineer site into a **government / enterprise AI architect** narrative, because Maria has rare credentials for that market:
-- Federal Track & Trace Video Analytics (under FBR Chapter XIV-BA — anonymized as "federal regulator" on the public site)
-- Provincial Government Secretariat AMS (anonymized; client = Sindh Secretariat in private CV)
-- Ministry-level stakeholder fluency from Green Tourism CEO-coordinator role
+The portfolio is reframed from a generic AI engineer site into a **enterprise / enterprise AI architect** narrative, because Maria has rare credentials for that market:
+- Federal Track & Trace Video Analytics (under NDA-protected client Chapter XIV-BA — anonymized as "NDA-protected client" on the public site)
+- NDA-protected client AMS (anonymized; client = NDA-protected organization in private CV)
+- Cross-functional stakeholder coordination from a confidential operations role
 
 ### Anonymization policy
-- **Public portfolio**: clients are referred to as "federal regulator" and "provincial government secretariat" — never named.
-- **Private CV**: real client names (FBR, Sindh Secretariat) are fine because the audience is controlled.
+- **Public portfolio**: clients are referred to as "NDA-protected client" and "NDA-protected client" — never named.
+- **Private CV**: real client names (NDA-protected client, NDA-protected organization) are fine because the audience is controlled.
 - Reason: the projects are 70% production-ready prototypes, not yet deployed; client confidentiality + accuracy concerns prevent putting their names on a Google-indexed site.
 
 ---
@@ -114,7 +114,7 @@ Portfolio/
 
 2. **Vercel custom subdomain** — pick from: `maria-naseem`, `marianaseem`, `maria-ai`, `maria-cpp`, `zumfluxai`, `mn-engineer`. Set in Vercel → Settings → Domains.
 
-3. **Live URLs for client projects** — if SitesBuildOps or Nauman Afzal site goes public, add a `demo` field on the matching project in `lib/data.ts`.
+3. **Live URLs for client projects** — if NDA-protected project or NDA-protected client site goes public, add a `demo` field on the matching project in `lib/data.ts`.
 
 4. **Physical AI textbook URL** — if known, set `currentlyLearning.items[0].url` in `lib/data.ts`.
 
@@ -130,9 +130,9 @@ Portfolio/
 
 ## Reference details kept for the CV (private — NOT on the public site)
 
-- **FBR Video Analytics** — under Chapter XIV-BA Track & Trace authorization. YOLOv8 + Ultralytics + lap tracking, multi-line/multi-SKU production counting, RTSP. Status: prototype, demo-ready.
-- **Sindh Secretariat AMS** — 4-stage HITL pipeline: enrollment → similarity-based candidate retrieval (FAISS) → human-in-the-loop verification gate → embedding generation → real-time inference. Status: prototype, demo-ready.
-- **Green Tourism stakeholder fluency** — provincial secretaries, additional secretaries, federal ministers, GHQ liaison, SIFC, Law Directorate, BOD-level meeting management.
+- **NDA-Protected Video Analytics** — under Chapter XIV-BA Track & Trace authorization. YOLOv8 + Ultralytics + lap tracking, multi-line/multi-SKU production counting, RTSP. Status: prototype, demo-ready.
+- **NDA-protected organization AMS** — 4-stage HITL pipeline: enrollment → similarity-based candidate retrieval (FAISS) → human-in-the-loop verification gate → embedding generation → real-time inference. Status: prototype, demo-ready.
+- **Confidential Organization stakeholder fluency** — external stakeholders, BOD-level meeting management.
 - **Recent CXP project** — multi-service: FastAPI + Celery + Notifications service + Next.js + PostgreSQL + Redis + Nginx + Gemini AI + Docker prod/dev compose splits + systemd + certbot.
 
 ---

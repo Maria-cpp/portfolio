@@ -36,8 +36,8 @@ export default function Experience() {
         >
           <div className="eyebrow">Career timeline</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-            A Track Record Of{' '}
-            <span className="gradient-text">Government & Enterprise Delivery</span>
+            From software foundations to{' '}
+            <span className="text-accent-cyan">production AI systems</span>
           </h2>
         </motion.div>
 

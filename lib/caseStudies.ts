@@ -40,14 +40,14 @@ export const caseStudies: CaseStudy[] = [
     slug: 'video-analytics',
     title: 'Real-Time Video Analytics Platform',
     tagline:
-      'YOLO26n + OpenVINO production-line counting and compliance reporting for a regulated-industry client',
+      'Ultralytics YOLO26n + OpenVINO production-line counting · NDA-protected engagement',
     role: 'AI Solutions Architect & Lead Engineer',
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
     status:
       'Demonstrated on-site to the client at their production facility · Minor updates before full rollout · Deployed on Microsoft Azure (Container Apps)',
     summary:
-      'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using YOLO26n with ONNX/OpenVINO CPU inference. Built for a regulated-industry client under a national compliance framework. Containerized and deployed on Microsoft Azure.',
+      'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using Ultralytics YOLO26n with ONNX/OpenVINO CPU inference. Client and domain details are withheld under NDA. Containerized and deployed on Microsoft Azure.',
     tags: [
       'YOLO26n',
       'OpenVINO',
@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Business Problem',
         body:
-          'A regulated-industry client needed to accurately count production output across multiple lines and SKUs in real-time, under a national regulatory compliance framework. Manual counting was error-prone and could not produce the timestamped, auditable records regulators require. The solution needed to run on existing infrastructure without expensive GPU hardware.'
+          'An NDA-protected engagement required accurate real-time production counting across multiple lines and SKUs, with timestamped records and CPU inference compatible with the deployment environment.'
       },
       {
         heading: 'Solution',
@@ -160,13 +160,13 @@ export const caseStudies: CaseStudy[] = [
     slug: 'agentic-contract-intelligence',
     title: 'Agentic AI Contract Intelligence Platform',
     tagline:
-      'Multi-agent RAG for contract intelligence, JMB automation & legal operations',
+      'Multi-agent RAG for contract intelligence and workflow automation',
     role: 'Solution Designer & Engineer (self-initiated)',
-    org: 'Green Tourism Pvt. Ltd.',
+    org: 'Confidential Organization',
     period: '2024 — 2025',
-    status: 'Deployed — in active use by the executive team at Green Tourism',
+    status: 'Deployed — active use by the organization; identity withheld under confidentiality obligations',
     summary:
-      'A LangGraph multi-agent platform that reads contracts, answers questions grounded in their actual text, and automates the governance workflow around them — JMB scheduling, reminders, and Minutes of Meeting. Identified the bottleneck from inside the business and built the solution: the Forward Deployed pattern in practice.',
+      'An NDA-protected LangGraph multi-agent platform for contract search, question answering, document summaries, meeting scheduling, reminders, and minutes workflows. Client and domain details are withheld.',
     tags: [
       'LangGraph',
       'Claude',
@@ -192,11 +192,11 @@ export const caseStudies: CaseStudy[] = [
         caption:
           'Deterministic extraction runs before the LLM; Claude validates and fills gaps, with confidence scoring gating what reaches the metadata store.',
         chart: `flowchart TB
-    DOC["Provincial contracts<br/>PDF · DOCX · scans"] --> ING["Ingestion"]
+    DOC["Confidential contracts<br/>PDF · DOCX · scans"] --> ING["Ingestion"]
     ING --> EXT["Deterministic extraction<br/>regex + OCR + rule-based parsing"]
     EXT --> VAL["LLM-assisted validation<br/>Claude + confidence scoring"]
     VAL -->|low confidence| HUMAN["Human review"]
-    VAL -->|high confidence| META[("Contract metadata<br/>duration · site · revenue share<br/>signatories · contacts · JMB schedule")]
+    VAL -->|high confidence| META[("Contract metadata<br/>duration · site · financial terms<br/>signatories · contacts · meeting schedule")]
     ING --> CHUNK["Chunk + embed"]
     CHUNK --> PG[("PostgreSQL + pgvector<br/>RAG knowledge base")]
     subgraph AGENTS["LangGraph orchestration · FastAPI"]
@@ -209,7 +209,7 @@ export const caseStudies: CaseStudy[] = [
     META --> AGENTS
     PG --> A4
     A4 --> UI["Dashboard<br/>ask · summarize · semantic search"]
-    A5 --> JMB["JMB scheduling + reminders"]
+    A5 --> MTG["Meeting scheduling + reminders"]
     A5 --> MOM["MoM management + follow-up emails"]
     AGENTS --> AUD["Audit logging"]`
       },
@@ -249,7 +249,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: 'Governance Automation Flow',
         chart: `flowchart LR
-    M["JMB schedules + obligations<br/>extracted metadata"] --> S["Scheduling agent"]
+    M["Meeting dates + obligations<br/>extracted metadata"] --> S["Scheduling agent"]
     S -->|N days before| G["Claude-generated reminder + agenda"]
     G --> EM["Follow-up emails to stakeholders"]
     S --> MO["MoM management"]
@@ -261,20 +261,20 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Business Problem',
         body:
-          'The organization manages contracts across multiple provinces, and tracking them was entirely manual. Staff read agreements by hand, hunted through historical records for precedent, tracked upcoming Joint Management Board (JMB) meetings in spreadsheets, chased Minutes of Meeting, and sent reminders individually. The process was slow, error-prone, and impossible to search across provinces — and a missed JMB date carried real governance consequences.'
+          'The organization managed a large contract set with manual tracking. Staff read agreements by hand, searched historical records for precedent, tracked management meetings in spreadsheets, chased minutes, and sent reminders individually. The process was slow, error-prone, and difficult to search; missed dates created operational risk.'
       },
       {
         heading: 'Solution',
         body:
-          'An AI automation pipeline that ingests contracts, indexes them, extracts structured metadata, and exposes a dashboard that reads contracts, answers questions about them, summarizes agreements, surfaces upcoming JMB meetings, sends reminder emails, manages MoMs, and searches historical records semantically. Retrieval-Augmented Generation grounds every answer in the actual contract text with citations, so responses are traceable rather than invented.'
+          'An AI automation pipeline that ingests contracts, indexes them, extracts structured metadata, and exposes a dashboard for grounded questions, summaries, reminders, minutes workflows, and semantic search. Retrieval-Augmented Generation grounds answers in source documents with citations.'
       },
       {
         heading: 'Major Features',
         bullets: [
           'Natural-language Q&A grounded in contract text, returned with source references',
           'Agreement summarization and cross-contract semantic search over historical records',
-          'Metadata extraction — duration, site details, revenue share, signatories, contacts, JMB schedules',
-          'Automated JMB scheduling, meeting reminders, and follow-up email generation',
+          'Metadata extraction — dates, site details, financial terms, signatories, and contacts',
+          'Automated meeting scheduling, reminders, and follow-up generation',
           'Minutes of Meeting (MoM) management tied to the contract record',
           'Confidence scoring with human review below threshold; audit logging throughout'
         ]
@@ -296,7 +296,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Challenges',
         bullets: [
-          'Multi-province document variety and inconsistent contract formats, including scanned pages requiring OCR',
+          'Document variety and inconsistent contract formats, including scanned pages requiring OCR',
           'Keeping answers grounded and citable rather than plausible-sounding — solved by retrieval with source references',
           'Turning implicit meeting and obligation dates buried in contract prose into a reliable, automated reminder schedule',
           'Deciding where determinism ends and the LLM begins, then making that boundary explicit and measurable via confidence scoring'
@@ -305,7 +305,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Scalability',
         body:
-          'Adding a province means adding documents, not re-architecting. The vector index and scheduler scale with volume, and retrieval keeps LLM context bounded regardless of how large the corpus grows. Modular AI services and clean-architecture boundaries mean individual agents can be replaced or scaled independently.'
+          'Adding another business unit means adding documents, not re-architecting. The vector index and scheduler scale with volume, and retrieval keeps LLM context bounded as the corpus grows. Modular AI services allow individual agents to be replaced or scaled independently.'
       },
       {
         heading: 'Deployment',
@@ -327,7 +327,7 @@ export const caseStudies: CaseStudy[] = [
       }
     ],
     businessValue:
-      'Converted a manual, province-by-province contract-tracking process into a searchable, self-service knowledge system with automated governance reminders — cutting the time to answer a contract question from hours of manual lookup to seconds, and removing missed-meeting risk from the JMB cycle.'
+      'Converted a manual contract-tracking process into a searchable knowledge system with automated reminders, reducing time spent on manual lookups and follow-up.'
   },
 
   // -------------------------------------------------------------------

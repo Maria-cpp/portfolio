@@ -45,7 +45,7 @@ export const aboutPillars = [
     label: 'Vision',
     title: 'AI that survives audit',
     description:
-      'For regulated and enterprise clients, "it works in a notebook" is the start, not the end. I build AI systems that pass live demonstrations, carry audit trails, and operate under strict compliance frameworks.',
+      'For confidential engagements, a working prototype is only the first step. I build AI systems with operational validation, audit trails, and deployment controls.',
     accent: 'cyan'
   },
   {
@@ -71,7 +71,7 @@ export const aboutPillars = [
 
 export const techCategories = [
   {
-    name: 'AI / Agentic',
+    name: 'Agentic AI & LLMs',
     icon: 'Brain',
     items: [
       'OpenAI', 'Anthropic Claude', 'Gemini',
@@ -81,9 +81,9 @@ export const techCategories = [
     ]
   },
   {
-    name: 'Computer Vision',
+    name: 'AI / Computer Vision',
     icon: 'Camera',
-    items: ['YOLO26n', 'OpenCV', 'OpenVINO', 'DeepFace · SFace', 'RTSP Multi-camera', 'FAISS']
+    items: ['Ultralytics', 'OpenVINO', 'ONNX', 'OpenCV', 'DeepFace · SFace', 'RTSP multi-camera', 'FAISS']
   },
   {
     name: 'Engineering',
@@ -100,7 +100,7 @@ export const techCategories = [
 export const techMarquee = [
   'Python', 'TypeScript', 'FastAPI', 'Next.js',
   'OpenAI', 'Anthropic', 'MCP',
-  'YOLO26n', 'OpenCV', 'OpenVINO',
+  'Ultralytics', 'YOLO26n', 'OpenCV', 'OpenVINO',
   'PostgreSQL', 'Redis',
   'Docker', 'Azure',
   'LangGraph', 'FAISS',
@@ -132,7 +132,7 @@ export const skillGroups = [
     title: 'Computer Vision',
     blurb: 'Production CV pipelines on live RTSP — from facial-recognition attendance to factory-line analytics.',
     items: [
-      'YOLO26n / Ultralytics · ONNX · OpenVINO',
+      'Ultralytics · YOLO26n · ONNX · OpenVINO',
       'Facial Recognition (DeepFace, SFace)',
       'RTSP multi-camera ingestion',
       '4-stage enrollment → HITL → embedding → inference',
@@ -196,7 +196,7 @@ export const skillGroups = [
       'Stakeholder & C-suite communication',
       'Solution architecture',
       'Client acquisition & service delivery',
-      'Corporate governance · BoD / JMB coordination',
+      'Corporate governance · board coordination',
       'Contract review · regulatory compliance'
     ]
   }
@@ -217,15 +217,15 @@ export const experience = [
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Architected the technical solution for an AI/ML-based real-time video analytics and production-counting system for a regulated-industry client. Built real-time RTSP video pipelines with YOLO26n (ONNX/OpenVINO CPU inference), multi-object tracking (lap), production-line counting, anomaly and stoppage detection, and FastAPI services designed for real-time data transmission. Containerized and deployed on Microsoft Azure (Container Apps). Demonstrated on-site — the client visited the production facility; minor updates in progress before full rollout.',
-      'Architected and prepared for deployment a Facial-Recognition Attendance Management System for an enterprise client — a four-stage CV pipeline (face enrollment → similarity-based candidate retrieval from live RTSP streams → HITL verification gate → embedding generation and real-time attendance inference). Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, threshold-based confidence routing, and a scalable architecture designed for thousands of employees. Deployed live on-premises (LAN) on our own staff in Karachi for real-world training and validation.',
+      'Architected a real-time video analytics and production-counting system. Built RTSP video pipelines with YOLO26n (ONNX/OpenVINO CPU inference), lap multi-object tracking, production-line counting, anomaly and stoppage detection, and FastAPI services. Containerized and deployed on Microsoft Azure Container Apps. Demonstrated on-site; minor updates are in progress before rollout.',
+      'Architected and prepared for deployment a four-stage facial-recognition attendance system for an NDA-protected engagement — enrollment → candidate retrieval from live RTSP streams → human verification → embedding generation and real-time inference. Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS, and confidence-based routing. Validated in an internal on-premises environment.',
       'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
       'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
       'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
       'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
       'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
     ],
-    stack: ['FastAPI', 'YOLO26n', 'OpenVINO', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+    stack: ['FastAPI', 'Ultralytics', 'YOLO26n', 'OpenVINO', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
 
   },
   {
@@ -237,24 +237,24 @@ export const experience = [
     bullets: [
       'Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.',
       'Running two active Forward Deployed engagements — embedding with automotive and travel-agency clients to map operations and automate manual workflows end-to-end. Case studies to follow as builds complete.',
-      'Active client engagements: SitesBuildOps (construction-finance fraud-detection platform) and the Nauman Afzal author portfolio.'
+      'Current client engagements are covered by confidentiality agreements; public case studies omit identifying details.'
     ],
     stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
   },
   {
     role: 'Corporate Affairs, Legal Operations & AI Solutions Engineer',
-    company: 'Green Tourism Pvt. Ltd.',
+    company: 'Confidential Organization',
     location: 'Islamabad, Pakistan',
     period: '2024 — 2025',
     bullets: [
-      'AI Solutions & Forward Deployed Engineering (self-initiated): Proactively identified operational inefficiencies in contract and governance workflows and independently designed an Agentic AI Contract Intelligence Platform to automate legal operations and executive coordination — working in a Forward Deployed capacity, collaborating directly with business stakeholders to understand requirements and rapidly deliver AI-powered workflow automation.',
+      'AI Solutions & Forward Deployed Engineering (self-initiated): Identified operational inefficiencies in contract and governance workflows and designed an Agentic AI Contract Intelligence Platform to automate document and executive coordination workflows, collaborating with stakeholders to map requirements and deliver workflow automation.',
       'Designed a multi-agent architecture using Python, FastAPI, Claude, LangGraph, and RAG for contract ingestion, information extraction, semantic search, validation, and workflow orchestration.',
-      'Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata — duration, site details, revenue share, signatories, contact information, and JMB schedules — and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering.',
-      'Automated JMB scheduling, meeting reminders, Minutes of Meeting (MoM) management, follow-up email generation, and contract lifecycle workflows — engineering RESTful APIs, modular AI services, confidence scoring, validation pipelines, and audit logging following clean-architecture principles for scalable enterprise deployment.',
-      'Corporate Affairs & Legal Operations (primary role): Served as the primary legal and regulatory liaison — managing stakeholder communication, compliance workflows, contract reviews, executive correspondence, and coordination across C-suite and cross-functional teams.',
-      'Coordinated corporate governance including Board of Directors (BoD) and Joint Management Board (JMB) meetings — preparing agendas, managing documentation, recording minutes, and tracking action items. Drafted and reviewed contracts, MoUs, and regulatory filings ensuring compliance with corporate law, procurement regulations, and internal governance policies.',
+      'Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) for contract metadata, with a RAG knowledge base on PostgreSQL (pgvector) for semantic search and contextual question answering.',
+      'Automated meeting scheduling, reminders, minutes management, follow-up email generation, and contract lifecycle workflows using REST APIs, modular AI services, confidence scoring, validation pipelines, and audit logging.',
+      'Corporate Affairs & Legal Operations (primary role): Managed stakeholder communication, governance workflows, contract reviews, executive correspondence, and coordination across leadership and cross-functional teams.',
+      'Coordinated board and management meetings, including agendas, documentation, minutes, and action tracking. Drafted and reviewed contracts and regulatory filings, and supported compliance reviews and risk assessments.',
       'Collaborated with external legal counsel and senior leadership on compliance reviews, risk assessments, and governance initiatives; implemented structured document management to improve audit readiness, traceability, and regulatory reporting.',
-      'Web & technical systems: Led delivery of the corporate WordPress website and Souvenir Shop — production-grade custom themes and PHP plugins integrating REST APIs and third-party services, with a cash-on-delivery checkout flow per client requirement, plus contributions to internal booking/reservation applications with Git-based version control.'
+      'Web & technical systems: Delivered a corporate WordPress website and online shop with custom themes, PHP plugins, REST API and third-party integrations, plus contributions to internal booking applications.'
     ],
     stack: ['Python', 'FastAPI', 'Claude', 'LangGraph', 'RAG', 'PostgreSQL / pgvector', 'OCR', 'WordPress', 'PHP', 'Corporate Governance', 'Legal Operations']
   },
@@ -312,29 +312,23 @@ export const projects = [
   {
     title: 'Video Analytics',
     slug: 'video-analytics',
-    tagline: 'YOLO26n + OpenVINO production-line counting for regulatory compliance',
+    tagline: 'Ultralytics YOLO26n + OpenVINO production-line counting · NDA-protected engagement',
     description:
-      'Architected for a regulated-industry client under a national regulatory compliance framework. YOLO26n object detection with ONNX conversion to OpenVINO for lightweight CPU inference, lap multi-object tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
-    tags: ['YOLO26n', 'OpenVINO', 'ONNX', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
+      'Architected a production computer-vision system for an NDA-protected engagement. Ultralytics YOLO26n detection is exported through ONNX to OpenVINO for CPU inference, with lap multi-object tracking, multi-line and multi-SKU counting on live RTSP feeds, timestamped events, and dashboard views by SKU, line, batch, and shift. Containerized and deployed on Microsoft Azure Container Apps. Demonstrated on-site; minor updates are in progress before full rollout.',
+    tags: ['Ultralytics', 'YOLO26n', 'OpenVINO', 'ONNX', 'Object tracking', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
     repo: null,
     demo: null,
-    images: [
-      '/images/video_analytics/multi_obj_detection.png',
-      '/images/video_analytics/single object.png',
-      '/images/video_analytics/moving object.png',
-      '/images/video_analytics/logs.png'
-    ],
     featured: true,
-    highlight: 'Regulated Industry · Compliance',
+    highlight: 'NDA-Protected Engagement',
     sector: 'Enterprise',
     extraTag: 'Demoed on-site',
     category: 'career'  },
   {
     title: 'Agentic AI Contract Intelligence Platform',
     slug: 'agentic-contract-intelligence',
-    tagline: 'FDE project \u2014 Multi-agent RAG for contract intelligence, JMB automation & legal ops',
+    tagline: 'NDA-protected engagement · Multi-agent RAG for contract intelligence and workflow automation',
     description:
-      'Forward Deployed Engineering build for a national tourism company managing contracts across multiple provinces. Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) to accurately extract contract metadata \u2014 duration, site details, revenue share, signatories, contact information, and JMB schedules \u2014 and implemented a RAG knowledge base on PostgreSQL (pgvector) for semantic contract search and contextual question answering. A LangGraph multi-agent architecture (Python \u00b7 FastAPI \u00b7 Claude) handles contract ingestion, extraction, semantic search, validation, and workflow orchestration. Automates JMB scheduling, meeting reminders, MoM management, and follow-up email generation, with audit logging throughout. Identified the workflow bottleneck from inside the business and built the solution \u2014 the Forward Deployed pattern in practice.',
+      'NDA-protected Forward Deployed Engineering engagement. Built deterministic document extraction (regex, OCR, rule-based parsing, LLM-assisted validation) and a PostgreSQL (pgvector) RAG knowledge base for semantic search and question answering. A LangGraph multi-agent architecture using Python, FastAPI, and Claude handles ingestion, extraction, validation, retrieval, workflow automation, and audit logging.',
     tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
     repo: null,
     demo: null,
@@ -347,16 +341,10 @@ export const projects = [
     title: 'Facial Recognition Attendance System',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
     description:
-      'Designed a four-stage HITL Facial Recognition Attendance Management System for an enterprise client. Pipeline: face enrollment \u2192 similarity-based candidate retrieval from live RTSP \u2192 human-in-the-loop verification gate \u2192 embedding generation \u2192 real-time inference and attendance logging. Multi-camera architecture scales from 40+ employees to thousands. Status: deployed live on-premises (LAN) on our own staff in Karachi for real-world training & validation.',
+      'Designed a four-stage HITL facial-recognition attendance system for an NDA-protected engagement. Pipeline: enrollment \u2192 candidate retrieval from live RTSP \u2192 human verification \u2192 embedding generation \u2192 real-time inference and attendance logging. Validated in an internal on-premises environment; further engagement details are withheld.',
     tags: ['DeepFace \u00b7 SFace', 'OpenCV', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
     repo: null,
     demo: null,
-    images: [
-      '/images/ams/face detection 2.png',
-      '/images/ams/2face detection.png',
-      '/images/ams/front cam.png',
-      '/images/ams/ams_logs.png'
-    ],
     featured: true,
     highlight: 'Enterprise \u00b7 HITL',
     sector: 'Enterprise',
@@ -452,23 +440,22 @@ export const projects = [
     demo: null,
     category: 'career'  },
   {
-    title: 'Green Pak Tourism',
-    tagline: 'Corporate web presence for national tourism body',
+    title: 'Confidential Organization — Corporate Web Platform',
+    tagline: 'Corporate website and online commerce',
     description:
-      'Designed and delivered the corporate website for Green Tourism Pvt. Ltd. \u2014 a national tourism company. Built during tenure as Executive Coordinator for Digital Operations.',
+      'Designed and delivered a corporate website and online commerce experience during a digital operations role. Organization details are withheld under confidentiality obligations.',
     tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
     repo: null,
-    demo: 'https://greenpaktourism.com/',
-    images: ['/images/gtpl_website.png'],
+    demo: null,
     featured: true,
-    highlight: 'GTPL \u00b7 Live',
+    highlight: 'NDA-Protected',
     category: 'career'  },
   // ── ZumfluxAI Client Projects ─────────────────────────────────────
   {
-    title: 'SitesBuildOps',
-    tagline: 'FDE project \u2014 Construction-finance ledger with AI fraud detection',
+    title: 'NDA-Protected Client — Operations Platform',
+    tagline: 'Forward Deployed Engineering · workflow and data platform',
     description:
-      'Forward Deployed Engineering engagement. Centralized finance, ledger, and fraud-detection platform for construction companies managing multiple sites, vendors, and contractors. Features purchase tracking, ledger reconciliation, duplicate detection engine, audit logging, and AI-assisted fraud prevention. Phase 0 prototype shipped; Phase 1 in progress.',
+      'Confidential Forward Deployed Engineering engagement. Built a workflow and data platform with transaction reconciliation, duplicate detection, audit logging, and assisted review. Further client and domain details are withheld.',
     tags: ['Next.js', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
     repo: null,
     demo: null,
@@ -478,67 +465,52 @@ export const projects = [
     extraTag: 'In Progress',
     category: 'zumfluxai'  },
   {
-    title: 'Nauman Afzal \u2014 Author Portfolio',
-    tagline: 'Bibliophile \u00b7 Author of Mudslinging & Budhoo',
+    title: 'NDA-Protected Client — Publishing Website',
+    tagline: 'Content-focused website · React + Vite',
     description:
-      'Designed and built the official author portfolio for Nauman Afzal \u2014 author of Mudslinging and Budhoo. Clean, content-first React + Vite single-page site with custom theming, Lucide iconography, and a books showcase.',
+      'Designed and built a content-first single-page website using React and Vite, with custom theming and a publication showcase. Client identity and content are withheld.',
     tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
     repo: null,
     demo: null,
-    videoUrl: '/videos/Nauman Afzal.mp4',
-    images: [
-      '/images/nauman_afzal/Screenshot 2026-07-20 174208.png'
-    ],
+    videoUrl: null,
     featured: true,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
     category: 'zumfluxai'  },
   {
-    title: 'Voyara Tourism',
-    tagline: 'Tourism booking experience \u2014 live prototype',
+    title: 'NDA-Protected Client — Booking Experience',
+    tagline: 'Booking experience · live prototype',
     description:
-      'Tourism booking platform with a modern, immersive interface for discovering and booking travel experiences. Designed for a tourism-industry client as a ZumfluxAI engagement.',
+      'Designed a discovery and booking experience for a client engagement. Client identity, business domain, and project details are withheld under confidentiality obligations.',
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     repo: null,
-    demo: 'https://voyara-tourism-projects.vercel.app/',
-    images: [
-      '/images/voyara/Screenshot 2026-07-20 173458.png',
-      '/images/voyara/Screenshot 2026-07-20 173513.png',
-      '/images/voyara/Screenshot 2026-07-20 173535.png',
-      '/images/voyara/Screenshot 2026-07-20 173546.png',
-      '/images/voyara/Screenshot 2026-07-20 173607.png'
-    ],
+    demo: null,
     featured: true,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
     extraTag: 'Live prototype',
     category: 'zumfluxai'  },
   {
-    title: 'Naimat Khan Durrani \u2014 Portfolio',
-    tagline: 'FDE project \u2014 Personal portfolio site',
+    title: 'NDA-Protected Client — Personal Website',
+    tagline: 'Forward Deployed Engineering · personal web presence',
     description:
-      'Forward Deployed Engineering engagement. Designed and built a personal portfolio site for Naimat Khan Durrani \u2014 embedded with the client to understand their brand and deliver a polished, production-ready web presence.',
+      'Designed and built a personal website with the client. Identity and identifying details are withheld under confidentiality obligations.',
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     repo: null,
-    demo: 'https://naimat-khan-durrani.vercel.app/',
-    images: [
-      '/images/naimat/Screenshot 2026-07-20 173435.png',
-      '/images/naimat/Screenshot 2026-07-20 173719.png',
-      '/images/naimat/Screenshot 2026-07-20 173736.png'
-    ],
+    demo: null,
     featured: true,
     highlight: 'FDE \u00b7 ZumfluxAI',
     sector: 'ZumfluxAI',
     extraTag: 'Live',
     category: 'zumfluxai'  },
   {
-    title: 'ARTSER',
-    tagline: 'Corporate site for an Italian aluminum & PVC window/door and fa\u00e7ade company',
+    title: 'NDA-Protected Client — Corporate Website',
+    tagline: 'Multilingual corporate website',
     description:
-      'Designed and built the corporate website for ARTSER \u2014 an aluminum and PVC window/door, fa\u00e7ade, and curtain-wall installation company based in Verona, Italy (independent since 2015, 26+ years of industry experience). Multi-language site (English, Italian, Arabic, Urdu) covering services, a featured-projects portfolio, supplier network, and client testimonials.',
+      'Designed and built a multilingual corporate website with service pages, project portfolio, supplier information, and testimonials. Client identity and identifying details are withheld.',
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel', 'Multi-language'],
     repo: null,
-    demo: 'https://art-ser.vercel.app/',
+    demo: null,
     featured: true,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
@@ -697,31 +669,7 @@ export const zumflux = {
       description: 'FastAPI + Next.js + PostgreSQL + Docker — end-to-end product engineering.'
     }
   ],
-  recentClients: [
-    {
-      name: 'SitesBuildOps',
-      kind: 'Construction finance & fraud detection platform'
-    },
-    {
-      name: 'Nauman Afzal',
-      kind: 'Author portfolio site (Mudslinging · Budhoo)'
-    },
-    {
-      name: 'Voyara Tourism',
-      kind: 'Tourism booking experience — live prototype',
-      url: 'https://voyara-tourism-projects.vercel.app/'
-    },
-    {
-      name: 'Naimat Khan Durrani',
-      kind: 'Personal portfolio site — live prototype',
-      url: 'https://naimat-khan-durrani.vercel.app/'
-    },
-    {
-      name: 'ARTSER',
-      kind: 'Aluminum & PVC window/door, façade company website (Verona, Italy)',
-      url: 'https://art-ser.vercel.app/'
-    }
-  ] as { name: string; kind: string; url?: string }[],
+  recentClients: [] as { name: string; kind: string; url?: string }[],
   cta: 'Hire ZumfluxAI'
 };
 

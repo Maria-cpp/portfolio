@@ -210,7 +210,7 @@ def build_resume():
         ("\u2714 10+ Years Professional Experience", "\u2714 Computer Vision"),
         ("\u2714 4+ Years AI Engineering", "\u2714 Agentic AI & Multi-Agent Systems"),
         ("\u2714 12+ Production Systems", "\u2714 LLM Applications & Real-Time AI"),
-        ("\u2714 Enterprise & Government AI Solutions", "\u2714 FastAPI Expert \u00b7 Azure Deployment"),
+        ("\u2714 Enterprise & enterprise AI Solutions", "\u2714 FastAPI Expert \u00b7 Azure Deployment"),
     ]
     table = doc.add_table(rows=4, cols=2)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -235,7 +235,7 @@ def build_resume():
     body_paragraph(
         doc,
         "Senior AI Engineer who designs and ships production AI systems for enterprise and "
-        "government clients. Architected real-time video analytics deployed on Azure, a four-stage "
+        "enterprise clients. Architected real-time video analytics deployed on Azure, a four-stage "
         "facial recognition attendance system running live on-premises, and a bank-grade data "
         "protection vault \u2014 each delivered from requirements through on-site client demonstrations. "
         "Built 12+ AI systems spanning computer vision, agentic workflows, and LLM applications. "
@@ -331,13 +331,13 @@ def build_resume():
 
     # --- Job 2 ---
     add_job_header(doc, "Corporate Affairs, Legal Operations & AI Solutions Engineer", "2024 \u2014 2025")
-    add_company_line(doc, "Green Tourism Pvt. Ltd. \u00b7 Islamabad, Pakistan")
+    add_company_line(doc, "Confidential Organization \u00b7 Islamabad, Pakistan")
 
     add_bullet(
         doc,
         "Identified operational bottleneck and built an AI contract intelligence platform automating "
         "legal operations \u2014 contract ingestion, semantic search, metadata extraction, and workflow "
-        "orchestration for a national tourism company.",
+        "orchestration for a client organization.",
         tech_suffix="LangGraph, Claude, RAG, pgvector."
     )
     add_bullet(
@@ -402,7 +402,7 @@ def build_resume():
     projects = [
         (
             "AI Video Analytics Platform",
-            " \u2014 Designed real-time production counting architecture for regulated-industry client. "
+            " \u2014 Designed real-time production counting architecture for NDA-protected engagement. "
             "Deployed on Azure, demonstrated on-site.",
             "YOLO, OpenCV, FastAPI, Azure."
         ),
@@ -423,7 +423,7 @@ def build_resume():
         ),
         (
             "Agentic Contract Intelligence",
-            " \u2014 Multi-agent system automating contract lifecycle for a national tourism company.",
+            " \u2014 Multi-agent system automating contract lifecycle for a client organization.",
             "LangGraph, Claude, RAG."
         ),
     ]

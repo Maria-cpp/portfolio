@@ -270,7 +270,7 @@ export const skillGroups = [
       'Stakeholder & C-suite communication',
       'Solution architecture',
       'Client acquisition & service delivery',
-      'Corporate governance · BoD / JMB coordination',
+      'Corporate governance · BoD / management meeting coordination',
       'Contract review · regulatory compliance'
     ]
   }
@@ -316,7 +316,7 @@ Replace the Video Analytics project entry:
   slug: 'video-analytics',
   tagline: 'YOLO26n + OpenVINO production-line counting for regulatory compliance',
   description:
-    'Architected for a regulated-industry client under a national regulatory compliance framework. YOLO26n object detection with ONNX conversion to OpenVINO for lightweight CPU inference, lap multi-object tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
+    'Architected for a NDA-protected engagement under a national regulatory compliance framework. YOLO26n object detection with ONNX conversion to OpenVINO for lightweight CPU inference, lap multi-object tracking, multi-line and multi-SKU production counting on live RTSP feeds, real-time event triggering with timestamped records, and dashboard views per SKU/line/batch/shift. Containerized and deployed on Microsoft Azure (Container Apps). Status: demonstrated on-site — the client visited the production facility; minor updates before rollout.',
   tags: ['YOLO26n', 'OpenVINO', 'ONNX', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
   repo: null,
   demo: null,
@@ -327,7 +327,7 @@ Replace the Video Analytics project entry:
     '/images/video_analytics/logs.png'
   ],
   featured: true,
-  highlight: 'Regulated Industry · Compliance',
+  highlight: 'NDA-Protected Engagement',
   sector: 'Enterprise',
   extraTag: 'Demoed on-site',
   category: 'career'
@@ -377,14 +377,14 @@ Add a new entry at the beginning of the `caseStudies` array (before the existing
   slug: 'video-analytics',
   title: 'Real-Time Video Analytics Platform',
   tagline:
-    'YOLO26n + OpenVINO production-line counting and compliance reporting for a regulated-industry client',
+    'YOLO26n + OpenVINO production-line counting and compliance reporting for a NDA-protected engagement',
   role: 'AI Solutions Architect & Lead Engineer',
   org: 'Arwen Tech (Pvt.) Ltd.',
   period: '2025 — Present',
   status:
     'Demonstrated on-site to the client at their production facility · Minor updates before full rollout · Deployed on Microsoft Azure (Container Apps)',
   summary:
-    'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using YOLO26n with ONNX/OpenVINO CPU inference. Built for a regulated-industry client under a national compliance framework. Containerized and deployed on Microsoft Azure.',
+    'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using YOLO26n with ONNX/OpenVINO CPU inference. Built for a NDA-protected engagement under a engagement requirements. Containerized and deployed on Microsoft Azure.',
   tags: [
     'YOLO26n',
     'OpenVINO',
@@ -442,7 +442,7 @@ Add a new entry at the beginning of the `caseStudies` array (before the existing
     {
       heading: 'Business Problem',
       body:
-        'A regulated-industry client needed to accurately count production output across multiple lines and SKUs in real-time, under a national regulatory compliance framework. Manual counting was error-prone and could not produce the timestamped, auditable records regulators require. The solution needed to run on existing infrastructure without expensive GPU hardware.'
+        'A NDA-protected engagement needed to accurately count production output across multiple lines and SKUs in real-time, under a national regulatory compliance framework. Manual counting was error-prone and could not produce the timestamped, auditable records regulators require. The solution needed to run on existing infrastructure without expensive GPU hardware.'
     },
     {
       heading: 'Solution',

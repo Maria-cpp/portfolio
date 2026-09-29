@@ -7,7 +7,7 @@
  * - Hover preview floating image on collapsed cards with screenshots
  * - Full-screen screenshot modal for projects that have both video and images
  * - Special handling for FTE Sales Lead Engine (dual-video toggle)
- * - Special handling for Green Pak Tourism (carousel + external link)
+ * - Expandable project cards with optional media
  *
  * Content sourced from `lib/data.ts` (projects).
  */
@@ -24,7 +24,7 @@ type ProjectCategory = 'career' | 'zumfluxai' | 'learning';
 
 // Returns badge color classes based on the project's sector
 const highlightColor = (sector?: string) => {
-  if (sector === 'Government') return 'bg-accent-cyan/15 text-accent-cyan border-accent-cyan/30';
+  if (sector === 'NDA-Protected') return 'bg-accent-cyan/15 text-accent-cyan border-accent-cyan/30';
   if (sector === 'ZumfluxAI') return 'bg-accent-pink/15 text-accent-pink border-accent-pink/30';
   return 'bg-accent/15 text-accent border-accent/30';
 };
@@ -115,7 +115,6 @@ function ProjectCard({
   const hasVideo = !!proj.videoUrl;
   const hasImages = proj.images && proj.images.length > 0;
   const isFTE = proj.title === 'FTE Sales Lead Engine';
-  const isGTPL = proj.title === 'Green Pak Tourism';
 
   return (
     <motion.div
@@ -187,23 +186,7 @@ function ProjectCard({
                 {proj.tagline}
               </p>
 
-              {isGTPL && hasImages && (
-                <div className="mt-4">
-                  <ImageCarousel images={proj.images!} title={proj.title} />
-                  <div className="mt-3 text-center">
-                    <a
-                      href="https://greenpaktourism.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-accent-cyan hover:text-white transition link-underline font-medium"
-                    >
-                      <ExternalLink size={14} /> Click here to view website
-                    </a>
-                  </div>
-                </div>
-              )}
-
-              {hasImages && !hasVideo && !isGTPL && (
+              {hasImages && !hasVideo && (
                 <div className="mt-4">
                   <ImageCarousel images={proj.images!} title={proj.title} />
                 </div>
@@ -317,7 +300,7 @@ function ProjectCard({
                     <Github size={14} /> Source
                   </a>
                 )}
-                {proj.demo && !isGTPL && (
+                {proj.demo && (
                   <a
                     href={proj.demo}
                     target="_blank"
@@ -419,10 +402,10 @@ export default function Projects() {
           className="flex flex-col gap-4"
         >
           <div>
-            <div className="eyebrow">Featured work</div>
+            <div className="eyebrow">Featured production AI systems</div>
             <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-              Selected{' '}
-              <span className="gradient-text">Projects</span>
+              Systems built to{' '}
+              <span className="text-accent-cyan">run in the real world</span>
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">

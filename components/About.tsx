@@ -10,31 +10,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Eye, Cpu, Rocket, BookOpen, ExternalLink } from 'lucide-react';
+import { BookOpen, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { aboutPillars, personal, currentlyLearning } from '@/lib/data';
-import Tilt3D from './Tilt3D';
-
-// Maps pillar labels to their corresponding Lucide icons
-const iconFor = (label: string) => {
-  if (label === 'Vision') return Eye;
-  if (label === 'Expertise') return Cpu;
-  return Rocket;
-};
-
-// Returns Tailwind classes for accent text + border color based on pillar accent
-const accentClass = (a: string) => {
-  if (a === 'cyan') return 'text-accent-cyan border-accent-cyan/30';
-  if (a === 'lime') return 'text-accent-lime border-accent-lime/30';
-  return 'text-accent-pink border-accent-pink/30';
-};
-
-// Returns Tailwind gradient class for the decorative glow blob on each card
-const accentGlow = (a: string) => {
-  if (a === 'cyan') return 'from-accent-cyan/20';
-  if (a === 'lime') return 'from-accent-lime/20';
-  return 'from-accent-pink/20';
-};
+import { currentlyLearning } from '@/lib/data';
 
 export default function About() {
   return (
@@ -46,41 +24,39 @@ export default function About() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
         >
-          <div className="eyebrow">About me</div>
+          <div className="eyebrow">Why my background is different</div>
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-            Engineer First.{' '}
-            <span className="gradient-text">Builder Always.</span>
+            I approach AI as a <span className="text-accent-cyan">systems engineer.</span>
           </h2>
-          <p className="mt-5 text-sm text-white/65 leading-relaxed">
-            {personal.longBio}
+          <p className="mt-5 max-w-3xl text-sm sm:text-base text-white/65 leading-relaxed">
+            My path spans enterprise operations and IT support, blockchain and peer-to-peer systems, full-stack product engineering, applied AI, computer vision, and agentic systems. That foundation lets me work across inference, APIs, data, deployment, and the applications around AI.
           </p>
         </motion.div>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {aboutPillars.map((p, i) => {
-            const Icon = iconFor(p.label);
-            return (
-              <Tilt3D
-                key={p.label}
-                delay={i * 0.08}
-                className="relative glass rounded-3xl p-6 border border-white/10 hover:border-accent/40 overflow-hidden h-full"
-              >
-                <div className={`absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br ${accentGlow(p.accent)} to-transparent blur-2xl`} />
-                <div className={`relative inline-flex items-center justify-center w-11 h-11 rounded-xl glass border ${accentClass(p.accent)}`}>
-                  <Icon size={20} />
-                </div>
-                <div className="mt-5 text-xs font-mono uppercase tracking-wider text-white/40">
-                  {p.label}
-                </div>
-                <h3 className="mt-2 font-display text-xl font-semibold">
-                  {p.title}
-                </h3>
-                <p className="mt-3 text-sm text-white/65 leading-relaxed">
-                  {p.description}
-                </p>
-              </Tilt3D>
-            );
-          })}
+        <div className="mt-10 rounded-2xl border border-white/10 bg-[#0d1015] p-5 sm:p-7">
+          <div className="font-mono text-[10px] tracking-[.18em] text-white/40">CAREER EVOLUTION · VERIFIED EXPERIENCE</div>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              ['2016–2020', 'Enterprise IT · operations support'],
+              ['2020–2022', 'Blockchain · distributed systems'],
+              ['2023–2025', 'Full-stack · applied AI'],
+              ['2025–Present', 'Production AI · architecture']
+            ].map(([date, stage], i) => <div key={date} className="relative border-l border-accent-cyan/40 pl-3 py-1">
+              <div className="font-mono text-[10px] text-accent-cyan">{date}</div>
+              <div className="mt-2 text-sm font-medium text-white/85">{stage}</div>
+              {i < 3 && <span aria-hidden="true" className="hidden md:block absolute -right-2 top-1/2 text-white/25">→</span>}
+            </div>)}
+          </div>
+          <p className="mt-5 border-t border-white/[.08] pt-4 text-xs leading-relaxed text-white/40">Early record: IBM Pakistan internship supporting a PTCL GPON deployment, followed by operations and IT support roles. The documented timeline begins with enterprise IT and operations before software product engineering and applied AI.</p>
+        </div>
+
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            ['Production AI systems', 'Live RTSP analytics, attendance workflows, and operational AI services.'],
+            ['Backend engineering foundation', 'APIs, databases, queues, security controls, and distributed services.'],
+            ['Computer vision + agentic AI', 'Detection, tracking, RAG, MCP tools, and human review paths.'],
+            ['Architecture + deployment', 'System boundaries, containerized services, cloud and observability.']
+          ].map(([title, text]) => <article key={title} className="rounded-xl border border-white/10 bg-white/[.025] p-4"><h3 className="text-sm font-semibold">{title}</h3><p className="mt-2 text-xs leading-relaxed text-white/50">{text}</p></article>)}
         </div>
 
         {/* Currently learning */}

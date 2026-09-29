@@ -26,7 +26,7 @@ npm run lint     # ESLint via Next.js defaults
 1. **Single source of truth:** All content lives in `lib/data.ts`. Never hardcode text in components.
 2. **No new files** unless absolutely necessary. Edit existing files first.
 3. **No README.md changes** without explicit permission.
-4. **Client anonymization:** Use "federal regulator" and "provincial government secretariat" in public-facing content. Never expose real client names (FBR, Sindh Secretariat).
+4. **Client anonymization:** Use "NDA-protected client" and "NDA-protected client" in public-facing content. Never expose real client names (NDA-protected client, NDA-protected organization).
 5. **Assets stay organized:** Images in `public/images/{project}/`, videos in `public/videos/`, certificates in `public/certificates/`.
 6. **TypeScript strict mode** is enforced. All components must be properly typed.
 7. **Do not modify** `next.config.mjs`, `tsconfig.json`, or `tailwind.config.ts` without explicit approval.

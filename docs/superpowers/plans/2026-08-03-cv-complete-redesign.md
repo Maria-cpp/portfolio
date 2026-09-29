@@ -23,7 +23,7 @@
 ✔ 10+ Years Professional Experience    ✔ Computer Vision
 ✔ 4+ Years AI Engineering              ✔ Agentic AI & Multi-Agent Systems
 ✔ 12+ Production Systems               ✔ LLM Applications & Real-Time AI
-✔ Enterprise & Government AI Solutions  ✔ FastAPI Expert • Azure Deployment
+✔ Enterprise & enterprise AI Solutions  ✔ FastAPI Expert • Azure Deployment
 ```
 
 ### 3. Achievements-First Bullet Pattern
@@ -72,7 +72,7 @@ Software Development • Operations • IT Support
 - Professional Summary (3-4 sentences, impact-focused)
 - Core Competencies (grid, ~20% of page)
 - Technical Skills (compact categories)
-- Professional Experience: Arwen Tech + Green Tourism
+- Professional Experience: Arwen Tech + Confidential Organization
 
 **Page 2:**
 - Professional Experience continued: ZUM Services Providers Co-founder + MediaPark (Blockchain)
@@ -116,11 +116,11 @@ Agentic AI • LLMs • Computer Vision | Enterprise AI
 ✔ 10+ Years Professional Experience    ✔ Computer Vision
 ✔ 4+ Years AI Engineering              ✔ Agentic AI & Multi-Agent Systems  
 ✔ 12+ Production Systems               ✔ LLM Applications & Real-Time AI
-✔ Enterprise & Government AI Solutions  ✔ FastAPI Expert • Azure Deployment
+✔ Enterprise & enterprise AI Solutions  ✔ FastAPI Expert • Azure Deployment
 ```
 
 **Professional Summary (rewritten, impact-focused, 3-4 sentences):**
-Senior AI Engineer who designs and ships production AI systems for enterprise and government clients. Architected real-time video analytics deployed on Azure, a four-stage facial recognition attendance system running live on-premises, and a bank-grade data protection vault — each delivered from requirements through on-site client demonstrations. Built 12+ AI systems spanning computer vision, agentic workflows, and LLM applications. Currently leading AI platform engineering at Arwen Tech and running Forward Deployed Engineering engagements through ZumfluxAI.
+Senior AI Engineer who designs and ships production AI systems for enterprise and enterprise clients. Architected real-time video analytics deployed on Azure, a four-stage facial recognition attendance system running live on-premises, and a bank-grade data protection vault — each delivered from requirements through on-site client demonstrations. Built 12+ AI systems spanning computer vision, agentic workflows, and LLM applications. Currently leading AI platform engineering at Arwen Tech and running Forward Deployed Engineering engagements through ZumfluxAI.
 
 **Core Competencies (3-column grid, compact):**
 Agentic AI, LLM Applications, Multi-Agent Systems, Computer Vision, RAG Pipelines, Real-Time AI, End-to-End Architecture, FastAPI, Azure Deployment, Docker & CI/CD, Python, PostgreSQL
@@ -139,8 +139,8 @@ Agentic AI, LLM Applications, Multi-Agent Systems, Computer Vision, RAG Pipeline
 - Shipped an MCP-native observability platform with AI-powered alert analysis performing root-cause inference and severity classification. Built and deployed the MCP server for tool integration. _Tech: Prometheus, Grafana, Claude SDK._
 - Delivered a multilingual NLP platform analyzing public feedback across 8+ low-resource languages with automated sentiment analysis and AI briefing generation. 107 tests.
 
-**Professional Experience — Green Tourism (achievements-first):**
-- Identified operational bottleneck and built an AI contract intelligence platform automating legal operations — contract ingestion, semantic search, metadata extraction, and workflow orchestration for a national tourism company. _Tech: LangGraph, Claude, RAG, pgvector._
+**Professional Experience — Confidential Organization (achievements-first):**
+- Identified operational bottleneck and built an AI contract intelligence platform automating legal operations — contract ingestion, semantic search, metadata extraction, and workflow orchestration for a client organization. _Tech: LangGraph, Claude, RAG, pgvector._
 - Automated meeting scheduling, minutes management, follow-up generation, and contract lifecycle workflows with audit logging.
 - Served as primary legal and regulatory liaison — managing compliance, Board of Directors coordination, and cross-functional stakeholder communication.
 - Delivered corporate website and e-commerce platform with custom development and API integrations.
@@ -160,11 +160,11 @@ IBM Pakistan (Intern) · Prime Tele Power · Team Work Construction
 Software Development · Operations · IT Support
 
 **Selected Projects (achievements-first, 4-5):**
-1. AI Video Analytics Platform — Designed real-time production counting architecture for regulated-industry client. Deployed on Azure, demonstrated on-site. _YOLO, OpenCV, FastAPI, Azure._
+1. AI Video Analytics Platform — Designed real-time production counting architecture for NDA-protected engagement. Deployed on Azure, demonstrated on-site. _YOLO, OpenCV, FastAPI, Azure._
 2. Facial Recognition Attendance — Four-stage pipeline with human verification, multi-camera RTSP, deployed on-premises. _DeepFace, OpenCV, FAISS._
 3. Security Vault — Enterprise data protection through tokenization and encryption with immutable audit trails. _FastAPI, PostgreSQL, Redis._
 4. Multilingual NLP Platform — Analyzed feedback across 8+ low-resource languages with AI briefing generation. _FastAPI, Kafka, PyTorch._
-5. Agentic Contract Intelligence — Multi-agent system automating contract lifecycle for a national tourism company. _LangGraph, Claude, RAG._
+5. Agentic Contract Intelligence — Multi-agent system automating contract lifecycle for a client organization. _LangGraph, Claude, RAG._
 
 **Education (one line):**
 Master of Information Technology — Quaid-i-Azam University
@@ -214,7 +214,7 @@ Agentic AI • Enterprise Platforms • Solution Design • Client Delivery
 **Summary emphasis:** Architecture decisions, client delivery, stakeholder communication, compliance, regulated environments.
 
 **Bullet reframing:** Lead with architecture/design decisions and client outcomes, not implementation.
-Example: "Architected and delivered a real-time video analytics solution for a regulated-industry client — from requirements gathering through on-site demonstration at the production facility."
+Example: "Architected and delivered a real-time video analytics solution for a NDA-protected engagement — from requirements gathering through on-site demonstration at the production facility."
 
 All other structural rules from Task 1 apply (highlights, achievements-first, compressed education, etc.)
 
@@ -255,7 +255,7 @@ Real-Time Vision • YOLO • Facial Recognition • Edge Deployment • Product
 ✔ 10+ Years Professional Experience    ✔ Real-Time Computer Vision
 ✔ 4+ Years AI Engineering              ✔ YOLO & Object Detection
 ✔ Production Vision Systems            ✔ Facial Recognition & HITL
-✔ Enterprise & Government AI Solutions  ✔ Azure & On-Premises Deployment
+✔ Enterprise & enterprise AI Solutions  ✔ Azure & On-Premises Deployment
 ```
 
 **Bullet reframing:** Lead with vision system achievements. Video analytics and facial recognition bullets get more detail. NLP/agentic bullets get compressed.
@@ -336,7 +336,7 @@ Verify every resume has:
 - [ ] Certifications are compact (one section, bullet or inline list)
 - [ ] Earlier Career compressed into 3 lines
 - [ ] Skills occupy ~20% of page 1, not 50%
-- [ ] Page 1 layout matches: Name → Headline → Contact → Highlights → Summary → Competencies → Skills → Arwen Tech + Green Tourism
+- [ ] Page 1 layout matches: Name → Headline → Contact → Highlights → Summary → Competencies → Skills → Arwen Tech + Confidential Organization
 - [ ] Page 2 layout matches: ZUM + MediaPark + Earlier Career + Selected Projects + Education + Certs
 
 - [ ] **Step 2: Commit any fixes**

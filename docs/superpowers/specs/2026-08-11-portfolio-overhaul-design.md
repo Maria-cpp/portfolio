@@ -112,7 +112,7 @@ Add measurable outcomes, specifics, and numbers where possible. Examples:
 New file: `app/projects/video-analytics/page.tsx`
 
 Structure:
-- **Problem:** Business problem (regulated industry needing production-line compliance counting)
+- **Problem:** Business problem (production-line counting with traceable operational records)
 - **Architecture:** How it was solved (YOLO26n, tracking, RTSP, FastAPI, Azure)
 - **Engineering:** What was built (multi-camera pipelines, real-time counting, dashboard, Docker deployment)
 - **Result:** What changed (on-site demo, Azure deployment, compliance framework)
