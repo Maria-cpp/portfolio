@@ -214,83 +214,79 @@ export const experience = [
     role: 'AI Solutions Architect & Full-Stack Developer',
     company: 'Arwen Tech',
     location: 'Islamabad, Pakistan',
-    period: '2025 — Present',
+    period: '2024 — Present',
     current: true,
     bullets: [
-      'Architected a real-time video analytics and production-counting system. Built RTSP video pipelines with YOLO26n (ONNX/OpenVINO CPU inference), lap multi-object tracking, production-line counting, anomaly and stoppage detection, and FastAPI services. Containerized and deployed on Microsoft Azure Container Apps. Demonstrated on-site; minor updates are in progress before rollout.',
-      'Architected and prepared for deployment a four-stage facial-recognition attendance system for an NDA-protected engagement — enrollment → candidate retrieval from live RTSP streams → human verification → embedding generation and real-time inference. Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS, and confidence-based routing. Validated in an internal on-premises environment.',
-      'Engineered an agentic notification microservice — a multi-channel orchestrator (email, WhatsApp, FCM push) using LLM-driven context-aware message generation with deterministic template fallback for guaranteed delivery. Built on FastAPI + Celery + Redis with retry handling, ClamAV virus scanning, and decoupled event-driven processing.',
-      'Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.',
-      'Built a Document AI / OCR ingestion service using PaddleOCR + pdfplumber + python-docx with async FastAPI, MIME validation, and audit-grade structured logging.',
-      'Delivered the Agentic Observability Platform — Prometheus → Alertmanager → AI Alert Analyzer (root-cause, severity, next-actions) with self-validating PromQL rules and a native MCP (Model Context Protocol) server for tool integration. Anthropic Claude SDK + FastAPI.',
-      'Standardised multi-service deployment via Docker Compose and GitHub Actions CI/CD across all delivered microservices.'
+      'End-to-End AI Delivery — Progressed from Software Engineer into AI-focused solution ownership, leading requirements, architecture, full-stack development, AI integration, testing, and on-prem/cloud deployment.',
+      'FBR Video Analytics — Architected a real-time production-counting system using RTSP, YOLO26n, ONNX/OpenVINO CPU inference, LAP multi-object tracking, anomaly/stoppage detection, and FastAPI. Containerized and deployed on Microsoft Azure Container Apps; demonstrated on-site with rollout updates in progress.',
+      'Facial Recognition Attendance — Architected a four-stage NDA-protected system: enrollment → live RTSP candidate retrieval → human verification → embedding generation/inference. Built multi-camera processing with OpenCV SFace, FAISS, and confidence-based routing; validated in an internal on-prem environment.',
+      'Agentic Notifications — Engineered an event-driven notification microservice for email, WhatsApp, and FCM using LLM-generated context-aware messaging with deterministic fallback. FastAPI + Celery + Redis, with retries, ClamAV scanning, and decoupled processing.',
+      'Customer Experience Portal — Designed and shipped an enterprise platform covering SLA lifecycle, contract onboarding, ticketing, assets, users, notifications, and workflow automation using FastAPI, Next.js, JWT, WebSockets, Celery, async PostgreSQL, and rate limiting.',
+      'Document AI — Built an asynchronous OCR/document-ingestion service using PaddleOCR, pdfplumber, python-docx, FastAPI, MIME validation, and audit-grade structured logging for extracting and processing enterprise documents.',
+      'Agentic Observability — Delivered a Prometheus → Alertmanager → AI Alert Analyzer pipeline for root-cause analysis, severity assessment, and recommended actions, with self-validating PromQL rules and a native MCP server using Claude SDK + FastAPI.',
+      'Platform Engineering — Standardized containerized deployment and CI/CD across delivered services using Docker Compose and GitHub Actions, supporting repeatable development-to-production delivery.'
     ],
-    stack: ['FastAPI', 'Ultralytics', 'YOLO26n', 'OpenVINO', 'OpenCV', 'MCP', 'Next.js', 'Redis', 'Celery', 'Docker', 'Microsoft Azure', 'Prometheus', 'Gemini', 'Anthropic Claude', 'PaddleOCR']
+    stack: [
+      'Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'Azure', 'Ultralytics', 'YOLO26', 'ONNX', 'OpenVINO', 'RTSP', 'OpenCV', 'FAISS', 'PaddleOCR', 'Prometheus', 'Alertmanager', 'LLMs', 'RAG', 'MCP', 'Claude SDK', 'GitHub Actions']
+  },
+  {
+  role: 'Founder · Full-Stack Developer · Applied Generative AI · FDE',
+  company: 'ZUMFluxAI',
+  period: '2023 — Present',
+  location: 'Pakistan',
+  current: true,
 
-  },
-  {
-    role: 'Founder',
-    company: 'ZumfluxAI',
-    location: 'Remote',
-    period: '2025 — Present',
-    current: true,
-    bullets: [
-      'Founded ZumfluxAI to deliver production AI engineering — agentic systems, computer vision pipelines, and full-stack AI platforms for teams shipping real-world products.',
-      'Running two active Forward Deployed engagements — embedding with automotive and travel-agency clients to map operations and automate manual workflows end-to-end. Case studies to follow as builds complete.',
-      'Current client engagements are covered by confidentiality agreements; public case studies omit identifying details.'
-    ],
-    stack: ['Agentic AI', 'LLMs', 'Computer Vision', 'FastAPI', 'Next.js', 'Vite']
-  },
-  {
-    role: 'Corporate Affairs, Legal Operations & AI Solutions Engineer',
-    company: 'Confidential Organization',
-    location: 'Islamabad, Pakistan',
-    period: '2024 — 2025',
-    bullets: [
-      'AI Solutions & Forward Deployed Engineering (self-initiated): Identified operational inefficiencies in contract and governance workflows and designed an Agentic AI Contract Intelligence Platform to automate document and executive coordination workflows, collaborating with stakeholders to map requirements and deliver workflow automation.',
-      'Designed a multi-agent architecture using Python, FastAPI, Claude, LangGraph, and RAG for contract ingestion, information extraction, semantic search, validation, and workflow orchestration.',
-      'Built a deterministic document extraction pipeline (regex, OCR, rule-based parsing, LLM-assisted validation) for contract metadata, with a RAG knowledge base on PostgreSQL (pgvector) for semantic search and contextual question answering.',
-      'Automated meeting scheduling, reminders, minutes management, follow-up email generation, and contract lifecycle workflows using REST APIs, modular AI services, confidence scoring, validation pipelines, and audit logging.',
-      'Corporate Affairs & Legal Operations (primary role): Managed stakeholder communication, governance workflows, contract reviews, executive correspondence, and coordination across leadership and cross-functional teams.',
-      'Coordinated board and management meetings, including agendas, documentation, minutes, and action tracking. Drafted and reviewed contracts and regulatory filings, and supported compliance reviews and risk assessments.',
-      'Collaborated with external legal counsel and senior leadership on compliance reviews, risk assessments, and governance initiatives; implemented structured document management to improve audit readiness, traceability, and regulatory reporting.',
-      'Web & technical systems: Delivered a corporate WordPress website and online shop with custom themes, PHP plugins, REST API and third-party integrations, plus contributions to internal booking applications.'
-    ],
-    stack: ['Python', 'FastAPI', 'Claude', 'LangGraph', 'RAG', 'PostgreSQL / pgvector', 'OCR', 'WordPress', 'PHP', 'Corporate Governance', 'Legal Operations']
-  },
-  {
-    role: 'Co-Founder · Full-Stack Developer & Applied Generative AI',
-    company: 'ZUM Services Providers',
-    location: 'Pakistan',
-    period: '2023 — 2025',
-    bullets: [
-      'Co-founded ZUM Services Providers and managed full end-to-end product development — building the full-stack platform from scratch while simultaneously running business operations, client acquisition, and service delivery.',
-      'Designed and developed production-ready web applications with RESTful API design, backend business logic in Python/FastAPI, and frontend interfaces — owning the complete software development lifecycle independently.',
-      'Designed and managed PostgreSQL databases — schemas, relationships, and optimized queries using SQLAlchemy ORM.',
-      'Containerized all backend services with Docker and implemented automated CI/CD pipelines via GitHub Actions, ensuring reliable, repeatable production deployments.',
-      'Managed the end-to-end product lifecycle — balancing technical execution with operational ownership across development, deployment, maintenance, and client communication.',
-      'Applied generative AI (ChatGPT) with structured prompt engineering to accelerate marketing and digital content production for the business — an early, practical adoption of LLM tooling to cut content turnaround and cost.',
-      'Delivered solar solution proposals and technical system layouts while leading digital operations — website development, marketing, branding, and digital content creation.'
-    ],
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'GitHub Actions', 'CI/CD', 'REST APIs', 'ChatGPT · Prompt Engineering']
-  },
+  bullets: [
+    'Founded ZUM Service Providers and delivered client solutions end-to-end — owning discovery, architecture, full-stack development, integration, deployment, and technical delivery.',
+    'Official Tourism Platform — Designed and delivered a production WordPress website with responsive layouts, custom visual theming, structured tourism content, destination showcases, and publication-focused sections, creating a maintainable digital presence for a national tourism organization while keeping the client identity confidential.',
+    'Discovery & Booking Platform — Designed a customer-facing discovery and booking experience, translating business requirements into intuitive search, exploration, and booking workflows. Client identity and project-specific details remain confidential.',
+    'Corporate Affairs · Contract FDE — Translated business and operational requirements into deployed application workflows and integrations, bridging stakeholders and hands-on engineering through implementation and troubleshooting.',
+    'Delivered full-stack applications across React/Next.js frontends, backend APIs, relational databases, authentication, third-party integrations, and Linux-based deployments.',
+    'Introduced Applied Generative AI into client solutions through LLM-assisted workflows, intelligent information processing, and task automation.',
+    'Established a hands-on delivery model spanning requirements → solution design → implementation → testing → deployment → production support, enabling direct ownership of the complete client solution lifecycle.',
+    'Managed projects end-to-end across discovery, solution design, implementation, testing, deployment, troubleshooting, and direct client communication.'
+  ],
+
+  stack: [
+    'Python', 'JavaScript', 'React', 'Next.js', 'REST APIs', 'SQL', 'Full-Stack Development', 'Generative AI', 'LLM Integration', 'System Integration', 'Linux', 'FDE', 'Technical Delivery'
+  ],
+  }, 
   {
     role: 'Blockchain Developer',
     company: 'MediaPark',
     location: 'Pakistan',
     period: '2020 — 2022',
     bullets: [
-      'Designed and delivered scalable native blockchain systems and decentralized applications (DApps), implementing core blockchain architecture including blocks, transactions, consensus validation, and ECDSA-based cryptographic signing for secure authentication and identity protection.',
-      'Implemented low-level socket-based networking for peer-to-peer (P2P) node communication, enabling distributed synchronization, block propagation, and transaction broadcasting across the blockchain network.',
-      'Developed compliance-oriented smart contract interaction frameworks with controlled access mechanisms, encryption standards, auditability practices, and structured technical documentation to ensure blockchain security and operational integrity.'
+      'Native Blockchain Engineering — Designed and built a native blockchain implementation from the protocol layer, developing block and transaction structures, chain validation, consensus logic, and ECDSA-based transaction signing and verification.',
+      'P2P Network — Built socket-based peer-to-peer node communication supporting node discovery, blockchain synchronization, block propagation, and transaction broadcasting across distributed network participants.',
+      'Transaction & Wallet Security — Implemented cryptographic key-pair workflows, transaction signing, signature verification, hashing, address handling, and validation rules to protect transaction integrity and prevent unauthorized state changes.',
+      'ERC-20 & Smart Contracts — Developed and integrated Ethereum-compatible ERC-20 token workflows, including token creation, transfers, balances, allowances, contract interaction, and Web3-based application integration.',
+      'Secure DApp Integration — Connected decentralized applications with blockchain nodes and smart contracts through backend services and RPC/Web3 interfaces, bridging conventional application workflows with decentralized infrastructure.',
+      'Compliance & Auditability — Engineered controlled-access smart contract workflows with traceable transaction activity, validation controls, audit-oriented records, and structured technical documentation for security-sensitive blockchain use cases.'
     ],
-    stack: ['Blockchain', 'ECDSA', 'P2P Networking', 'Smart Contracts', 'DApps']
+    stack: ['Native Blockchain', 'Distributed Systems', 'P2P Networking', 'Sockets', 'ECDSA', 'Cryptography', 'Ethereum', 'ERC-20', 'Smart Contracts', 'Web3', 'DApps', 'RPC'],  },
+  {
+    role: 'Backend Engineer · Secure Systems',
+    company: 'Confidential / Project-Based Engineering',
+    period: '2016 — 2019',
+    location: 'Pakistan',
+    current: false,
+    bullets: [
+      'Backend & Systems Engineering — Developed server-side applications and internal business systems using C++ and backend technologies, building a foundation in application architecture, data processing, and systems programming.',
+      'API & Data Engineering — Built backend functionality and service integrations around relational databases, structured operational records, server-side validation, and application data-access layers.',
+      'Secure Application Workflows — Implemented authentication, authorization, role-based access patterns, input validation, and controlled access for applications handling restricted operational data.',
+      'C++ Systems Development — Developed C++ components for performance-sensitive application logic, file/data processing, networking, and integration with backend systems and databases.',
+      'Systems Integration — Integrated applications with databases and internal/external services, troubleshooting data flow, connectivity, and application-level integration issues.',
+      'Linux & Production Support — Configured and supported applications in Linux environments, handling deployments, debugging, database operations, application configuration, and production troubleshooting.',
+      'Client Delivery — Translated operational requirements into working backend functionality and delivered project-based systems for clients operating in confidentiality-sensitive environments.'
+    ],
+    stack: ['C++', 'Backend Development', 'REST APIs', 'SQL', 'Database Design', 'Authentication', 'RBAC', 'Networking', 'Linux', 'System Integration']
   },
   {
-    role: 'Earlier Career',
-    company: 'IBM Pakistan · Prime Tele Power Solution · Team Work Construction',
+    role: 'Internship',
+    company: 'IBM Pakistan',
     location: 'Pakistan',
-    period: '2016 — 2020',
+    period: '2016 — 6 weeks',
     minimal: true,
     bullets: [
       'Internship at IBM Pakistan (2016) — supported PTCL\'s GPON deployment via PeopleSoft, Siebel, IBM Maximo, and IBM Integration Bus; contributed to GPON training documentation and inventory provisioning. Subsequent operations and IT support roles.'
