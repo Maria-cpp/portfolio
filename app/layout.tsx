@@ -8,6 +8,7 @@
  */
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { personal } from '@/lib/data';
 import './globals.css';
 
 // --- Font configuration (CSS variables used in tailwind.config.ts) ---
@@ -31,9 +32,8 @@ const mono = JetBrains_Mono({
 
 // --- SEO constants ---
 const SITE_URL = 'https://maria-ai-portfolio.vercel.app';
-const TITLE = 'Maria Naseem | AI Engineer · Computer Vision · Agentic AI';
-const DESCRIPTION =
-  'AI Engineer and Solutions Architect building production computer vision, agentic AI, RAG, MCP, and enterprise platforms with Python, FastAPI, OpenVINO, PostgreSQL, Docker, and cloud infrastructure.';
+const TITLE = `${personal.name} | ${personal.title}`;
+const DESCRIPTION = personal.shortBio;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -115,19 +115,19 @@ export const metadata: Metadata = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Maria Naseem',
+  name: personal.name,
   url: SITE_URL,
-  email: 'mailto:marianaseem99@gmail.com',
-  jobTitle: 'AI Engineer and AI Solutions Architect',
+  email: `mailto:${personal.email}`,
+  jobTitle: personal.title,
   description: DESCRIPTION,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Islamabad',
+    addressLocality: personal.location.split(',')[0],
     addressCountry: 'PK'
   },
   sameAs: [
-    'https://github.com/Maria-cpp',
-    'https://www.linkedin.com/in/maria-naseem/'
+    personal.github,
+    personal.linkedin
   ],
   worksFor: [
     { '@type': 'Organization', name: 'Arwen Tech' },
@@ -151,9 +151,9 @@ const personSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Maria Naseem — Forward Deployed Engineer',
+  name: `${personal.name} — ${personal.title}`,
   url: SITE_URL,
-  author: { '@type': 'Person', name: 'Maria Naseem' }
+  author: { '@type': 'Person', name: personal.name }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

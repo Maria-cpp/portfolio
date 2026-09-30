@@ -6,10 +6,10 @@
  * used when the site is shared on social media (Twitter, LinkedIn, etc.).
  */
 import { ImageResponse } from 'next/og';
+import { personal } from '@/lib/data';
 
 export const runtime = 'edge';
-export const alt =
-  'Maria Naseem — Forward Deployed Engineer & AI Solutions Architect';
+export const alt = `${personal.name} — ${personal.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -51,7 +51,7 @@ export default async function OGImage() {
             textTransform: 'uppercase'
           }}
         >
-          Maria Naseem
+          {personal.name}
         </div>
         <div
           style={{
@@ -64,7 +64,7 @@ export default async function OGImage() {
             letterSpacing: -2
           }}
         >
-          Forward Deployed Engineer
+          AI Engineer
         </div>
         <div
           style={{
@@ -77,7 +77,7 @@ export default async function OGImage() {
             color: '#22d3ee'
           }}
         >
-          AI Solutions Architect
+          & AI Solutions Architect
         </div>
         <div
           style={{
@@ -89,8 +89,7 @@ export default async function OGImage() {
             lineHeight: 1.4
           }}
         >
-          I embed with clients, map their workflows, and ship production AI —
-          agentic systems, RAG, computer vision, enterprise automation.
+          {personal.shortBio}
         </div>
         <div
           style={{

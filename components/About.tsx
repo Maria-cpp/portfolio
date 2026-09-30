@@ -12,11 +12,12 @@
 import { motion } from 'framer-motion';
 import { BookOpen, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { currentlyLearning } from '@/lib/data';
+import { currentlyLearning, experience } from '@/lib/data';
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative py-24 sm:py-28">
+      <div className="absolute -top-16 left-0 h-64 w-64 rounded-full bg-accent-pink/[.07] blur-[110px] pointer-events-none" />
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +25,7 @@ export default function About() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
         >
-          <div className="eyebrow">Why my background is different</div>
+          <div className="eyebrow">The engineering journey</div>
 
           <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
             I approach AI as a{' '}
@@ -32,64 +33,47 @@ export default function About() {
           </h2>
 
           <p className="mt-5 max-w-3xl text-sm sm:text-base text-white/65 leading-relaxed">
-            My engineering journey spans backend and secure systems,
-            blockchain and distributed applications, full-stack product
-            development, and production AI. Each stage strengthened a
+            My experience spans backend and secure systems, blockchain and
+            distributed applications, full-stack product development, and
+            production AI. Each stage strengthened a
             different layer of the stack — from APIs, databases, authentication,
             and Linux environments to distributed systems, computer vision,
             agentic AI, and production infrastructure.
           </p>
         </motion.div>
 
-        <div className="mt-10 rounded-2xl border border-white/10 bg-[#0d1015] p-5 sm:p-7">
-          <div className="font-mono text-[10px] tracking-[.18em] text-white/40">
-            CAREER EVOLUTION · ENGINEERING JOURNEY
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="glass-strong relative mt-10 overflow-hidden rounded-3xl p-5 sm:p-8"
+        >
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-cyan/60 to-transparent" />
+          <div className="font-mono text-[10px] tracking-[.18em] text-accent-cyan/70">
+            EXPERIENCE · CAREER TIMELINE
           </div>
 
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              [
-                '2016–2019',
-                'Backend engineering · secure systems',
-              ],
-              [
-                '2020–2022',
-                'Blockchain · distributed systems',
-              ],
-              [
-                '2023–2025',
-                'Full-stack · applied GenAI',
-              ],
-              [
-                '2025–Present',
-                'AI engineering · solutions architecture',
-              ],
-            ].map(([date, stage], i) => (
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {experience.map((job, i) => (
               <div
-                key={date}
-                className="relative border-l border-accent-cyan/40 pl-3 py-1"
+                key={`${job.company}-${job.role}`}
+                className={`card-hover group relative rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan/60 hover:bg-accent-cyan/[.06] hover:shadow-[0_12px_36px_rgba(34,211,238,0.08)] ${job.current ? 'border-accent-cyan/35 bg-accent-cyan/[.045]' : 'border-white/15 bg-white/[.025]'}`}
               >
-                <div className="font-mono text-[10px] text-accent-cyan">
-                  {date}
+                <div className="flex items-center gap-2 font-mono text-[10px] text-accent-cyan">
+                  {job.current && <span className="h-1.5 w-1.5 rounded-full bg-accent-lime shadow-[0_0_8px_var(--accent-lime)]" />}
+                  {job.period}
                 </div>
 
-                <div className="mt-2 text-sm font-medium text-white/85">
-                  {stage}
+                <div className="mt-3 text-sm font-semibold leading-snug text-white/90">
+                  {job.role}
                 </div>
-
-                {i < 3 && (
-                  <span
-                    aria-hidden="true"
-                    className="hidden md:block absolute -right-2 top-1/2 text-white/25"
-                  >
-                    →
-                  </span>
-                )}
+                <div className="mt-1 text-xs text-white/45">{job.company}</div>
               </div>
             ))}
           </div>
 
-          <p className="mt-5 border-t border-white/[.08] pt-4 text-xs leading-relaxed text-white/40">
+          <p className="mt-5 border-t border-white/[.08] pt-4 text-xs leading-relaxed text-white/45">
             My early engineering foundation included backend development and
             secure business systems, alongside enterprise IT and operations
             experience including an IBM Pakistan internship supporting PTCL's
@@ -97,7 +81,7 @@ export default function About() {
             distributed systems, full-stack products, applied GenAI, and
             production AI engineering.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[
@@ -117,13 +101,14 @@ export default function About() {
               'Architecture + deployment',
               'Production system boundaries, containerized services, cloud infrastructure, observability, and operational AI deployments.',
             ],
-          ].map(([title, text]) => (
+          ].map(([title, text], i) => (
             <article
               key={title}
-              className="rounded-xl border border-white/10 bg-white/[.025] p-4"
+              className="glass card-hover group rounded-2xl border-white/10 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan/40 hover:bg-white/[.045] hover:shadow-[0_14px_40px_rgba(34,211,238,0.07)]"
             >
-              <h3 className="text-sm font-semibold">{title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-white/50">
+              <div className="mb-3 font-mono text-[10px] tracking-widest text-accent-cyan/70 transition-colors group-hover:text-accent-cyan">0{i + 1}</div>
+              <h3 className="text-sm font-semibold text-white/90 transition-colors group-hover:text-accent-cyan">{title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/55">
                 {text}
               </p>
             </article>
@@ -139,19 +124,19 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-12"
           >
-            <div className="flex items-center gap-2 mb-4">
+            <div className="mb-4 flex items-center gap-2">
               <BookOpen size={14} className="text-accent-pink" />
 
-              <span className="text-xs font-mono uppercase tracking-wider text-white/50">
+              <span className="text-xs font-mono uppercase tracking-wider text-white/55">
                 {currentlyLearning.label}
               </span>
             </div>
 
-            <div className="grid md:grid-cols-1 gap-4">
+            <div className="grid gap-4">
               {currentlyLearning.items.map((book) => (
                 <div
                   key={book.title}
-                  className="glass rounded-2xl p-5 md:p-6 card-hover overflow-hidden"
+                  className="glass card-hover group rounded-2xl border-white/10 p-5 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-pink/40 hover:shadow-[0_14px_40px_rgba(244,114,182,0.08)] overflow-hidden"
                 >
                   <div className="grid md:grid-cols-[260px_1fr] gap-5 items-start">
                     {/* Cover image */}
@@ -171,7 +156,7 @@ export default function About() {
                         Currently learning
                       </div>
 
-                      <h3 className="font-display text-lg sm:text-xl font-semibold leading-tight">
+                      <h3 className="font-display text-lg sm:text-xl font-semibold leading-tight transition-colors group-hover:text-accent-pink">
                         {book.title}
                       </h3>
 

@@ -30,7 +30,7 @@ import Mermaid from '@/components/Mermaid';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 // Pre-generate pages for all case study slugs at build time
 export function generateStaticParams() {
@@ -38,8 +38,9 @@ export function generateStaticParams() {
 }
 
 // Dynamic metadata for each case study page (title, description, OG tags)
-export function generateMetadata({ params }: Props): Metadata {
-  const cs = getCaseStudy(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const {slug} = await params;
+  const cs = getCaseStudy(slug);
   if (!cs) return { title: 'Case study not found' };
 
   const url = `/projects/${cs.slug}`;
@@ -62,8 +63,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const cs = getCaseStudy(params.slug);
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params;
+  const cs = getCaseStudy(slug);
   if (!cs) notFound();
 
   const articleSchema = {

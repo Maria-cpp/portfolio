@@ -93,7 +93,7 @@ export const techCategories = [
   {
     name: 'Infrastructure',
     icon: 'Boxes',
-    items: ['Docker', 'GitHub Actions', 'Azure', 'Prometheus', 'Grafana', 'Nginx', 'Linux']
+    items: ['Docker', 'GitHub Actions', 'Kubernetes', 'Azure', 'Prometheus', 'Grafana', 'Nginx', 'Linux']
   }
 ] as const;
 
@@ -211,7 +211,7 @@ export const skillGroups = [
 
 export const experience = [
   {
-    role: 'AI Solutions Architect & Full-Stack Developer',
+    role: 'AI Solutions Engineer & Full-Stack AI',
     company: 'Arwen Tech',
     location: 'Islamabad, Pakistan',
     period: '2024 — Present',

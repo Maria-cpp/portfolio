@@ -57,7 +57,7 @@ export default function Zumflux() {
                     {zumflux.name}
                   </h2>
                   <div className="mt-1 text-xs font-mono text-white/50">
-                    by Maria Naseem · 2025
+                    by Maria Naseem · 2023
                   </div>
                 </div>
               </div>
