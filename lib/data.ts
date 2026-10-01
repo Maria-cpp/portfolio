@@ -591,7 +591,7 @@ export const certifications = [
     name: 'Agent Factory Fundamentals: Building Digital FTEs',
     issuer: 'PIAIC / Panaversity',
     year: '2026',
-    status: 'Completed · 81%',
+    status: 'Completed',
     pdfUrl: '/certificates/FTE.png',
     group: 'professional' as const
   },
@@ -599,7 +599,7 @@ export const certifications = [
     name: 'Generative AI Applications',
     issuer: 'Coursera',
     year: '2026',
-    status: 'Completed · 90%',
+    status: 'Completed',
     pdfUrl: '/certificates/IBM _genrative _Ai.jpg',
     group: 'professional' as const
   },
@@ -621,7 +621,7 @@ export const certifications = [
   },
   {
     name: 'Alibaba Cloud Trainer',
-    issuer: 'Bano Qabil',
+    issuer: 'Alibaba Cloud',
     year: '2026',
     status: 'In Progress',
     pdfUrl: null,
@@ -739,7 +739,7 @@ export const education = [
 
 export const stats = [
   { label: 'Active FDE client engagements', value: '2' },
-  { label: 'Yrs across tech, engineering & ops · 6+ software · 4+ AI/ML', value: '10+' },
+  { label: 'Yrs across tech, engineering & ops · 6+ software · 4+ AI/ML', value: '9+' },
   { label: 'Systems & projects — prototype to production', value: '12+' },
   { label: 'AI certifications', value: '6' }
 ];
