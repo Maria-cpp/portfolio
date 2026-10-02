@@ -1,61 +1,53 @@
 MARIA NASEEM
-AI Engineer / FDE | AI Solutions Architect | Agentic AI & LLM Systems | Computer Vision | Enterprise Delivery
-Islamabad, Pakistan | marianaseem99@gmail.com | +92 306 6775777 | LinkedIn | GitHub | Portfolio
+AI Engineer | Applied AI for Enterprise Workflows
+Islamabad, Pakistan | marianaseem99@gmail.com | +92 306 6775777
+LinkedIn | GitHub | Portfolio
+Open to relocation and remote international AI engineering roles
 
 PROFESSIONAL SUMMARY
-AI Engineer / Forward Deployed Engineer (FDE) and AI Solutions Architect with 10 years of professional experience, including 5+ years architecting and delivering production-grade AI and software systems. Recent work includes real-time video analytics and production counting for an NDA-protected engagement; a four-stage HITL facial-recognition attendance system; a PII tokenization vault with hash-chained audit logging; and a multilingual NLP sentiment platform. Specialise in agentic AI engineering — native MCP servers, multi-agent orchestration (OpenAI / Anthropic / Gemini SDKs), RAG with Qdrant / Pinecone, and Human-in-the-Loop verification gates. Client identities and identifying engagement details are withheld under confidentiality obligations.
-
-TECHNICAL SKILLS
-Agentic AI & LLMs: Multi-Agent Orchestration · MCP Servers (built & deployed) · OpenAI Agents SDK · Anthropic Claude SDK · Google Gemini · Grok · LangChain / LangGraph · RAG Pipelines · Embeddings & Similarity Search · Vector DBs (Qdrant, Pinecone, pgvector) · Pydantic structured outputs · HITL controls · Prompt & Context Engineering
-Computer Vision: YOLO26n / YOLO11 / YOLOv8 (Ultralytics, custom fine-tuned) · OpenVINO (FP16 inference optimization) · ByteTrack & lap multi-object tracking · Real-time RTSP video pipelines · Object detection, counting & throughput analytics · Camera tamper detection (SSIM, blur, freeze, signal loss) · Facial Recognition (DeepFace, RetinaFace, YuNet + SFace) · OpenCV · PaddleOCR · FAISS vector similarity
-NLP & Multilingual AI: NLLB-200 · XLM-R · Aya 23 · PEFT / LoRA fine-tuning · Multilingual & low-resource NLP (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi) · Sentiment / intent / topic / toxicity classification · Kafka streaming pipelines
-Backend & APIs: Python · FastAPI · async SQLAlchemy 2.x · Pydantic v2 · Celery + Redis · PostgreSQL (psycopg3, asyncpg, pgvector) · Alembic migrations · WebSockets · JWT/OAuth2 · RBAC · Microservices Architecture · Node.js
-Security & Privacy Engineering: PII detection & tokenization (regex, Luhn, spaCy NER) · HMAC-SHA256 · Envelope encryption (Fernet/AES) · Hash-chained audit logs · KMS/HSM key providers & rotation · Dual-gate authorization
-MLOps & Observability: Prometheus · Grafana · Alertmanager · structlog · Weights & Biases · DVC · MLflow concepts · LLM evaluation patterns · A/B testing · model versioning · Pytest + pytest-asyncio · GitHub Actions CI/CD
-DevOps & Cloud: Docker · Docker Compose · CI/CD Pipelines · Microsoft Azure (Container Apps) · Linux · Nginx · Gunicorn · systemd · certbot · familiarity with Kubernetes patterns
-Frontend & Full-Stack: Next.js · React · TypeScript · Tailwind CSS · Streamlit · Playwright (browser automation)
-Languages: Python (expert) · SQL · TypeScript / JavaScript · Bash · C++ · PHP
+AI engineer building enterprise applications end-to-end, from ingestion and inference through APIs, human review, deployment, and monitoring. Recent work spans CPU-based video analytics, document intelligence and RAG, multilingual sentiment analysis, agentic workflows, and sensitive-data protection. Combine hands-on implementation with solution design, requirements discovery, and client-facing delivery. Project descriptions distinguish deployed services, internal validation, and work in progress.
 
 PROFESSIONAL EXPERIENCE
 
-AI Solutions Architect & Full-Stack Developer | Arwen Tech, Islamabad	2025 – Present
-▸ Architected a real-time video analytics and production-counting system for an NDA-protected engagement. Built RTSP pipelines with YOLO26n (OpenVINO FP16), multi-object tracking, throughput counting, camera health checks, and FastAPI microservices with JWT/RBAC and WebSocket updates. Containerized and deployed on Microsoft Azure Container Apps. Demonstrated on-site; minor updates are in progress before rollout.
-▸ Architected and prepared for deployment a four-stage HITL facial-recognition attendance system for an NDA-protected engagement — enrollment → candidate retrieval from live RTSP streams → human verification → embedding generation and real-time inference. Multi-camera RTSP ingestion with OpenCV SFace embeddings, FAISS index, and confidence-based routing. Validated in an internal on-premises environment.
-▸ Architected and built the Security Vault Service — a bank-grade PII tokenization microservice (detect → tokenize → encrypt → dual-gate access) using regex/Luhn + spaCy NER detection, HMAC-SHA256 deterministic tokens, Fernet/AES envelope encryption with versioned key rotation, and an immutable SHA-256 hash-chained audit log enforced at the database layer. FastAPI + PostgreSQL 16 + Redis/Celery + Prometheus/Grafana observability; 86 automated tests. In internal use at Arwen Tech for active testing and hardening.
-▸ Architected the Multilingual NLP Intelligence Platform — an agentic Kafka pipeline for sentiment, intent, topic, toxicity and sarcasm analysis across Urdu, Roman Urdu, Pashto and other low-resource languages, using NLLB-200 translation and XLM-R/Aya-23 classification, with a human-review loop feeding PEFT/LoRA retraining under shadow-mode deployment. FastAPI + Next.js + PostgreSQL/pgvector + Qdrant; 107 backend tests. Operational internally, running sentiment analysis on live feedback.
-▸ Designed and shipped the Customer Experience Portal — full SLA lifecycle, contract onboarding, and workflow automation. FastAPI + Next.js + JWT + WebSocket live updates, Celery workers, async Postgres, fastapi-limiter rate limiting.
-▸ Delivered additional production microservices: an Agentic Observability Platform (Prometheus → Alertmanager → AI Alert Analyzer with a native MCP server, Anthropic Claude SDK + FastAPI); a multi-channel notification orchestrator (email/WhatsApp/FCM, LLM-driven messaging, FastAPI + Celery + Redis); and a Document AI/OCR ingestion service (PaddleOCR + pdfplumber + python-docx). All containerized via Docker Compose with GitHub Actions CI/CD.
+AI Solutions Engineer & Full-Stack AI | Arwen Tech, Islamabad	2024 – Present
+▸ Completed Video Analytics end-to-end: RTSP ingestion, YOLO detection, ONNX/OpenVINO CPU inference, tracking, counting events, FastAPI services, and deployment integration. Deployed on Azure Container Apps and demonstrated at a client facility; rollout updates remain pending.
+▸ Designed and built a facial-recognition attendance workflow with enrollment, candidate retrieval, human verification, and embedding/inference using OpenCV SFace and FAISS. Validated internally on-premises.
+▸ Built enterprise workflows for contract onboarding, SLA tracking, ticketing, notifications, and integrations with FastAPI, Next.js, PostgreSQL, and Redis/Celery; built asynchronous OCR and document ingestion.
+▸ Built a privacy-vault service for sensitive-data detection, reversible tokenization, encrypted mappings, policy-controlled unmasking, and tamper-evident audit records. In internal use for testing and hardening.
+▸ Built multilingual feedback processing with normalization, translation, sentiment analysis, and human review. Running sentiment analysis internally; LoRA training and full observability remain in progress.
+▸ Built monitoring and AI-assisted alert triage with Prometheus, Grafana, Alertmanager, and optional MCP integration. AI analysis suggests hypotheses and checks; example dashboards distinguish synthetic KPIs from live metrics. Used Docker and GitHub Actions for repeatable delivery.
 
 Corporate Affairs, Legal Operations & AI Solutions Engineer | Confidential Organization, Islamabad	2024 – 2025
-▸ AI Solutions Engineering (self-initiated, Forward-Deployed capacity): identified operational inefficiencies in contract and governance workflows and designed an Agentic AI Contract Intelligence Platform — a LangGraph multi-agent system (Python, FastAPI, Claude, RAG on PostgreSQL/pgvector) automating document extraction, semantic search, meeting scheduling, minutes management, and follow-up generation, with confidence scoring and audit logging.
-▸ Corporate Affairs & Legal Operations (primary role): coordinated leadership and stakeholder communication, governance meetings, agendas, minutes, contracts, and regulatory filings. Supported compliance reviews, risk assessments, and cross-functional operations. Identifying client, stakeholder, and jurisdiction details are withheld under confidentiality obligations.
-▸ Delivered a corporate WordPress website and online shop with custom themes, PHP plugins, REST API and third-party integrations, plus contributions to internal booking applications.
+▸ Identified contract and governance workflow needs and built a self-initiated document intelligence system: extraction, Claude-assisted validation, LangGraph orchestration, and PostgreSQL/pgvector RAG. Implementation completed; adoption and business outcomes are not quantified.
+▸ Primary role covered stakeholder coordination, governance meetings, agendas, minutes, contracts, and regulatory filings. Supported compliance reviews and cross-functional operations.
+▸ Delivered a corporate WordPress website and online shop with custom themes, plugins, and third-party integrations; contributed to internal booking applications.
 
 Co-Founder & Full-Stack Developer | ZUM Services Providers	2023 – 2025
-▸ Co-founded ZUM Services Providers and managed full end-to-end product development — building the full-stack platform from scratch while simultaneously running business operations, client acquisition, and service delivery.
-▸ Designed and developed production-ready web applications with RESTful API design, backend business logic in Python/FastAPI, and frontend interfaces — owning the complete software development lifecycle independently.
-▸ Designed and managed PostgreSQL databases — schemas, relationships, and optimized queries using SQLAlchemy ORM.
-▸ Containerized all backend services with Docker and implemented automated CI/CD pipelines via GitHub Actions, ensuring reliable, repeatable production deployments.
-▸ Applied generative AI (ChatGPT) with structured prompt engineering to accelerate marketing and digital content production for the business — an early, practical adoption of LLM tooling to cut content turnaround and cost.
-▸ Delivered solar solution proposals and technical system layouts while leading digital operations — website development, marketing, branding, and digital content creation.
+▸ Owned application development alongside client acquisition and service delivery: requirements, backend logic, APIs, relational data, frontend integration, and deployment tooling.
+▸ Delivered websites, digital operations, solar proposals, and technical layouts; used structured LLM prompting for marketing and content workflows.
 
 Blockchain Developer | MediaPark	2020 – 2022
-▸ Designed and delivered scalable native blockchain systems and decentralized applications (DApps) — core architecture (blocks, transactions, consensus validation), ECDSA-based cryptographic signing, and low-level socket-based P2P networking for distributed synchronization and block propagation.
-▸ Developed compliance-oriented smart contract interaction frameworks with controlled access mechanisms, encryption standards, and structured technical documentation to ensure blockchain security and operational integrity.
+▸ Built native blockchain components covering blocks, transactions, validation, ECDSA signing, and socket-based peer-to-peer synchronization.
+▸ Developed smart-contract integration, access controls, and technical documentation for decentralized applications.
 
-Earlier Career (2016 – 2020): Internship at IBM Pakistan (2016) — supported PTCL's GPON deployment via PeopleSoft, Siebel, IBM Maximo, and IBM Integration Bus; contributed to GPON training documentation and inventory provisioning. Subsequent operations and IT support roles at Prime Tele Power Solution (2016 – 2017) and Team Work Construction (2018 – 2020).
+Earlier Career	2016 – 2020
+Operations and IT support: Prime Tele Power Solution (2016–2017), Team Work Construction (2018–2020). IBM Pakistan internship (2016): supported GPON deployment documentation and provisioning using enterprise systems.
 
-KEY PROJECTS & OPEN SOURCE
-▸ FTE Sales Lead Engine — Playwright browser automation + AI-driven lead scoring + HITL review layer; reduced manual outreach effort by ~80%.
-▸ Gesture AI Web App — Real-time hand-gesture detection with Next.js for touchless interaction.
+TECHNICAL SKILLS
+Core Expertise: Applied AI, computer vision, document intelligence and RAG, solution design, requirements discovery, client-facing delivery.
+Production AI: RTSP pipelines, YOLO, OpenVINO, OpenCV, ONNX, FAISS, LangGraph, Claude/OpenAI integrations, MCP, human-in-the-loop review, multilingual NLP, pgvector.
+Engineering: Python, FastAPI, TypeScript, Next.js, PostgreSQL, Redis, Celery, REST APIs, authentication and authorization.
+Cloud / Infrastructure: Azure Container Apps, Docker, Docker Compose, GitHub Actions, Linux, Nginx.
+Tools: Prometheus, Grafana, Alertmanager, pytest, OCR and document-processing tooling.
+
+SELECTED WORK & PUBLIC EVIDENCE
+▸ Video Analytics: Azure-deployed camera-based counting workflow; architecture and video demonstrations in the portfolio. Client identity and source code are confidential.
+▸ Contract Intelligence: document extraction, semantic retrieval, human review, and workflow automation; architecture case study in the portfolio.
+▸ Agentic Observability Platform: public implementation with monitoring dashboards and advisory alert analysis. Synthetic examples are not production outcome measurements.
+https://github.com/Maria-cpp/Agentic-Observability-Platform
 
 CERTIFICATIONS & EDUCATION
-Master of Information Technology — Quaid-e-Azam University, 2016
-Agentic AI Level 2 — Professional · PIAIC / Panaversity, 2026
-Agentic AI Level 1 — Developer Fundamentals · PIAIC / Panaversity, 2026
-Agent Factory Fundamentals: Building Digital FTEs · PIAIC / Panaversity, 2026 (81%)
-Generative AI Applications · Coursera, 2026 (90%)
-Build RAG Applications · IBM / Coursera, 2026
-AI for Everyone · DeepLearning.AI / Coursera, 2026
-Alibaba Cloud Certified Trainer · Bano Qabil, 2026 — In Progress
-AI for Cybersecurity Specialization · Johns Hopkins University / Coursera — In Progress
+Master of Information Technology | Quaid-e-Azam University | 2016
+Agentic AI Level 2 – Professional | PIAIC / Panaversity | 2026
+Generative AI Applications | Coursera | 2026
+Build RAG Applications | IBM / Coursera | 2026

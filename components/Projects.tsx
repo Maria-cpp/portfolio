@@ -18,7 +18,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, Sparkles, Play, ChevronLeft, ChevronRight, Images, X, ChevronDown, FileText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { projects } from '@/lib/data';
+import { projects, projectSection } from '@/lib/data';
 
 type ProjectCategory = 'career' | 'zumfluxai' | 'learning';
 
@@ -131,6 +131,7 @@ function ProjectCard({
         style={{ background: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.6) 30%, rgba(43,77,255,0.8) 50%, rgba(0,229,255,0.6) 70%, transparent)' }}
       />
       <button
+        aria-expanded={isExpanded}
         onClick={onToggle}
         onMouseMove={hasImages && !isExpanded ? onMouseMove : undefined}
         onMouseLeave={hasImages && !isExpanded ? onMouseLeave : undefined}
@@ -149,16 +150,16 @@ function ProjectCard({
             </div>
           )}
           <div className="flex items-center gap-3 flex-wrap min-w-0">
-            <h3 className="font-display text-lg md:text-xl font-semibold truncate">
+            <h3 className="font-display text-lg md:text-xl font-semibold break-words">
               {proj.title}
             </h3>
             {proj.highlight && (
-              <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border shrink-0 ${highlightColor(proj.sector)}`}>
+              <div className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border ${highlightColor(proj.sector)}`}>
                 <Sparkles size={10} /> {proj.highlight}
               </div>
             )}
             {proj.extraTag && (
-              <div className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border bg-accent-lime/15 text-accent-lime border-accent-lime/30 shrink-0">
+              <div className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md border bg-accent-lime/15 text-accent-lime border-accent-lime/30">
                 {proj.extraTag}
               </div>
             )}
@@ -169,6 +170,59 @@ function ProjectCard({
           className={`text-white/50 shrink-0 ml-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
         />
       </button>
+
+      <div className="px-5 md:px-6 pb-5">
+        <p className="text-sm text-white/70 leading-relaxed">{'summary' in proj ? proj.summary : proj.tagline}</p>
+        {'ownership' in proj && <p className="mt-2 text-sm text-white/65"><strong className="text-white/85">{'ownershipLabel' in proj ? proj.ownershipLabel : 'My contribution'}:</strong> {proj.ownership}</p>}
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          {proj.slug && (
+            <Link
+              href={`/projects/${proj.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/15 px-3 py-1.5 text-sm font-medium text-accent transition hover:bg-accent/25"
+            >
+              <FileText size={14} /> Read case study
+            </Link>
+          )}
+          {proj.repo && (
+            <a
+              href={proj.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
+            >
+              <Github size={14} /> Source
+            </a>
+          )}
+          {proj.demo && (
+            <a
+              href={proj.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
+            >
+              <ExternalLink size={14} /> Live
+            </a>
+          )}
+          {hasVideo && hasImages && (
+            <button
+              onClick={() => setScreenshotModal({ images: proj.images!, title: proj.title })}
+              className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline cursor-pointer"
+            >
+              <Images size={14} /> Screenshots
+            </button>
+          )}
+          {hasVideo && !proj.repo && !proj.demo && !hasImages && !isFTE && (
+            <span className="inline-flex items-center gap-1.5 text-sm text-white/60">
+              <Play size={14} /> Expand for video demo
+            </span>
+          )}
+          {!proj.repo && !proj.demo && !hasVideo && !hasImages && !proj.slug && (
+            <span className="text-xs text-white/40 italic">
+              Private implementation · client details withheld
+            </span>
+          )}
+        </div>
+      </div>
 
       <AnimatePresence initial={false}>
         {isExpanded && (
@@ -281,54 +335,7 @@ function ProjectCard({
                 ))}
               </div>
 
-              <div className="mt-6 flex items-center gap-3">
-                {proj.slug && (
-                  <Link
-                    href={`/projects/${proj.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/15 px-3 py-1.5 text-sm font-medium text-accent transition hover:bg-accent/25"
-                  >
-                    <FileText size={14} /> Read case study
-                  </Link>
-                )}
-                {proj.repo && (
-                  <a
-                    href={proj.repo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
-                  >
-                    <Github size={14} /> Source
-                  </a>
-                )}
-                {proj.demo && (
-                  <a
-                    href={proj.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline"
-                  >
-                    <ExternalLink size={14} /> Live
-                  </a>
-                )}
-                {hasVideo && hasImages && (
-                  <button
-                    onClick={() => setScreenshotModal({ images: proj.images!, title: proj.title })}
-                    className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition link-underline cursor-pointer"
-                  >
-                    <Images size={14} /> Screenshots
-                  </button>
-                )}
-                {hasVideo && !proj.repo && !proj.demo && !hasImages && !isFTE && (
-                  <span className="inline-flex items-center gap-1.5 text-sm text-white/60">
-                    <Play size={14} /> Watch demo above
-                  </span>
-                )}
-                {!proj.repo && !proj.demo && !hasVideo && !hasImages && !proj.slug && (
-                  <span className="text-xs text-white/40 italic">
-                    Private — available on request
-                  </span>
-                )}
-              </div>
+
             </div>
           </motion.div>
         )}
@@ -341,7 +348,7 @@ export default function Projects() {
   const [screenshotModal, setScreenshotModal] = useState<{ images: string[]; title: string } | null>(null);  // Full-screen screenshot viewer
   const [expandedKey, setExpandedKey] = useState<string | null>(projects[0]?.title ?? null);                  // Which project card is expanded
   const [showFteChatbot, setShowFteChatbot] = useState(false);    // FTE project dual-video toggle
-  const [showAll, setShowAll] = useState(false);                  // Show all projects vs top 5
+  const [showAll, setShowAll] = useState(false);                  // Show archive vs selected projects
   const [activeTab, setActiveTab] = useState<ProjectCategory | 'all'>('all');  // Category filter tab
   const [hoverPreview, setHoverPreview] = useState<{ src: string; x: number; y: number } | null>(null);  // Floating preview on hover
 
@@ -358,8 +365,8 @@ export default function Projects() {
   const zumfluxProjects = useMemo(() => projects.filter(p => (p as typeof p & { category?: string }).category === 'zumfluxai'), []);
   const learningProjects = useMemo(() => projects.filter(p => (p as typeof p & { category?: string }).category === 'learning'), []);
 
-  // Initial view shows only the top 5 career projects
-  const topProjects = careerProjects.slice(0, 5);
+  // Initial view uses the explicit featured selection.
+  const topProjects = careerProjects.filter((project) => project.featured);
 
   const tabs: { key: ProjectCategory | 'all'; label: string }[] = [
     { key: 'all', label: 'All' },
@@ -402,21 +409,20 @@ export default function Projects() {
           className="flex flex-col gap-4"
         >
           <div>
-            <div className="eyebrow">Featured production AI systems</div>
+            <div className="eyebrow">Selected AI engineering work</div>
             <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold leading-tight">
-              Systems built to{' '}
-              <span className="text-accent-cyan">run in the real world</span>
+              Applied AI for{' '}
+              <span className="text-accent-cyan">enterprise workflows</span>
             </h2>
           </div>
           <p className="text-white/55 max-w-md text-sm">
-            Enterprise platforms, FDE engagements, ZumfluxAI client work, and learning builds — from
-            multi-camera CV pipelines to MCP-native agentic systems.
+            {projectSection.description}
           </p>
         </motion.div>
 
         {!showAll ? (
           <>
-            {/* Top 5 career projects */}
+            {/* Three selected projects */}
             <div className="mt-14 flex flex-col gap-3">
               {renderProjectList(topProjects, 0)}
             </div>
@@ -431,7 +437,7 @@ export default function Projects() {
                 onClick={() => setShowAll(true)}
                 className="btn btn-primary cursor-pointer"
               >
-                View all projects ({projects.length})
+                Browse project archive ({projects.length})
               </button>
             </motion.div>
           </>
@@ -522,13 +528,13 @@ export default function Projects() {
               top: hoverPreview.y - 120,
             }}
           >
-            <div className="w-72 h-44 rounded-xl overflow-hidden border border-white/20 shadow-2xl shadow-black/60 bg-black">
+            <div className="relative w-72 h-44 rounded-xl overflow-hidden border border-white/20 shadow-2xl shadow-black/60 bg-black">
               <Image
                 src={hoverPreview.src}
                 alt="Project preview"
                 fill
                 sizes="288px"
-                className="object-cover !relative"
+                className="object-cover"
               />
             </div>
           </motion.div>

@@ -57,7 +57,7 @@ export default async function OGImage() {
           style={{
             display: 'flex',
             marginTop: 24,
-            fontSize: 76,
+            fontSize: 54,
             fontWeight: 700,
             color: '#e7e9ee',
             lineHeight: 1.05,
@@ -70,14 +70,14 @@ export default async function OGImage() {
           style={{
             display: 'flex',
             marginTop: 8,
-            fontSize: 76,
+            fontSize: 54,
             fontWeight: 700,
             lineHeight: 1.05,
             letterSpacing: -2,
             color: '#22d3ee'
           }}
         >
-          & AI Solutions Architect
+          Applied AI · Enterprise Delivery
         </div>
         <div
           style={{

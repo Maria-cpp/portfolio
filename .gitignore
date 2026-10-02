@@ -50,3 +50,11 @@ public/resumes/
 
 # Build output
 out/
+
+# Local portfolio data backup
+/lib/data copy.ts
+
+
+# docs
+/docs/
+/respnse.md

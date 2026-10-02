@@ -17,13 +17,9 @@ import { personal } from '@/lib/data';
 // Anchors only resolve on the homepage. On sub-routes (e.g. /projects/[slug])
 // they must be prefixed so they navigate home first, then scroll.
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#stack', label: 'Tech' },
+  { href: '#projects', label: 'Work' },
   { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#architecture', label: 'Architecture' },
-  { href: '#zumflux', label: 'ZumfluxAI' },
-  { href: '#certifications', label: 'Certs' },
+  { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' }
 ];
 
@@ -76,7 +72,7 @@ export default function Navbar() {
               </span>
             </a>
 
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1">
               {links.map((l) => (
                 <a
                   key={l.href}
@@ -90,15 +86,18 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2">
               <a
-                href={to('#contact')}
-                className="hidden md:inline-flex btn btn-primary text-xs"
+                href={personal.resumeUrl}
+                download
+                className="inline-flex btn btn-primary text-xs"
               >
-                Let&apos;s talk
+                Download CV
               </a>
               <button
                 onClick={() => setOpen(!open)}
                 className="lg:hidden p-2 rounded-full hover:bg-white/5"
                 aria-label="Toggle menu"
+                aria-expanded={open}
+                aria-controls="mobile-navigation"
               >
                 {open ? <X size={18} /> : <Menu size={18} />}
               </button>
@@ -116,7 +115,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             className="fixed top-[72px] left-4 right-4 z-40 lg:hidden nav-scrolled rounded-2xl p-4"
           >
-            <div className="flex flex-col gap-1">
+            <nav id="mobile-navigation" aria-label="Mobile navigation" className="flex flex-col gap-1">
               {links.map((l) => (
                 <a
                   key={l.href}
@@ -127,7 +126,7 @@ export default function Navbar() {
                   {l.label}
                 </a>
               ))}
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

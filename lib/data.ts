@@ -1,8 +1,8 @@
 // =====================================================================
 //  Maria Naseem — Portfolio Data (Single Source of Truth)
 //
-//  ALL text content lives here. Components import from this file and
-//  never hardcode text in JSX. To update site content, edit this file.
+//  Shared portfolio content lives here. Some component copy and case
+//  studies are maintained separately; keep their claims consistent.
 //
 //  Exports: personal, aboutPillars, techCategories, techMarquee,
 //  skillGroups, experience, projects, certifications, zumflux,
@@ -14,15 +14,15 @@ export const personal = {
   name: 'Maria Naseem',
   firstName: 'Maria',
   initials: 'MN',
-  title: 'AI Engineer & AI Solutions Architect',
+  title: 'AI Engineer | Applied AI for Enterprise Workflows',
   taglines: [
-    'AI Engineer & AI Solutions Architect',
-    'Agentic AI · Computer Vision · RAG',
-    'Production AI Systems',
-    'Founder @ ZumfluxAI'
+    'AI Engineer',
+    'Applied AI for enterprise workflows',
+    'Computer Vision · RAG · AI Integration',
+    'Hands-on architecture and client-facing delivery'
   ],
   location: 'Islamabad, Pakistan',
-  availability: 'Open to relocation & remote — worldwide',
+  availability: 'Open to relocation and remote international AI engineering roles',
   email: 'marianaseem99@gmail.com',
   businessEmail: 'zumfluxai@gmail.com',
   phone: '+92 306 6775777',
@@ -30,10 +30,19 @@ export const personal = {
   linkedin: 'https://www.linkedin.com/in/maria-naseem/',
   resumeUrl: '/Maria_Naseem_CV.pdf',
   shortBio:
-    'AI Engineer & AI Solutions Architect. I design, build, and deploy production AI — real-time computer vision on RTSP, agentic systems with MCP and HITL gates, RAG platforms, and bank-grade data protection. Currently running two Forward Deployed engagements across automotive and travel.',
+    'I build AI applications end-to-end — from data ingestion and inference through APIs, human-in-the-loop review, deployment, and monitoring.',
   longBio:
-    `AI Engineer & AI Solutions Architect with roughly 10 years across technology, engineering, and corporate operations — about 6 in software and ~4 in AI/ML, the last ~2 focused on production systems. I architect real-time video-analytics platforms on Azure, four-stage HITL facial-recognition systems, MCP-native agentic observability stacks, and bank-grade PII tokenization vaults. I work as a Forward Deployed Engineer — embedding with clients, mapping their operations, and shipping AI they can actually run. Currently running two active FDE engagements and founded ZumfluxAI to deliver this work.`
+    `I am an AI engineer based in Islamabad, Pakistan, with a background across software, technology, and corporate operations. At Arwen Tech, I work on video analytics, AI-assisted enterprise workflows, backend services, and deployment tooling. My work combines hands-on implementation with solution design and client-facing delivery. I also undertake independent development through ZumfluxAI. I am exploring AI engineering opportunities with product teams and enterprise AI organizations, including UAE/Gulf relocation and remote international roles.`
 };
+
+export const heroWork = [
+  { title: 'Video Analytics', description: 'object detection, tracking, and facial recognition using standard IP cameras.' },
+  { title: 'Standard Infrastructure', description: 'solutions that work with high-quality generic IP cameras and standard PCs, without requiring specialized hardware.' },
+  { title: 'NLP & Sentiment Analysis', description: 'multilingual feedback and sentiment analysis workflows.' },
+  { title: 'Agentic AI', description: 'agentic systems with MCP integrations, human-in-the-loop (HITL) gates, and workflow automation.' },
+  { title: 'RAG Platforms', description: 'enterprise knowledge retrieval and document intelligence systems.' },
+  { title: 'LLM Data Protection', description: 'protecting sensitive enterprise data within LLM-powered applications.' }
+] as const;
 
 // ---------------------------------------------------------------------
 //  About — three pillar cards (Vision / Expertise / Innovation)
@@ -42,24 +51,24 @@ export const personal = {
 
 export const aboutPillars = [
   {
-    label: 'Vision',
-    title: 'AI that survives audit',
+    label: 'Delivery',
+    title: 'AI integrated into real workflows',
     description:
-      'For confidential engagements, a working prototype is only the first step. I build AI systems with operational validation, audit trails, and deployment controls.',
+      'I connect inference and document processing to APIs, review queues, operational records, and deployment tooling. Project descriptions distinguish internal validation, demonstrations, and rollout status.',
     accent: 'cyan'
   },
   {
     label: 'Expertise',
-    title: 'Agentic systems · MCP · HITL',
+    title: 'Computer vision and document AI',
     description:
-      'Multi-agent orchestration with explicit Human-in-the-Loop gates, MCP servers (built and deployed), RAG over vector stores, real-time RTSP processing, and FastAPI/Next.js stacks — bridging research-grade ML to battle-tested infrastructure.',
+      'Recent work includes CPU-based RTSP video analytics, retrieval over enterprise documents, structured LLM outputs, and human review of uncertain results.',
     accent: 'lime'
   },
   {
-    label: 'Innovation',
-    title: 'From prototype to live deployment in weeks',
+    label: 'Ownership',
+    title: 'From requirements to implementation',
     description:
-      'A real-time video-analytics system demonstrated on-site to the client at their production facility. A four-stage HITL attendance system deployed and running live on-premises. I move fast — and document the path so reviewers, auditors, and senior architects can follow it.',
+      'I work across requirements, architecture, implementation, testing, and delivery. Video Analytics has been deployed on Azure and demonstrated at a client facility; the attendance system has been validated internally on-premises.',
     accent: 'pink'
   }
 ] as const;
@@ -71,134 +80,63 @@ export const aboutPillars = [
 
 export const techCategories = [
   {
-    name: 'Agentic AI & LLMs',
+    name: 'Core Expertise',
     icon: 'Brain',
-    items: [
-      'OpenAI', 'Anthropic Claude', 'Gemini',
-      'MCP Servers (built & deployed)', 'Multi-Agent Orchestration',
-      'HITL Controls', 'RAG', 'FAISS', 'LangGraph',
-      'Pydantic Structured Outputs'
-    ]
+    items: ['Applied AI', 'Computer Vision', 'Document Intelligence & RAG', 'Solution Design', 'Client-facing Delivery']
   },
   {
-    name: 'AI / Computer Vision',
+    name: 'Production AI',
     icon: 'Camera',
-    items: ['Ultralytics', 'OpenVINO', 'ONNX', 'OpenCV', 'DeepFace · SFace', 'RTSP multi-camera', 'FAISS']
+    items: ['RTSP Video Pipelines', 'YOLO / OpenVINO', 'OpenCV', 'LangGraph', 'LLM Integration', 'Human-in-the-Loop Review', 'MCP', 'pgvector / FAISS']
   },
   {
     name: 'Engineering',
     icon: 'Server',
-    items: ['Python', 'FastAPI', 'Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Celery', 'WebSockets']
+    items: ['Python', 'FastAPI', 'TypeScript', 'Next.js', 'PostgreSQL', 'Redis / Celery', 'REST APIs']
   },
   {
-    name: 'Infrastructure',
+    name: 'Cloud / Infrastructure',
     icon: 'Boxes',
-    items: ['Docker', 'GitHub Actions', 'Kubernetes', 'Azure', 'Prometheus', 'Grafana', 'Nginx', 'Linux']
+    items: ['Azure Container Apps', 'Docker', 'GitHub Actions', 'Linux', 'Nginx']
+  },
+  {
+    name: 'Tools',
+    icon: 'Wrench',
+    items: ['Prometheus', 'Grafana', 'Alertmanager', 'OpenAI / Claude APIs', 'ONNX']
   }
 ] as const;
 
 export const techMarquee = [
-  'Python', 'TypeScript', 'FastAPI', 'Next.js',
-  'OpenAI', 'Anthropic', 'MCP',
-  'Ultralytics', 'YOLO26n', 'OpenCV', 'OpenVINO',
-  'PostgreSQL', 'Redis',
-  'Docker', 'Azure',
-  'LangGraph', 'FAISS',
-  'Prometheus', 'Grafana'
+  'Python', 'FastAPI', 'Computer Vision', 'RAG', 'LangGraph',
+  'OpenVINO', 'PostgreSQL', 'Docker', 'Azure', 'MCP'
 ];
 
-// ---------------------------------------------------------------------
-//  Skills — grid card view with title, blurb, and checklist items
-//  Used by: Skills.tsx
-// ---------------------------------------------------------------------
-
+// Supporting descriptions use the same expertise groups as the stack.
 export const skillGroups = [
   {
-    title: 'Agentic AI & MCP',
-    blurb: 'Multi-agent orchestration with explicit HITL gates and MCP-native tool integration.',
-    items: [
-      'OpenAI / Claude Agents SDK',
-      'MCP Servers (built & deployed)',
-      'Multi-Agent Orchestration',
-      'Human-in-the-Loop gates',
-      'Pydantic Structured Outputs',
-      'LangGraph',
-      'n8n workflow automation',
-      'Conversational agents (in progress)',
-      'Voice / calling agents (in progress)'
-    ]
+    title: 'Core Expertise',
+    blurb: 'Applied AI connected to enterprise workflows and client requirements.',
+    items: ['Computer vision and video analytics', 'Document intelligence and RAG', 'Solution design', 'Requirements discovery and technical delivery']
   },
   {
-    title: 'Computer Vision',
-    blurb: 'Production CV pipelines on live RTSP — from facial-recognition attendance to factory-line analytics.',
-    items: [
-      'Ultralytics · YOLO26n · ONNX · OpenVINO',
-      'Facial Recognition (DeepFace, SFace)',
-      'RTSP multi-camera ingestion',
-      '4-stage enrollment → HITL → embedding → inference',
-      'Production-line counting & anomaly detection'
-    ]
+    title: 'Production AI',
+    blurb: 'Inference, retrieval, and review workflows with explicit deployment status.',
+    items: ['YOLO, ONNX, OpenVINO and OpenCV', 'RTSP ingestion and counting events', 'LangGraph and structured LLM outputs', 'pgvector and FAISS retrieval', 'MCP tool integration', 'Human-in-the-Loop review']
   },
   {
-    title: 'LLM Engineering',
-    blurb: 'RAG, structured outputs, document intelligence, and provider-agnostic LLM gateways.',
-    items: [
-      'OpenAI · Anthropic · Grok · Gemini',
-      'Retrieval-Augmented Generation',
-      'Embeddings & Vector Search',
-      'FAISS · Pinecone · pgvector',
-      'Document Intelligence · OCR · Contract AI',
-      'Prompt Engineering & guardrails',
-      'NLP — multilingual & low-resource (Urdu, Roman Urdu, Pashto…)'
-    ]
+    title: 'Engineering',
+    blurb: 'Backend services and interfaces that connect AI to operational systems.',
+    items: ['Python and FastAPI', 'TypeScript and Next.js', 'PostgreSQL and API integration', 'Redis and Celery queues', 'Authentication and access controls']
   },
   {
-    title: 'Backend & APIs',
-    blurb: 'Production-grade Python services with async + queues + auth.',
-    items: [
-      'FastAPI · Python',
-      'Redis + Celery (async + retry)',
-      'PostgreSQL · MySQL · Alembic',
-      'WebSockets · REST · JWT',
-      'Microservices · structlog',
-      'RBAC/CBAC'
-    ]
+    title: 'Cloud / Infrastructure',
+    blurb: 'Containerized deployments and repeatable build workflows.',
+    items: ['Azure Container Apps', 'Docker and Docker Compose', 'GitHub Actions CI/CD', 'Linux and Nginx']
   },
   {
-    title: 'Security & Privacy Engineering',
-    blurb: 'Bank-grade data protection — tokenization, envelope encryption, and tamper-evident audit trails.',
-    items: [
-      'PII detection (regex + Luhn + spaCy NER)',
-      'Deterministic tokenization (HMAC-SHA256)',
-      'Envelope encryption · versioned keys · rotation',
-      'Hash-chained, append-only audit logs',
-      'Dual-gate authorization · RBAC',
-      'KMS / HSM key providers · SIEM forwarding'
-    ]
-  },
-  {
-    title: 'Cloud Architecture',
-    blurb: 'End-to-end architecture design for scalable, secure, and production-ready applications.',
-    items: [
-      'Alibaba Cloud architecture patterns',
-      'Full application architecture design',
-      'Scalable compute, storage, and networking',
-      'High availability, disaster recovery, and observability',
-      'Security, IAM, and cost-aware design',
-      'Mock exam preparation for Alibaba Cloud architecture'
-    ]
-  },
-  {
-    title: 'Consulting & Delivery',
-    blurb: 'The forward-deployed half — embedding with stakeholders, mapping workflows, and owning delivery end to end.',
-    items: [
-      'Requirement gathering & workflow mapping',
-      'Stakeholder & C-suite communication',
-      'Solution architecture',
-      'Client acquisition & service delivery',
-      'Corporate governance · board coordination',
-      'Contract review · regulatory compliance'
-    ]
+    title: 'Tools',
+    blurb: 'Model integration and operational visibility.',
+    items: ['OpenAI and Anthropic APIs', 'Prometheus and Grafana', 'Alertmanager', 'ONNX model export']
   }
 ];
 
@@ -217,40 +155,30 @@ export const experience = [
     period: '2024 — Present',
     current: true,
     bullets: [
-      'End-to-End AI Delivery — Progressed from Software Engineer into AI-focused solution ownership, leading requirements, architecture, full-stack development, AI integration, testing, and on-prem/cloud deployment.',
-      'FBR Video Analytics — Architected a real-time production-counting system using RTSP, YOLO26n, ONNX/OpenVINO CPU inference, LAP multi-object tracking, anomaly/stoppage detection, and FastAPI. Containerized and deployed on Microsoft Azure Container Apps; demonstrated on-site with rollout updates in progress.',
-      'Facial Recognition Attendance — Architected a four-stage NDA-protected system: enrollment → live RTSP candidate retrieval → human verification → embedding generation/inference. Built multi-camera processing with OpenCV SFace, FAISS, and confidence-based routing; validated in an internal on-prem environment.',
-      'Agentic Notifications — Engineered an event-driven notification microservice for email, WhatsApp, and FCM using LLM-generated context-aware messaging with deterministic fallback. FastAPI + Celery + Redis, with retries, ClamAV scanning, and decoupled processing.',
-      'Customer Experience Portal — Designed and shipped an enterprise platform covering SLA lifecycle, contract onboarding, ticketing, assets, users, notifications, and workflow automation using FastAPI, Next.js, JWT, WebSockets, Celery, async PostgreSQL, and rate limiting.',
-      'Document AI — Built an asynchronous OCR/document-ingestion service using PaddleOCR, pdfplumber, python-docx, FastAPI, MIME validation, and audit-grade structured logging for extracting and processing enterprise documents.',
-      'Agentic Observability — Delivered a Prometheus → Alertmanager → AI Alert Analyzer pipeline for root-cause analysis, severity assessment, and recommended actions, with self-validating PromQL rules and a native MCP server using Claude SDK + FastAPI.',
-      'Platform Engineering — Standardized containerized deployment and CI/CD across delivered services using Docker Compose and GitHub Actions, supporting repeatable development-to-production delivery.'
+      'Work across requirements, solution design, full-stack implementation, AI integration, testing, and deployment for enterprise applications.',
+      'Video Analytics — Built RTSP video processing with YOLO, ONNX/OpenVINO CPU inference, object tracking, counting events, and FastAPI. Deployed on Azure Container Apps and demonstrated at a client facility; rollout updates remain in progress.',
+      'Attendance — Designed and built enrollment, candidate retrieval, human verification, and embedding/inference workflows using OpenCV SFace and FAISS. Validated in an internal on-premises environment.',
+      'Enterprise Workflows — Built Customer Experience Portal functionality for contract onboarding, SLA tracking, ticketing, notifications, and integrations using FastAPI, Next.js, PostgreSQL, and Redis/Celery.',
+      'Document Processing — Built asynchronous OCR and document ingestion with format validation and structured logging for enterprise records.',
+      'Observability & Delivery — Built monitoring and an AI-assisted alert analysis workflow using Prometheus, Alertmanager, and Grafana; used Docker and GitHub Actions for repeatable service delivery. AI analysis provides hypotheses and recommended checks, rather than verified root causes.'
     ],
-    stack: [
-      'Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'Azure', 'Ultralytics', 'YOLO26', 'ONNX', 'OpenVINO', 'RTSP', 'OpenCV', 'FAISS', 'PaddleOCR', 'Prometheus', 'Alertmanager', 'LLMs', 'RAG', 'MCP', 'Claude SDK', 'GitHub Actions']
+    stack: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'Redis', 'Docker', 'Azure', 'OpenVINO', 'OpenCV', 'Prometheus', 'MCP', 'GitHub Actions']
   },
   {
-  role: 'Founder · Full-Stack Developer · Applied Generative AI · FDE',
+  role: 'Founder · Independent Software & AI Development',
   company: 'ZUMFluxAI',
   period: '2023 — Present',
   location: 'Pakistan',
   current: true,
 
   bullets: [
-    'Founded ZUM Service Providers and delivered client solutions end-to-end — owning discovery, architecture, full-stack development, integration, deployment, and technical delivery.',
-    'Official Tourism Platform — Designed and delivered a production WordPress website with responsive layouts, custom visual theming, structured tourism content, destination showcases, and publication-focused sections, creating a maintainable digital presence for a national tourism organization while keeping the client identity confidential.',
-    'Discovery & Booking Platform — Designed a customer-facing discovery and booking experience, translating business requirements into intuitive search, exploration, and booking workflows. Client identity and project-specific details remain confidential.',
-    'Corporate Affairs · Contract FDE — Translated business and operational requirements into deployed application workflows and integrations, bridging stakeholders and hands-on engineering through implementation and troubleshooting.',
-    'Delivered full-stack applications across React/Next.js frontends, backend APIs, relational databases, authentication, third-party integrations, and Linux-based deployments.',
-    'Introduced Applied Generative AI into client solutions through LLM-assisted workflows, intelligent information processing, and task automation.',
-    'Established a hands-on delivery model spanning requirements → solution design → implementation → testing → deployment → production support, enabling direct ownership of the complete client solution lifecycle.',
-    'Managed projects end-to-end across discovery, solution design, implementation, testing, deployment, troubleshooting, and direct client communication.'
+    'Undertake independent client development through ZumfluxAI, covering requirements discovery, solution design, implementation, and direct client communication.',
+    'Built websites and application workflows using React/Next.js, APIs, relational databases, and third-party integrations. Client identities and identifying project details are withheld.',
+    'Developed LLM-assisted information processing and workflow automation, with review steps where human decisions are required.',
+    'Work on a confidential operations platform with transaction reconciliation, duplicate detection, audit logging, and assisted review; implementation remains in progress.'
   ],
-
-  stack: [
-    'Python', 'JavaScript', 'React', 'Next.js', 'REST APIs', 'SQL', 'Full-Stack Development', 'Generative AI', 'LLM Integration', 'System Integration', 'Linux', 'FDE', 'Technical Delivery'
-  ],
-  }, 
+  stack: ['Python', 'FastAPI', 'React', 'Next.js', 'PostgreSQL', 'Docker', 'LLM Integration'],
+  },
   {
     role: 'Blockchain Developer',
     company: 'MediaPark',
@@ -303,38 +231,48 @@ export const experience = [
 //  sector (for badge color), extraTag, highlight, repo, demo
 // ---------------------------------------------------------------------
 
+export const projectSection = {
+  description: 'Three selected AI projects showcasing implementation scope, current status, and supporting evidence. Additional client work, experiments, and learning projects are available in the archive.'
+};
+
 export const projects = [
   // ── Career / Enterprise Projects ──────────────────────────────────
   {
     title: 'Video Analytics',
+    summary: 'Production-line counting from camera feeds, with timestamped records and dashboard views.',
+    ownershipLabel: 'End-to-end delivery',
+    ownership: 'Completed the solution end-to-end, including video ingestion, inference, tracking, event APIs, and deployment integration.',
     slug: 'video-analytics',
-    tagline: 'Ultralytics YOLO26n + OpenVINO production-line counting · NDA-protected engagement',
-    description:
-      'Architected a production computer-vision system for an NDA-protected engagement. Ultralytics YOLO26n detection is exported through ONNX to OpenVINO for CPU inference, with lap multi-object tracking, multi-line and multi-SKU counting on live RTSP feeds, timestamped events, and dashboard views by SKU, line, batch, and shift. Containerized and deployed on Microsoft Azure Container Apps. Demonstrated on-site; minor updates are in progress before full rollout.',
+    tagline: 'CPU-based video analytics for production-line counting',
+    description: 'Built a video-analytics system for a confidential enterprise engagement, covering RTSP ingestion, YOLO detection exported through ONNX to OpenVINO for CPU inference, object tracking, and counting events. FastAPI and PostgreSQL support timestamped records and dashboard views by SKU, line, batch, and shift. Deployed on Azure Container Apps and demonstrated at a client facility. Updates remain in progress before full rollout; no validated business-impact or counting-accuracy figures are published.',
     tags: ['Ultralytics', 'YOLO26n', 'OpenVINO', 'ONNX', 'Object tracking', 'OpenCV', 'RTSP', 'FastAPI', 'PostgreSQL', 'Docker', 'Microsoft Azure'],
     repo: null,
     demo: null,
     featured: true,
     highlight: 'NDA-Protected Engagement',
     sector: 'Enterprise',
-    extraTag: 'Demoed on-site',
+    extraTag: 'Azure deployed · rollout pending',
     category: 'career'  },
   {
     title: 'Agentic AI Contract Intelligence Platform',
+    summary: 'Document extraction and retrieval for contract search and AI-assisted workflows.',
+    ownership: 'Built extraction, RAG retrieval, and agent workflow integration.',
     slug: 'agentic-contract-intelligence',
-    tagline: 'NDA-protected engagement · Multi-agent RAG for contract intelligence and workflow automation',
-    description:
-      'NDA-protected Forward Deployed Engineering engagement. Built deterministic document extraction (regex, OCR, rule-based parsing, LLM-assisted validation) and a PostgreSQL (pgvector) RAG knowledge base for semantic search and question answering. A LangGraph multi-agent architecture using Python, FastAPI, and Claude handles ingestion, extraction, validation, retrieval, workflow automation, and audit logging.',
+    tagline: 'Document extraction, semantic search, and AI-assisted contract workflows',
+    description: 'Built document extraction using OCR, rule-based parsing, and LLM-assisted validation, alongside a PostgreSQL/pgvector RAG knowledge base for semantic search and question answering. Python, FastAPI, Claude, and LangGraph connect ingestion, extraction, retrieval, and workflow automation with audit logging. Client details are confidential. Implementation is completed; user adoption and business outcomes are not quantified here.',
     tags: ['LangGraph', 'Claude', 'RAG', 'pgvector', 'FastAPI', 'Python', 'OCR', 'Multi-Agent', 'Document Intelligence'],
     repo: null,
     demo: null,
-    featured: true,
-    highlight: 'FDE \u00b7 Agentic RAG',
+    featured: false,
+    highlight: 'Document AI · RAG',
     sector: 'Enterprise',
     extraTag: 'Completed',
     category: 'career'  },
   {
     title: 'Facial Recognition Attendance System',
+    slug: 'facial-recognition-attendance',
+    summary: 'Human-reviewed facial recognition and attendance logging from standard IP camera streams.',
+    ownership: 'Designed and built enrollment, candidate retrieval, human verification, and embedding/inference workflows.',
     tagline: '4-stage HITL facial recognition on multi-camera RTSP',
     description:
       'Designed a four-stage HITL facial-recognition attendance system for an NDA-protected engagement. Pipeline: enrollment \u2192 candidate retrieval from live RTSP \u2192 human verification \u2192 embedding generation \u2192 real-time inference and attendance logging. Validated in an internal on-premises environment; further engagement details are withheld.',
@@ -344,14 +282,15 @@ export const projects = [
     featured: true,
     highlight: 'Enterprise \u00b7 HITL',
     sector: 'Enterprise',
-    extraTag: 'Live \u00b7 on-prem',
+    extraTag: 'Internally validated · on-premises',
     category: 'career'  },
   {
     title: 'Security Vault Service',
+    summary: 'Sensitive-data detection, reversible tokenization, and controlled unmasking for enterprise applications.',
+    ownership: 'Designed and built the privacy-vault service, including encrypted mappings, access controls, and tamper-evident audit integration.',
     slug: 'security-vault-service',
-    tagline: 'Bank-grade PII tokenization vault with dual-gate unmask + hash-chained audit',
-    description:
-      'An independent privacy-vault microservice: detects sensitive data (regex + Luhn, then spaCy NER across 11 entity types), replaces it with deterministic HMAC-SHA256 tokens, envelope-encrypts the reversible mapping at rest, and resolves tokens only behind a dual policy-plus-permission gate. Every operation appends to an immutable SHA-256 hash-chained audit log enforced at the database layer — UPDATE/DELETE/TRUNCATE are rejected by triggers. Versioned keys with in-place rotation, pluggable KMS/HSM key provider, format-preserving and salted masking, Redis caching, Celery async bulk jobs, TLS via nginx, least-privilege DB role, and a Prometheus/Grafana/Alertmanager stack with an AI Alert Analyzer. 86 tests; in internal use at Arwen Tech for active testing and hardening. Enterprise IdP (Keycloak/OIDC) code-complete.',
+    tagline: 'PII tokenization, controlled unmasking, and tamper-evident audit records',
+    description: 'Built a privacy-vault microservice with regex/Luhn and spaCy-based sensitive-data detection, deterministic HMAC-SHA256 tokenization, encrypted token mappings, and policy-plus-permission checks for unmasking. Hash-chained audit records and database triggers restrict modification through the application database role; these controls do not establish immutability against privileged administrators. Includes key versioning, Redis caching, Celery bulk jobs, and monitoring. In internal use at Arwen Tech for testing and hardening; external security certification is not claimed.',
     tags: ['FastAPI', 'PostgreSQL 16', 'HMAC-SHA256', 'Fernet/AES', 'spaCy NER', 'Redis', 'Celery', 'KMS/HSM', 'Prometheus', 'Docker'],
     repo: null,
     demo: null,
@@ -365,9 +304,11 @@ export const projects = [
     category: 'career'  },
   {
     title: 'Agentic Observability Platform',
-    tagline: 'MCP-native AI alert analyzer on Grafana + Prometheus',
-    description:
-      'Dockerized observability stack with a built and deployed MCP server. AI Alert Analyzer performs root-cause inference, severity classification, and recommended next actions. Self-validating PromQL rules and dashboards against live Prometheus.',
+    slug: 'agentic-observability',
+    summary: 'Monitoring and AI-assisted alert triage, with synthetic KPI examples distinguished from live metrics.',
+    ownership: 'Built the monitoring stack and advisory alert analysis integration.',
+    tagline: 'Monitoring with AI-assisted alert triage and optional MCP integration',
+    description: 'Built a Dockerized Prometheus, Grafana, and Alertmanager stack with an AI alert analyzer that suggests severity, possible causes, and follow-up checks. Supports mock and LLM-backed analysis, with optional MCP integration. Repository examples include synthetic agent KPI data alongside live API and host metrics; dashboard values should be interpreted according to their data source. Public code and screenshots demonstrate implementation, rather than measured incident-resolution gains.',
     tags: ['FastAPI', 'MCP', 'Prometheus', 'Grafana', 'Alertmanager', 'LLM Agents', 'Docker'],
     repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
     demo: null,
@@ -380,16 +321,16 @@ export const projects = [
       '/images/agentic_observability/prometheus target.png',
       '/images/agentic_observability/cxp_dashboard.png'
     ],
-    featured: true,
-    highlight: 'MCP Server',
+    featured: false,
+    highlight: 'Public code · AI-assisted monitoring',
+    extraTag: 'Demo stack · mixed data sources',
     category: 'career'  },
   {
     title: 'Multilingual NLP Intelligence Platform',
     slug: 'multilingual-nlp-intelligence',
     tagline: 'Agentic pipeline for low-resource-language public-feedback analysis + AI briefs',
-    description:
-      'A multilingual NLP platform that ingests social data across Pakistan\u2019s low-resource languages (Urdu, Roman Urdu, Pashto, Sindhi, Punjabi through long-tail Balochi, Brahui, Burushaski) and runs it through an agentic Kafka pipeline: language detection \u2192 script normalization/transliteration \u2192 NLLB-200 translation to an English pivot \u2192 sentiment, intent, topic, toxicity and sarcasm analysis. Every post preserves five artefacts (raw, native script, roman, English pivot, predictions) for a replayable audit trail. A Claude/Grok briefing agent generates daily briefs and real-time alerts; a human-review queue exports DVC-versioned gold sets that feed LoRA retraining, with adapters hot-swapped via shadow mode and automatic rollback on regression. pgvector + Qdrant, Redis, MinIO, W&B, Prometheus. 107 backend tests. Operational internally \u2014 running sentiment analysis on live feedback and posts; LoRA training and full observability in progress.',
-    tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'Aya 23', 'PyTorch', 'PEFT / LoRA', 'pgvector', 'Qdrant', 'Claude / Grok', 'Next.js'],
+    description: 'Built a multilingual public-feedback processing platform with language detection, script normalization, translation to an English pivot, and sentiment analysis. Original text and processed representations are retained for review. Running sentiment analysis on live feedback internally. LoRA training and full observability remain in progress; adapter hot-swapping, shadow evaluation, and automatic rollback are not presented as established operational capabilities.',
+    tags: ['FastAPI', 'Kafka', 'NLLB-200', 'XLM-R', 'pgvector', 'Next.js'],
     repo: null,
     demo: null,
     images: [
@@ -399,7 +340,7 @@ export const projects = [
       '/images/NLP/Pashto.png',
       '/images/NLP/Sindhi.png'
     ],
-    featured: true,
+    featured: false,
     highlight: 'NLP \u00b7 Agentic Pipeline',
     sector: 'Enterprise',
     extraTag: 'Operational',
@@ -407,20 +348,18 @@ export const projects = [
   {
     title: 'Customer Experience Portal (CXP)',
     tagline: 'Contract lifecycle automation with Gemini-assisted workflows',
-    description:
-      'End-to-end customer experience portal \u2014 contract onboarding through full SLA lifecycle, contract tracking, workflow automation, and Gemini-powered assistant. Stack: FastAPI \u00b7 Celery \u00b7 Notifications microservice \u00b7 Next.js \u00b7 PostgreSQL \u00b7 Redis \u00b7 Nginx. Production-ready Docker compose splits (dev/prod) with systemd unit files and certbot SSL.',
+    description: 'Built an enterprise portal covering contract onboarding, SLA lifecycle tracking, ticketing, notifications, and Gemini-assisted workflows. FastAPI, Next.js, PostgreSQL, and Redis/Celery connect the application and asynchronous processing. Includes Docker Compose configurations, systemd unit files, and SSL setup; deployment configuration alone does not establish customer production adoption.',
     tags: ['FastAPI', 'Next.js', 'Celery', 'PostgreSQL', 'Redis', 'Gemini', 'Docker', 'WebSockets'],
     repo: null,
     demo: null,
     videoUrl: '/videos/CX portal.mp4',
-    featured: true,
+    featured: false,
     highlight: 'Enterprise \u00b7 SaaS',
     category: 'career'  },
   {
     title: 'Multi-Channel Notification Microservice',
     tagline: 'Grok LLM + Redis/Celery message orchestrator',
-    description:
-      'Agentic notification service routing across email, SMS, Slack, WhatsApp. Grok LLM produces context-aware messages with predefined template fallback for guaranteed delivery; Redis + Celery handle async queue, retry, and decoupled processing.',
+    description: 'Built notification routing across email, SMS, Slack, and WhatsApp, with LLM-assisted message generation and predefined-template fallback. Redis and Celery support queued processing and retries. Fallback reduces dependence on model availability; delivery still depends on channel providers and retry outcomes.',
     tags: ['Grok LLM', 'Redis', 'Celery', 'FastAPI'],
     repo: null,
     demo: null,
@@ -435,17 +374,6 @@ export const projects = [
     repo: 'https://github.com/Maria-cpp/Bulk-data-import',
     demo: null,
     category: 'career'  },
-  {
-    title: 'Confidential Organization — Corporate Web Platform',
-    tagline: 'Corporate website and online commerce',
-    description:
-      'Designed and delivered a corporate website and online commerce experience during a digital operations role. Organization details are withheld under confidentiality obligations.',
-    tags: ['WordPress', 'E-commerce', 'API Integrations', 'Digital Operations'],
-    repo: null,
-    demo: null,
-    featured: true,
-    highlight: 'NDA-Protected',
-    category: 'career'  },
   // ── ZumfluxAI Client Projects ─────────────────────────────────────
   {
     title: 'NDA-Protected Client — Operations Platform',
@@ -455,23 +383,10 @@ export const projects = [
     tags: ['Next.js', 'FastAPI', 'PostgreSQL 17', 'Alembic', 'Docker', 'Redis', 'S3 / MinIO'],
     repo: null,
     demo: null,
-    featured: true,
+    featured: false,
     highlight: 'FDE \u00b7 ZumfluxAI',
     sector: 'ZumfluxAI',
     extraTag: 'In Progress',
-    category: 'zumfluxai'  },
-  {
-    title: 'NDA-Protected Client — Publishing Website',
-    tagline: 'Content-focused website · React + Vite',
-    description:
-      'Designed and built a content-first single-page website using React and Vite, with custom theming and a publication showcase. Client identity and content are withheld.',
-    tags: ['React 18', 'Vite', 'Lucide', 'Tailwind'],
-    repo: null,
-    demo: null,
-    videoUrl: null,
-    featured: true,
-    highlight: 'ZumfluxAI \u00b7 Client',
-    sector: 'ZumfluxAI',
     category: 'zumfluxai'  },
   {
     title: 'NDA-Protected Client — Booking Experience',
@@ -481,23 +396,10 @@ export const projects = [
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     repo: null,
     demo: null,
-    featured: true,
+    featured: false,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
     extraTag: 'Live prototype',
-    category: 'zumfluxai'  },
-  {
-    title: 'NDA-Protected Client — Personal Website',
-    tagline: 'Forward Deployed Engineering · personal web presence',
-    description:
-      'Designed and built a personal website with the client. Identity and identifying details are withheld under confidentiality obligations.',
-    tags: ['Next.js', 'React', 'Tailwind', 'Vercel'],
-    repo: null,
-    demo: null,
-    featured: true,
-    highlight: 'FDE \u00b7 ZumfluxAI',
-    sector: 'ZumfluxAI',
-    extraTag: 'Live',
     category: 'zumfluxai'  },
   {
     title: 'NDA-Protected Client — Corporate Website',
@@ -507,7 +409,7 @@ export const projects = [
     tags: ['Next.js', 'React', 'Tailwind', 'Vercel', 'Multi-language'],
     repo: null,
     demo: null,
-    featured: true,
+    featured: false,
     highlight: 'ZumfluxAI \u00b7 Client',
     sector: 'ZumfluxAI',
     extraTag: 'Live',
@@ -516,8 +418,7 @@ export const projects = [
   {
     title: 'FTE Sales Lead Engine',
     tagline: 'Browser automation \u00d7 AI scoring \u00d7 HITL review',
-    description:
-      'Playwright-based lead discovery, file-watcher trigger pipelines, AI-driven lead scoring and qualification, and a Human-in-the-Loop review layer \u2014 reducing manual outreach effort by ~80%.',
+    description: 'Built a learning project combining Playwright-based lead discovery, pipeline triggers, AI-assisted scoring and qualification, and Human-in-the-Loop review. Video walkthroughs demonstrate the workflow; no measured outreach-effort reduction is claimed.',
     tags: ['Playwright', 'Python', 'LLM', 'HITL'],
     repo: null,
     demo: null,
@@ -644,9 +545,9 @@ export const certifications = [
 
 export const zumflux = {
   name: 'ZumfluxAI',
-  tagline: 'AI Engineering Studio — production AI systems for teams shipping real-world products.',
+  tagline: 'Independent software and applied AI development.',
   description:
-    'I founded ZumfluxAI to bring agentic systems, computer vision pipelines, and full-stack AI platforms to teams that need shipping-grade engineering — not demos. From multi-camera vision systems to autonomous LLM workflows, ZumfluxAI delivers AI that runs in production.',
+    'ZumfluxAI is the name I use for independent client development, including websites, application integrations, and AI-assisted workflows. This work provides additional evidence of requirements discovery and hands-on delivery. I am actively exploring employed AI engineering roles.',
   services: [
     {
       title: 'Agentic Workflow Automation',
@@ -666,7 +567,7 @@ export const zumflux = {
     }
   ],
   recentClients: [] as { name: string; kind: string; url?: string }[],
-  cta: 'Hire ZumfluxAI'
+  cta: 'Contact Maria about AI engineering roles'
 };
 
 // ---------------------------------------------------------------------
@@ -675,11 +576,11 @@ export const zumflux = {
 // ---------------------------------------------------------------------
 
 export const forwardDeployed = {
-  label: 'Forward Deployed Engineer',
+  label: 'Client-facing AI delivery',
   definition:
-    "A Forward Deployed Engineer (FDE) is a hybrid technical role—part engineer, part consultant, and part problem-solver. They embed directly into enterprise client environments to customize, build, and deploy complex software or AI systems, bridging the gap between a tech company's product and real-world client workflows.",
+    'Forward Deployed Engineering combines hands-on implementation with requirements discovery and adaptation to customer workflows.',
   note:
-    'This is exactly how I work: embedded with your team, hands-on in your environment, and accountable for the system running in production — not just a slide deck.'
+    'My relevant experience includes direct client communication, translating operational requirements into software, integration work, and on-site demonstration. I am interested in AI engineering roles with this delivery scope.'
 };
 
 // ---------------------------------------------------------------------
@@ -689,31 +590,31 @@ export const forwardDeployed = {
 
 export const consulting = {
   eyebrow: 'Work with me',
-  heading: 'Consulting & Training',
+  heading: 'AI Engineering Opportunities',
   intro:
-    'Beyond building AI products, I help organizations adopt AI the right way — turning repetitive work into automation.',
+    'I am exploring applied AI and enterprise delivery roles with product teams, AI startups, and enterprise engineering organizations.',
   services: [
     {
       icon: 'Workflow',
-      badge: 'Consultancy',
-      title: 'AI Automation Consultancy',
+      badge: 'Employment',
+      title: 'Applied AI & Enterprise Delivery',
       description:
-        'I map your workflows, find the bottlenecks worth fixing, and design AI + automation that frees your team to focus on higher-value work.',
+        'My work spans workflow requirements, AI integration, backend implementation, and delivery. Contact me to discuss a relevant engineering position.',
       points: [
         'Workflow mapping & pain-point analysis',
         'Automation & AI opportunity assessment',
         'Prototype → pilot → production rollout'
       ],
-      cta: 'Book a free consultation',
-      href: 'mailto:zumfluxai@gmail.com?subject=AI%20Automation%20Consultation',
+      cta: 'Discuss an AI engineering role',
+      href: 'mailto:marianaseem99@gmail.com?subject=AI%20Engineering%20Opportunity',
       whatsapp: {
         label: 'WhatsApp me',
-        href: 'https://wa.me/923066775777?text=Hi%20Maria%2C%20I%27d%20like%20to%20book%20a%20free%20AI%20consultation.'
+        href: 'https://wa.me/923066775777?text=Hi%20Maria%2C%20I%27d%20like%20to%20discuss%20an%20AI%20engineering%20role.'
       }
     }
   ],
   trainingLink: {
-    text: 'I also offer AI training & enablement for small teams.',
+    text: 'Additional learning resource: an AI bootcamp guide.',
     cta: 'View the AI Bootcamp',
     href: 'https://github.com/Maria-cpp/ai-bootcamp-guide'
   }
@@ -733,15 +634,13 @@ export const education = [
 ];
 
 // ---------------------------------------------------------------------
-//  Stats — key metrics displayed in the Hero section stats strip
+//  Stats — experience counters requested for the hero
 //  Used by: Hero.tsx
 // ---------------------------------------------------------------------
 
 export const stats = [
-  { label: 'Active FDE client engagements', value: '2' },
-  { label: 'Yrs across tech, engineering & ops · 6+ software · 4+ AI/ML', value: '9+' },
-  { label: 'Systems & projects — prototype to production', value: '12+' },
-  { label: 'AI certifications', value: '6' }
+  { label: 'Years Engineering Experience', value: '9+' },
+  { label: 'Years AI/ML', value: '4+' }
 ];
 
 // ---------------------------------------------------------------------

@@ -175,6 +175,34 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
           </div>
 
+          {/* Narrative sections */}
+          <div className="mt-16 flex flex-col gap-12">
+            {cs.sections.map((s) => (
+              <section key={s.heading}>
+                <h2 className="font-display text-2xl font-bold sm:text-3xl">
+                  {s.heading}
+                </h2>
+                {s.body && (
+                  <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                    {s.body}
+                  </p>
+                )}
+                {s.bullets && (
+                  <ul className="mt-4 flex flex-col gap-2.5">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex gap-3">
+                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        <span className="text-sm leading-relaxed text-white/65">
+                          {b}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            ))}
+          </div>
+
           {/* Diagrams */}
           {cs.diagrams.length > 0 && (
             <section className="mt-16">
@@ -222,34 +250,6 @@ export default async function CaseStudyPage({ params }: Props) {
               ))}
             </div>
           </section>
-
-          {/* Narrative sections */}
-          <div className="mt-16 flex flex-col gap-12">
-            {cs.sections.map((s) => (
-              <section key={s.heading}>
-                <h2 className="font-display text-2xl font-bold sm:text-3xl">
-                  {s.heading}
-                </h2>
-                {s.body && (
-                  <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
-                    {s.body}
-                  </p>
-                )}
-                {s.bullets && (
-                  <ul className="mt-4 flex flex-col gap-2.5">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="flex gap-3">
-                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                        <span className="text-sm leading-relaxed text-white/65">
-                          {b}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </section>
-            ))}
-          </div>
 
           {/* Footer nav */}
           <div className="mt-20 flex items-center justify-between border-t border-white/[0.06] pt-8">

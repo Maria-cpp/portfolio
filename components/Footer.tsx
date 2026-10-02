@@ -22,7 +22,7 @@ export default function Footer() {
               <span className="text-fg-muted">.dev</span>
             </div>
             <div className="mt-1 text-xs font-mono text-white/40">
-              © {year} {personal.name} · Founder, ZumfluxAI
+              © {year} {personal.name} · AI Engineer
             </div>
           </div>
 

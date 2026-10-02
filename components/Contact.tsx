@@ -2,7 +2,7 @@
  * Contact.tsx — Contact information section with social links.
  *
  * Full-width glassmorphic card with a two-column layout:
- * Left: heading, description, and primary business email CTA.
+ * Left: heading, description, and personal recruitment email and CV actions.
  * Right: stacked contact cards (GitHub, LinkedIn, Phone, Location)
  * with hover effects and external link arrows.
  *
@@ -11,7 +11,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MapPin, Phone, ArrowUpRight, Briefcase } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Phone, ArrowUpRight, Download } from 'lucide-react';
 import { personal } from '@/lib/data';
 
 export default function Contact() {
@@ -23,7 +23,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="relative glass-strong rounded-[28px] p-10 md:p-14 overflow-hidden"
+          className="relative glass-strong rounded-[28px] p-5 sm:p-10 md:p-14 overflow-hidden"
         >
           <div className="absolute -top-32 right-0 w-96 h-96 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-32 left-0 w-96 h-96 rounded-full bg-accent-cyan/15 blur-3xl pointer-events-none" />
@@ -31,24 +31,24 @@ export default function Contact() {
           <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-10">
             <div>
               <div className="eyebrow">Get in touch</div>
-              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">
-                Have an AI workflow{' '}
-                <span className="gradient-text">worth automating?</span>
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold leading-tight">
+                Hiring for applied AI{' '}
+                <span className="gradient-text">or enterprise delivery?</span>
               </h2>
               <p className="mt-5 text-white/65 max-w-md leading-relaxed">
-                Tell me what your team is doing manually. I&apos;ll help map the
-                workflow, identify where AI fits, and design a production-ready
-                solution.
+                I&apos;m exploring AI engineering opportunities with product teams and enterprise AI organizations, including client-facing deployment roles.
               </p>
 
-              <div className="mt-7 flex flex-col gap-3">
+              <p className="mt-4 text-sm text-white/70">{personal.availability}</p>
+              <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href={`mailto:${personal.businessEmail}?subject=ZumfluxAI%20engagement`}
+                  href={`mailto:${personal.email}?subject=AI%20Engineering%20Opportunity`}
                   className="inline-flex items-center gap-2 btn btn-primary w-fit"
                 >
-                  <Briefcase size={16} /> {personal.businessEmail}
+                  <Mail size={16} /> Email Maria
                   <ArrowUpRight size={14} />
                 </a>
+                <a href={personal.resumeUrl} download className="btn btn-ghost"><Download size={16} /> Download CV</a>
               </div>
             </div>
 

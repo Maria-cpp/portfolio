@@ -1,72 +1,95 @@
-"""Build the public CV PDF from the anonymized cv-content.md source."""
+"""Generate the linked, text-searchable public CV from cv-content.md."""
 from pathlib import Path
-import textwrap
-
-import fitz
+import pymupdf as fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "cv-content.md"
-OUTPUT = ROOT / "public" / "Maria_Naseem_CV.sanitized.pdf"
-PAGE = (595, 842)
-LEFT, RIGHT, TOP, BOTTOM = 48, 48, 48, 48
-BLUE = (0.08, 0.55, 0.67)
+OUTPUT = ROOT / "public" / "Maria_Naseem_CV.pdf"
+IDENTITY = "AI Engineer | Applied AI for Enterprise Workflows"
+SECTIONS = {"PROFESSIONAL SUMMARY", "TECHNICAL SKILLS", "PROFESSIONAL EXPERIENCE", "SELECTED WORK & PUBLIC EVIDENCE", "CERTIFICATIONS & EDUCATION"}
+LINKS = {
+    "LinkedIn": "https://www.linkedin.com/in/maria-naseem/",
+    "GitHub": "https://github.com/Maria-cpp",
+    "Portfolio": "https://maria-ai-portfolio.vercel.app",
+    "marianaseem99@gmail.com": "mailto:marianaseem99@gmail.com",
+    "https://github.com/Maria-cpp/Agentic-Observability-Platform": "https://github.com/Maria-cpp/Agentic-Observability-Platform",
+}
+WIDTH, HEIGHT = 595, 842
+MARGIN = 44
+SIZE, LEADING = 10, 13
 
-def clean(value: str) -> str:
-    return (value.replace("▸", "•").replace("→", "->").replace("·", " | ")
-            .replace("—", " - ").replace("–", "-").replace("’", "'")
-            .replace("“", '"').replace("”", '"').replace("…", "..."))
 
-lines = [clean(line.strip()) for line in SOURCE.read_text(encoding="utf-8").splitlines()]
-document = fitz.open()
-page = document.new_page(width=PAGE[0], height=PAGE[1])
-y = TOP
-section_names = {"PROFESSIONAL SUMMARY", "TECHNICAL SKILLS", "PROFESSIONAL EXPERIENCE", "KEY PROJECTS & OPEN SOURCE", "CERTIFICATIONS & EDUCATION"}
+def clean(value):
+    return (value.replace("▸", "•").replace("—", "-").replace("–", "-")
+            .replace("→", "->").replace("’", "'"))
 
-def new_page() -> None:
-    global page, y
-    page = document.new_page(width=PAGE[0], height=PAGE[1])
-    y = TOP
 
-for line in lines:
-    if not line:
-        y += 4
-        continue
-    if line == "MARIA NASEEM":
-        page.insert_text((LEFT, y + 20), line, fontname="hebo", fontsize=20, color=(0.04, 0.08, 0.14))
-        y += 27
-        continue
-    if line in section_names:
-        if y > PAGE[1] - BOTTOM - 45:
-            new_page()
-        y += 8
-        page.draw_line((LEFT, y), (PAGE[0] - RIGHT, y), color=(0.82, 0.86, 0.89), width=0.7)
-        y += 17
-        page.insert_text((LEFT, y), line, fontname="hebo", fontsize=10, color=BLUE)
-        y += 15
-        continue
-    is_bullet = line.startswith("• ")
-    is_role = "\t" in line
-    size = 8.4 if is_bullet else 9
-    indent = 12 if is_bullet else 0
-    normalized = line.replace("\t", " | ")
-    wrapped = textwrap.wrap(normalized, width=105 if not is_bullet else 100,
-                            subsequent_indent="   " if is_bullet else "",
-                            break_long_words=False, break_on_hyphens=False) or [normalized]
-    height = len(wrapped) * (size + 3) + (3 if is_role else 1)
-    if y + height > PAGE[1] - BOTTOM:
-        new_page()
-    color = (0.13, 0.17, 0.21) if not is_bullet else (0.20, 0.23, 0.27)
-    font = "hebo" if is_role else "helv"
-    for row in wrapped:
-        y += size + 2
-        page.insert_text((LEFT + indent, y), row, fontname=font, fontsize=size, color=color)
-    y += 3 if is_role else 1
+def wrap(value, font, size, width):
+    rows, row = [], ""
+    for word in value.split():
+        candidate = (row + " " + word).strip()
+        if row and fitz.get_text_length(candidate, fontname=font, fontsize=size) > width:
+            rows.append(row)
+            row = word
+        else:
+            row = candidate
+    return rows + ([row] if row else [])
 
-for number, current in enumerate(document, start=1):
-    current.draw_line((LEFT, PAGE[1] - 31), (PAGE[0] - RIGHT, PAGE[1] - 31), color=(0.86, 0.88, 0.90), width=0.5)
-    current.insert_text((LEFT, PAGE[1] - 18), "Maria Naseem | AI Engineer & AI Solutions Architect", fontname="helv", fontsize=7, color=(0.40, 0.44, 0.48))
-    current.insert_text((PAGE[0] - RIGHT - 38, PAGE[1] - 18), f"{number} / {len(document)}", fontname="helv", fontsize=7, color=(0.40, 0.44, 0.48))
 
-document.set_metadata({"title": "Maria Naseem | AI Engineer & AI Solutions Architect", "author": "Maria Naseem", "subject": "Professional CV"})
-document.save(OUTPUT, garbage=4, deflate=True)
-document.close()
+def main():
+    doc = fitz.open()
+    page = doc.new_page(width=WIDTH, height=HEIGHT)
+    y = MARGIN
+    lines = SOURCE.read_text(encoding="utf-8").splitlines()
+    for line in lines:
+        line = clean(line.strip())
+        if not line:
+            y += 5
+            continue
+        section = line in SECTIONS
+        role = "\t" in line
+        bullet = line.startswith("• ")
+        name = line == "MARIA NASEEM"
+        font = "hebo" if section or role or name or line == IDENTITY else "helv"
+        size = 21 if name else (10.5 if section else SIZE)
+        indent = 12 if bullet else 0
+        # Draw the bullet separately so wrapped rows retain a readable hanging indent.
+        value = line[2:] if bullet else line
+        if role:
+            title, dates = value.split("\t", 1)
+            rows = wrap(title, font, size, WIDTH - 2 * MARGIN) + [dates]
+        else:
+            rows = wrap(value, font, size, WIDTH - 2 * MARGIN - indent)
+        leading = 26 if name else LEADING
+        required = len(rows) * leading + (55 if section or role else 0)
+        if y + required > HEIGHT - MARGIN:
+            page = doc.new_page(width=WIDTH, height=HEIGHT)
+            y = MARGIN
+        if section:
+            y += 7
+            page.draw_line((MARGIN, y), (WIDTH-MARGIN, y), color=(0.8,0.85,0.88), width=0.6)
+            y += 5
+        for index, row in enumerate(rows):
+            y += leading
+            if bullet and index == 0:
+                page.insert_text((MARGIN, y), "-", fontname="helv", fontsize=SIZE)
+            page.insert_text((MARGIN+indent, y), row, fontname=font, fontsize=size,
+                             color=(0.07,0.38,0.48) if section else (0.12,0.16,0.20))
+        y += 3 if section or role else 1
+    for number, current in enumerate(doc, 1):
+        current.insert_text((MARGIN, HEIGHT-22), "Maria Naseem | AI Engineer", fontsize=8, color=(0.4,0.44,0.48))
+        current.insert_text((WIDTH-MARGIN-30, HEIGHT-22), f"{number}/{len(doc)}", fontsize=8)
+        for label, uri in LINKS.items():
+            matches = current.search_for(label)
+            if label in {"LinkedIn", "GitHub", "Portfolio"}:
+                matches = matches[:1] if number == 1 else []
+            for rect in matches:
+                current.insert_link({"kind": fitz.LINK_URI, "from": rect, "uri": uri})
+    doc.set_metadata({"title": "Maria Naseem | " + IDENTITY, "author": "Maria Naseem", "subject": "AI engineering CV"})
+    doc.save(OUTPUT, garbage=4, deflate=True)
+    print(f"Generated {OUTPUT.name}: {len(doc)} pages")
+    doc.close()
+
+
+if __name__ == "__main__":
+    main()

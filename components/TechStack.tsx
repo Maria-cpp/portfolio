@@ -7,11 +7,11 @@ export default function TechStack() {
   return <section id="stack" className="relative py-20 sm:py-24">
     <div className="mx-auto max-w-6xl px-5">
       <div className="max-w-2xl">
-        <div className="eyebrow">AI engineering stack</div>
-        <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold">Tools behind <span className="text-accent-cyan">the systems</span></h2>
+        <div className="eyebrow">Core expertise</div>
+        <h2 className="mt-4 font-display text-3xl sm:text-5xl font-bold">Expertise behind <span className="text-accent-cyan">the work</span></h2>
         <p className="mt-4 text-sm text-white/55">Grouped by the work they support, from model and agent workflows to deployed services.</p>
       </div>
-      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {techCategories.map((cat) => {
           const Icon = iconMap[cat.icon] ?? Boxes;
           return <article key={cat.name} className="rounded-2xl border border-white/10 bg-[#0d1015] p-5 h-full">

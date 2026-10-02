@@ -563,3 +563,9 @@ section {
 .marquee-track-slow:hover {
   animation-play-state: paused;
 }
+
+/* Visible keyboard focus on recruitment links and interactive controls. */
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent-cyan, #22d3ee);
+  outline-offset: 4px;
+}

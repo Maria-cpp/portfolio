@@ -70,6 +70,7 @@ export default function Experience() {
                   <div className={`glass rounded-2xl overflow-hidden ${isMinimal ? '' : ''}`}>
                     {/* Header — always visible, clickable */}
                     <button
+                      aria-expanded={isExpanded}
                       onClick={() => toggleExperience(i)}
                       className="w-full flex items-center justify-between p-4 md:p-5 text-left cursor-pointer"
                     >

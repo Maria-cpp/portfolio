@@ -1,56 +1,45 @@
-import { ArrowDown, ArrowRight, Github, Linkedin, Download } from 'lucide-react';
-import { experience, personal, techMarquee } from '@/lib/data';
+import { ArrowRight, Github, Linkedin, Download, Mail } from 'lucide-react';
+import { experience, heroWork, personal, stats } from '@/lib/data';
 
-const featuredTech = techMarquee.slice(0, 7);
-const currentRole = experience.find((job) => job.current);
+const currentRole = experience.find((job) => job.company === 'Arwen Tech');
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[88vh] flex items-center pt-28 pb-16">
+    <section id="top" className="relative pt-24 pb-12 sm:pt-28 sm:pb-16">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
-      <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-accent-cyan/10 blur-[120px] pointer-events-none" />
-      <div className="relative mx-auto max-w-6xl px-5 w-full">
-        <div className="glass-strong relative overflow-hidden rounded-3xl p-6 sm:p-10 lg:p-12">
+      <div className="relative mx-auto max-w-6xl px-5">
+        <div className="glass-strong relative overflow-hidden rounded-3xl p-5 sm:p-10 lg:p-12">
           <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-accent-cyan via-accent-lime to-accent-pink" />
-          <div className="max-w-4xl">
-            <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">{personal.name}</span>
-              <span className="text-sm text-white/40">/ {personal.location}</span>
-            </p>
-            <h1 className="mt-6 font-display font-bold text-5xl sm:text-7xl lg:text-8xl leading-[.98] tracking-tight">
-              AI Engineer<span className="text-accent-cyan">.</span>
-            </h1>
-            <p className="mt-5 font-display text-xl sm:text-2xl text-white/75">Agentic AI <span className="text-white/30">·</span> Computer Vision <span className="text-white/30">·</span> Production Systems</p>
-            <p className="mt-7 max-w-3xl text-base sm:text-lg text-white/65 leading-relaxed">{personal.shortBio}</p>
-            {currentRole && (
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/55">
-                <span><b className="text-white/90 font-medium">{currentRole.role}</b> @ {currentRole.company}</span>
-                <span><b className="text-white/90 font-medium">Founder</b> @ ZumfluxAI</span>
-              </div>
-            )}
-            <div className="mt-7 flex flex-wrap gap-2" aria-label="Featured technologies">
-              {featuredTech.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 bg-white/[.035] px-3 py-1.5 font-mono text-[11px] text-white/65">{item}</span>
-              ))}
-            </div>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#projects" className="btn btn-primary">View AI projects <ArrowRight size={16} /></a>
-              <a href="#architecture" className="btn btn-ghost">View architecture <ArrowDown size={15} /></a>
-              <a href={personal.resumeUrl} download className="btn btn-ghost"><Download size={15} /> Download CV</a>
-            </div>
-            <div className="mt-6 flex gap-5 text-sm text-white/55">
-              <a href={personal.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Github size={15} /> GitHub</a>
-              <a href={personal.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Linkedin size={15} /> LinkedIn</a>
-            </div>
+          <p className="font-display text-xl sm:text-2xl font-semibold">{personal.name}</p>
+          <h1 className="mt-4 max-w-4xl font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight">
+            {personal.title}
+          </h1>
+          <p className="mt-4 max-w-3xl text-sm sm:text-base text-white/70 leading-relaxed">{personal.shortBio}</p>
+          <p className="mt-5 text-sm sm:text-base text-white/80"><strong>Recent work includes building and deploying</strong> AI solutions across:</p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/70 leading-relaxed">
+            {heroWork.map((work) => (
+              <li key={work.title}><strong className="text-white/90">{work.title}</strong> — {work.description}</li>
+            ))}
+          </ul>
+          <p className="mt-4 max-w-3xl text-sm text-white/70">{personal.location} · {personal.availability}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={personal.resumeUrl} download className="btn btn-primary"><Download size={16} /> Download CV</a>
+            <a href="#contact" className="btn btn-ghost"><Mail size={16} /> Contact Maria</a>
           </div>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 border-y border-white/10">
-            <div className="flex items-baseline gap-3 py-4 sm:py-5 sm:pr-5 border-b sm:border-b-0 sm:border-r border-white/10">
-              <strong className="font-display text-3xl text-white">9+</strong>
-              <span className="text-xs sm:text-sm text-white/50">Years Engineering Experience</span>
-            </div>
-            <div className="flex items-baseline gap-3 py-4 sm:py-5 sm:pl-5">
-              <strong className="font-display text-3xl text-white">4+</strong>
-              <span className="text-xs sm:text-sm text-white/50">Years AI/ML</span>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 text-sm text-white/70">
+            <a href="#projects" className="inline-flex items-center gap-1.5 hover:text-white">Selected work <ArrowRight size={15} /></a>
+            <a href={personal.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Linkedin size={15} /> LinkedIn</a>
+            <a href={personal.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white"><Github size={15} /> GitHub</a>
+          </div>
+          <div className="mt-7 border-t border-white/10 pt-5 text-sm text-white/70">
+            <p><strong className="block text-white">{currentRole?.company}</strong>AI-focused engineering · {currentRole?.period}</p>
+            <div className="mt-5 grid grid-cols-2 gap-5 max-w-md">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="font-display text-3xl font-bold text-accent-cyan">{stat.value}</p>
+                  <p className="mt-1">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

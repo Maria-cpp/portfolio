@@ -35,19 +35,150 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: 'facial-recognition-attendance',
+    title: 'Facial Recognition Attendance System',
+    tagline: 'Human-reviewed facial recognition from standard IP camera streams',
+    role: 'AI engineering & attendance workflow implementation',
+    org: 'Arwen Tech · Confidential engagement',
+    period: 'Recent project · During current Arwen Tech role',
+    status: 'Internally validated · On-premises environment',
+    summary: 'Designed and built a camera-based attendance workflow connecting enrollment, candidate retrieval, human verification, and embedding generation to real-time recognition and attendance logging. Internally validated on-premises; client identity and engagement details are withheld.',
+    tags: ['OpenCV', 'SFace', 'DeepFace', 'FAISS', 'RTSP', 'FastAPI', 'HITL'],
+    stack: [
+      { layer: 'Video ingestion', tech: 'Standard IP cameras, RTSP streams, OpenCV' },
+      { layer: 'Face representations', tech: 'DeepFace / OpenCV SFace embeddings' },
+      { layer: 'Candidate retrieval', tech: 'FAISS similarity search' },
+      { layer: 'Review workflow', tech: 'Human verification before approved candidates enter the recognition index' },
+      { layer: 'Backend', tech: 'Python, FastAPI, attendance logging' },
+      { layer: 'Validation environment', tech: 'Internal on-premises setup' }
+    ],
+    sections: [
+      {
+        heading: 'Business Problem',
+        body: 'The engagement required camera-based attendance recognition using existing-style IP camera infrastructure. The engineering challenge was to connect face matching to usable attendance records while retaining human control over candidate identity verification.'
+      },
+      {
+        heading: 'My Role',
+        body: 'Designed and built the enrollment, candidate retrieval, human verification, and embedding/inference workflows. Connected live camera processing to similarity search and attendance logging, and validated the system in an internal on-premises environment.'
+      },
+      {
+        heading: 'Solution & Workflow',
+        bullets: [
+          'Enrollment establishes an initial face representation associated with a known identity.',
+          'Candidate retrieval finds potential matches from live RTSP camera streams using face representations and similarity search.',
+          'A human verification gate accepts or rejects candidate identity associations before approved examples enter the recognition index.',
+          'Approved examples support embedding generation and subsequent real-time inference; recognition outputs connect to attendance logging.'
+        ]
+      },
+      {
+        heading: 'Engineering Decisions',
+        bullets: [
+          'RTSP and OpenCV connect standard IP camera feeds to processing rather than requiring a dedicated biometric camera interface.',
+          'SFace embeddings and FAISS separate face representation from candidate search.',
+          'Human verification makes index updates explicit and reviewable; it reduces the risk of incorrect associations propagating through subsequent matches.',
+          'Match thresholds and uncertain outputs need evaluation under the actual lighting, pose, camera quality, and enrollment conditions.'
+        ]
+      },
+      {
+        heading: 'Validation & Current Status',
+        body: 'Validated internally in an on-premises environment. This is not presented as completed client rollout or verified organization-wide adoption. Camera count, enrolled-user count, sustained processing rate, false-match and false-rejection rates, and latency are not published.'
+      },
+      {
+        heading: 'Results & Business Value',
+        body: 'The implemented result is a connected enrollment-to-attendance workflow with human-reviewed candidate associations. Reduced administration time and recognition accuracy are intended benefits to evaluate, rather than measured outcomes claimed here.'
+      },
+      {
+        heading: 'Recognition Boundaries & Next Validation',
+        bullets: [
+          'Face similarity is a candidate signal, not a guarantee of identity; human review can also make mistakes.',
+          'Evaluate false matches, missed matches, and duplicate attendance events using representative internal reference data.',
+          'Biometric data retention, access permissions, and consent requirements must be reviewed for the deployment environment.',
+          'Liveness detection and anti-spoofing are not claimed as implemented capabilities in this case study.'
+        ]
+      },
+      {
+        heading: 'Supporting Evidence',
+        body: 'The architecture diagrams below describe the implemented workflow and its human-review boundary. Source code, biometric samples, and identifying engagement details remain private; no public demo or repository is claimed.'
+      }
+    ],
+    diagrams: [
+      {
+        title: 'Enrollment & Human-Reviewed Index Building',
+        caption: 'Candidate retrieval and human verification precede approved additions to the recognition index.',
+        chart: `flowchart TB
+    EN["Enrollment<br/>known identity + initial face representation"] --> RET["Candidate retrieval<br/>similarity search"]
+    CAM["Standard IP cameras<br/>live RTSP streams"] --> CV["OpenCV<br/>face processing"]
+    CV --> RET
+    RET --> H["Human verification<br/>check identity association"]
+    H -->|approved| EMB["Embedding generation<br/>OpenCV SFace"]
+    H -->|rejected| EX["Exclude candidate from index update"]
+    EMB --> IDX[("FAISS recognition index")]
+    IDX --> RET`
+      },
+      {
+        title: 'Recognition & Attendance Flow',
+        caption: 'The index supplies similarity matches for inference; matching performance depends on thresholds and camera conditions.',
+        chart: `flowchart LR
+    RTSP["Live RTSP frames"] --> CV["OpenCV<br/>face processing"]
+    CV --> E["SFace embeddings"]
+    E --> S["FAISS similarity search"]
+    IDX[("Verified recognition index")] --> S
+    S --> M["Recognition result<br/>identity candidate + match score"]
+    M --> API["FastAPI attendance workflow"]
+    API --> LOG["Attendance records"]`
+      }
+    ],
+    businessValue: 'Connects camera-based recognition to attendance records while keeping candidate index updates under human review. Operational savings and recognition performance remain to be quantified.'
+  },
+  {
+    slug: 'agentic-observability',
+    title: 'Agentic Observability Platform',
+    tagline: 'Monitoring and AI-assisted alert triage with optional MCP integration',
+    role: 'AI engineering & monitoring implementation',
+    org: 'Arwen Tech',
+    period: '2025 — Present',
+    status: 'Demo stack · Live metrics and synthetic examples distinguished',
+    summary: 'A Dockerized monitoring stack with Prometheus, Grafana, Alertmanager, and an advisory AI alert analyzer. Public code demonstrates integration; dashboard examples include both live metrics and synthetic agent KPIs.',
+    tags: ['FastAPI', 'Prometheus', 'Grafana', 'Alertmanager', 'MCP', 'Docker'],
+    repo: 'https://github.com/Maria-cpp/Agentic-Observability-Platform',
+    stack: [
+      { layer: 'Monitoring', tech: 'Prometheus, Grafana, Alertmanager' },
+      { layer: 'Analysis', tech: 'FastAPI, mock or LLM-backed analysis, optional MCP integration' },
+      { layer: 'Delivery', tech: 'Docker Compose' }
+    ],
+    diagrams: [{
+      title: 'Monitoring & Advisory Analysis',
+      caption: 'Synthetic KPI examples and live metrics have different evidentiary value. AI suggestions require human verification.',
+      chart: `flowchart LR
+    LIVE["Live API / host metrics"] --> P["Prometheus"]
+    MOCK["Synthetic agent KPI examples"] --> P
+    P --> G["Grafana dashboards"]
+    P --> A["Alertmanager"]
+    A --> AI["FastAPI alert analyzer<br/>mock or LLM-backed"]
+    MCP["Optional MCP context"] -.-> AI
+    AI --> H["Human verifies hypotheses<br/>and recommended checks"]`
+    }],
+    sections: [
+      { heading: 'Business Problem', body: 'Operational teams need visibility into service health and a practical starting point for investigating alerts across application and infrastructure signals.' },
+      { heading: 'My Role', body: 'Built the monitoring stack and advisory alert-analysis integration, connecting metrics, alerts, dashboards, and AI-assisted investigation.' },
+      { heading: 'Solution & Engineering Decisions', bullets: ['Prometheus collects metrics; Grafana displays them and Alertmanager routes alerts.', 'A FastAPI analyzer supports mock and LLM-backed responses with optional MCP context.', 'Suggested severity, possible causes, and follow-up checks are advisory outputs, not verified diagnoses.', 'Synthetic agent KPI examples are distinguished from live API and host metrics.'] },
+      { heading: 'Validation & Results', body: 'Public code and screenshots demonstrate the integration. Dashboard example values do not establish production scale, agent success rates, or reduced incident-resolution time. No measured operational improvement is claimed.' },
+      { heading: 'Evidence', body: 'The public repository is linked above. The homepage project card includes monitoring and analysis screenshots. Inspect data sources and analyzer mode when reproducing the example stack.' }
+    ],
+    businessValue: 'Brings monitoring and suggested investigation steps into one workflow. Incident-resolution savings require evaluation against real operational incidents.'
+  },
   // -------------------------------------------------------------------
   {
     slug: 'video-analytics',
     title: 'Real-Time Video Analytics Platform',
     tagline:
       'Ultralytics YOLO26n + OpenVINO production-line counting · NDA-protected engagement',
-    role: 'AI Solutions Architect & Lead Engineer',
+    role: "End-to-end AI engineering ownership",
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
-    status:
-      'Demonstrated on-site to the client at their production facility · Minor updates before full rollout · Deployed on Microsoft Azure (Container Apps)',
-    summary:
-      'A multi-camera real-time video analytics platform that performs production-line counting and anomaly detection on live RTSP feeds using Ultralytics YOLO26n with ONNX/OpenVINO CPU inference. Client and domain details are withheld under NDA. Containerized and deployed on Microsoft Azure.',
+    status: "Azure deployed · Demonstrated on-site · Rollout updates pending",
+    summary: "Camera-based production counting using RTSP ingestion, YOLO detection, OpenVINO CPU inference, tracking, event APIs, and dashboard integration. Completed end-to-end engineering; full client rollout remains pending.",
     tags: [
       'YOLO26n',
       'OpenVINO',
@@ -103,56 +234,36 @@ export const caseStudies: CaseStudy[] = [
     ],
     sections: [
       {
-        heading: 'Business Problem',
-        body:
-          'An NDA-protected engagement required accurate real-time production counting across multiple lines and SKUs, with timestamped records and CPU inference compatible with the deployment environment.'
+        "heading": "Business Problem",
+        "body": "An enterprise engagement required camera-based production counting with timestamped records across lines and SKUs, using standard IP cameras and CPU-based inference. Client details are confidential."
       },
       {
-        heading: 'Solution',
-        body:
-          'A multi-camera real-time video analytics platform. YOLO26n handles object detection, exported via ONNX and converted to OpenVINO for lightweight CPU inference. The lap tracker maintains persistent object IDs across frames. A counting engine tracks multi-line, multi-SKU production with real-time event triggering for anomalies and stoppages. FastAPI transmits data in real-time to PostgreSQL and a dashboard with views per SKU, line, batch, and shift.'
+        "heading": "End-to-End Ownership",
+        "body": "I completed the solution end-to-end: video ingestion, detection and tracking, counting logic, event APIs, database integration, dashboard integration, containerization, Azure deployment, and on-site demonstration. Full client rollout remains subject to pending updates."
       },
       {
-        heading: 'Key Engineering Decisions',
-        bullets: [
-          'YOLO26n over larger models — the newest ultralight architecture provides sufficient accuracy for production-line objects while enabling CPU-only deployment via OpenVINO',
-          'ONNX → OpenVINO conversion — eliminates GPU dependency, reducing deployment cost and complexity on client infrastructure',
-          'lap tracker for multi-object tracking — lightweight linear assignment approach handles the structured, predictable motion patterns of a production line efficiently',
-          'Multi-line counting architecture — a single deployment handles multiple production lines and SKU types simultaneously'
+        "heading": "Solution & Engineering Decisions",
+        "bullets": [
+          "OpenCV ingests RTSP streams; YOLO detection is exported through ONNX for OpenVINO CPU inference.",
+          "Tracking uses linear assignment to associate detections across frames; counting logic turns tracked movement into timestamped events.",
+          "FastAPI connects events to PostgreSQL records and dashboard views by SKU, line, batch, and shift.",
+          "CPU inference avoids a dedicated GPU requirement for the configured use case; capacity still depends on hardware, resolution, and concurrent streams."
         ]
       },
       {
-        heading: 'Major Features',
-        bullets: [
-          'Real-time object detection on live RTSP feeds from multiple cameras',
-          'Multi-object tracking with persistent IDs across frames',
-          'Multi-line, multi-SKU production counting with per-shift aggregation',
-          'Anomaly and stoppage detection with real-time event triggering',
-          'Dashboard views: per SKU, per line, per batch, per shift',
-          'Timestamped, auditable records for regulatory compliance'
-        ]
+        "heading": "Deployment & Validation",
+        "body": "Containerized and deployed on Microsoft Azure Container Apps. Demonstrated at the client production facility. Minor updates remain before full rollout; deployment and demonstration are distinct from completed operational adoption."
       },
       {
-        heading: 'Challenges',
-        bullets: [
-          'Achieving reliable counting accuracy on a busy production line with overlapping objects and variable lighting',
-          'Deploying real-time inference on CPU-only infrastructure without sacrificing frame rate — solved with ONNX/OpenVINO optimization',
-          'Handling multiple RTSP camera feeds simultaneously with consistent tracking across views'
-        ]
+        "heading": "Scale & Results",
+        "body": "The implementation supports multi-camera and multi-line workflows. Camera count, sustained FPS, latency, counting accuracy, uptime, and before/after operational savings are not published. The demonstrated result is a working, deployed counting workflow, rather than a quantified business improvement."
       },
       {
-        heading: 'Deployment',
-        body:
-          'Containerized with Docker and deployed on Microsoft Azure Container Apps. The system was demonstrated on-site at the client\'s production facility — the client visited and observed live counting. Minor updates are in progress before full production rollout.'
-      },
-      {
-        heading: 'Lessons Learned',
-        body:
-          'The model choice matters less than the deployment engineering. YOLO26n is not the most accurate detector available, but it runs on CPU via OpenVINO at the frame rates the use case demands — and that practical constraint is what makes the system deployable on client infrastructure without a GPU procurement cycle. The on-site demo proved that real-time accuracy on actual production-line footage is what closes the deal, not benchmark numbers on public datasets.'
+        "heading": "Evidence",
+        "body": "Architecture diagrams below explain the processing path; the homepage project card includes video demonstrations. Source code and identifying engagement details are private."
       }
     ],
-    businessValue:
-      'Replaces manual production counting with real-time, auditable automated tracking — meeting regulatory compliance requirements while eliminating human counting error. CPU-only inference via OpenVINO means no GPU hardware costs for the client.'
+    businessValue: "Automates the counting workflow and provides timestamped records. Operational savings and counting accuracy have not been quantified publicly."
   },
 
   // -------------------------------------------------------------------
@@ -161,12 +272,11 @@ export const caseStudies: CaseStudy[] = [
     title: 'Agentic AI Contract Intelligence Platform',
     tagline:
       'Multi-agent RAG for contract intelligence and workflow automation',
-    role: 'Solution Designer & Engineer (self-initiated)',
+    role: "Solution Designer & Engineer (self-initiated)",
     org: 'Confidential Organization',
     period: '2024 — 2025',
-    status: 'Deployed — active use by the organization; identity withheld under confidentiality obligations',
-    summary:
-      'An NDA-protected LangGraph multi-agent platform for contract search, question answering, document summaries, meeting scheduling, reminders, and minutes workflows. Client and domain details are withheld.',
+    status: "Implementation completed · Adoption and outcomes not quantified",
+    summary: "A LangGraph and FastAPI document workflow combining extraction, PostgreSQL/pgvector retrieval, Claude-assisted processing, human review, and follow-up automation. Identifying organization and document details are withheld.",
     tags: [
       'LangGraph',
       'Claude',
@@ -216,7 +326,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: 'RAG Query Flow',
         caption:
-          'Every answer is grounded in retrieved contract passages and returned with source references — traceable rather than hallucinated.',
+          'Every answer is grounded in retrieved contract passages and returned with source references — source-referenced for human verification.',
         chart: `sequenceDiagram
     autonumber
     participant U as User
@@ -259,75 +369,36 @@ export const caseStudies: CaseStudy[] = [
     ],
     sections: [
       {
-        heading: 'Business Problem',
-        body:
-          'The organization managed a large contract set with manual tracking. Staff read agreements by hand, searched historical records for precedent, tracked management meetings in spreadsheets, chased minutes, and sent reminders individually. The process was slow, error-prone, and difficult to search; missed dates created operational risk.'
+        "heading": "Business Problem",
+        "body": "Contract and governance work involved manual document lookup, obligation tracking, meeting records, and follow-up. The project connected document retrieval and extraction to those workflows."
       },
       {
-        heading: 'Solution',
-        body:
-          'An AI automation pipeline that ingests contracts, indexes them, extracts structured metadata, and exposes a dashboard for grounded questions, summaries, reminders, minutes workflows, and semantic search. Retrieval-Augmented Generation grounds answers in source documents with citations.'
+        "heading": "My Role",
+        "body": "As a self-initiated solution designer and engineer working within corporate/legal operations, I identified workflow requirements and built document extraction, RAG retrieval, and agent workflow integration. This project does not change the primary operational nature of that historical role."
       },
       {
-        heading: 'Major Features',
-        bullets: [
-          'Natural-language Q&A grounded in contract text, returned with source references',
-          'Agreement summarization and cross-contract semantic search over historical records',
-          'Metadata extraction — dates, site details, financial terms, signatories, and contacts',
-          'Automated meeting scheduling, reminders, and follow-up generation',
-          'Minutes of Meeting (MoM) management tied to the contract record',
-          'Confidence scoring with human review below threshold; audit logging throughout'
+        "heading": "Solution & Engineering Decisions",
+        "bullets": [
+          "OCR, regex, and rule-based parsing extract document content before Claude-assisted validation.",
+          "PostgreSQL/pgvector retrieval provides source passages for search, summaries, and question answering.",
+          "LangGraph and FastAPI coordinate extraction, retrieval, and scheduling workflows.",
+          "Confidence-based human review and source references support checking; neither guarantees correct extraction or hallucination-free answers."
         ]
       },
       {
-        heading: 'AI Components',
-        bullets: [
-          'LangGraph multi-agent orchestration — ingestion, extraction, validation, retrieval, scheduling',
-          'RAG over a pgvector index — retrieval bounds LLM context regardless of corpus size',
-          'Claude for validation, contextual Q&A, summarization, and MoM/email generation',
-          'LLM-assisted validation layered on deterministic extraction, never replacing it'
-        ]
+        "heading": "Implementation & Validation",
+        "body": "Implementation is completed. User adoption, deployment environment, corpus size, extraction accuracy, retrieval quality, and time savings are not quantified here. The portfolio does not claim independently verified organizational adoption."
       },
       {
-        heading: 'Key Design Decision — deterministic first, LLM second',
-        body:
-          'The extraction pipeline runs regex, OCR, and rule-based parsing before the LLM ever sees the document. Claude then validates, fills gaps, and verifies fields, and a confidence score decides whether the result enters the metadata store or routes to a human. Rules are cheaper, faster, and reproducible where the data is structured; the LLM earns its place only on the unstructured remainder. The confidence gate means ambiguous extractions surface to a person rather than silently becoming facts.'
+        "heading": "Scale & Results",
+        "body": "The implemented result is a searchable document workflow with structured metadata and AI-assisted follow-up. Modular services and bounded retrieval context support extension, but no load benchmark or measured reduction in manual work is published."
       },
       {
-        heading: 'Challenges',
-        bullets: [
-          'Document variety and inconsistent contract formats, including scanned pages requiring OCR',
-          'Keeping answers grounded and citable rather than plausible-sounding — solved by retrieval with source references',
-          'Turning implicit meeting and obligation dates buried in contract prose into a reliable, automated reminder schedule',
-          'Deciding where determinism ends and the LLM begins, then making that boundary explicit and measurable via confidence scoring'
-        ]
-      },
-      {
-        heading: 'Scalability',
-        body:
-          'Adding another business unit means adding documents, not re-architecting. The vector index and scheduler scale with volume, and retrieval keeps LLM context bounded as the corpus grows. Modular AI services allow individual agents to be replaced or scaled independently.'
-      },
-      {
-        heading: 'Deployment',
-        body:
-          'Containerized FastAPI services exposing REST APIs, with modular AI services and audit logging designed for enterprise deployment.'
-      },
-      {
-        heading: 'Lessons Learned',
-        body:
-          'The highest-value AI is rarely the flashiest model — it is the removal of a specific, painful manual loop the business runs every week. Sitting inside the corporate-affairs workflow is precisely why I knew what to build: the requirements gathering had already happened by living the problem. That is the Forward Deployed lesson worth carrying into any client engagement.'
-      },
-      {
-        heading: 'Future Improvements',
-        bullets: [
-          'Obligation-tracking alerts derived from extracted contract terms',
-          'Contract risk flagging and cross-contract clause comparison',
-          'Broader connector coverage for document sources'
-        ]
+        "heading": "Evidence",
+        "body": "The diagrams describe ingestion, extraction, retrieval, and human review. Implementation and documents are private; confidential details are withheld."
       }
     ],
-    businessValue:
-      'Converted a manual contract-tracking process into a searchable knowledge system with automated reminders, reducing time spent on manual lookups and follow-up.'
+    businessValue: "Connects contract lookup and follow-up in one searchable workflow. Reduced lookup time and organizational adoption are not claimed as measured results."
   },
 
   // -------------------------------------------------------------------
@@ -335,14 +406,12 @@ export const caseStudies: CaseStudy[] = [
     slug: 'security-vault-service',
     title: 'Security Vault Service',
     tagline:
-      'Bank-grade PII tokenization vault with dual-gate unmask and hash-chained audit',
-    role: 'Lead Architect & Engineer',
+      'PII tokenization with controlled unmasking and tamper-evident audit',
+    role: "AI engineering & privacy-vault implementation",
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
-    status:
-      'In internal use at Arwen Tech (active testing & hardening) · Core production-hardened, 86 tests · Enterprise IdP integration code-complete · Ops observability in progress',
-    summary:
-      'An independent privacy-vault microservice implementing detect → tokenize → protect → gate access. Lets an enterprise use LLMs and third-party analytics on regulated data without exposing raw PII, with an audit trail a regulator can actually accept.',
+    status: "Internal use · Testing and hardening · External certification not claimed",
+    summary: "A privacy-vault microservice for sensitive-data detection, reversible tokenization, encrypted mappings, policy-controlled unmasking, and tamper-evident audit records.",
     tags: [
       'FastAPI',
       'PostgreSQL 16',
@@ -357,7 +426,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: [
       { layer: 'API', tech: 'Python, FastAPI, slowapi rate limiting' },
-      { layer: 'Data', tech: 'PostgreSQL 16 — dedicated vault schema, trigger-enforced immutability' },
+      { layer: 'Data', tech: 'PostgreSQL 16 — dedicated vault schema, application-role audit modification restrictions' },
       { layer: 'Crypto', tech: 'HMAC-SHA256 deterministic tokens, Fernet/AES envelope encryption, versioned keys' },
       { layer: 'Detection', tech: 'Regex + Luhn checksum, spaCy NER via a pluggable NERDetector interface' },
       { layer: 'Async', tech: 'Celery + Redis — bulk jobs, scheduled chain-integrity checks' },
@@ -365,7 +434,7 @@ export const caseStudies: CaseStudy[] = [
       { layer: 'Identity', tech: 'Pluggable auth; Keycloak/OIDC gateway (code-complete, deployment pending)' },
       { layer: 'Key management', tech: 'Pluggable KeyProvider — env / KMS / HSM, with rotation scripts' },
       { layer: 'Observability', tech: 'Prometheus, Grafana, Alertmanager, OpenTelemetry, AI Alert Analyzer' },
-      { layer: 'Testing', tech: 'pytest (86 tests), Locust load testing' }
+      { layer: 'Testing', tech: 'pytest and load-testing tooling; measured results not published' }
     ],
     diagrams: [
       {
@@ -454,104 +523,37 @@ export const caseStudies: CaseStudy[] = [
     ],
     sections: [
       {
-        heading: 'Business Problem',
-        body:
-          'Enterprises want to use LLMs, analytics, and third-party APIs on their data — but that data contains regulated PII: names, card numbers, national IDs, IBANs. Sending raw PII across a trust boundary is a compliance and breach liability. Teams need a way to strip sensitive values before data leaves, reversibly restore them only for authorized callers, and prove to an auditor that nothing else happened.'
+        "heading": "Business Problem",
+        "body": "LLM-powered applications need to reduce exposure of sensitive enterprise data when calling downstream services and restrict who can recover the original values."
       },
       {
-        heading: 'Solution',
-        body:
-          'An independent masking/unmasking microservice implementing the Privacy Vault pattern. Sensitive spans are detected (regex-first, NER-second), replaced with deterministic context-preserving tokens, and the reversible mapping is envelope-encrypted in a dedicated PostgreSQL vault schema. Unmasking resolves only behind a dual gate — namespace policy AND caller permission. Every operation appends to an immutable, SHA-256 hash-chained audit log that the database itself refuses to UPDATE, DELETE, or TRUNCATE.'
+        "heading": "My Role",
+        "body": "Designed and built the privacy-vault service, including sensitive-data detection, tokenization, encrypted mappings, controlled unmasking, and audit integration."
       },
       {
-        heading: 'Major Features',
-        bullets: [
-          'PII detection across 11 entity types — EMAIL, CARD, IBAN, NATIONAL_ID, PHONE via regex/Luhn; PERSON, ADDRESS, ORG, DATE, MONEY, GPE via NER',
-          'Deterministic tokenization — same value yields the same token, enabling dedup and referential integrity across systems',
-          'Envelope encryption at rest with versioned keys and in-place rotation',
-          'Dual-gate unmask — defense in depth; justification captured and logged on every resolution',
-          'Immutable hash-chained audit log — row_hash = SHA256(prev_hash ‖ event), enforced by database triggers',
-          'Format-preserving masking and opt-in salted mode to defeat frequency analysis',
-          'SIEM forwarding, Prometheus metrics, and automated 5-minute chain-integrity verification with critical alerting'
+        "heading": "Solution & Engineering Decisions",
+        "bullets": [
+          "Regex/Luhn checks and spaCy NER detect structured and unstructured sensitive spans. Detection can miss entities and needs evaluation on representative data.",
+          "HMAC-SHA256 tokens connect masked values to encrypted PostgreSQL mappings; versioned keys support rotation.",
+          "Unmasking requires both namespace policy and caller permission.",
+          "Hash-chained audit records and database triggers restrict modification through the application database role. Privileged administrators remain outside that immutability claim.",
+          "Redis and Celery support caching and bulk jobs; Docker supports repeatable service setup."
         ]
       },
       {
-        heading: 'AI Components',
-        bullets: [
-          'spaCy NER for unstructured PII that regex cannot catch — lazily loaded, zero cost when disabled',
-          'Reference demo of the full privacy pattern: detect → mask → send masked text to Claude → decrypt on return',
-          'AI Alert Analyzer in the observability stack performs root-cause and severity inference on vault alerts'
-        ]
+        "heading": "Validation & Security Boundaries",
+        "body": "In internal use at Arwen Tech for testing and hardening. No external security certification, bank-grade assurance, or regulatory approval is claimed. Identity-provider deployment and production key-management integration require environment-specific verification."
       },
       {
-        heading: 'APIs',
-        bullets: [
-          'PUT /api/vault/mask — detect and tokenize',
-          'PUT /api/vault/unmask — dual gate, X-Reason justification captured',
-          'GET /api/admin/audit — hash-chained audit trail',
-          'GET /health and /health/dashboard — DB, key versions, chain stats',
-          'POST /api/jobs and GET /api/jobs/{id} — async bulk operations',
-          'Interactive OpenAPI docs at /docs'
-        ]
+        "heading": "Scale & Results",
+        "body": "The implemented result is reversible tokenization with controlled access and tamper-evident records. Detection recall, throughput, latency, and external security review results are not published. Masking reduces exposure; it does not guarantee removal of all sensitive information."
       },
       {
-        heading: 'Security Considerations',
-        bullets: [
-          'Clear values stored only as ciphertext; keys never co-located with data and unwrapped by KMS/HSM at runtime in production',
-          'Least-privilege vault_app DB role — INSERT/SELECT/UPDATE only, no DDL, no TRUNCATE, no DELETE on audit',
-          'TLS 1.2+ at the edge, request-size caps (413 over 1MB), per-endpoint rate limits',
-          'Tamper-evident audit chain with automated integrity checks and SIEM critical alerts on break',
-          'Justification required and logged for every unmask operation'
-        ]
-      },
-      {
-        heading: 'Key Design Decisions',
-        bullets: [
-          'Regex-first, NER-second — structured PII is faster and deterministic via regex; NER fills gaps for unstructured data',
-          'Pluggable interfaces (KeyProvider, NERDetector) — swap env vars for KMS/HSM in production without touching core logic',
-          'Deterministic tokenization — enables deduplication and referential integrity across systems',
-          'Hash-chained audit log — any modification breaks the chain and is detectable by periodic integrity checks',
-          'Dual-gate unmask — both namespace policy and caller permission must allow the operation'
-        ]
-      },
-      {
-        heading: 'Challenges',
-        bullets: [
-          'Making the audit log genuinely tamper-evident at the database layer, not just the application layer — the hard part was proving immutability, not implementing logging',
-          'Balancing deterministic tokenization (needed for referential integrity) against frequency-analysis risk — resolved with an opt-in salted mode so callers choose the tradeoff per use case',
-          'Designing pluggable seams so development uses env keys and small models while production swaps to KMS/HSM and larger NER, with no core changes'
-        ]
-      },
-      {
-        heading: 'Scalability',
-        bullets: [
-          'Redis cache on token lookups reduces DB load; deterministic tokens make caching safe',
-          'Celery decouples bulk operations from the request path',
-          'Stateless FastAPI scales horizontally behind nginx; PostgreSQL is the single stateful tier',
-          'Load-tested with Locust'
-        ]
-      },
-      {
-        heading: 'Deployment',
-        body:
-          'Docker Compose brings up the vault service, PostgreSQL, Redis, Celery worker, and nginx. A unified compose file adds the identity gateway and Keycloak. A separate observability stack provides Prometheus, Grafana, Alertmanager, a vault exporter with 13 metrics, 11 alert rules, and an AI Alert Analyzer.'
-      },
-      {
-        heading: 'Lessons Learned',
-        body:
-          '"It runs and is correct" is the start of a regulated deployment, not the end. The explicit before-production checklist — IdP, KMS, key rotation, SIEM forwarding, operational runbook — is the difference between a demo and something a bank will actually adopt. Encoding compliance requirements as database constraints rather than application code is far more defensible in an audit: the control cannot be bypassed by a future code path.'
-      },
-      {
-        heading: 'Future Improvements',
-        bullets: [
-          'Complete Keycloak OIDC/SAML deployment and integration testing',
-          'Finish ops observability — health dashboard polish, archival automation',
-          'Layer the out-of-scope GPT-Guard / RAG / agentic protection on top of the vault core'
-        ]
+        "heading": "Evidence",
+        "body": "The homepage includes a service screenshot; the diagrams below show masking, unmasking, and deployment boundaries. Source and enterprise data remain private."
       }
     ],
-    businessValue:
-      'Lets an enterprise adopt LLMs and third-party analytics on regulated data without exposing raw PII — turning a compliance blocker into a solved control. The audit chain and dual gate give security and compliance teams the evidence they need to sign off.'
+    businessValue: "Reduces sensitive-data exposure in downstream workflows while controlling recovery of original values. Compliance approval and complete PII removal are not claimed."
   },
 
   // -------------------------------------------------------------------
@@ -560,13 +562,11 @@ export const caseStudies: CaseStudy[] = [
     title: 'Multilingual NLP Intelligence Platform',
     tagline:
       'Agentic pipeline for low-resource-language public-feedback analysis and AI briefs',
-    role: 'Lead Architect',
+    role: "AI engineering & multilingual workflow implementation",
     org: 'Arwen Tech (Pvt.) Ltd.',
     period: '2025 — Present',
-    status:
-      'Operational internally — running sentiment analysis on live feedback & posts (pipeline, briefing agent, connectors, dashboard, human review) · LoRA training + full observability in progress · 107 backend tests passing',
-    summary:
-      'A multilingual NLP platform that ingests public social data across languages mainstream NLP handles poorly, runs it through an agentic pipeline, and produces validated, actionable analysis — improving its own sovereign models through a human-review and active-learning loop.',
+    status: "Internal sentiment analysis · LoRA training and full observability in progress",
+    summary: "An internal multilingual feedback platform for language detection, normalization, translation, sentiment analysis, and human review. Training and monitoring extensions remain in progress.",
     tags: [
       'FastAPI',
       'Kafka',
@@ -598,7 +598,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: 'System Architecture',
         caption:
-          'Autonomous agents handle each stage with self-healing and auto-retry; Kafka decouples ingestion from processing so stages scale independently.',
+          'Kafka separates ingestion and processing. Dashed training paths represent work in progress, rather than proven operational model updates.',
         chart: `flowchart LR
     SM["Social sources<br/>Instagram · Facebook · manual"] --> K[("Apache Kafka")]
     K --> DET["Detect<br/>language ID"]
@@ -611,8 +611,8 @@ export const caseStudies: CaseStudy[] = [
     ANA --> STORE[("PostgreSQL + pgvector<br/>Qdrant · Redis · MinIO")]
     ANA --> REV["Human Review Queue"]
     REV --> GOLD["DVC gold sets"]
-    GOLD --> LORA["LoRA training · PEFT"]
-    LORA -->|shadow deploy + auto-rollback| ANA`
+    GOLD -.-> LORA["LoRA training · PEFT · in progress"]
+    LORA -.->|planned evaluation / promotion| ANA`
       },
       {
         title: 'Data Flow — the five preserved artefacts',
@@ -629,16 +629,16 @@ export const caseStudies: CaseStudy[] = [
       {
         title: 'Active-Learning Loop',
         caption:
-          'The review UI is not overhead — it is the training-data engine. Reviewer effort compounds into model quality.',
+          'The review UI is not overhead — it is the training-data engine. The training and model-promotion steps remain in progress.',
         chart: `flowchart LR
     PR["Low-confidence / disagreement<br/>predictions"] --> RQ["Review Queue<br/>approve · correct · reject"]
     RQ --> LS["Label Studio<br/>complex labeling"]
     RQ --> GS["Gold set<br/>DVC-versioned JSONL by language/task"]
     LS --> GS
     GS --> TR["LoRA retraining · PEFT"]
-    TR --> SH["Shadow-mode deploy"]
-    SH -->|regression| RB["Auto-rollback"]
-    SH -->|passes| PROD["Promote adapter"]`
+    TR --> SH["Shadow evaluation · planned"]
+    SH -->|regression| RB["Rollback · planned"]
+    SH -->|passes| PROD["Adapter promotion · planned"]`
       },
       {
         title: 'Deployment Flow',
@@ -659,92 +659,36 @@ export const caseStudies: CaseStudy[] = [
     ],
     sections: [
       {
-        heading: 'Business Problem',
-        body:
-          'Decision-makers need to understand public sentiment expressed across a dozen languages and scripts — Urdu, Roman Urdu, Pashto, Sindhi, Punjabi, and long-tail languages like Balochi, Brahui, and Burushaski — that mainstream NLP tools handle poorly or not at all. Off-the-shelf models are English-centric, commercial APIs do not cover these languages sovereignly, and raw sentiment scores without human validation are not trustworthy enough to act on.'
+        "heading": "Business Problem",
+        "body": "Teams need to review feedback written in Urdu, Roman Urdu, and regional languages, including noisy spelling and mixed scripts, without losing the original text when analyzing translated content."
       },
       {
-        heading: 'Solution',
-        body:
-          'A hybrid FastAPI + Kafka platform where autonomous agents handle each processing stage. Text is language-detected, normalized and transliterated across scripts, translated to an English pivot via NLLB-200 fine-tuned on OPUS corpora, then analyzed for sentiment, intent, topic, toxicity, and sarcasm. A briefing agent generates daily briefs and alerts. Predictions below confidence route to a human-review queue; corrections auto-export to DVC-versioned gold sets that feed LoRA retraining — so sovereign models improve over time and hot-swap in via shadow mode with automatic rollback.'
+        "heading": "My Role",
+        "body": "Designed and built the multilingual ingestion and processing workflow, backend/dashboard integration, and human-review path for internal feedback analysis."
       },
       {
-        heading: 'Major Features',
-        bullets: [
-          'Agentic pipeline with self-healing and auto-retry per stage, plus a fully replayable audit trail',
-          'Language coverage tiered from anchor (Urdu, Roman Urdu) through major regional to long-tail',
-          'Five artefacts preserved per post — raw, native script, roman, English pivot, predictions',
-          'Human review queue with approve/correct/reject, feeding auto-exported DVC gold sets',
-          'Label Studio integration for complex annotation tasks',
-          'Active learning — corrections drive LoRA retraining; adapters hot-swap via shadow mode with auto-rollback on regression'
+        "heading": "Solution & Engineering Decisions",
+        "bullets": [
+          "Kafka decouples ingestion from processing; language detection and normalization precede translation to an English pivot.",
+          "NLLB-200 and multilingual analysis components support sentiment processing. Original and intermediate representations remain available for review.",
+          "FastAPI, PostgreSQL/pgvector, and Next.js connect processing to stored records and dashboards.",
+          "Human review supports checking uncertain results; language-specific evaluation is required before relying on classifications."
         ]
       },
       {
-        heading: 'AI Components',
-        bullets: [
-          'Translation — NLLB-200 fine-tuned on OPUS parallel corpora, English pivot strategy',
-          'Understanding — XLM-R, Aya 23, BGE-M3 embeddings for multilingual sentiment, intent, topic, toxicity, sarcasm',
-          'Generation — Claude/Grok briefing agent for daily and on-demand briefs',
-          'Continual learning — PEFT/LoRA adapters trained from reviewer-corrected gold sets, versioned in DVC'
-        ]
+        "heading": "Deployment & Current Status",
+        "body": "Running sentiment analysis on live feedback internally. LoRA training and full observability remain in progress. Adapter hot-swapping, shadow evaluation, and automatic rollback are proposed development paths, not established operational capabilities."
       },
       {
-        heading: 'APIs',
-        bullets: [
-          'POST /api/v1/ingest and /ingest/batch — single and batch ingestion',
-          'GET /api/v1/posts and /posts/{id} — five artefacts plus audit trail',
-          'GET/POST /api/v1/reviews and /reviews/stats — human review queue',
-          'GET/POST /api/v1/briefs and /briefs/generate — briefs',
-          'GET /api/v1/dashboard/stats — analytics',
-          'GET /api/v1/health — system health'
-        ]
+        "heading": "Scale & Results",
+        "body": "The implemented result is an internal multilingual feedback workflow with retained source text and reviewable outputs. Language-specific accuracy, throughput, user count, and measured improvements from retraining are not published."
       },
       {
-        heading: 'Governance & Safeguards',
-        bullets: [
-          'Human-in-the-loop gate on low-confidence and disagreement predictions — no autonomous action on ambiguous signals',
-          'Full, replayable audit trail of every agent action per post',
-          'Sovereign model training — data and adapters stay in-house rather than shipping content to third-party APIs for core analysis',
-          'Scope limited to public and consented data sources'
-        ]
-      },
-      {
-        heading: 'Challenges',
-        bullets: [
-          'Genuinely low-resource languages — no clean parallel corpora, heavy code-switching, Roman-script noise — addressed with the transliteration/normalization stage and five-artefact preservation',
-          'Making model improvement safe in a live system — solved with shadow-mode LoRA deploys and automatic rollback rather than direct promotion',
-          'Keeping analysis trustworthy enough to act on — solved by routing uncertainty to humans instead of surfacing false confidence'
-        ]
-      },
-      {
-        heading: 'Scalability',
-        bullets: [
-          'Kafka decouples ingestion from processing; stages scale independently as consumers',
-          'pgvector and Qdrant split relational and high-recall vector workloads',
-          'Tiered language strategy allows adding long-tail languages incrementally without re-architecting'
-        ]
-      },
-      {
-        heading: 'Deployment',
-        body:
-          'Full stack via docker-compose — FastAPI gateway, Kafka, Next.js dashboard, PostgreSQL + pgvector, Qdrant, Redis, MinIO, Label Studio, and Prometheus/Grafana. Training runs in Colab notebooks with W&B tracking and DVC-versioned datasets.'
-      },
-      {
-        heading: 'Lessons Learned',
-        body:
-          'Preserving every intermediate representation is what makes a multilingual pipeline debuggable — when an English-pivot sentiment score looks wrong, you can walk back through the transliteration and native script to find where it broke. And a human-review-to-gold-set-to-LoRA loop turns reviewer effort into compounding model quality: the review UI is not overhead, it is the training-data engine.'
-      },
-      {
-        heading: 'Future Improvements',
-        bullets: [
-          'Complete LoRA training and ML-ops phase',
-          'Complete observability and monitoring phase',
-          'Expand connector coverage and broaden long-tail language gold sets'
-        ]
+        "heading": "Evidence & Next Steps",
+        "body": "Homepage screenshots show multilingual records and processing views. Complete the training and monitoring work, then evaluate each supported language against reviewed reference data before publishing performance claims."
       }
     ],
-    businessValue:
-      'Gives organizations a sovereign, multilingual read on public sentiment in languages no commercial tool covers well — with human validation that makes the output trustworthy enough to act on, and a feedback loop that keeps improving accuracy without recurring third-party API costs.'
+    businessValue: "Makes multilingual feedback searchable and reviewable while retaining source text. Accuracy improvements and operational savings require measurement."
   }
 ];
 
