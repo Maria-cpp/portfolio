@@ -36,12 +36,12 @@ export const personal = {
 };
 
 export const heroWork = [
-  { title: 'Video Analytics', description: 'object detection, tracking, and facial recognition using standard IP cameras.' },
-  { title: 'Standard Infrastructure', description: 'solutions that work with high-quality generic IP cameras and standard PCs, without requiring specialized hardware.' },
-  { title: 'NLP & Sentiment Analysis', description: 'multilingual feedback and sentiment analysis workflows.' },
-  { title: 'Agentic AI', description: 'agentic systems with MCP integrations, human-in-the-loop (HITL) gates, and workflow automation.' },
-  { title: 'RAG Platforms', description: 'enterprise knowledge retrieval and document intelligence systems.' },
-  { title: 'LLM Data Protection', description: 'protecting sensitive enterprise data within LLM-powered applications.' }
+  { title: 'Video Analytics', description: 'Object detection, tracking, and facial recognition using standard IP cameras.' },
+  { title: 'Standard Infrastructure', description: 'Solutions that work with high-quality generic IP cameras and standard PCs, without requiring specialized hardware.' },
+  { title: 'NLP & Sentiment Analysis', description: 'Multilingual feedback and sentiment analysis workflows.' },
+  { title: 'Agentic AI', description: 'Agentic systems with MCP integrations, human-in-the-loop (HITL) gates, and workflow automation.' },
+  { title: 'RAG Platforms', description: 'Enterprise knowledge retrieval and document intelligence systems.' },
+  { title: 'LLM Data Protection', description: 'Protecting sensitive enterprise data within LLM-powered applications.' }
 ] as const;
 
 // ---------------------------------------------------------------------
